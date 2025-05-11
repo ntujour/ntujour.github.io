@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>NTU Journalism Services Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .portal-container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 40px 32px 32px 32px;
+      min-width: 320px;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5em;
+      color: #1976d2;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 2em 0 0 0;
+    }
+    .service-list li {
+      margin: 1.2em 0;
+    }
+    .service-link {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1976d2;
+      font-size: 1.1rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .service-link:hover {
+      background: #1976d2;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+    }
+    .desc {
+      color: #555;
+      font-size: 1rem;
+      margin-top: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="portal-container">
+    <h1>NTU Journalism Services Portal</h1>
+    <ul class="service-list">
+      <li>
+        <a class="service-link" href="advisee.html">指導學生狀態 Supervising Status</a>
+        <div class="desc">查看各指導老師的學生畢業狀態與分組</div>
+      </li>
+      <li>
+        <a class="service-link" href="courses.html">課程地圖 Course Map</a>
+        <div class="desc">瀏覽新聞所課程地圖與模組結構</div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html> 

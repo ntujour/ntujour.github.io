@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Sheet CSV 讀取展示</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 20px;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 4px 8px;
+    }
+    th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Google Sheet 資料表</h2>
+  <div id="sheet-table"></div>
+  <script>
+    d3.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTofwdyqFHIOiQtKMvnTN3wd138UG2ZL8LtrCWUyA6Rpl0NUZViTjllXf1pZ-i4d85dIOL3S5aobVzN/pub?gid=0&single=true&output=csv')
+      .then(data => {
+        if (!data || data.length === 0) {
+          document.getElementById('sheet-table').innerText = '無資料';
+          return;
+        }
+        // 產生表格
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+        // 標題列
+        const headerRow = document.createElement('tr');
+        Object.keys(data[0]).forEach(key => {
+          const th = document.createElement('th');
+          th.textContent = key;
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+        // 資料列
+        data.forEach(row => {
+          const tr = document.createElement('tr');
+          Object.values(row).forEach(val => {
+            const td = document.createElement('td');
+            td.textContent = val;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        document.getElementById('sheet-table').appendChild(table);
+      })
+      .catch(err => {
+        document.getElementById('sheet-table').innerText = '讀取失敗：' + err;
+      });
+  </script>
+</body>
+</html>

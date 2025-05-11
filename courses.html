@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程地圖</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+
+        .course-node {
+            fill: #f0f0f0;
+            stroke: #999;
+            stroke-width: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .course-node.unable {
+            fill: #e0e0e0;
+            stroke: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .course-node.selected {
+            fill: lightpink;
+            stroke: black;
+            stroke-width: 1px;
+        }
+
+        .course-text {
+            font-size: 10px;
+            pointer-events: none;
+            dominant-baseline: middle;
+            text-anchor: middle;
+        }
+
+        .course-text.unable {
+            fill: #999;
+        }
+
+        .course-text-en {
+            font-size: 10px;
+            fill: #666;
+            pointer-events: none;
+        }
+
+        .dashboard {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .selected-course-item {
+            display: inline-block;
+            margin: 2px;
+            padding: 3px 6px;
+            background: #f0f0f0;
+            border-radius: 2px;
+            font-size: 12px;
+        }
+
+        .category-container {
+            fill: #f8f9fa;
+            stroke: #dee2e6;
+            stroke-width: 1px;
+        }
+
+        .category-container.core {
+            fill: #e3f2fd;
+            stroke: #2196f3;
+            stroke-width: 2px;
+        }
+
+        .category-label {
+            font-size: 12px;
+            font-weight: bold;
+            fill: #495057;
+        }
+
+        .category-label.core {
+            fill: #1976d2;
+        }
+
+        #clear-selection {
+            margin: 5px;
+            padding: 4px 8px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        #clear-selection:hover {
+            background: #cc0000;
+        }
+
+        .credit-sum {
+            font-size: 14px;
+            margin-left: 10px;
+            color: #495057;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 6px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 2px;
+            font-size: 11px;
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 200px;
+            white-space: pre-line;
+        }
+
+        #course-map {
+            margin-top: 60px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .module-connection {
+            stroke: #666;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .module-arrow {
+            fill: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h3 style="margin: 0; font-size: 14px;">已選課程: <span id="selected-count">0</span> 門
+            <span class="credit-sum">總學分: <span id="credit-sum">0</span></span>
+        </h3>
+        <div id="selected-courses"></div>
+        <button id="clear-selection">清除選擇</button>
+    </div>
+    <svg id="course-map"></svg>
+
+    <script>
+        const width = 1200;
+        const height = 1000;
+        const svg = d3.select('#course-map')
+            .attr('width', width)
+            .attr('height', height);
+
+        const margin = {top: 80, right: 20, bottom: 20, left: 20};
+
+        let selectedCourses = new Set();
+        let courseData = null;
+
+        const tooltip = d3.select('body').append('div')
+            .attr('class', 'tooltip')
+            .style('opacity', 0);
+
+        // 定義連接線的起點和終點
+        const connections = [
+            // 核心選修到三個必選修模組
+            {from: '核心選修', to: '必修'},
+            {from: '核心選修', to: '必選修-實務'},
+            {from: '核心選修', to: '必選修-方法'},
+            // 必選修模組到延伸選修
+            {from: '必修', to: '延伸選修'},
+            {from: '必選修-實務', to: '延伸選修'},
+            {from: '必選修-方法', to: '延伸選修'}
+        ];
+
+        // 重新設計的模組布局
+        const categoryLayout = {
+            '核心選修': { x: width/2 - 80, y: 50, width: 160, height: 30, isCore: true },
+            '必修': { x: width/2 - 240, y: 180, width: 160, height: 150 },
+            '必選修-實務': { x: width/2 - 80, y: 180, width: 160, height: 150 },
+            '必選修-方法': { x: width/2 + 80, y: 180, width: 160, height: 150 },
+            '延伸選修': { x: width/2 - 80, y: 380, width: 160, height: 30, isCore: true },
+            '畢業論文': { x: width/2 - 80, y: 850, width: 160, height: 100, isCore: true }
+        };
+
+        // 計算最大區塊高度
+        const maxHeight = Math.max(300, 200, 250, 250, 300); // 你可根據實際需求調整
+
+        d3.csv('./courses.csv').then(data => {
+            courseData = data;
+            
+            const categories = Object.keys(categoryLayout);
+            
+            // 繪製連接線
+            connections.forEach(conn => {
+                const from = categoryLayout[conn.from];
+                const to = categoryLayout[conn.to];
+                
+                // 計算起點和終點
+                const startX = from.x + from.width/2;
+                const startY = from.y + from.height;
+                const endX = to.x + to.width/2;
+                const endY = to.y;
+                
+                // 繪製直角連接線
+                svg.append('path')
+                    .attr('class', 'module-connection')
+                    .attr('d', `M ${startX} ${startY} 
+                              L ${startX} ${(startY + endY)/2}
+                              L ${endX} ${(startY + endY)/2}
+                              L ${endX} ${endY}`);
+
+                // 添加箭頭
+                svg.append('path')
+                    .attr('class', 'module-arrow')
+                    .attr('d', `M ${endX-5} ${endY-5} L ${endX} ${endY} L ${endX+5} ${endY-5}`);
+            });
+
+            // 繪製模組容器
+            svg.selectAll('.category-container')
+                .data(categories)
+                .enter()
+                .append('rect')
+                .attr('class', d => `category-container ${categoryLayout[d].isCore ? 'core' : ''}`)
+                .attr('x', d => categoryLayout[d].x)
+                .attr('y', d => categoryLayout[d].y)
+                .attr('width', d => categoryLayout[d].width)
+                .attr('height', d => categoryLayout[d].height);
+
+            // 繪製模組標籤
+            svg.selectAll('.category-label')
+                .data(categories)
+                .enter()
+                .append('text')
+                .attr('class', d => `category-label ${categoryLayout[d].isCore ? 'core' : ''}`)
+                .attr('x', d => categoryLayout[d].x + categoryLayout[d].width/2)
+                .attr('y', d => categoryLayout[d].y + (categoryLayout[d].isCore ? 20 : 15))
+                .attr('text-anchor', 'middle')
+                .text(d => d);
+
+            // 在畢業論文方塊中添加子項目
+            if (categoryLayout['畢業論文']) {
+                const thesisBox = categoryLayout['畢業論文'];
+                const thesisItems = ['專業報導', '(平面/影像/多媒體)', '學術論文'];
+                
+                thesisItems.forEach((item, i) => {
+                    svg.append('text')
+                        .attr('class', 'course-text')
+                        .attr('x', thesisBox.x + thesisBox.width/2)
+                        .attr('y', thesisBox.y + 35 + (i * 15))
+                        .attr('text-anchor', 'middle')
+                        .text(item);
+                });
+            }
+
+            // ====== 新增：下方五個區塊用 <g> 群組包裹並置中 ======
+            const blockWidth = 160;
+            const blockHeight = maxHeight;
+            const blockGap = 0;
+            const totalWidth = blockWidth * 5 + blockGap * 4;
+            const startX = (width - totalWidth) / 2;
+            const extendY = categoryLayout['延伸選修'].y + categoryLayout['延伸選修'].height + 20;
+            const bottomBlocks = [
+              { key: '理論/方法', label: '理論/方法' },
+              { key: '媒體公民意識', label: '媒體公民意識' },
+              { key: '國際視野', label: '國際視野' },
+              { key: '數位知能', label: '數位知能' },
+              { key: '專業實作', label: '專業實作' }
+            ];
+            const bottomBlockKeys = bottomBlocks.map(b => b.key);
+            const bottomGroup = svg.append('g')
+              .attr('id', 'bottom-blocks-group')
+              .attr('transform', `translate(${startX},${extendY})`);
+            // 畫五個底下區塊的外框和標題
+            bottomBlocks.forEach((block, i) => {
+              bottomGroup.append('rect')
+                .attr('x', i * (blockWidth + blockGap))
+                .attr('y', 0)
+                .attr('width', blockWidth)
+                .attr('height', blockHeight)
+                .attr('class', 'category-container');
+              bottomGroup.append('text')
+                .attr('x', i * (blockWidth + blockGap) + blockWidth / 2)
+                .attr('y', 20)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'category-label')
+                .text(block.label);
+            });
+            // ====== 新增結束 ======
+
+            // 先畫上層區塊的課程
+            data.forEach((course, i) => {
+              const category = course.category;
+              if (bottomBlockKeys.includes(category)) {
+                // 不處理，等下方統一畫
+                return;
+              }
+              const layout = categoryLayout[category];
+              const coursesInCategory = data.filter(d => d.category === category);
+              const index = coursesInCategory.indexOf(course);
+              course.x = layout.x + 5;
+              course.y = layout.y + 25 + (index * 20);
+              // 畫在 svg 上
+              const group = svg.append('g')
+                .attr('class', 'course-group')
+                .attr('transform', `translate(${course.x}, ${course.y})`);
+              group.append('rect')
+                .attr('class', d => `course-node ${course.active === 'unable' ? 'unable' : ''}`)
+                .attr('width', 150)
+                .attr('height', 20)
+                .attr('rx', 0)
+                .on('mouseover', function(event, d) {
+                  if (course.active === 'unable') return;
+                  const tooltipText = `課程名稱：${course.cname}\n英文名稱：${course.cname_en}\n學分數：${course.credit}\n授課教師：${course.offer_by || '待聘'}\n建議修課：${course.suggest || '不限'}`;
+                  tooltip.transition().duration(200).style('opacity', .9);
+                  tooltip.html(tooltipText)
+                    .style('left', (event.pageX + 10) + 'px')
+                    .style('top', (event.pageY - 28) + 'px');
+                })
+                .on('mouseout', function() {
+                  tooltip.transition().duration(500).style('opacity', 0);
+                })
+                .on('click', function(event, d) {
+                  if (course.active === 'unable') return;
+                  const isSelected = !d3.select(this).classed('selected');
+                  d3.select(this).classed('selected', isSelected);
+                  if (isSelected) {
+                    selectedCourses.add(course);
+                  } else {
+                    selectedCourses.delete(course);
+                  }
+                  updateDashboard();
+                });
+              group.append('text')
+                .attr('class', d => `course-text ${course.active === 'unable' ? 'unable' : ''}`)
+                .attr('x', 75)
+                .attr('y', 10)
+                .text(course.cname);
+            });
+
+            // 再畫下方五個區塊的課程
+            bottomBlocks.forEach((block, blockIndex) => {
+              const coursesInCategory = data.filter(d => d.category === block.key);
+              coursesInCategory.forEach((course, i) => {
+                const group = bottomGroup.append('g')
+                  .attr('class', 'course-group')
+                  .attr('transform', `translate(${blockIndex * (blockWidth + blockGap) + 5}, ${30 + i * 20})`);
+                group.append('rect')
+                  .attr('class', d => `course-node ${course.active === 'unable' ? 'unable' : ''}`)
+                  .attr('width', 150)
+                  .attr('height', 20)
+                  .attr('rx', 0)
+                  .on('mouseover', function(event, d) {
+                    if (course.active === 'unable') return;
+                    const tooltipText = `課程名稱：${course.cname}\n英文名稱：${course.cname_en}\n學分數：${course.credit}\n授課教師：${course.offer_by || '待聘'}\n建議修課：${course.suggest || '不限'}`;
+                    tooltip.transition().duration(200).style('opacity', .9);
+                    tooltip.html(tooltipText)
+                      .style('left', (event.pageX + 10) + 'px')
+                      .style('top', (event.pageY - 28) + 'px');
+                  })
+                  .on('mouseout', function() {
+                    tooltip.transition().duration(500).style('opacity', 0);
+                  })
+                  .on('click', function(event, d) {
+                    if (course.active === 'unable') return;
+                    const isSelected = !d3.select(this).classed('selected');
+                    d3.select(this).classed('selected', isSelected);
+                    if (isSelected) {
+                      selectedCourses.add(course);
+                    } else {
+                      selectedCourses.delete(course);
+                    }
+                    updateDashboard();
+                  });
+                group.append('text')
+                  .attr('class', d => `course-text ${course.active === 'unable' ? 'unable' : ''}`)
+                  .attr('x', 75)
+                  .attr('y', 10)
+                  .text(course.cname);
+              });
+            });
+
+            d3.select('#clear-selection').on('click', () => {
+                selectedCourses.clear();
+                svg.selectAll('.course-node').classed('selected', false);
+                updateDashboard();
+            });
+        });
+
+        function updateDashboard() {
+            const selectedCount = selectedCourses.size;
+            const creditSum = Array.from(selectedCourses).reduce((sum, course) => sum + parseInt(course.credit || 0), 0);
+            
+            d3.select('#selected-count').text(selectedCount);
+            d3.select('#credit-sum').text(creditSum);
+            
+            const selectedCoursesDiv = d3.select('#selected-courses');
+            selectedCoursesDiv.html('');
+            
+            selectedCourses.forEach(course => {
+                selectedCoursesDiv.append('div')
+                    .attr('class', 'selected-course-item')
+                    .text(`${course.cname} (${course.credit}學分)`);
+            });
+        }
+    </script>
+</body>
+</html> 
