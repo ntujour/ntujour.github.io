@@ -198,7 +198,7 @@
         // 計算最大區塊高度
         const maxHeight = Math.max(300, 200, 250, 250, 300); // 你可根據實際需求調整
 
-        d3.csv('./courses.csv').then(data => {
+        d3.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0TtnU5t5rNehj20mQNi21qmXLU5d-zU5Z2TdE7zpLr3_aHaNfwG0SlDSB8P5pH-zlK3D-qjOKIzFG/pub?gid=2036219296&single=true&output=csv').then(data => {
             courseData = data;
             
             const categories = Object.keys(categoryLayout);
@@ -308,7 +308,13 @@
                 return;
               }
               const layout = categoryLayout[category];
-              const coursesInCategory = data.filter(d => d.category === category);
+              const coursesInCategory = data.filter(d => d.category === category)
+                .sort((a, b) => {
+                  // 將 unable 的課程排到後面
+                  if (a.active === 'unable' && b.active !== 'unable') return 1;
+                  if (a.active !== 'unable' && b.active === 'unable') return -1;
+                  return 0;
+                });
               const index = coursesInCategory.indexOf(course);
               course.x = layout.x + 5;
               course.y = layout.y + 25 + (index * 20);
@@ -352,7 +358,13 @@
 
             // 再畫下方五個區塊的課程
             bottomBlocks.forEach((block, blockIndex) => {
-              const coursesInCategory = data.filter(d => d.category === block.key);
+              const coursesInCategory = data.filter(d => d.category === block.key)
+                .sort((a, b) => {
+                  // 將 unable 的課程排到後面
+                  if (a.active === 'unable' && b.active !== 'unable') return 1;
+                  if (a.active !== 'unable' && b.active === 'unable') return -1;
+                  return 0;
+                });
               coursesInCategory.forEach((course, i) => {
                 const group = bottomGroup.append('g')
                   .attr('class', 'course-group')
