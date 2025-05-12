@@ -62,18 +62,21 @@
   </style>
 </head>
 <body>
-  <div class="portal-container">
-    <h1>NTU Journalism Services Portal</h1>
-    <ul class="service-list">
-      <li>
-        <a class="service-link" href="advisee.html">指導學生狀態 Supervising Status</a>
-        <div class="desc">查看各指導老師的學生畢業狀態與分組</div>
-      </li>
-      <li>
-        <a class="service-link" href="courses.html">課程地圖 Course Map</a>
-        <div class="desc">瀏覽新聞所課程地圖與模組結構</div>
-      </li>
-    </ul>
-  </div>
+  <header style="width:100%;background:#1976d2;color:#fff;padding:12px 0;text-align:center;font-size:1.2rem;letter-spacing:1px;">
+    NTU Journalism Services Portal
+  </header>
+  <main style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;">
+    <div class="dashboard-cards" style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:40px;">
+      <a class="dashboard-card" href="advisee.html" style="background:#e3f2fd;border-radius:10px;padding:24px 32px;min-width:180px;box-shadow:0 2px 8px rgba(25,118,210,0.08);text-decoration:none;color:#1976d2;display:flex;flex-direction:column;align-items:center;transition:box-shadow 0.2s;">
+        <span style="font-size:1.3rem;font-weight:600;">指導學生狀態</span>
+        <span style="font-size:0.95rem;margin-top:8px;color:#555;">Supervising Status</span>
+      </a>
+      <a class="dashboard-card" href="courses.html" style="background:#e3f2fd;border-radius:10px;padding:24px 32px;min-width:180px;box-shadow:0 2px 8px rgba(25,118,210,0.08);text-decoration:none;color:#1976d2;display:flex;flex-direction:column;align-items:center;transition:box-shadow 0.2s;">
+        <span style="font-size:1.3rem;font-weight:600;">課程地圖</span>
+        <span style="font-size:0.95rem;margin-top:8px;color:#555;">Course Map</span>
+      </a>
+    </div>
+    <div style="margin-top:32px;color:#888;font-size:0.95rem;">歡迎使用本服務平台</div>
+  </main>
 </body>
 </html> 
