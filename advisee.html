@@ -256,36 +256,96 @@
         // ===== 新增簡表：只列出論文題目不是在學中或休學的學生，分屆次 =====
         // 先分組
         const completedByYear = {};
+        const completedByAdvisor = {};
         data.forEach(row => {
           const thesisTitle = (row['論文題目'] || '').trim();
           const year = (row['屆次'] || '').trim();
+          const advisorField = (row['指導老師'] || '').trim();
           if (thesisTitle && thesisTitle !== '在學中' && thesisTitle !== '休學') {
+            // 依屆次分組
             if (!completedByYear[year]) completedByYear[year] = [];
             completedByYear[year].push(row);
+            
+            // 依指導老師分組
+            if (advisorField) {
+              const advisors = advisorField.split(/、|,|，/).map(name => name.trim()).filter(Boolean);
+              advisors.forEach(advisor => {
+                if (!completedByAdvisor[advisor]) completedByAdvisor[advisor] = [];
+                completedByAdvisor[advisor].push(row);
+              });
+            }
           }
         });
+
         // 依屆次排序
         const sortedCompletedYears = Object.keys(completedByYear).sort((a, b) => b - a);
+        // 依老師排序（專任在前，兼任在後）
+        const sortedAdvisors = [...fulltimeAdvisors, ...adjunctAdvisors].filter(advisor => completedByAdvisor[advisor]);
+
         if (sortedCompletedYears.length > 0) {
           const tableSection = document.createElement('div');
           tableSection.className = 'advisor-section';
           tableSection.style.marginTop = '20px';
+          
+          // 新增標題和分頁按鈕
+          const headerDiv = document.createElement('div');
+          headerDiv.style.display = 'flex';
+          headerDiv.style.justifyContent = 'space-between';
+          headerDiv.style.alignItems = 'center';
+          headerDiv.style.marginBottom = '15px';
+          
           const tableTitle = document.createElement('h2');
           tableTitle.textContent = '畢業論文簡表';
-          tableSection.appendChild(tableTitle);
+          tableTitle.style.margin = '0';
+          
+          const tabButtons = document.createElement('div');
+          tabButtons.style.display = 'flex';
+          tabButtons.style.gap = '10px';
+          
+          const yearTab = document.createElement('button');
+          yearTab.textContent = '依屆次';
+          yearTab.style.padding = '5px 15px';
+          yearTab.style.border = '1px solid #ccc';
+          yearTab.style.borderRadius = '4px';
+          yearTab.style.background = '#f0f0f0';
+          yearTab.style.cursor = 'pointer';
+          
+          const advisorTab = document.createElement('button');
+          advisorTab.textContent = '依指導老師';
+          advisorTab.style.padding = '5px 15px';
+          advisorTab.style.border = '1px solid #ccc';
+          advisorTab.style.borderRadius = '4px';
+          advisorTab.style.background = '#f0f0f0';
+          advisorTab.style.cursor = 'pointer';
+          
+          tabButtons.appendChild(yearTab);
+          tabButtons.appendChild(advisorTab);
+          
+          headerDiv.appendChild(tableTitle);
+          headerDiv.appendChild(tabButtons);
+          tableSection.appendChild(headerDiv);
+          
+          // 建立內容容器
+          const contentContainer = document.createElement('div');
+          
+          // 依屆次顯示的內容
+          const yearContent = document.createElement('div');
           sortedCompletedYears.forEach(year => {
             const yearTitle = document.createElement('div');
             yearTitle.style.fontWeight = 'bold';
             yearTitle.style.marginTop = '10px';
             yearTitle.textContent = `${year}屆`;
-            tableSection.appendChild(yearTitle);
-            // 新的 badge + 論文題目方式
+            yearContent.appendChild(yearTitle);
+            
             const ul = document.createElement('ul');
             ul.style.listStyle = 'none';
             ul.style.padding = '0';
             ul.style.margin = '0 0 10px 0';
+            
             completedByYear[year].forEach(row => {
               const li = document.createElement('li');
+              li.style.display = 'flex';
+              li.style.alignItems = 'flex-start';
               li.style.marginBottom = '2px';
               const badge = document.createElement('span');
               if ((row['論文類型'] || '').trim() === '研究組') {
@@ -293,22 +353,83 @@
               } else {
                 badge.className = 'student-badge';
               }
-              badge.textContent = row['學生姓名'];
+              badge.textContent = `${row['學生姓名']}(${row['屆次']})`;
+              badge.style.flexShrink = '0';
+              const textContainer = document.createElement('span');
+              textContainer.style.marginLeft = '8px';
+              textContainer.style.display = 'inline-block';
+              textContainer.style.lineHeight = '1.6';
+              textContainer.innerHTML = ` ${row['論文題目']}<span class="advisor-text">（${row['指導老師']}老師指導）</span>`;
               li.appendChild(badge);
-              const thesisSpan = document.createElement('span');
-              thesisSpan.textContent = row['論文題目'];
-              thesisSpan.style.marginLeft = '2px';
-              thesisSpan.style.fontSize = '14px';
-              li.appendChild(thesisSpan);
-              const advisorSpan = document.createElement('span');
-              advisorSpan.className = 'advisor-text';
-              advisorSpan.textContent = `（${row['指導老師']}老師指導）`;
-              li.appendChild(advisorSpan);
+              li.appendChild(textContainer);
               ul.appendChild(li);
             });
-            tableSection.appendChild(ul);
+            yearContent.appendChild(ul);
           });
+          
+          // 依指導老師顯示的內容
+          const advisorContent = document.createElement('div');
+          advisorContent.style.display = 'none';
+          
+          sortedAdvisors.forEach(advisor => {
+            const advisorTitle = document.createElement('div');
+            advisorTitle.style.fontWeight = 'bold';
+            advisorTitle.style.marginTop = '10px';
+            advisorTitle.textContent = `${advisor}老師`;
+            advisorContent.appendChild(advisorTitle);
+            
+            const ul = document.createElement('ul');
+            ul.style.listStyle = 'none';
+            ul.style.padding = '0';
+            ul.style.margin = '0 0 10px 0';
+            
+            completedByAdvisor[advisor].forEach(row => {
+              const li = document.createElement('li');
+              li.style.display = 'flex';
+              li.style.alignItems = 'flex-start';
+              li.style.marginBottom = '2px';
+              const badge = document.createElement('span');
+              if ((row['論文類型'] || '').trim() === '研究組') {
+                badge.className = 'student-badge research';
+              } else {
+                badge.className = 'student-badge';
+              }
+              badge.textContent = `${row['學生姓名']}(${row['屆次']})`;
+              badge.style.flexShrink = '0';
+              const textContainer = document.createElement('span');
+              textContainer.style.marginLeft = '8px';
+              textContainer.style.display = 'inline-block';
+              textContainer.style.lineHeight = '1.6';
+              textContainer.innerHTML = ` ${row['論文題目']}<span class="advisor-text">（${row['指導老師']}老師指導）</span>`;
+              li.appendChild(badge);
+              li.appendChild(textContainer);
+              ul.appendChild(li);
+            });
+            advisorContent.appendChild(ul);
+          });
+          
+          contentContainer.appendChild(yearContent);
+          contentContainer.appendChild(advisorContent);
+          tableSection.appendChild(contentContainer);
           container.appendChild(tableSection);
+          
+          // 分頁切換功能
+          yearTab.onclick = function() {
+            yearContent.style.display = 'block';
+            advisorContent.style.display = 'none';
+            yearTab.style.background = '#e0e0e0';
+            advisorTab.style.background = '#f0f0f0';
+          };
+          
+          advisorTab.onclick = function() {
+            yearContent.style.display = 'none';
+            advisorContent.style.display = 'block';
+            yearTab.style.background = '#f0f0f0';
+            advisorTab.style.background = '#e0e0e0';
+          };
+          
+          // 預設顯示依屆次
+          yearTab.style.background = '#e0e0e0';
         }
 
         // 浮動選單
