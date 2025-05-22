@@ -2,3 +2,4 @@ backup/
 .vscode/settings.json
 knownews/figs/.DS_Store
 .DS_Store
+update_forms.py

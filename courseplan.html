@@ -67,7 +67,7 @@
       ['115-1', '115-2']
     ];
     // 下載資料
-    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0TtnU5t5rNehj20mQNi21qmXLU5d-zU5Z2TdE7zpLr3_aHaNfwG0SlDSB8P5pH-zlK3D-qjOKIzFG/pub?gid=2036219296&single=true&output=csv')
+    fetch('data/courses.csv')
       .then(r => r.text())
       .then(csv => {
         // 解析CSV

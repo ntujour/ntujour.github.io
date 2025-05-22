@@ -74,6 +74,7 @@
     <a href="index.html" style="color:#fff;text-decoration:none;display:block;width:100%;height:100%;">NTU Journalism Services Portal</a>
   </header>
   <main style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;">
+    <div style="margin-top:32px;color:#888;font-size:0.95rem;">歡迎使用本服務平台</div>
     <div class="dashboard-cards" style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:40px;">
       <a class="dashboard-card" href="advisee.html" style="background:#e3f2fd;border-radius:10px;padding:24px 32px;min-width:180px;box-shadow:0 2px 8px rgba(25,118,210,0.08);text-decoration:none;color:#1976d2;display:flex;flex-direction:column;align-items:center;transition:box-shadow 0.2s;">
         <span style="font-size:1.3rem;font-weight:600;">指導學生狀態</span>
@@ -92,20 +93,9 @@
         <span style="font-size:0.95rem;margin-top:8px;color:#555;">Course Planning</span>
       </a>
     </div>
-    <div style="margin-top:32px;color:#888;font-size:0.95rem;">歡迎使用本服務平台</div>
-    <div class="dashboard-cards" style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:40px;">
-      <div class="dashboard-card" style="background:#fff8e1;border-radius:10px;padding:24px 32px;width:220px;box-shadow:0 2px 8px rgba(255,193,7,0.08);text-decoration:none;color:#daa520;display:flex;flex-direction:column;align-items:center;transition:box-shadow 0.2s;position:relative;">
-        <div style="display:flex;align-items:center;width:100%;justify-content:center;position:relative;">
-          <span style="font-size:1.3rem;font-weight:600;">相關表單</span>
-          <label for="formToggle" style="position:absolute;right:0;cursor:pointer;width:20px;height:20px;display:flex;align-items:center;justify-content:center;">
-            <div class="triangle" style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #daa520;transition:transform 0.3s ease-out;"></div>
-          </label>
-        </div>
-        <input type="checkbox" id="formToggle" style="display:none;">
-        <div id="formList" style="margin-top:16px;width:100%;text-align:left;max-height:0;overflow:hidden;transition:max-height 0.3s ease-out;">
-          <div style="font-size:0.95rem;color:#555;text-align:center;">載入中...</div>
-        </div>
-      </div>
+    <div style="margin-top:32px;color:#888;font-size:0.95rem;">相關表單</div>
+    <div id="formList" class="dashboard-cards" style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
+      <div style="font-size:0.95rem;color:#555;text-align:center;">載入中...</div>
     </div>
   </main>
   <script>
@@ -114,10 +104,11 @@
 
     async function loadForms() {
       try {
-        const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQHsu0mwJHBxfuSwglE4PsC2G_F8atdcFZ_j1SSvaNA1QuLlBfVnFXQmYX5Hb5Qp3f1PdtTjQ_4ngi9/pub?gid=1170157119&single=true&output=csv');
+        const response = await fetch('data/office.csv');
         const csvText = await response.text();
         formsData = parseCSV(csvText);
         formsLoaded = true;
+        displayForms(formsData);
       } catch (error) {
         console.error('Error loading forms:', error);
         document.getElementById('formList').innerHTML = '<div style="color:#daa520;text-align:center;">無法載入表單資料</div>';
@@ -140,37 +131,15 @@
     function displayForms(forms) {
       const formList = document.getElementById('formList');
       formList.innerHTML = forms.map(form => `
-        <div style="margin-bottom:12px;">
-          <a href="${form.formLink}" target="_blank" style="color:#daa520;text-decoration:none;font-size:0.95rem;display:block;">
-            ${form.formName}
-          </a>
-          <span style="color:#555;font-size:0.85rem;display:block;margin-top:4px;">
-            截止日期: ${form.endDate}
-          </span>
-        </div>
+        <a href="${form.formLink}" target="_blank" style="background:#f3e5f5;border-radius:10px;padding:24px 32px;min-width:180px;box-shadow:0 2px 8px rgba(156,39,176,0.08);text-decoration:none;color:#7b1fa2;display:flex;flex-direction:column;align-items:center;transition:box-shadow 0.2s;">
+          <span style="font-size:0.95rem;font-weight:500;">${form.formName}</span>
+          <span style="font-size:0.85rem;margin-top:8px;color:#555;">截止日期: ${form.endDate}</span>
+        </a>
       `).join('');
     }
 
     // Load forms when the page loads
     window.addEventListener('load', loadForms);
-
-    // Add change handler for the checkbox
-    document.getElementById('formToggle').addEventListener('change', function(e) {
-      const formList = document.getElementById('formList');
-      const triangle = document.querySelector('.triangle');
-      if (e.target.checked) {
-        if (!formsLoaded) {
-          loadForms();
-        } else if (formsData) {
-          displayForms(formsData);
-        }
-        formList.style.maxHeight = '500px';
-        triangle.style.transform = 'rotate(180deg)';
-      } else {
-        formList.style.maxHeight = '0';
-        triangle.style.transform = 'rotate(0deg)';
-      }
-    });
   </script>
 </body>
 </html> 

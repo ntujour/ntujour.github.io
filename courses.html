@@ -349,7 +349,7 @@
         // 計算最大區塊高度
         const maxHeight = Math.max(300, 200, 250, 250, 300); // 你可根據實際需求調整
 
-        d3.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0TtnU5t5rNehj20mQNi21qmXLU5d-zU5Z2TdE7zpLr3_aHaNfwG0SlDSB8P5pH-zlK3D-qjOKIzFG/pub?gid=2036219296&single=true&output=csv').then(data => {
+        d3.csv('data/courses.csv').then(data => {
             courseData = data;
             
             const categories = Object.keys(categoryLayout);

@@ -144,7 +144,7 @@
     <div id="sheet-table"></div>
   </div>
   <script>
-    d3.csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTofwdyqFHIOiQtKMvnTN3wd138UG2ZL8LtrCWUyA6Rpl0NUZViTjllXf1pZ-i4d85dIOL3S5aobVzN/pub?gid=0&single=true&output=csv')
+    d3.csv('data/advisee.csv')
       .then(data => {
         if (!data || data.length === 0) {
           document.getElementById('sheet-table').innerText = '無資料';
