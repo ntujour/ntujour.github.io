@@ -32,8 +32,12 @@
 31,國際政治與兩岸關係專題,Seminar on International Politics and Cross-strait Relations ,明居正,國際視野,3,106-2,即將停開,,,unable,,,,
 32,新聞資訊視覺化,Visual Journalism,林照真,數位知能,3,113-1,每年,,,,,,,
 33,網頁設計與敘事,Web Design for Storytelling,謝吉隆,數位知能,3,113-1,每年,,製作多媒體新聞專題的基礎。隨著生成式AI發展，大幅降低網頁與多媒體製作門檻，教學也隨之改變。建議有採編經驗或主題的狀況下選修，例如碩二上。,,1,,1,
-34,新聞資料處理與視覺呈現,Journalism Processing and Visualization,謝吉隆,數位知能,3,113-2,每年,,,,,1,,1
-35,社會科學程式設計,Programming for Social Science,謝吉隆,數位知能,3,113-2,每年,,,,1,,1,
+34,新聞資料處理與視覺呈現,Journalism Processing and Visualization,謝吉隆,數位知能,3,113-2,每年,,"認識、操作、視覺化數據與文字資料。
+使用R語言、容易與量化研究方法結合。
+大量使用NYTimes案例教學。",,,1,,1
+35,社會科學程式設計,Programming for Social Science,謝吉隆,數位知能,3,113-2,每年,,"用程式語言來探索社會科學議題。
+使用Python，大量使用生成式AI輔助寫作。
+學習用Vibe Coding設計服務。",,1,,1,
 36,多媒體創作,Multi-media Journalism ,林照真,數位知能,3,110-2,專任教師決定,,,,,,,
 37,電視新聞雜誌,Tv News Magazines ,王泰俐,數位知能,3,111-2,暫不開設,,,unable,,,,
 38,新聞資料分析,Data Analysis in Journalism ,謝吉隆,數位知能,3,106-2,即將停開,,,unable,,,,
