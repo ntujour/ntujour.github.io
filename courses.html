@@ -290,12 +290,64 @@
             top: 0;
             z-index: 1000;
         }
+
+        .guidance-box {
+            background: #e8f4fd;
+            border: 2px solid #1976d2;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .guidance-title {
+            color: #1976d2;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .guidance-title::before {
+            content: "📋";
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        .guidance-content {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .guidance-content ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .guidance-content li {
+            margin-bottom: 8px;
+        }
+        .guidance-content strong {
+            color: #d32f2f;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
     <header class="fixed-top" style="background:#1976d2;color:#fff;padding:12px 0;text-align:center;font-size:1.2rem;letter-spacing:1px;cursor:pointer;width:100vw;">
         <a href="index.html" style="color:#fff;text-decoration:none;display:block;width:100%;height:100%;">NTU Journalism Services Portal</a>
     </header>
+    
+    <div class="guidance-box" style="margin-top: 60px;">
+        <div class="guidance-title">修課指引</div>
+        <div class="guidance-content">
+            <ol>
+                <li><strong>提計劃書口試前</strong>必須完成必修與必選修的課程，包含研究方法與新聞實務的必選修規範。但注意，是提計劃書口試前，並非找指導教授前。</li>
+                <li>找指導教授、提計劃書口試、最終論文口試需要分別間隔<strong>三個月</strong>。</li>
+            </ol>
+        </div>
+    </div>
+    
     <div id="svg-container" style="width: 1200px; margin: 0 auto; display: block;">
         <svg id="main-svg"></svg>
     </div>

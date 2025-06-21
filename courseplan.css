@@ -1,0 +1,222 @@
+/* 共用樣式 - Course Planning Pages */
+
+/* 固定頂部導航 */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+/* 基本頁面樣式 */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 52px; /* height of header + a bit of space */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 主容器樣式 */
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px 32px 32px;
+  min-width: 320px;
+  max-width: 1200px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* 標題樣式 */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+  color: #1976d2;
+}
+
+.desc {
+  color: #555;
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+
+/* 修課指引框 */
+.guidance-box {
+  background: #e8f4fd;
+  border: 2px solid #1976d2;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guidance-title {
+  color: #1976d2;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.guidance-title::before {
+  content: "📋";
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.guidance-content {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.guidance-content ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.guidance-content li {
+  margin-bottom: 8px;
+}
+
+.guidance-content strong {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* 課程表格樣式 (courseplan_v1.html) */
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.course-table th {
+  background: #1976d2;
+  color: #fff;
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.course-table td {
+  padding: 12px 8px;
+  border: 1px solid #e0e0e0;
+  vertical-align: top;
+  min-height: 60px;
+}
+
+.course-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.category-header {
+  background: #f5f5f5 !important;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  padding: 12px 16px;
+  border-right: 2px solid #1976d2;
+}
+
+.course-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin: 2px 0;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.course-item.required {
+  background: #D5D5D5;
+  color: #fff;
+  border-color: #424242;
+}
+
+.course-item.method {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-color: #1976d2;
+}
+
+.course-item.practice {
+  background: #f3e5f5;
+  color: #7b1fa2;
+  border-color: #7b1fa2;
+}
+
+.course-item.other {
+  background: #fff;
+  color: #1976d2;
+  border-color: #bdbdbd;
+}
+
+.course-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.course-teacher {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+}
+
+.course-info {
+  color: #c2185b;
+  cursor: pointer;
+}
+
+.course-tooltip {
+  position: fixed;
+  background: #fff;
+  color: #333;
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 9999;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+    margin: 20px 10px;
+  }
+  
+  .course-table {
+    font-size: 0.85rem;
+  }
+  
+  .course-table th,
+  .course-table td {
+    padding: 8px 4px;
+  }
+  
+  .course-item {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+} 

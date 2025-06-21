@@ -4,46 +4,7 @@
   <meta charset="UTF-8">
   <title>開課規劃 | Course Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    .fixed-top {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      z-index: 1000;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      padding-top: 52px; /* height of header + a bit of space */
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: #f5f7fa;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .container {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      padding: 40px 32px 32px 32px;
-      min-width: 320px;
-      max-width: 500px;
-      margin-top: 40px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5em;
-      color: #1976d2;
-    }
-    .desc {
-      color: #555;
-      font-size: 1rem;
-      margin-top: 0.5em;
-    }
-  </style>
+  <link rel="stylesheet" href="courseplan.css">
 </head>
 <body>
   <header class="fixed-top" style="background:#1976d2;color:#fff;padding:12px 0;text-align:center;font-size:1.2rem;letter-spacing:1px;cursor:pointer;width:100vw;">
@@ -51,21 +12,20 @@
   </header>
   <main class="container main-content-rwd" style="background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.04);padding:32px 24px;max-width:1200px;width:90vw;margin:40px auto 0 auto;border-radius:12px;text-align:center;">
     <h1 style="color:#1976d2;font-size:2rem;margin-bottom:0.5em;">開課規劃</h1>
-    <div id="courseplan-blocks" style="width:100%;max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px 24px;justify-content:center;"></div>
+    <div id="courseplan-table" style="width:100%;margin:0 auto;"></div>
   </main>
   <script>
-    // 課程顏色
-    const typeColor = {
-      '必修': { bg: '#D5D5D5', color: '#fff', border: '#424242' },
-      '必選修': { bg: '#e3f2fd', color: '#1976d2', border: '#1976d2' },
-      '選修': { bg: '#fff', color: '#1976d2', border: '#bdbdbd' }
-    };
-    const typeOrder = ['必修', '必選修', '選修'];
-    // 固定順序，上排114-1, 114-2，下排115-1, 115-2
-    const semesters = [
-      ['114-1', '114-2'],
-      ['115-1', '115-2']
+    // 課程類別定義
+    const categories = [
+      { key: 'required', name: '必修', class: 'required' },
+      { key: 'method', name: '必選修-方法', class: 'method' },
+      { key: 'practice', name: '必選修-實務', class: 'practice' },
+      { key: 'other', name: '其他', class: 'other' }
     ];
+    
+    // 學期順序
+    const semesters = ['114-1', '114-2', '115-1', '115-2'];
+    
     // 下載資料
     fetch('data/courses.csv')
       .then(r => r.text())
@@ -78,130 +38,156 @@
           header.forEach((h, i) => obj[h.trim()] = (row[i]||'').trim());
           return obj;
         });
-        // 依學期分組
-        const semesterCourses = { '114-1': [], '114-2': [], '115-1': [], '115-2': [] };
-        data.forEach(course => {
-          Object.keys(semesterCourses).forEach(s => {
-            if (course[s] === '1') semesterCourses[s].push(course);
-          });
+        
+        // 建立表格
+        const container = document.getElementById('courseplan-table');
+        const table = document.createElement('table');
+        table.className = 'course-table';
+        
+        // 建立表頭
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        
+        // 第一欄是類別標題
+        const categoryHeader = document.createElement('th');
+        categoryHeader.textContent = '課程類別';
+        categoryHeader.className = 'category-header';
+        headerRow.appendChild(categoryHeader);
+        
+        // 其他欄是學期
+        semesters.forEach(semester => {
+          const th = document.createElement('th');
+          th.textContent = semester;
+          headerRow.appendChild(th);
         });
-        // 建立區塊
-        const container = document.getElementById('courseplan-blocks');
-        container.innerHTML = '';
-        semesters.forEach(row => {
-          const rowDiv = document.createElement('div');
-          rowDiv.style.display = 'flex';
-          rowDiv.style.gap = '32px 24px';
-          rowDiv.style.width = '100%';
-          rowDiv.style.justifyContent = 'center';
-          row.forEach(term => {
-            // 分組與排序
-            const grouped = { '必修': [], '必選修': [], '選修': [] };
-            semesterCourses[term].forEach(c => {
-              let cat = (c.category || '').trim();
-              if (cat.startsWith('必修')) cat = '必修';
-              else if (cat.startsWith('必選修')) cat = '必選修';
-              else cat = '選修';
-              grouped[cat].push(c);
+        
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+        
+        // 建立表格內容
+        const tbody = document.createElement('tbody');
+        
+        categories.forEach(category => {
+          const row = document.createElement('tr');
+          
+          // 類別標題欄
+          const categoryCell = document.createElement('td');
+          categoryCell.textContent = category.name;
+          categoryCell.className = 'category-header';
+          row.appendChild(categoryCell);
+          
+          // 各學期欄位
+          semesters.forEach(semester => {
+            const cell = document.createElement('td');
+            
+            // 篩選該類別和學期的課程
+            const semesterCourses = data.filter(course => {
+              // 檢查是否在該學期開課
+              if (course[semester] !== '1') return false;
+              
+              // 檢查類別
+              const courseCategory = (course.category || '').trim();
+              
+              switch (category.key) {
+                case 'required':
+                  return courseCategory.startsWith('必修');
+                case 'method':
+                  return courseCategory.startsWith('必選修-方法');
+                case 'practice':
+                  return courseCategory.startsWith('必選修-實務');
+                case 'other':
+                  return !courseCategory.startsWith('必修') && 
+                         !courseCategory.startsWith('必選修-方法') && 
+                         !courseCategory.startsWith('必選修-實務');
+                default:
+                  return false;
+              }
             });
-            // 建立大區塊
-            const block = document.createElement('div');
-            block.className = 'semester-block';
-            block.style.background = '#f5f5f5';
-            block.style.padding = '18px 18px 12px 18px';
-            block.style.minWidth = '260px';
-            block.style.maxWidth = '320px';
-            block.style.flex = '1 1 320px';
-            block.style.margin = '0';
-            block.style.display = 'flex';
-            block.style.flexDirection = 'column';
-            block.style.alignItems = 'flex-start';
-            block.style.boxSizing = 'border-box';
-            block.style.position = 'relative';
-            // 標題
-            const title = document.createElement('div');
-            title.textContent = term;
-            title.style.fontWeight = 'bold';
-            title.style.fontSize = '1.1rem';
-            title.style.color = '#1976d2';
-            title.style.marginBottom = '10px';
-            block.appendChild(title);
-            // 課程清單
-            typeOrder.forEach(type => {
-              grouped[type].forEach(course => {
-                const courseDiv = document.createElement('div');
-                // 課名樣式
-                courseDiv.style.background = typeColor[type].bg;
-                courseDiv.style.color = typeColor[type].color;
-                courseDiv.style.border = '1px solid ' + typeColor[type].border;
-                courseDiv.style.fontWeight = 'normal';
-                courseDiv.style.fontSize = '0.97rem';
-                courseDiv.style.padding = '4px 8px';
-                courseDiv.style.margin = '0 0 1px 0';
-                courseDiv.style.borderRadius = '0';
-                courseDiv.style.width = '100%';
-                courseDiv.style.boxSizing = 'border-box';
-                courseDiv.style.textAlign = 'left';
-                // info: subtle color, tooltip
-                let cnameSpan = document.createElement('span');
-                if (course.info) {
-                  cnameSpan.textContent = course.cname;
-                  cnameSpan.style.color = '#c2185b'; // 柔和暗粉紅
-                  cnameSpan.style.fontWeight = 'normal';
-                  cnameSpan.style.cursor = 'pointer';
-                  cnameSpan.title = course.info;
-                  cnameSpan.onmouseenter = function(e) {
-                    let tip = document.createElement('div');
-                    tip.textContent = course.info;
-                    tip.style.position = 'fixed';
-                    tip.style.background = '#fff';
-                    tip.style.color = '#c2185b';
-                    tip.style.border = '1px solid #e3e3e3';
-                    tip.style.borderRadius = '6px';
-                    tip.style.padding = '6px 12px';
-                    tip.style.fontSize = '0.95rem';
-                    tip.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
-                    tip.style.zIndex = 9999;
-                    tip.style.left = (e.clientX + 10) + 'px';
-                    tip.style.top = (e.clientY + 10) + 'px';
-                    tip.className = 'course-tooltip';
-                    document.body.appendChild(tip);
-                    cnameSpan._tip = tip;
-                  };
-                  cnameSpan.onmousemove = function(e) {
-                    if (cnameSpan._tip) {
-                      cnameSpan._tip.style.left = (e.clientX + 10) + 'px';
-                      cnameSpan._tip.style.top = (e.clientY + 10) + 'px';
-                    }
-                  };
-                  cnameSpan.onmouseleave = function() {
-                    if (cnameSpan._tip) {
-                      document.body.removeChild(cnameSpan._tip);
-                      cnameSpan._tip = null;
-                    }
-                  };
-                } else {
-                  cnameSpan.textContent = course.cname;
-                  cnameSpan.style.fontWeight = 'normal';
-                  cnameSpan.style.color = '#333';
-                }
-                courseDiv.appendChild(cnameSpan);
-                // 教師
-                let teacher = course.offer_by ? course.offer_by : '';
-                let teacherSpan = document.createElement('span');
-                teacherSpan.textContent = teacher ? ' (' + teacher + ')' : '';
-                teacherSpan.style.color = '#aaa';
-                teacherSpan.style.fontWeight = 'normal';
-                teacherSpan.style.fontSize = '0.96em';
-                teacherSpan.style.marginLeft = '4px';
+            
+            // 分組：有info的課程和無info的課程
+            const coursesWithInfo = semesterCourses.filter(course => course.info);
+            const coursesWithoutInfo = semesterCourses.filter(course => !course.info);
+            
+            // 先顯示無info的課程
+            coursesWithoutInfo.forEach(course => {
+              const courseDiv = document.createElement('div');
+              courseDiv.className = `course-item ${category.class}`;
+              
+              // 課程名稱
+              const nameSpan = document.createElement('div');
+              nameSpan.className = 'course-name';
+              nameSpan.textContent = course.cname;
+              courseDiv.appendChild(nameSpan);
+              
+              // 教師資訊
+              if (course.offer_by) {
+                const teacherSpan = document.createElement('div');
+                teacherSpan.className = 'course-teacher';
+                teacherSpan.textContent = course.offer_by;
                 courseDiv.appendChild(teacherSpan);
-                block.appendChild(courseDiv);
-              });
+              }
+              
+              cell.appendChild(courseDiv);
             });
-            rowDiv.appendChild(block);
+            
+            // 再顯示有info的課程
+            coursesWithInfo.forEach(course => {
+              const courseDiv = document.createElement('div');
+              courseDiv.className = `course-item ${category.class}`;
+              
+              // 課程名稱
+              const nameSpan = document.createElement('div');
+              nameSpan.className = 'course-name';
+              nameSpan.textContent = course.cname;
+              nameSpan.classList.add('course-info');
+              nameSpan.title = course.info;
+              
+              // 工具提示功能
+              nameSpan.onmouseenter = function(e) {
+                let tip = document.createElement('div');
+                tip.textContent = course.info;
+                tip.className = 'course-tooltip';
+                tip.style.left = (e.clientX + 10) + 'px';
+                tip.style.top = (e.clientY + 10) + 'px';
+                document.body.appendChild(tip);
+                nameSpan._tip = tip;
+              };
+              
+              nameSpan.onmousemove = function(e) {
+                if (nameSpan._tip) {
+                  nameSpan._tip.style.left = (e.clientX + 10) + 'px';
+                  nameSpan._tip.style.top = (e.clientY + 10) + 'px';
+                }
+              };
+              
+              nameSpan.onmouseleave = function() {
+                if (nameSpan._tip) {
+                  document.body.removeChild(nameSpan._tip);
+                  nameSpan._tip = null;
+                }
+              };
+              
+              courseDiv.appendChild(nameSpan);
+              
+              // 教師資訊
+              if (course.offer_by) {
+                const teacherSpan = document.createElement('div');
+                teacherSpan.className = 'course-teacher';
+                teacherSpan.textContent = course.offer_by;
+                courseDiv.appendChild(teacherSpan);
+              }
+              
+              cell.appendChild(courseDiv);
+            });
+            
+            row.appendChild(cell);
           });
-          container.appendChild(rowDiv);
+          
+          tbody.appendChild(row);
         });
+        
+        table.appendChild(tbody);
+        container.appendChild(table);
       });
   </script>
 </body>
