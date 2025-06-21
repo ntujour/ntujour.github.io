@@ -112,4 +112,188 @@ table tr:hover {
 .tag-gray {
   background-color: #f8f9fa;
   color: #495057;
+}
+
+/* --- Course Plan Specific Styles --- */
+
+.guidance-box {
+  background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%);
+  border: 2px solid #1976d2;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px auto;
+  text-align: left;
+  max-width: 800px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.1);
+}
+
+.guidance-title {
+  color: #1976d2;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.guidance-title::before {
+  content: "📋";
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.guidance-content {
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.guidance-content ol {
+  margin: 6px 0;
+  padding-left: 18px;
+}
+
+.guidance-content li {
+  margin-bottom: 6px;
+}
+
+.guidance-content strong {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.course-table th {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: #fff;
+  padding: 10px 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.course-table td {
+  padding: 10px 6px;
+  border: 1px solid #e8e8e8;
+  vertical-align: top;
+  min-height: 50px;
+}
+
+.course-table tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+.category-header {
+  background: #f8f9fa !important;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  padding: 10px 12px;
+  border-right: 2px solid #6c757d;
+  font-size: 0.9rem;
+}
+
+.course-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 5px 6px;
+  margin: 2px 0;
+  font-size: 0.8rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.course-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.course-item.required {
+  background: #e9ecef;
+  color: #212529;
+  border-color: #adb5bd;
+}
+
+.course-item.method {
+  background: #eef2f7;
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.course-item.practice {
+  background: #f4e6f7;
+  color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.course-item.other {
+  background: #fff;
+  color: #6c757d;
+  border-color: #ced4da;
+}
+
+.course-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+  font-size: 0.8rem;
+}
+
+.course-teacher {
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+}
+
+.course-info {
+  color: #d63384;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.course-info:hover {
+  color: #b3216c;
+}
+
+.course-tooltip {
+  position: fixed;
+  background: #fff;
+  color: #333;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 9999;
+  max-width: 280px;
+  word-wrap: break-word;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .course-table {
+    font-size: 0.75rem;
+  }
+  
+  .course-table th,
+  .course-table td {
+    padding: 6px 3px;
+  }
+  
+  .course-item {
+    font-size: 0.7rem;
+    padding: 3px 4px;
+  }
 } 
