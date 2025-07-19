@@ -245,6 +245,14 @@ table tr:hover {
   border-color: #ced4da;
 }
 
+.course-item.selected {
+  background: #d4edda !important;
+  border-color: #28a745 !important;
+  color: #155724 !important;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+  transform: scale(1.02);
+}
+
 .course-name {
   font-weight: 500;
   margin-bottom: 2px;

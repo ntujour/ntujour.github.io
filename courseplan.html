@@ -40,6 +40,28 @@
     // 學期順序
     const semesters = ['114-1', '114-2', '115-1', '115-2'];
     
+    // 選中的課程記錄
+    const selectedCourses = new Set();
+    
+    // 更新學期課程計數
+    function updateSemesterCount() {
+      semesters.forEach(semester => {
+        const count = Array.from(selectedCourses).filter(courseId => {
+          const [courseSemester] = courseId.split('|');
+          return courseSemester === semester;
+        }).length;
+        
+        const headerCell = document.querySelector(`th[data-semester="${semester}"]`);
+        if (headerCell) {
+          if (count > 0) {
+            headerCell.textContent = `${semester}（共選了${count}門課）`;
+          } else {
+            headerCell.textContent = semester;
+          }
+        }
+      });
+    }
+    
     // 下載資料
     fetch('data/courses.csv')
       .then(r => r.text())
@@ -72,6 +94,7 @@
         semesters.forEach(semester => {
           const th = document.createElement('th');
           th.textContent = semester;
+          th.setAttribute('data-semester', semester);
           headerRow.appendChild(th);
         });
         
@@ -126,6 +149,7 @@
             coursesWithoutInfo.forEach(course => {
               const courseDiv = document.createElement('div');
               courseDiv.className = `course-item ${category.class}`;
+              courseDiv.style.cursor = 'pointer';
               
               // 課程名稱
               const nameSpan = document.createElement('div');
@@ -141,6 +165,19 @@
                 courseDiv.appendChild(teacherSpan);
               }
               
+              // 添加點擊事件
+              const courseId = `${semester}|${course.cname}`;
+              courseDiv.onclick = function() {
+                if (selectedCourses.has(courseId)) {
+                  selectedCourses.delete(courseId);
+                  courseDiv.classList.remove('selected');
+                } else {
+                  selectedCourses.add(courseId);
+                  courseDiv.classList.add('selected');
+                }
+                updateSemesterCount();
+              };
+              
               cell.appendChild(courseDiv);
             });
             
@@ -148,6 +185,7 @@
             coursesWithInfo.forEach(course => {
               const courseDiv = document.createElement('div');
               courseDiv.className = `course-item ${category.class}`;
+              courseDiv.style.cursor = 'pointer';
               
               // 課程名稱
               const nameSpan = document.createElement('div');
@@ -190,6 +228,19 @@
                 teacherSpan.textContent = course.offer_by;
                 courseDiv.appendChild(teacherSpan);
               }
+              
+              // 添加點擊事件
+              const courseId = `${semester}|${course.cname}`;
+              courseDiv.onclick = function() {
+                if (selectedCourses.has(courseId)) {
+                  selectedCourses.delete(courseId);
+                  courseDiv.classList.remove('selected');
+                } else {
+                  selectedCourses.add(courseId);
+                  courseDiv.classList.add('selected');
+                }
+                updateSemesterCount();
+              };
               
               cell.appendChild(courseDiv);
             });
