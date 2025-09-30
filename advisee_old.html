@@ -2,239 +2,147 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>指導學生狀態 | NTU Journalism</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Google Sheet CSV 讀取展示</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
-    :root {
-      color-scheme: light;
-      --portal-primary: #0369a1;
-      --portal-primary-accent: #0ea5e9;
-      --portal-primary-strong: #0f172a;
-      --portal-surface: #ffffff;
-      --portal-surface-soft: #f8fafc;
-      --portal-border: rgba(148, 163, 184, 0.35);
-      --portal-border-strong: rgba(14, 165, 233, 0.45);
-      --portal-muted: #64748b;
-      --portal-muted-strong: #475569;
-      --portal-highlight-bg: #ede9fe;
-      --portal-highlight: #6d28d9;
-      --portal-radius: 3px;
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 1000;
     }
-
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-
-    main {
-      width: 100%;
-    }
-
-    #sheet-table {
+      padding: 0;
+      padding-top: 52px; /* height of header + a bit of space */
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      justify-content: center;
     }
-
+    #main-content {
+      width: 60%;
+      max-width: 1200px;
+    }
     .faculty-container {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
+      gap: 20px;
+      margin-bottom: 20px;
     }
-
-    .rounded-2xl,
-    .rounded-xl,
-    .rounded-lg,
-    .rounded-md,
-    .rounded {
-      border-radius: var(--portal-radius) !important;
-    }
-
     .faculty-section {
-      flex: 1 1 320px;
-      border-radius: var(--portal-radius);
-      border: 1px solid rgba(148, 163, 184, 0.28);
-      background: var(--portal-surface-soft);
-      padding: 1.5rem;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      flex: 1;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 10px;
+      background: #fafbfc;
     }
-
     .faculty-section h3 {
-      margin: 0 0 0.75rem 0;
-      font-size: 1.05rem;
-      color: var(--portal-primary);
-      letter-spacing: 0.03em;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #1565c0;
     }
-
     .teacher-list {
       list-style: none;
       padding: 0;
       margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
     }
-
+    .teacher-list li {
+      margin-bottom: 8px;
+    }
     .teacher-name {
-      font-weight: 600;
-      color: var(--portal-muted-strong);
-      margin-right: 4px;
+      font-weight: bold;
+      margin-right: 5px;
     }
-
     .student-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(14, 165, 233, 0.12);
-      color: #0369a1;
-      border-radius: var(--portal-radius);
-      padding: 0.15rem 0.6rem;
-      margin: 2px 4px 2px 0;
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1565c0;
+      border-radius: 5px;
+      padding: 2px 4px;
+      margin: 1px 1px 1px 0;
       font-size: 12px;
-      border: 1px solid rgba(14, 165, 233, 0.35);
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
       cursor: pointer;
+      border: 1px solid #90caf9;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
-
-    .student-badge:hover {
-      background: #0ea5e9;
-      color: #fff;
-      border-color: #0369a1;
-      transform: translateY(-1px);
-    }
-
     .student-badge.research {
-      background: var(--portal-highlight-bg);
-      color: var(--portal-highlight);
-      border: 1px solid rgba(109, 40, 217, 0.3);
+      background: #ede7f6;
+      color: #5e35b1;
+      border: 1px solid #b39ddb;
     }
-
+    .student-badge:hover {
+      background: #1976d2;
+      color: #fff;
+      border-color: #1976d2;
+    }
     .student-badge.research:hover {
-      background: #7c3aed;
+      background: #7e57c2;
       color: #fff;
-      border-color: #5b21b6;
+      border-color: #7e57c2;
     }
-
     .student-badge.unadvised {
-      background: rgba(148, 163, 184, 0.15);
-      color: var(--portal-muted-strong);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: #f5f5f5;
+      color: #757575;
+      border: 1px solid #e0e0e0;
     }
-
     .student-badge.unadvised:hover {
-      background: rgba(100, 116, 139, 0.3);
+      background: #9e9e9e;
       color: #fff;
-      border-color: rgba(100, 116, 139, 0.6);
+      border-color: #9e9e9e;
     }
-
-    .advisor-section,
+    .advisor-section {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 6px;
+      background: #fafbfc;
+    }
+    .advisor-section h2 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      color: #333;
+    }
     .year-section {
-      border-radius: var(--portal-radius);
-      border: 1px solid rgba(148, 163, 184, 0.28);
-      background: rgba(255, 255, 255, 0.96);
-      padding: 1.75rem;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 6px;
+      background: #fafbfc;
     }
-
-    .advisor-section h2,
     .year-section h3 {
-      margin: 0 0 0.75rem 0;
-      color: var(--portal-primary);
-      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #333;
     }
-
     .advisor-text {
-      color: var(--portal-muted);
+      color: #78909c;
       font-size: 13px;
     }
-
     table {
       border-collapse: collapse;
-      width: 100%;
-      margin: 0.75rem 0;
+      margin: 10px;
     }
-
-    th,
-    td {
-      border: 1px solid rgba(203, 213, 225, 0.8);
-      padding: 6px 8px;
-      font-size: 0.9rem;
+    th, td {
+      border: 1px solid #aaa;
+      padding: 2px 4px; 
     }
-
     th {
-      background: rgba(226, 232, 240, 0.6);
-      font-weight: 600;
-      color: var(--portal-muted-strong);
+      background: #f0f0f0;
     }
-
-    .tab-toggle {
-      padding: 0.45rem 1.1rem;
-      border-radius: 9999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(248, 250, 252, 0.9);
-      color: var(--portal-muted-strong);
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .tab-toggle:hover {
-      border-color: rgba(14, 165, 233, 0.45);
-      color: var(--portal-primary);
-    }
-
-    .tab-toggle.active {
-      background: rgba(14, 165, 233, 0.18);
-      border-color: rgba(14, 165, 233, 0.5);
-      color: var(--portal-primary);
-      box-shadow: 0 10px 25px -18px rgba(14, 165, 233, 0.55);
-    }
-
-    @media (max-width: 768px) {
-      .faculty-container {
-        flex-direction: column;
-      }
-
-      .faculty-section {
-        flex: 1 1 auto;
-      }
+    .sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
   </style>
 </head>
-<body class="min-h-screen bg-slate-100 text-slate-800 antialiased">
-  <header class="sticky top-0 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-    <div class="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-4">
-      <a href="index.html" class="text-lg font-semibold tracking-wide text-sky-800 transition-colors hover:text-sky-600">NTU Journalism Services Portal</a>
-      <a href="index_old.html" class="text-sm font-medium text-slate-500 transition hover:text-sky-600">回到舊版</a>
-    </div>
+<body>
+  <header class="fixed-top" style="background:#1976d2;color:#fff;padding:12px 0;text-align:center;font-size:1.2rem;letter-spacing:1px;cursor:pointer;width:100vw;">
+    <a href="index.html" style="color:#fff;text-decoration:none;display:block;width:100%;height:100%;">NTU Journalism Services Portal</a>
   </header>
-
-  <main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 py-12">
-    <section class="space-y-3">
-      <h1 class="text-3xl font-semibold tracking-tight text-sky-900">指導學生狀態</h1>
-      <p class="max-w-3xl text-sm leading-relaxed text-slate-600">了解每位老師現在的指導學生數以及畢業生的論文題目，掌握即時的指導資源與研究題材。</p>
-    </section>
-
-    <section class="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm shadow-slate-200/60">
-      <div class="space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <h2 class="text-lg font-semibold text-sky-800">學生指導中</h2>
-          <span class="text-xs font-medium uppercase tracking-widest text-slate-400">資料每日同步更新</span>
-        </div>
-        <div id="sheet-table" class="flex flex-col gap-6"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-slate-200 bg-white/90">
-    <div class="mx-auto flex w-full max-w-5xl flex-col gap-1 px-4 py-6 text-xs text-slate-400">
-      <span>國立臺灣大學 新聞研究所 | NTU Graduate Institute of Journalism</span>
-      <span>如有建議或需求，請聯繫系辦。</span>
-    </div>
-  </footer>
+  <div id="main-content">
+    <h2>學生指導中</h2>
+    <div id="sheet-table"></div>
+  </div>
   <script>
     d3.csv('data/advisee.csv')
       .then(data => {
@@ -393,25 +301,38 @@
         if (sortedCompletedYears.length > 0) {
           const tableSection = document.createElement('div');
           tableSection.className = 'advisor-section';
-          tableSection.style.marginTop = '24px';
+          tableSection.style.marginTop = '20px';
           
           // 新增標題和分頁按鈕
           const headerDiv = document.createElement('div');
-          headerDiv.className = 'flex flex-wrap items-center justify-between gap-3 mb-4';
+          headerDiv.style.display = 'flex';
+          headerDiv.style.justifyContent = 'space-between';
+          headerDiv.style.alignItems = 'center';
+          headerDiv.style.marginBottom = '15px';
           
           const tableTitle = document.createElement('h2');
           tableTitle.textContent = '畢業論文簡表';
+          tableTitle.style.margin = '0';
           
           const tabButtons = document.createElement('div');
-          tabButtons.className = 'flex flex-wrap items-center gap-2';
+          tabButtons.style.display = 'flex';
+          tabButtons.style.gap = '10px';
           
           const yearTab = document.createElement('button');
           yearTab.textContent = '依屆次';
-          yearTab.className = 'tab-toggle';
-
+          yearTab.style.padding = '5px 15px';
+          yearTab.style.border = '1px solid #ccc';
+          yearTab.style.borderRadius = '4px';
+          yearTab.style.background = '#f0f0f0';
+          yearTab.style.cursor = 'pointer';
+          
           const advisorTab = document.createElement('button');
           advisorTab.textContent = '依指導老師';
-          advisorTab.className = 'tab-toggle';
+          advisorTab.style.padding = '5px 15px';
+          advisorTab.style.border = '1px solid #ccc';
+          advisorTab.style.borderRadius = '4px';
+          advisorTab.style.background = '#f0f0f0';
+          advisorTab.style.cursor = 'pointer';
           
           tabButtons.appendChild(yearTab);
           tabButtons.appendChild(advisorTab);
@@ -512,19 +433,19 @@
           yearTab.onclick = function() {
             yearContent.style.display = 'block';
             advisorContent.style.display = 'none';
-            yearTab.classList.add('active');
-            advisorTab.classList.remove('active');
+            yearTab.style.background = '#e0e0e0';
+            advisorTab.style.background = '#f0f0f0';
           };
-
+          
           advisorTab.onclick = function() {
             yearContent.style.display = 'none';
             advisorContent.style.display = 'block';
-            yearTab.classList.remove('active');
-            advisorTab.classList.add('active');
+            yearTab.style.background = '#f0f0f0';
+            advisorTab.style.background = '#e0e0e0';
           };
-
+          
           // 預設顯示依屆次
-          yearTab.classList.add('active');
+          yearTab.style.background = '#e0e0e0';
         }
 
         // 浮動選單

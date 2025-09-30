@@ -4,80 +4,32 @@
   <meta charset="UTF-8">
   <title>開課規劃 | Course Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="min-h-screen bg-slate-100 text-slate-800 antialiased">
-  <header class="sticky top-0 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-    <div class="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-4">
-      <a href="index.html" class="text-lg font-semibold tracking-wide text-sky-800 transition-colors hover:text-sky-600">NTU Journalism Services Portal</a>
-      <a href="index_old.html" class="text-sm font-medium text-slate-500 transition hover:text-sky-600">回到舊版</a>
-    </div>
+<body>
+  <header class="fixed-top" style="background:#1976d2;color:#fff;padding:12px 0;text-align:center;font-size:1.2rem;letter-spacing:1px;cursor:pointer;width:100vw;">
+    <a href="index.html" style="color:#fff;text-decoration:none;display:block;width:100%;height:100%;">NTU Journalism Services Portal</a>
   </header>
-
-  <main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 py-12">
-    <section class="space-y-3">
-      <h1 class="text-3xl font-semibold tracking-tight text-sky-900">開課規劃</h1>
-      <p class="max-w-3xl text-sm leading-relaxed text-slate-600">提供未來兩年規劃開設的課程資訊，可點選課程以估算選修學分數，協助安排修課步調。</p>
-    </section>
-
-    <section class="rounded-2xl border border-slate-200 bg-white/95 p-6 shadow-sm shadow-slate-200/60">
-      <div class="space-y-6">
-        <div class="guidance-box" data-open="false">
-          <button type="button" class="guidance-toggle" aria-expanded="false">
-            <span class="guidance-title">修課指引</span>
-            <span class="guidance-hint">點此展開內容</span>
-            <span class="guidance-arrow">▾</span>
-          </button>
-          <div class="guidance-content-wrapper">
-            <div class="guidance-content">
-              <ul>
-                <li>「大眾傳播理論」原則上為碩一必修、「新聞法律與倫理」為碩二必修。</li>
-                <li>論文進程各階段須間隔至少三個月：確認指導教授三個月後方可進行計劃書口試；計劃書口試通過三個月後方可辦理論文口試。辦理計劃書口試前須完成所有必修與必選修課程（詳見<a href="http://www.journalism.ntu.edu.tw/course-regulation.html" target="_blank" rel="noopener noreferrer">臺大新聞所入學學生修業規定</a>）。</li>
-                <li><b>專業組</b>：除必修必選課程外，需再選修本所課程至少兩門；撰寫文字或多媒體採訪報導論文者必選「採訪寫作一、二」，撰寫影像採訪論文者必選「影像報導一、二」。</li>
-                <li><b>研究組</b>：除必修理論課程外，須再選修三門所內理論課程（課程地圖延伸選修中的「理論／方法」、「媒體公民意識」、「國際視野」三類）。選修「影像報導二」須先修「影像報導一」，選修「採訪寫作二」須先修「採訪寫作一」。</li>
-                <li>未來兩年將因新聘與業界師資新增課程，預計114-2增開三至四門、115-1增開二至三門，敬請留意公告與調整。</li>
-                <li>在學期間建議建立個人專業技能，無論文字、影像、音訊、數位媒體或資料新聞，本所均有對應課程可供選修，鼓勵依興趣與職涯提早規劃。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div id="courseplan-table" class="courseplan-table"></div>
+  <main class="container main-content-rwd">
+    <h1>開課規劃</h1>
+    
+    <div class="guidance-box">
+      <div class="guidance-title">修課指引</div>
+      <div class="guidance-content">
+        <ul>
+          <li>「大眾傳播理論」原則上為碩一必修、「新聞法律與倫理」為碩二必修</li>
+          <li>本所規定論文進程中各階段須間隔至少三個月：自確認指導教授起，三個月後方可進行計劃書口試；計劃書口試通過後，三個月後方可辦理論文口試。在「進行計劃書口試」前，學生須完成所有必修與必選修課程（詳見<a href="http://www.journalism.ntu.edu.tw/course-regulation.html" target="_blank">臺大新聞所入學學生修業規定</a>）。<b>必修</b>包含「大眾傳播理論」與「新聞法律與倫理」；<b>必選修</b>包含方法必選二擇一、實務必選五擇三。</li>    
+          <li><b>專業組</b>另規定：1、除必修必選課程外，需再選修本所開設之課程至少兩門。2、撰寫深度採訪報導、多媒體採訪報導導論文者，必選「採訪寫作一」、「採訪寫作二」；撰寫影像深度採訪報導導論文者，必選「影像報導一」、「影像報導二」。</li>
+          <li><b>研究組</b>另規定：1、除必修理論課程外，須再選修三門所內理論課程，即本所課程地圖中延伸選修之「理論／方法」、「媒體公民意識」、「國際視野」等三類之課程。2、選修「影像報導二」者，應先修「影像報導一」；選修「採訪寫作二」者，應先修「採訪寫作一」。</li>
+          <li>除表列課程外，因應現有的新聘師資作業與實務師資的邀請規劃，預計114-2將再增開三至四門新課並延續至115-2，且115-1將再開二至三門新課。</li>
+          <li>於在學期間宜建立對新聞工作的個人專職技能。無論是文字、影像、音訊、數位媒體與程式設計技能，本所均有相對應的課程可供選修，建議依照個人興趣與職涯選擇提早規劃。</li>
+        </ul>
       </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-slate-200 bg-white/90">
-    <div class="mx-auto flex w-full max-w-5xl flex-col gap-1 px-4 py-6 text-xs text-slate-400">
-      <span>國立臺灣大學 新聞研究所 | NTU Graduate Institute of Journalism</span>
-      <span>如有建議或需求，請聯繫系辦。</span>
     </div>
-  </footer>
-  <script>
-    // 切換修課指引顯示
-    const guidanceBox = document.querySelector('.guidance-box');
-    if (guidanceBox) {
-      const toggleButton = guidanceBox.querySelector('.guidance-toggle');
-      const hint = guidanceBox.querySelector('.guidance-hint');
-      const contentWrapper = guidanceBox.querySelector('.guidance-content-wrapper');
-      toggleButton?.addEventListener('click', () => {
-        const open = guidanceBox.getAttribute('data-open') === 'true';
-        const nextState = !open;
-        guidanceBox.setAttribute('data-open', nextState.toString());
-        toggleButton.setAttribute('aria-expanded', nextState.toString());
-        if (hint) {
-          hint.textContent = nextState ? '點此收合內容' : '點此展開內容';
-        }
-        if (contentWrapper) {
-          contentWrapper.style.maxHeight = nextState ? `${contentWrapper.scrollHeight}px` : '0px';
-        }
-      });
-      if (contentWrapper) {
-        contentWrapper.style.maxHeight = '0px';
-      }
-    }
 
+    <div id="courseplan-table" style="width:100%;margin:0 auto;"></div>
+  </main>
+  <script>
     // 課程類別定義
     const categories = [
       { key: 'required', name: '必修', class: 'required' },

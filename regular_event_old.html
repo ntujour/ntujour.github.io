@@ -4,176 +4,181 @@
   <meta charset="UTF-8">
   <title>常態活動 | Regular Events</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      color-scheme: light;
-      --portal-primary: #0369a1;
-      --portal-accent: #0ea5e9;
-      --portal-muted: #64748b;
-      --portal-muted-strong: #475569;
-      --portal-border: rgba(148, 163, 184, 0.28);
-      --portal-radius: 3px;
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 1000;
     }
-
     body {
       margin: 0;
+      padding: 0;
+      padding-top: 52px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: #f1f5f9;
-      color: #0f172a;
+      background: #f5f7fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    main {
-      width: 100%;
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 40px 32px 32px 32px;
+      min-width: 320px;
+      max-width: 800px;
+      margin-top: 40px;
+      text-align: center;
     }
-
-    .rounded-2xl,
-    .rounded-xl,
-    .rounded-lg,
-    .rounded {
-      border-radius: var(--portal-radius) !important;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5em;
+      color: #1976d2;
     }
-
-    .events-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: var(--portal-radius);
-      border: 1px solid rgba(148, 163, 184, 0.24);
-      box-shadow: 0 32px 64px -48px rgba(15, 23, 42, 0.55);
-      padding: 32px 28px;
-    }
-
     .event-list {
       width: 100%;
-      margin: 0;
+      max-width: 100%;
+      margin: 20px 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      box-sizing: border-box;
     }
-
     .event-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+      align-items: baseline;
+      min-height: 32px;
+      margin-bottom: 0;
+      width: 100%;
+      font-size: 0.8em;
     }
-
-    .event-row:last-of-type {
-      border-bottom: none;
-    }
-
     .event-month-cell {
-      flex: 0 0 90px;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #0284c7;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      width: 20%;
+      min-width: 60px;
+      font-weight: 500;
+      color: #1976d2;
+      text-align: left;
+      padding: 2px 0 2px 0;
+      box-sizing: border-box;
+      vertical-align: top;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      font-size: 1.15em;
+      justify-content: flex-start;
     }
-
     .event-content-cell {
-      flex: 1 1 0;
+      width: 80%;
+      box-sizing: border-box;
+      padding: 2px 0 2px 2px;
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      font-size: 0.95rem;
-      color: var(--portal-muted-strong);
+      align-items: flex-start;
+      height: 100%;
+      vertical-align: top;
+      justify-content: center;
+      text-align: left;
+      font-size: 1em;
     }
-
+    .event-hashtag-cell {
+      width: 20%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      height: 100%;
+      box-sizing: border-box;
+      padding-left: 8px;
+      text-align: left;
+      font-size: 1em;
+    }
     .event-title-row {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
+      flex-wrap: wrap;
+      white-space: normal;
+      overflow-x: visible;
+      font-size: 1em;
       gap: 8px;
     }
-
-    .event-title,
-    .event-title-link {
-      font-weight: 600;
-      color: #0f172a;
-      font-size: 1.05rem;
+    .event-title, .event-title-link {
+      font-weight: 500;
+      color: #111;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      display: block;
+      align-self: flex-start;
+      font-size: 1.15em;
       text-decoration: none;
-      transition: color 0.2s ease;
+      cursor: pointer;
     }
-
-    .event-title-link:hover {
-      color: #0284c7;
+    .event-title-link {
       text-decoration: underline;
     }
-
-    .event-description {
-      font-size: 0.85rem;
-      color: var(--portal-muted);
-      line-height: 1.5;
-      margin: 0;
+    .event-description-inline {
+      font-size: 0.7em;
+      color: #888;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      line-height: 1.4;
+      word-break: break-word;
+      text-align: left;
+      width: 100%;
+      border: 1px solid #e0e0e0;
+      border-radius: 3px;
+      padding: 4px 8px;
+      background-color: #fafafa;
     }
-
     .event-category {
-      display: inline-flex;
-      align-items: center;
-      padding: 2px 10px;
-      border-radius: var(--portal-radius);
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.03em;
-      background: rgba(148, 163, 184, 0.16);
-      color: var(--portal-muted-strong);
+      display: inline-block;
+      margin-left: 0;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-weight: 500;
+      color: #333;
+      background: #e3e8f0;
+      align-self: center;
+      font-size: 0.9em;
     }
-
-    .category-工讀與實習 { background: rgba(14, 165, 233, 0.18); color: #0369a1; }
-    .category-研討會 { background: rgba(74, 222, 128, 0.2); color: #047857; }
-    .category-學生活動 { background: rgba(251, 191, 36, 0.22); color: #b45309; }
-    .category-海外交換 { background: rgba(196, 181, 253, 0.22); color: #6b21a8; }
-    .category-其他 { background: rgba(148, 163, 184, 0.18); color: #475569; }
-
+    .category-工讀與實習 { background: #e3f2fd; color: #1976d2; }
+    .category-研討會 { background: #e8f5e9; color: #388e3c; }
+    .category-學生活動 { background: #fffde7; color: #b8860b; }
+    .category-海外交換 { background: #ede7f6; color: #7b1fa2; }
+    .category-其他 { background: #f5f5f5; color: #757575; }
+    .event-date {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 4px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
+    .event-description {
+      color: #444;
+      font-size: 0.95em;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
     .event-due-inline {
-      color: #dc2626;
-      font-weight: 600;
-      margin-right: 6px;
-    }
-
-    @media (max-width: 720px) {
-      .events-card {
-        padding: 24px 20px;
-      }
-
-      .event-month-cell {
-        flex-basis: 100%;
-        font-size: 0.95rem;
-      }
-
-      .event-content-cell {
-        flex-basis: 100%;
-      }
+      font-size: 0.8em;
+      color: #d32f2f;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      line-height: 1.4;
+      word-break: break-word;
+      text-align: left;
+      width: 100%;
     }
   </style>
 </head>
-<body class="min-h-screen bg-slate-100 text-slate-800 antialiased">
-  <header class="sticky top-0 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-    <div class="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-4">
-      <a href="index.html" class="text-lg font-semibold tracking-wide text-sky-800 transition-colors hover:text-sky-600">NTU Journalism Services Portal</a>
-      <a href="index_old.html" class="text-sm font-medium text-slate-500 transition hover:text-sky-600">回到舊版</a>
-    </div>
+<body>
+  <header class="fixed-top" style="background:#1976d2;color:#fff;padding:12px 0;text-align:center;font-size:1.2rem;letter-spacing:1px;cursor:pointer;width:100vw;">
+    <a href="index.html" style="color:#fff;text-decoration:none;display:block;width:100%;height:100%;">NTU Journalism Services Portal</a>
   </header>
-
-  <main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 py-12">
-    <section class="space-y-3">
-      <h1 class="text-3xl font-semibold tracking-tight text-sky-900">常態活動</h1>
-      <p class="max-w-3xl text-sm leading-relaxed text-slate-600">匯整每年的常態活動，包含口試申請期限、論文報獎、學術研討會與國際交換申請等重要時間，協助你掌握系上節奏與申請時程。</p>
-    </section>
-
-    <section class="events-card">
-      <div id="regular-event-list" class="event-list"></div>
-    </section>
+  <main class="container">
+    <h1>常態活動</h1>
+    <div id="regular-event-list" class="event-list"></div>
   </main>
-
-  <footer class="border-t border-slate-200 bg-white/90">
-    <div class="mx-auto flex w-full max-w-5xl flex-col gap-1 px-4 py-6 text-xs text-slate-400">
-      <span>國立臺灣大學 新聞研究所 | NTU Graduate Institute of Journalism</span>
-      <span>如有建議或需求，請聯繫系辦。</span>
-    </div>
-  </footer>
   <script>
     // 下載資料
     fetch('data/regular_event.csv')
@@ -201,7 +206,7 @@
             if (!isFirstMonth) {
               const hr = document.createElement('hr');
               hr.style.border = 'none';
-              hr.style.borderTop = '1px solid rgba(148, 163, 184, 0.28)';
+              hr.style.borderTop = '1px solid #e0e0e0';
               hr.style.margin = '18px 0 12px 0';
               listContainer.appendChild(hr);
             }
@@ -251,16 +256,16 @@
               const due = event[3]?.trim();
               const descText = event[4]?.trim() || '';
               if (due || descText) {
-                const descParagraph = document.createElement('p');
-                descParagraph.className = 'event-description';
+                const descInline = document.createElement('div');
+                descInline.className = 'event-description-inline';
                 if (due) {
                   const dueSpan = document.createElement('span');
-                  dueSpan.className = 'event-due-inline';
+                  dueSpan.style.color = '#d32f2f';
                   dueSpan.textContent = `截止日期：${due} `;
-                  descParagraph.appendChild(dueSpan);
+                  descInline.appendChild(dueSpan);
                 }
-                descParagraph.appendChild(document.createTextNode(descText));
-                contentCell.appendChild(descParagraph);
+                descInline.appendChild(document.createTextNode(descText));
+                contentCell.appendChild(descInline);
               }
 
               rowDiv.appendChild(monthCell);
@@ -274,7 +279,7 @@
       .catch(error => {
         const listContainer = document.getElementById('regular-event-list');
         listContainer.innerHTML = `
-          <div style="color: #dc2626; padding: 20px; text-align: center;">
+          <div style="color: #d32f2f; padding: 20px; text-align: center;">
             <p>無法讀取資料，請確認 data/regular_event.csv 檔案是否存在。</p>
             <p>錯誤訊息: ${error.message}</p>
           </div>
