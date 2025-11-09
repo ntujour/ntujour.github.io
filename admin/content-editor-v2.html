@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新聞活動編輯器 v2 - 台大新聞所</title>
+    <link rel="stylesheet" href="../css/tailwind.css">
+    <link rel="stylesheet" href="../css/site-common.css">
+
+    <!-- Quill Rich Text Editor -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <style>
+        .editor-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .form-section {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Quill Editor Styles */
+        #editor-container {
+            height: 400px;
+            background: white;
+        }
+        .ql-container {
+            font-size: 16px;
+        }
+        .ql-editor {
+            min-height: 350px;
+        }
+
+        /* Image Upload Drop Zone */
+        .image-upload-zone {
+            border: 2px dashed #cbd5e0;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            background: #f7fafc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .image-upload-zone:hover {
+            border-color: #4299e1;
+            background: #ebf8ff;
+        }
+        .image-upload-zone.dragover {
+            border-color: #3182ce;
+            background: #bee3f8;
+        }
+
+        /* Image Preview */
+        .image-preview {
+            display: inline-block;
+            position: relative;
+            margin: 0.5rem;
+        }
+        .image-preview img {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 0.375rem;
+            border: 2px solid #e2e8f0;
+        }
+        .image-preview .remove-btn {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* CSV Table */
+        .csv-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+        .csv-table th, .csv-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.3rem 0.5rem;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .csv-table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            padding: 0.4rem 0.5rem;
+        }
+        .csv-table tr:hover {
+            background: #f9fafb;
+        }
+        .csv-table td.title-cell {
+            max-width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .csv-table td.action-cell {
+            white-space: nowrap;
+        }
+        .action-btn {
+            padding: 0.2rem 0.4rem;
+            font-size: 0.7rem;
+            margin: 0 0.1rem;
+            display: inline-block;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="editor-container">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">📝 新聞活動內容管理系統 v2</h1>
+            <p class="text-gray-600">支援富文本編輯與圖片拖拽上傳</p>
+        </header>
+
+        <!-- 控制按鈕 -->
+        <div class="form-section">
+            <div class="flex gap-2 items-center">
+                <button onclick="saveCSV()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                    💾 Save to DB
+                </button>
+                <button onclick="downloadCSV()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+                    📥 Download Backup CSV
+                </button>
+
+                <div class="flex gap-2 items-center ml-4">
+                    <span class="text-sm text-gray-600">載入類型：</span>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="load-type" value="news" checked onchange="loadCSVByType()" class="mr-1">
+                        <span class="text-sm">新聞</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="load-type" value="activity" onchange="loadCSVByType()" class="mr-1">
+                        <span class="text-sm">活動</span>
+                    </label>
+                </div>
+
+                <div class="ml-auto flex gap-2 items-center">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" id="show-archived" onchange="filterTable()" class="mr-1">
+                        <span class="text-sm">顯示已下架</span>
+                    </label>
+                    <input type="text" id="search" placeholder="搜尋標題或內容..."
+                           class="border border-gray-300 rounded px-3 py-2"
+                           oninput="filterTable()">
+                    <select id="type-filter" class="border border-gray-300 rounded px-3 py-2" onchange="filterTable()">
+                        <option value="">所有類型</option>
+                        <option value="news">新聞</option>
+                        <option value="activity">活動</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新增/編輯表單 -->
+        <div class="form-section">
+            <h2 class="text-xl font-bold text-gray-900 mb-4" id="form-title">新增內容</h2>
+            <form id="content-form" onsubmit="handleSubmit(event)">
+                <input type="hidden" id="edit-index" value="">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">類型 *</label>
+                        <select id="type" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                            <option value="news">新聞</option>
+                            <option value="activity">活動</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">分類</label>
+                        <select id="category" class="w-full border border-gray-300 rounded px-3 py-2">
+                            <option value="">不分類</option>
+                            <option value="招生">招生</option>
+                            <option value="榮譽">榮譽</option>
+                            <option value="徵才">徵才</option>
+                            <option value="活動">活動</option>
+                            <option value="演講">演講</option>
+                            <option value="學術">學術</option>
+                            <option value="公告">公告</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">標題 *</label>
+                    <input type="text" id="title" class="w-full border border-gray-300 rounded px-3 py-2" required
+                           placeholder="例如：【招生訊息】115學年度甄試招生簡章">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">日期 *</label>
+                        <input type="date" id="date" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">時間（活動用）</label>
+                        <input type="text" id="time" class="w-full border border-gray-300 rounded px-3 py-2"
+                               placeholder="14:00-16:00">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">地點（活動用）</label>
+                        <input type="text" id="location" class="w-full border border-gray-300 rounded px-3 py-2"
+                               placeholder="社科院大樓101教室">
+                    </div>
+                </div>
+
+                <!-- 圖片上傳區 -->
+                <div class="mb-4">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <button type="button" onclick="openImageUploadModal()"
+                                    class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded px-4 py-2 text-gray-700">
+                                📷 上傳圖片
+                            </button>
+                            <span class="ml-2 text-sm text-gray-500" id="image-count">未上傳圖片</span>
+                        </div>
+                        <div id="image-previews" class="flex-1 flex flex-wrap gap-2"></div>
+                    </div>
+                    <input type="hidden" id="image" value="">
+                </div>
+
+                <!-- 圖片上傳 Modal -->
+                <div id="image-upload-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+                    <div style="background: white; border-radius: 0.5rem; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; padding: 2rem;">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">上傳圖片</h3>
+                            <button type="button" onclick="closeImageUploadModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                        </div>
+
+                        <div class="image-upload-zone" id="image-drop-zone">
+                            <input type="file" id="image-file" accept="image/*" multiple style="display: none;" onchange="handleImageUpload(event)">
+                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <p class="mt-2 text-sm text-gray-600">拖拽圖片到此處，或</p>
+                            <button type="button" onclick="document.getElementById('image-file').click()"
+                                    class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                                選擇檔案
+                            </button>
+                            <p class="mt-2 text-xs text-gray-500">支援 JPG, PNG, GIF 格式</p>
+                        </div>
+
+                        <div id="modal-image-previews" class="mt-4"></div>
+
+                        <div class="mt-4 flex justify-end gap-2">
+                            <button type="button" onclick="closeImageUploadModal()"
+                                    class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">
+                                關閉
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 富文本編輯器 -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">內容 * （支援富文本編輯）</label>
+                    <div id="editor-container"></div>
+                </div>
+
+                <div class="flex gap-2">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
+                        ✓ <span id="submit-text">新增</span>
+                    </button>
+                    <button type="button" onclick="cancelEdit()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded">
+                        ✗ 取消
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 資料列表 -->
+        <div class="form-section">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">內容列表 (<span id="count">0</span> 筆)</h2>
+            <div style="overflow-x: auto;">
+                <table class="csv-table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px; text-align: center;">下架</th>
+                            <th style="width: 60px;">ID</th>
+                            <th style="width: 60px;">類型</th>
+                            <th style="width: 200px; text-align: left;">圖片路徑</th>
+                            <th style="max-width: 350px;">標題</th>
+                            <th style="width: 100px;">日期</th>
+                            <th style="width: 100px;">分類</th>
+                            <th style="width: 100px;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr>
+                            <td colspan="8" class="text-center text-gray-500 py-4">
+                                載入中...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 全域變數
+        let csvData = [];
+        let originalCsvData = []; // 保存原始資料用於比對
+        let quill;
+        let uploadedImages = [];
+        let currentLoadType = 'news'; // 預設載入新聞
+        let hasUnsavedChanges = false; // 追蹤是否有未儲存的變更
+        let changeLog = {
+            added: [],
+            updated: [],
+            deleted: []
+        }; // 變更記錄
+
+        // 初始化 Quill 編輯器
+        document.addEventListener('DOMContentLoaded', function() {
+            quill = new Quill('#editor-container', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        [{ 'indent': '-1'}, { 'indent': '+1' }],
+                        ['link', 'image'],
+                        ['clean']
+                    ]
+                },
+                placeholder: '在此輸入內容...'
+            });
+
+            // 設定今天的日期為預設值
+            document.getElementById('date').valueAsDate = new Date();
+
+            // 設定圖片拖拽功能
+            setupImageDragDrop();
+
+            // 自動載入預設的 CSV (新聞)
+            autoLoadCSV();
+        });
+
+        // 開啟圖片上傳 Modal
+        function openImageUploadModal() {
+            document.getElementById('image-upload-modal').style.display = 'flex';
+        }
+
+        // 關閉圖片上傳 Modal
+        function closeImageUploadModal() {
+            document.getElementById('image-upload-modal').style.display = 'none';
+        }
+
+        // 設定圖片拖拽功能
+        function setupImageDragDrop() {
+            const dropZone = document.getElementById('image-drop-zone');
+
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('dragover');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+
+                const files = e.dataTransfer.files;
+                handleImageFiles(files);
+            });
+        }
+
+        // 處理圖片上傳
+        function handleImageUpload(event) {
+            const files = event.target.files;
+            handleImageFiles(files);
+        }
+
+        // 處理圖片檔案
+        function handleImageFiles(files) {
+            for (let file of files) {
+                if (!file.type.startsWith('image/')) {
+                    alert('請上傳圖片檔案');
+                    continue;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const imageData = {
+                        name: file.name,
+                        data: e.target.result,
+                        size: (file.size / 1024).toFixed(2) + ' KB'
+                    };
+                    uploadedImages.push(imageData);
+                    displayImagePreviews();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // 顯示圖片預覽
+        function displayImagePreviews() {
+            // 表單內的預覽
+            const container = document.getElementById('image-previews');
+            container.innerHTML = '';
+
+            // Modal 內的預覽
+            const modalContainer = document.getElementById('modal-image-previews');
+            modalContainer.innerHTML = '';
+
+            uploadedImages.forEach((img, index) => {
+                const div = document.createElement('div');
+                div.className = 'image-preview';
+
+                // 判斷是 Base64 還是檔案路徑
+                let imgSrc = img.data;
+                if (!imgSrc.startsWith('data:')) {
+                    // 如果是檔案路徑，需要加上相對路徑前綴
+                    if (imgSrc.startsWith('images/')) {
+                        imgSrc = '../' + imgSrc;
+                    }
+                }
+
+                div.innerHTML = `
+                    <img src="${imgSrc}" alt="${img.name}">
+                    <div class="remove-btn" onclick="removeImage(${index})">×</div>
+                    <p class="text-xs text-gray-500 mt-1">${img.name}</p>
+                `;
+                container.appendChild(div);
+                modalContainer.appendChild(div.cloneNode(true));
+            });
+
+            // 更新隱藏欄位和計數
+            document.getElementById('image').value = uploadedImages.map(img => img.data).join('|||');
+            const countText = uploadedImages.length > 0 ? `已上傳 ${uploadedImages.length} 張圖片` : '未上傳圖片';
+            document.getElementById('image-count').textContent = countText;
+        }
+
+        // 移除圖片
+        function removeImage(index) {
+            uploadedImages.splice(index, 1);
+            displayImagePreviews();
+        }
+
+        // 離開前警告
+        window.addEventListener('beforeunload', function(e) {
+            if (hasUnsavedChanges) {
+                e.preventDefault();
+                e.returnValue = '您有未儲存的變更，確定要離開嗎？';
+                return e.returnValue;
+            }
+        });
+
+        // 自動載入 CSV
+        function autoLoadCSV() {
+            fetch('../data/content.csv')
+                .then(response => response.text())
+                .then(text => {
+                    parseCSV(text);
+                    // 保存原始資料的深拷貝
+                    originalCsvData = JSON.parse(JSON.stringify(csvData));
+                    renderTable();
+                })
+                .catch(error => {
+                    console.error('自動載入 CSV 失敗:', error);
+                    document.getElementById('table-body').innerHTML =
+                        '<tr><td colspan="7" class="text-center text-gray-500 py-4">無法載入 CSV 檔案</td></tr>';
+                });
+        }
+
+        // 根據類型載入 CSV
+        function loadCSVByType() {
+            const selectedType = document.querySelector('input[name="load-type"]:checked').value;
+            currentLoadType = selectedType;
+            filterTable();
+        }
+
+        // 解析 CSV（處理跨行的引號欄位）
+        function parseCSV(text) {
+            csvData = [];
+            const rows = [];
+            let currentRow = '';
+            let inQuotes = false;
+
+            // 逐字元處理，正確識別跨行的引號欄位
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const nextChar = text[i + 1];
+
+                if (char === '"' && inQuotes && nextChar === '"') {
+                    currentRow += '""';
+                    i++;
+                } else if (char === '"') {
+                    inQuotes = !inQuotes;
+                    currentRow += char;
+                } else if (char === '\n' && !inQuotes) {
+                    // 只在引號外的換行才是真正的行分隔
+                    if (currentRow.trim()) {
+                        rows.push(currentRow);
+                    }
+                    currentRow = '';
+                } else {
+                    currentRow += char;
+                }
+            }
+            // 最後一行
+            if (currentRow.trim()) {
+                rows.push(currentRow);
+            }
+
+            if (rows.length < 2) {
+                alert('CSV 檔案格式錯誤');
+                return;
+            }
+
+            const headers = parseCSVLine(rows[0]);
+            console.log('CSV Headers:', headers);
+            console.log('Headers count:', headers.length);
+            console.log('Total rows:', rows.length);
+
+            for (let i = 1; i < rows.length; i++) {
+                const values = parseCSVLine(rows[i]);
+                const row = {};
+
+                // 調試前3筆
+                if (i <= 3) {
+                    console.log(`\nRow ${i} 解析:`);
+                    console.log('  Values count:', values.length);
+                    console.log('  Image 位置 (index 10):', values[10]);
+                }
+
+                headers.forEach((header, index) => {
+                    row[header] = values[index] || '';
+                });
+                csvData.push(row);
+            }
+
+            console.log('總共解析了', csvData.length, '筆資料');
+        }
+
+        // 解析 CSV 行（處理逗號、引號和換行）
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                const nextChar = line[i + 1];
+
+                if (char === '"' && inQuotes && nextChar === '"') {
+                    // 雙引號轉義
+                    current += '"';
+                    i++;
+                } else if (char === '"') {
+                    // 切換引號狀態
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    // 只在引號外的逗號才分割
+                    result.push(current);
+                    current = '';
+                } else {
+                    // 其他字元（包括換行）都保留
+                    current += char;
+                }
+            }
+            result.push(current);
+            return result;
+        }
+
+        // 渲染表格
+        function renderTable() {
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+
+            if (csvData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-gray-500 py-4">無資料</td></tr>';
+                document.getElementById('count').textContent = '0';
+                return;
+            }
+
+            // 調試：檢查前3筆資料的圖片欄位
+            console.log('=== 前3筆資料的圖片欄位 ===');
+            csvData.slice(0, 3).forEach((row, i) => {
+                console.log(`${i+1}. ID: ${row.id}, Type: ${row.type}, Image: "${row.image}"`);
+            });
+
+            csvData.forEach((row, index) => {
+                const isArchived = row.archived === 'true' || row.archived === true;
+                const tr = document.createElement('tr');
+                if (isArchived) {
+                    tr.style.opacity = '0.5';
+                    tr.style.background = '#f9fafb';
+                }
+                // 處理圖片縮圖
+                let thumbnailHtml = '';
+                const imageField = row.image ? row.image.trim() : '';
+
+                // 調試前3筆
+                if (index < 3) {
+                    console.log(`Row ${index}: imageField = "${imageField}", hasImage: ${!!imageField}`);
+                }
+
+                if (imageField) {
+                    const images = imageField.split('|||');
+                    const firstImage = images[0].trim();
+                    if (index < 3) {
+                        console.log(`  firstImage = "${firstImage}"`);
+                    }
+                    if (firstImage) {
+                        // 如果是相對路徑（images/...），加上 ../ 前綴
+                        let imgSrc = firstImage;
+                        if (imgSrc.startsWith('images/')) {
+                            imgSrc = '../' + imgSrc;
+                        }
+                        if (index < 3) {
+                            console.log(`  imgSrc = "${imgSrc}"`);
+                        }
+                        thumbnailHtml = `<img src="${imgSrc}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 0.25rem; border: 1px solid #e5e7eb;" alt="縮圖" onerror="console.error('圖片載入失敗:', '${imgSrc}'); this.parentElement.innerHTML='<span style=\\'font-size: 0.6rem; color: #ef4444;\\'>失敗</span>'">`;
+                        if (images.length > 1) {
+                            thumbnailHtml += `<div style="font-size: 0.6rem; color: #6b7280;">+${images.length - 1}</div>`;
+                        }
+                    }
+                }
+
+                if (!thumbnailHtml) {
+                    thumbnailHtml = '<span style="font-size: 0.6rem; color: #9ca3af;">無圖</span>';
+                    if (index < 3) {
+                        console.log(`  → 顯示無圖`);
+                    }
+                }
+
+                tr.innerHTML = `
+                    <td style="width: 40px; text-align: center;"><input type="checkbox" ${isArchived ? 'checked' : ''} onchange="toggleArchive(${index}, this.checked)"></td>
+                    <td style="width: 60px;">${row.id || ''}</td>
+                    <td style="width: 60px;"><span class="inline-block px-1.5 py-0.5 text-xs rounded ${row.type === 'news' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}">${row.type === 'news' ? '新聞' : '活動'}</span></td>
+                    <td style="width: 200px; text-align: left; padding: 0.2rem; font-size: 0.6rem; word-break: break-all;">
+                        <div>${thumbnailHtml}</div>
+                        <div style="color: #6b7280; margin-top: 2px;">${row.image ? row.image.substring(0, 50) : '無路徑'}</div>
+                    </td>
+                    <td class="title-cell" style="max-width: 350px;" title="${row.title || ''}">${row.title || ''}</td>
+                    <td style="width: 100px; padding: 0.2rem;">
+                        <input type="date" value="${row.date || ''}"
+                               onchange="updateField(${index}, 'date', this.value)"
+                               style="width: 100%; font-size: 0.7rem; padding: 0.2rem; border: 1px solid #e5e7eb; border-radius: 0.25rem;">
+                    </td>
+                    <td style="width: 100px; padding: 0.2rem;">
+                        <select onchange="updateField(${index}, 'category', this.value)"
+                                style="width: 100%; font-size: 0.7rem; padding: 0.2rem; border: 1px solid #e5e7eb; border-radius: 0.25rem;">
+                            <option value="">未分類</option>
+                            <option value="招生" ${row.category === '招生' ? 'selected' : ''}>招生</option>
+                            <option value="榮譽" ${row.category === '榮譽' ? 'selected' : ''}>榮譽</option>
+                            <option value="徵才" ${row.category === '徵才' ? 'selected' : ''}>徵才</option>
+                            <option value="演講" ${row.category === '演講' ? 'selected' : ''}>演講</option>
+                            <option value="學術" ${row.category === '學術' ? 'selected' : ''}>學術</option>
+                            <option value="活動" ${row.category === '活動' ? 'selected' : ''}>活動</option>
+                            <option value="公告" ${row.category === '公告' ? 'selected' : ''}>公告</option>
+                        </select>
+                    </td>
+                    <td class="action-cell" style="width: 100px;">
+                        <button onclick="editRow(${index})" class="action-btn bg-yellow-500 hover:bg-yellow-600 text-white">編輯</button>
+                        <button onclick="deleteRow(${index})" class="action-btn bg-red-500 hover:bg-red-600 text-white">刪除</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('count').textContent = csvData.length;
+            filterTable();
+        }
+
+        // 切換下架狀態
+        function toggleArchive(index, isArchived) {
+            csvData[index].archived = isArchived;
+            renderTable();
+        }
+
+        // 即時更新欄位
+        function updateField(index, field, value) {
+            csvData[index][field] = value;
+            // 不重新渲染整個表格，避免失去焦點
+        }
+
+        // 篩選表格
+        function filterTable() {
+            const searchText = document.getElementById('search').value.toLowerCase();
+            const typeFilter = document.getElementById('type-filter').value;
+            const showArchived = document.getElementById('show-archived').checked;
+            const selectedLoadType = document.querySelector('input[name="load-type"]:checked').value;
+            const rows = document.querySelectorAll('#table-body tr');
+
+            let visibleCount = 0;
+            rows.forEach((row, index) => {
+                if (index >= csvData.length) return;
+
+                const data = csvData[index];
+                const isArchived = data.archived === 'true' || data.archived === true;
+
+                const matchSearch = !searchText ||
+                    data.title.toLowerCase().includes(searchText) ||
+                    data.content.toLowerCase().includes(searchText);
+                const matchType = !typeFilter || data.type === typeFilter;
+                const matchLoadType = data.type === selectedLoadType;
+                const matchArchived = showArchived || !isArchived;
+
+                if (matchSearch && matchType && matchLoadType && matchArchived) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            document.getElementById('count').textContent = visibleCount;
+        }
+
+        // 表單提交
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const editIndex = document.getElementById('edit-index').value;
+            const contentHTML = quill.root.innerHTML;
+
+            const data = {
+                id: editIndex === '' ? Date.now().toString() : csvData[editIndex].id,
+                type: document.getElementById('type').value,
+                title: document.getElementById('title').value,
+                date: document.getElementById('date').value,
+                category: document.getElementById('category').value,
+                time: document.getElementById('time').value,
+                location: document.getElementById('location').value,
+                content: contentHTML,
+                slug: '',
+                originalFile: '',
+                image: document.getElementById('image').value,
+                archived: editIndex === '' ? false : csvData[editIndex].archived || false
+            };
+
+            // 自動生成 slug
+            data.slug = `${data.type}-${data.id}`;
+
+            if (editIndex === '') {
+                // 新增
+                csvData.unshift(data);
+                changeLog.added.push({ id: data.id, title: data.title, type: data.type });
+                hasUnsavedChanges = true;
+                console.log('✅ 新增資料:', data.id, data.title);
+                console.log('目前總筆數:', csvData.length);
+                // 重新渲染表格以顯示新增的資料
+                renderTable();
+                // 重新應用篩選以確保新增的項目可見
+                filterData();
+            } else {
+                // 更新
+                const oldData = csvData[editIndex];
+                csvData[editIndex] = { ...csvData[editIndex], ...data };
+                changeLog.updated.push({ id: data.id, title: data.title, type: data.type });
+                hasUnsavedChanges = true;
+                console.log('✅ 更新資料:', data.id, data.title);
+                renderTable();
+            }
+
+            cancelEdit();
+            updateChangeStatus();
+            alert('✅ 儲存成功！記得點擊「Save to DB」將變更儲存到資料庫');
+        }
+
+        // 編輯行
+        function editRow(index) {
+            const data = csvData[index];
+
+            document.getElementById('edit-index').value = index;
+            document.getElementById('type').value = data.type;
+            document.getElementById('title').value = data.title;
+            document.getElementById('date').value = data.date;
+            document.getElementById('category').value = data.category || '';
+            document.getElementById('time').value = data.time || '';
+            document.getElementById('location').value = data.location || '';
+
+            // 設定富文本內容
+            quill.root.innerHTML = data.content || '';
+
+            // 處理圖片
+            uploadedImages = [];
+            if (data.image) {
+                const images = data.image.split('|||');
+                images.forEach(imgData => {
+                    if (imgData) {
+                        uploadedImages.push({
+                            name: '已上傳圖片',
+                            data: imgData,
+                            size: 'N/A'
+                        });
+                    }
+                });
+                displayImagePreviews();
+            }
+
+            document.getElementById('form-title').textContent = '編輯內容';
+            document.getElementById('submit-text').textContent = '更新';
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 刪除行
+        function deleteRow(index) {
+            const data = csvData[index];
+            if (confirm(`確定要刪除這筆資料嗎？\n\nID: ${data.id}\n標題: ${data.title}`)) {
+                changeLog.deleted.push({ id: data.id, title: data.title, type: data.type });
+                csvData.splice(index, 1);
+                hasUnsavedChanges = true;
+                renderTable();
+                updateChangeStatus();
+                console.log('🗑️ 刪除資料:', data.id, data.title);
+            }
+        }
+
+        // 更新變更狀態顯示
+        function updateChangeStatus() {
+            const totalChanges = changeLog.added.length + changeLog.updated.length + changeLog.deleted.length;
+            if (totalChanges > 0) {
+                document.title = `⚠️ (${totalChanges}) 台大新聞所 CMS - 有未儲存的變更`;
+            } else {
+                document.title = '台大新聞所 CMS';
+            }
+        }
+
+        // 取消編輯
+        function cancelEdit() {
+            document.getElementById('content-form').reset();
+            document.getElementById('edit-index').value = '';
+            document.getElementById('form-title').textContent = '新增內容';
+            document.getElementById('submit-text').textContent = '新增';
+            document.getElementById('date').valueAsDate = new Date();
+            quill.root.innerHTML = '';
+            uploadedImages = [];
+            displayImagePreviews();
+        }
+
+        // 下載 CSV
+        function downloadCSV() {
+            if (csvData.length === 0) {
+                alert('沒有資料可以下載');
+                return;
+            }
+
+            console.log('準備下載 CSV，總筆數:', csvData.length);
+            console.log('前 3 筆資料的 ID:', csvData.slice(0, 3).map(d => d.id));
+
+            const headers = ['id', 'type', 'title', 'date', 'category', 'time', 'location', 'content', 'slug', 'originalFile', 'image', 'archived'];
+
+            // 使用 QUOTE_ALL 模式：所有欄位都加上引號
+            let csv = '"' + headers.join('","') + '"\n';
+
+            csvData.forEach(row => {
+                const values = headers.map(header => {
+                    const value = (row[header] || '').toString();
+                    // 轉義引號（" → ""）
+                    return value.replace(/"/g, '""');
+                });
+                csv += '"' + values.join('","') + '"\n';
+            });
+
+            const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `content_backup_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            console.log('✅ 已下載 CSV，包含', csvData.length, '筆資料');
+        }
+
+        // 儲存 CSV 到伺服器
+        async function saveCSV() {
+            if (csvData.length === 0) {
+                alert('沒有資料可以儲存');
+                return;
+            }
+
+            // 顯示變更記錄
+            if (!hasUnsavedChanges) {
+                if (!confirm('目前沒有未儲存的變更，確定要重新儲存嗎？')) {
+                    return;
+                }
+            } else {
+                let changeMessage = '📝 本次變更記錄：\n\n';
+
+                if (changeLog.added.length > 0) {
+                    changeMessage += `✅ 新增 ${changeLog.added.length} 筆：\n`;
+                    changeLog.added.forEach(item => {
+                        changeMessage += `   • ID: ${item.id} - ${item.title} (${item.type})\n`;
+                    });
+                    changeMessage += '\n';
+                }
+
+                if (changeLog.updated.length > 0) {
+                    changeMessage += `📝 更新 ${changeLog.updated.length} 筆：\n`;
+                    changeLog.updated.forEach(item => {
+                        changeMessage += `   • ID: ${item.id} - ${item.title} (${item.type})\n`;
+                    });
+                    changeMessage += '\n';
+                }
+
+                if (changeLog.deleted.length > 0) {
+                    changeMessage += `🗑️ 刪除 ${changeLog.deleted.length} 筆：\n`;
+                    changeLog.deleted.forEach(item => {
+                        changeMessage += `   • ID: ${item.id} - ${item.title} (${item.type})\n`;
+                    });
+                    changeMessage += '\n';
+                }
+
+                changeMessage += `\n總共 ${csvData.length} 筆資料\n\n確定要儲存到資料庫嗎？`;
+
+                if (!confirm(changeMessage)) {
+                    return;
+                }
+            }
+
+            const headers = ['id', 'type', 'title', 'date', 'category', 'time', 'location', 'content', 'slug', 'originalFile', 'image', 'archived'];
+
+            // 使用 QUOTE_ALL 模式：所有欄位都加上引號
+            let csv = '"' + headers.join('","') + '"\n';
+
+            csvData.forEach(row => {
+                const values = headers.map(header => {
+                    const value = (row[header] || '').toString();
+                    // 轉義引號（" → ""）
+                    return value.replace(/"/g, '""');
+                });
+                csv += '"' + values.join('","') + '"\n';
+            });
+
+            try {
+                // 自動偵測當前伺服器端口
+                const serverUrl = window.location.origin + '/save-csv';
+
+                const response = await fetch(serverUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ csv: csv })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+
+                    // 儲存成功後清除變更記錄
+                    changeLog = { added: [], updated: [], deleted: [] };
+                    hasUnsavedChanges = false;
+                    updateChangeStatus();
+
+                    alert('✅ ' + result.message + '\n\n資料已成功儲存到資料庫！');
+                    console.log('CSV 已儲存:', result);
+                } else {
+                    const error = await response.text();
+                    alert('❌ 儲存失敗: ' + error);
+                    console.error('儲存失敗:', error);
+                }
+            } catch (error) {
+                alert('❌ 無法連接到儲存伺服器\n\n請確認 CMS 系統是否正在運行 (python3 cms.py)\n\n錯誤訊息: ' + error.message);
+                console.error('儲存錯誤:', error);
+            }
+        }
+    </script>
+</body>
+</html>

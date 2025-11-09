@@ -1,0 +1,610 @@
+﻿
+<!DOCTYPE html>
+
+<html id="FormHtml" xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hant-tw">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head id="Head1"><script src="../Scripts/jquery.min.js'></script>
+<script src="../Scripts/jquery.cookie.js'></script>
+<script src="../Scripts/jUtil.js'></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAo1MAXwJfl0q3fNU_5QyogEgyecOICpWs&libraries=places,drawing'></script>
+<script src="../Scripts/jGMap.js'></script>
+<script src="../Scripts/fancybox/jquery.fancybox.js'></script>
+<link rel='stylesheet' type='text/css'  href="../Scripts/fancybox/jquery.fancybox.css'> 
+<script src="../Scripts/lightGallery/js/lightgallery-all.min.js'></script>
+<link rel='stylesheet' type='text/css'  href="../Scripts/lightGallery/css/lightgallery.min.css'> 
+<script src="../Scripts/J_Pager.js'></script>
+<script  src="../Scripts/jquery.mousewheel.min.js'></script> 
+<script  src="../Scripts/jquery.touchwipe.min.js'></script> 
+<script  src="../js/airdatepicker/datepicker.min.js'></script> 
+<script  src="../js/airdatepicker/datepicker.zh-tw.js'></script> 
+<script  src="../js/airdatepicker/datepicker.en.js'></script> 
+<link rel='stylesheet' type='text/css'  href="../js/airdatepicker/datepicker.min.css'> 
+<script  src="../Scripts/dompurify.min.js'></script> 
+<script>var CCMS_WWWURL='https://webpageprodvm.ntu.edu.tw/crossL402';var CCMS_LanguageSN=1;var CCMS_SitesSN_Encryption='366';</script><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="DC.Title" content="國立臺灣大學新聞研究所網頁" />
+<meta name="DC.Subject" content="" />
+<meta name="DC.Creator" content="" />
+<meta name="DC.Publisher" content="" />
+<meta name="DC.Date" content="2018-08-30" />
+<meta name="DC.Type" content="" />
+<meta name="DC.Identifier" content="" />
+<meta name="DC.Description" content="" />
+<meta name="DC.Contributor" content="" />
+<meta name="DC.Format" content="" />
+<meta name="DC.Relation" content="" />
+<meta name="DC.Source" content="" />
+<meta name="DC.Language" content="" />
+<meta name="DC.Coverage.t.min" content="2018-08-30" />
+<meta name="DC.Coverage.t.max" content="2018-09-30" />
+<meta name="DC.Rights" content="" />
+<meta name="Category.Theme" content="" />
+<meta name="Category.Cake" content="" />
+<meta name="Category.Service" content="" />
+<meta name="DC.Keywords" content="" />
+<title>
+	國立臺灣大學新聞研究所-活動資訊
+</title><link id="likCssGlobal" href="../css/global.css" rel="stylesheet" type="text/css" /><link id="likCssPage" href="../css/page.css" rel="stylesheet" type="text/css" /><link id="likPrint" href="../css/print.css" rel="stylesheet" type="text/css" media="print" /><link id="lnkCssSysDetail" href="../css/sys_detail.css" rel="stylesheet" type="text/css" />
+
+    
+    <script>
+        $(function () {
+            var $Keyword = $('#search-box')
+$Keyword.keyup(function(){
+	ClientSearch($(this).val());
+})
+function ClientSearch(SearchWord){
+
+$('.SearchUl ul').find('li').each(function(k,v){
+    var word = '';
+    $(v).find('.caption>span,.p>p>span').each(function (k1, v1) { word += ($(v1).html()) });
+    if (word.toLowerCase().indexOf(SearchWord.toLowerCase()) > -1) {
+		$(this).show();
+    }else{
+			$(this).hide();
+    }
+})
+}
+        })
+        </script>
+
+      <script>
+        var  ajaxjsop = function(){
+  let _ajaxjsoplist = [];
+  let _ajaxjsoplist_index = 0;
+  let isStart = false;
+  let Next = function(){
+    console.log('Next');
+    _ajaxjsoplist_index = _ajaxjsoplist_index +1;
+
+      if(_ajaxjsoplist.length >= _ajaxjsoplist_index){
+         _ajaxjsoplist[_ajaxjsoplist_index-1]();
+         }
+
+  };
+  let Start = function(){
+    if(!isStart){
+      console.log('Start');
+      isStart = true;
+      Next();
+    }
+  };
+  return {
+      List :_ajaxjsoplist,
+      Next : Next,
+      Start: Start
+  };
+}();
+
+
+    </script>
+<link href="../images/favicon.ico" rel="icon" type="image/x-icon" /><script>const jhxiaoQS = '?n=35498&amp;sms=26668&amp;Create=1'</script><meta property="og:title" content="活動資訊" >
+<meta property="og:type" content="article" >
+<meta property="og:url" content="https://webpageprodvm.ntu.edu.tw/crossL402/News2.aspx?n=35498&sms=26668" >
+<meta property="og:site_name" content="國立臺灣大學新聞研究所" >
+<style>
+        .for_accessibility a {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 99;
+            width: 1px;
+            height: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #000;
+        }
+            .for_accessibility a:focus {
+                width: auto;
+                height: auto;
+                padding: 6px;
+                background-color: #fff;
+            }
+        .for_accessibility div {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: transparent;
+            opacity: .1
+        }
+            .for_accessibility h1, .for_accessibility h2 {
+                visibility: hidden;
+                margin: 0;
+            }
+    </style></head>
+<body id="Formbody" data-js="false"><div class="for_accessibility">
+    
+    <a href="#CCMS_Content" class="" title="跳到主要內容區塊">跳到主要內容區塊</a>    <div>
+        <h1>國立臺灣大學新聞研究所</h1>        <h2>活動資訊</h2>        <nav></nav>
+    </div>
+    <script>
+        var $a = $('.for_accessibility a');
+        $a.on('click', function (evt) {
+            var $href = $($(this).attr('href')),
+                $target = $href.find('a').eq(0).get(0);
+            setTimeout(function () { try { $target.focus(); } catch (e) { } }, 0);
+        });
+    </script>
+</div>
+<script> document.body.setAttribute("data-js", "true");</script>
+   
+    
+    <form method="post" action="./News2.aspx?n=35498&amp;sms=26668&amp;Create=1" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTkwOTY2NTgyNQ9kFgJmD2QWAgIBD2QWAgIBD2QWCgICDxYCHgRUZXh0BaMHPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiIC8+CjxtZXRhIG5hbWU9IkRDLlRpdGxlIiBjb250ZW50PSLlnIvnq4voh7rngaPlpKflrbjmlrDogZ7noJTnqbbmiYDntrLpoIEiIC8+CjxtZXRhIG5hbWU9IkRDLlN1YmplY3QiIGNvbnRlbnQ9IiIgLz4KPG1ldGEgbmFtZT0iREMuQ3JlYXRvciIgY29udGVudD0iIiAvPgo8bWV0YSBuYW1lPSJEQy5QdWJsaXNoZXIiIGNvbnRlbnQ9IiIgLz4KPG1ldGEgbmFtZT0iREMuRGF0ZSIgY29udGVudD0iMjAxOC0wOC0zMCIgLz4KPG1ldGEgbmFtZT0iREMuVHlwZSIgY29udGVudD0iIiAvPgo8bWV0YSBuYW1lPSJEQy5JZGVudGlmaWVyIiBjb250ZW50PSIiIC8+CjxtZXRhIG5hbWU9IkRDLkRlc2NyaXB0aW9uIiBjb250ZW50PSIiIC8+CjxtZXRhIG5hbWU9IkRDLkNvbnRyaWJ1dG9yIiBjb250ZW50PSIiIC8+CjxtZXRhIG5hbWU9IkRDLkZvcm1hdCIgY29udGVudD0iIiAvPgo8bWV0YSBuYW1lPSJEQy5SZWxhdGlvbiIgY29udGVudD0iIiAvPgo8bWV0YSBuYW1lPSJEQy5Tb3VyY2UiIGNvbnRlbnQ9IiIgLz4KPG1ldGEgbmFtZT0iREMuTGFuZ3VhZ2UiIGNvbnRlbnQ9IiIgLz4KPG1ldGEgbmFtZT0iREMuQ292ZXJhZ2UudC5taW4iIGNvbnRlbnQ9IjIwMTgtMDgtMzAiIC8+CjxtZXRhIG5hbWU9IkRDLkNvdmVyYWdlLnQubWF4IiBjb250ZW50PSIyMDE4LTA5LTMwIiAvPgo8bWV0YSBuYW1lPSJEQy5SaWdodHMiIGNvbnRlbnQ9IiIgLz4KPG1ldGEgbmFtZT0iQ2F0ZWdvcnkuVGhlbWUiIGNvbnRlbnQ9IiIgLz4KPG1ldGEgbmFtZT0iQ2F0ZWdvcnkuQ2FrZSIgY29udGVudD0iIiAvPgo8bWV0YSBuYW1lPSJDYXRlZ29yeS5TZXJ2aWNlIiBjb250ZW50PSIiIC8+CjxtZXRhIG5hbWU9IkRDLktleXdvcmRzIiBjb250ZW50PSIiIC8+CmQCBA8WAh4EaHJlZgUZL2Nyb3NzTDQwMi9jc3MvZ2xvYmFsLmNzc2QCBQ8WAh8BBRcvY3Jvc3NMNDAyL2Nzcy9wYWdlLmNzc2QCBg8WAh8BBRgvY3Jvc3NMNDAyL2Nzcy9wcmludC5jc3NkAgcPFgIfAQUdL2Nyb3NzTDQwMi9jc3Mvc3lzX2RldGFpbC5jc3NkZEHV7EPz4aSpIIcVRRaH5cjhaMOC" />
+</div>
+
+        <!--主選單 結束-->
+        <!--標題-->
+
+        <div class="title">
+            
+
+        </div>
+        
+        
+        
+        
+        
+        
+     <div class="group sys-root" data-func="{&#39;datePicker&#39;:{&#39;autoClose&#39;:true,&#39;language&#39;:&#39;en&#39;,&#39;navTitles&#39;:{&#39;days&#39;:&#39;&lt;i&amp;gt;民國 rrr 年&lt;/i&amp;gt; &amp;nbsp; MM&#39;,&#39;months&#39;:&#39;民國 rrr 年&#39;,&#39;years&#39;:&#39;民國 rrr1 至 rrr2 年&#39;}}}" data-nojs="您的瀏覽器似乎不支援 JavaScript 語法，但沒關係，這並不會影響到內容的陳述。如需要選擇適合您的字級大小，可利用鍵盤 Ctrl   ( )放大 (-)縮小。如需要回到上一頁，可使用瀏覽器提供的 Alt   左方向鍵(←)。如需要列印，可利用鍵盤 Ctrl   p 使用瀏覽器提供的列印功能。" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="group base-mobile" data-func="{&#39;toggleBtn&#39;:{}}" data-index="1" data-type="3"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"   title="mobile botton"    img-title="mobile botton"  ><i class=""></i>mobile botton</a></span></h3></div></div><div class="ct"><div class="in"> <div class="area-form search" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"   title="search"    img-title="search"  ><i class=""></i>search</a></span></h4></div></div><div class="ct"><div class="in"><div class="fieldset">
+  <span class="search"><input data-search="btn_4892f32013054a48b6ae4a1d3abd238f" type="search" placeholder="Search" title="搜尋"></span>
+  <span class="submit"><a href="#" class='CCMS_SearchBtn' data-search="btn_4892f32013054a48b6ae4a1d3abd238f" title="搜尋" >搜尋</a></span><a href="../Advanced_Search.html" style='display:none;' title='搜尋' >搜尋</a>
+</div>
+<div class="list">
+  <ul data-index="1" data-child="0">
+  </ul>
+</div>
+<script >
+$(function () {
+    $('[data-search="4892f32013054a48b6ae4a1d3abd238f"]').on("keydown", function (event) {
+        if (event.which == 13) {
+             doSearch($('#btn_4892f32013054a48b6ae4a1d3abd238f'));
+            return false;
+        }
+    });
+});
+</script>
+</div></div><div class="ft"><div class="in"><ul data-index="1" data-child="1">
+  <li data-index="1" class="advanced"><span><a rel="noopener noreferrer" target="_blank" class='AS_btn' href="https://www.google.com.tw/advanced_search?hl=zh-Hant-tw" title="進階搜尋[另開新視窗]">進階搜尋</a></span></li>
+ <script>
+ if ($('.AS_btn').attr('href').indexOf('&as_sitesearch=') > -1){
+}else{
+ $('.AS_btn').attr('href',$('.AS_btn').attr('href') + '&as_sitesearch=' + window.location.origin);
+}
+</script>
+</ul>
+</div></div></div></div> <div class="group-list nav" data-func="{&#39;majorNavStraight&#39;:{}}" data-index="2" data-type="4" data-child="7"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li data-index="1"> <div class="group nav" data-index="1" data-type="3" data-child="4"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../about/intro.html"      title="認識本所"    img-title="認識本所"  ><i class=""></i>認識本所</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../about/intro.html"      title="本所介紹"    img-title="本所介紹"  ><i class=""></i>本所介紹</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../about/mission.html"      title="宗旨與目標"    img-title="宗旨與目標"  ><i class=""></i>宗旨與目標</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="3" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../about/gallery.html"      title="新聞所圖集"    img-title="新聞所圖集"  ><i class=""></i>新聞所圖集</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="4" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../about/transportation.html"      title="聯絡我們"    img-title="聯絡我們"  ><i class=""></i>聯絡我們</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></li><li data-index="2"> <div class="group nav" data-index="2" data-type="3" data-child="5"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../event.html"      title="消息與活動"    img-title="消息與活動"  ><i class=""></i>消息與活動</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../news/News_n_35497_sms_26652.html"      title="最新消息"    img-title="最新消息"  ><i class=""></i>最新消息</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="News2_n_35498_sms_26668.html"      title="活動資訊"    img-title="活動資訊"  ><i class=""></i>活動資訊</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="3" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../international-communication.html"      title="國際交流"    img-title="國際交流"  ><i class=""></i>國際交流</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="4" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../academic-activity.html"      title="學術活動"    img-title="學術活動"  ><i class=""></i>學術活動</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="5" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="https://coss.ntu.edu.tw/coss504.html "      title="[另開新視窗]社科院心輔室"   target="_blank"   img-title="社科院心輔室"  ><i class=""></i>社科院心輔室</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></li><li data-index="3"> <div class="group nav" data-index="3" data-type="3" data-child="7"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/faculty.html"      title="師資陣容"    img-title="師資陣容"  ><i class=""></i>師資陣容</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/fulltime-professor.html"      title="專任教師"    img-title="專任教師"  ><i class=""></i>專任教師</a></span></h4></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/hsiehjl.html"      title="謝吉隆 副教授兼所長"    img-title="謝吉隆 副教授兼所長"  ><i class=""></i>謝吉隆 副教授兼所長</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/linly.html"      title="林麗雲 教授"    img-title="林麗雲 教授"  ><i class=""></i>林麗雲 教授</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/hungcl.html"      title="洪貞玲 教授"    img-title="洪貞玲 教授"  ><i class=""></i>洪貞玲 教授</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/lincc.html"      title="林照真 教授"    img-title="林照真 教授"  ><i class=""></i>林照真 教授</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/RauchfleischA.html"      title="Adrain Rauchfleisch（劉好迪） 教授"    img-title="Adrain Rauchfleisch（劉好迪） 教授"  ><i class=""></i>Adrain Rauchfleisch（劉好迪） 教授</a></span></li><li   data-index="6"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/tsaihj.html"      title="蔡蕙如 副教授"    img-title="蔡蕙如 副教授"  ><i class=""></i>蔡蕙如 副教授</a></span></li><li   data-index="7"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/chanii.html"      title="詹怡宜 副教授"    img-title="詹怡宜 副教授"  ><i class=""></i>詹怡宜 副教授</a></span></li></ul>
+</div></div></div></div> <div class="list-text nav" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/parttime-professor.html"      title="兼任教師"    img-title="兼任教師"  ><i class=""></i>兼任教師</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="3" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_105608.html"      title="名譽教授"    img-title="名譽教授"  ><i class=""></i>名譽教授</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="4" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/practical-professor.html"      title="實務教師"    img-title="實務教師"  ><i class=""></i>實務教師</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="5" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/Professorjointappointment.html"      title="合聘教師"    img-title="合聘教師"  ><i class=""></i>合聘教師</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="6" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_98989.html"      title="感謝與追思"    img-title="感謝與追思"  ><i class=""></i>感謝與追思</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="7" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../staff.html"      title="行政人員"    img-title="行政人員"  ><i class=""></i>行政人員</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></li><li data-index="4"> <div class="group nav" data-index="4" data-type="3" data-child="7"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/admissions.html"      title="入學資訊"    img-title="入學資訊"  ><i class=""></i>入學資訊</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="https://www.aca.ntu.edu.tw/w/aca/LocalAdmission "      title="臺大招生資訊"    img-title="臺大招生資訊"  ><i class=""></i>臺大招生資訊</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/qualifying-exam.html"      title="甄試入學簡章"    img-title="甄試入學簡章"  ><i class=""></i>甄試入學簡章</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="3" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/entrance-exam.html"      title="招生考試簡章"    img-title="招生考試簡章"  ><i class=""></i>招生考試簡章</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="4" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/past-exam.html"      title="歷屆考古題"    img-title="歷屆考古題"  ><i class=""></i>歷屆考古題</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="5" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/international-students.html"      title="國際生"    img-title="國際生"  ><i class=""></i>國際生</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="6" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/ochkmc-students.html"      title="僑港澳生"    img-title="僑港澳生"  ><i class=""></i>僑港澳生</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="7" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/mainland-chinese-students.html"      title="陸生"    img-title="陸生"  ><i class=""></i>陸生</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></li><li data-index="5"> <div class="group nav" data-index="5" data-type="3" data-child="5"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-map.html"      title="課程規劃"    img-title="課程規劃"  ><i class=""></i>課程規劃</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-map.html"      title="課程地圖"    img-title="課程地圖"  ><i class=""></i>課程地圖</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="https://course.ntu.edu.tw/search/dept?d=3420 "      title="課表與課程大綱"    img-title="課表與課程大綱"  ><i class=""></i>課表與課程大綱</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="3" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-regulation.html"      title="修業規定"    img-title="修業規定"  ><i class=""></i>修業規定</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="4" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../students/statute-and-form.html"      title="學位考試資訊"    img-title="學位考試資訊"  ><i class=""></i>學位考試資訊</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="5" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../students/cross-school-course-cooperation.html"      title="校際與跨系選課"    img-title="校際與跨系選課"  ><i class=""></i>校際與跨系選課</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></li><li data-index="6"> <div class="group nav" data-index="6" data-type="3" data-child="7"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../publications/e-report.html"      title="出版發表"    img-title="出版發表"  ><i class=""></i>出版發表</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="https://medium.com/@ntujour2022"      title="[另開新視窗]新聞所Medium"   target="_blank"   img-title="新聞所Medium"  ><i class=""></i>新聞所Medium</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../publications/e-report.html"      title="前期所報"    img-title="前期所報"  ><i class=""></i>前期所報</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="3" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../publications/master-thesis.html"      title="畢業生論文"    img-title="畢業生論文"  ><i class=""></i>畢業生論文</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="4" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../publications/books.html"      title="報導專書"    img-title="報導專書"  ><i class=""></i>報導專書</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="5" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../publications/ntu-news-forum.html"      title="臺大新聞論壇"    img-title="臺大新聞論壇"  ><i class=""></i>臺大新聞論壇</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="6" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_178002.html"      title="畢業生就業狀況"    img-title="畢業生就業狀況"  ><i class=""></i>畢業生就業狀況</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="7" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="https://datajournalism.ntu.edu.tw/"      title="台大資料新聞"    img-title="台大資料新聞"  ><i class=""></i>台大資料新聞</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></li><li data-index="7"> <div class="group nav" data-index="7" data-type="3" data-child="2"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../resident-reporter.html"      title="獎補助"    img-title="獎補助"  ><i class=""></i>獎補助</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_167406.html"      title="榮譽"    img-title="榮譽"  ><i class=""></i>榮譽</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text nav" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="https://advisory.ntu.edu.tw/CMS/Scholarship?pageId=232"      title="本校獎學金"    img-title="本校獎學金"  ><i class=""></i>本校獎學金</a></span></h4></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></li></ul></div></div></div></div> <div class="list-text link" data-index="3" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"   title="上方連結"    img-title="上方連結"  ><i class=""></i>上方連結</a></span></h4></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../Default.html"   title="回首頁"   target="_self"   img-title="回首頁"  ><i class=""></i>回首頁</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="http://www.ntu.edu.tw/"   title="[另開新視窗]臺大首頁[另開新視窗]"   target="_blank"   img-title="臺大首頁[另開新視窗]"  ><i class=""></i>臺大首頁</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="https://www.facebook.com/ntujour/"   title="[另開新視窗]新聞所FB[另開新視窗]"   target="_blank"   img-title="新聞所FB[另開新視窗]"  ><i class=""></i>新聞所FB</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../SiteMap.html"   title="網站導覽"   target="_self"   img-title="網站導覽"  ><i class=""></i>網站導覽</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="https://webpageprodvm.ntu.edu.tw/Journalism/Default.aspx"   title="[另開新視窗]English[另開新視窗]"   target="_blank"   img-title="English[另開新視窗]"  ><i class=""></i>English</a></span></li></ul>
+</div></div></div></div></div></div></div></div> <div class="group base-extend" data-index="2" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div data-func="{&#39;anchor&#39;:{}}" class="simple-text btn" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="#" title="back to top[連結]">back to top</a></span></div></div></div></div></div></div></div></div> <div class="group base-wrapper" data-index="3" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="group base-header" data-index="1" data-type="3" data-child="2"><div class="in"><div class="ct"><div class="in"> <div class="list-text link" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"   title="上方連結"    img-title="上方連結"  ><i class=""></i>上方連結</a></span></h4></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../Default.html"   title="回首頁"   target="_self"   img-title="回首頁"  ><i class=""></i>回首頁</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="http://www.ntu.edu.tw/"   title="[另開新視窗]臺大首頁[另開新視窗]"   target="_blank"   img-title="臺大首頁[另開新視窗]"  ><i class=""></i>臺大首頁</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="https://www.facebook.com/ntujour/"   title="[另開新視窗]新聞所FB[另開新視窗]"   target="_blank"   img-title="新聞所FB[另開新視窗]"  ><i class=""></i>新聞所FB</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../SiteMap.html"   title="網站導覽"   target="_self"   img-title="網站導覽"  ><i class=""></i>網站導覽</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="https://webpageprodvm.ntu.edu.tw/Journalism/Default.aspx"   title="[另開新視窗]English[另開新視窗]"   target="_blank"   img-title="English[另開新視窗]"  ><i class=""></i>English</a></span></li></ul>
+</div></div></div></div> <div class="group default l-l" data-index="1" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="simple-text major-logo" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="../Default.html" title="回首頁">國立臺灣大學新聞研究所</a></span></div></div></div></div> <div class="group default s-h" data-index="1" data-type="3"><div class="in"><div class="ct"><div class="in"> <div class="area-form search" data-func="{&#39;showDataList&#39;:{}}" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"   title="search"    img-title="search"  ><i class=""></i>search</a></span></h4></div></div><div class="ct"><div class="in"><div class="fieldset">
+  <span class="search"><input data-search="btn_f3e1ac5421984ea59b0bc59f23ceff54" type="search" placeholder="Search" title="搜尋"></span>
+  <span class="submit"><a href="#" class='CCMS_SearchBtn' data-search="btn_f3e1ac5421984ea59b0bc59f23ceff54" title="搜尋" >搜尋</a></span><a href="../Advanced_Search.html" style='display:none;' title='搜尋' >搜尋</a>
+</div>
+<div class="list">
+  <ul data-index="1" data-child="0">
+  </ul>
+</div>
+<script >
+$(function () {
+    $('[data-search="f3e1ac5421984ea59b0bc59f23ceff54"]').on("keydown", function (event) {
+        if (event.which == 13) {
+             doSearch($('#btn_f3e1ac5421984ea59b0bc59f23ceff54'));
+            return false;
+        }
+    });
+});
+</script>
+</div></div><div class="ft"><div class="in"><ul data-index="1" data-child="1">
+  <li data-index="1" class="advanced"><span><a rel="noopener noreferrer" target="_blank" class='AS_btn' href="https://www.google.com.tw/advanced_search?hl=zh-Hant-tw" title="進階搜尋[另開新視窗]">進階搜尋</a></span></li>
+ <script>
+ if ($('.AS_btn').attr('href').indexOf('&as_sitesearch=') > -1){
+}else{
+ $('.AS_btn').attr('href',$('.AS_btn').attr('href') + '&as_sitesearch=' + window.location.origin);
+}
+</script>
+</ul>
+</div></div></div></div></div></div></div></div></div></div></div></div> <div class="group-list nav" data-func="{&#39;hud&#39;:{},&#39;majorNavHorizontal&#39;:{},&#39;setNavWidth&#39;:{}}" data-index="3" data-type="4" data-child="7"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li data-index="1"> <div id="Group_93050_jsvbJuobyQ" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="93050" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group nav" data-index="1" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../about/intro.html"      title="認識本所"    img-title="認識本所"  ><i class=""></i>認識本所</a></span></h3></div></div><div class="ct"><div class="in"> <div id="Group_93051_mcgdmJjgUo" data-SitesModuleSN="75" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="93051" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text nav" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="4"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../about/intro.html"      title="本所介紹"    img-title="本所介紹"  ><i class=""></i>本所介紹</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../about/mission.html"      title="宗旨與目標"    img-title="宗旨與目標"  ><i class=""></i>宗旨與目標</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../about/gallery.html"      title="新聞所圖集"    img-title="新聞所圖集"  ><i class=""></i>新聞所圖集</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../about/transportation.html"      title="聯絡我們"    img-title="聯絡我們"  ><i class=""></i>聯絡我們</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="2"> <div id="Group_135449_bMhbxptjSM" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="135449" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group nav" data-index="2" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../event.html"      title="消息與活動"    img-title="消息與活動"  ><i class=""></i>消息與活動</a></span></h3></div></div><div class="ct"><div class="in"> <div id="Group_135450_PxMXRKJQuJ" data-SitesModuleSN="75" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="135450" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text nav" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../news/News_n_35497_sms_26652.html"      title="最新消息"    img-title="最新消息"  ><i class=""></i>最新消息</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="News2_n_35498_sms_26668.html"      title="活動資訊"    img-title="活動資訊"  ><i class=""></i>活動資訊</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../international-communication.html"      title="國際交流"    img-title="國際交流"  ><i class=""></i>國際交流</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../academic-activity.html"      title="學術活動"    img-title="學術活動"  ><i class=""></i>學術活動</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="https://coss.ntu.edu.tw/coss504.html "      title="[另開新視窗]社科院心輔室"   target="_blank"   img-title="社科院心輔室"  ><i class=""></i>社科院心輔室</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="3"> <div id="Group_93052_QVLJeoDxAo" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="93052" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group nav" data-index="3" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/faculty.html"      title="師資陣容"    img-title="師資陣容"  ><i class=""></i>師資陣容</a></span></h3></div></div><div class="ct"><div class="in"> <div id="Group_93053_RviJkcexky" data-SitesModuleSN="75" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="93053" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text nav" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/fulltime-professor.html"      title="專任教師"    img-title="專任教師"  ><i class=""></i>專任教師</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/parttime-professor.html"      title="兼任教師"    img-title="兼任教師"  ><i class=""></i>兼任教師</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_105608.html"      title="名譽教授"    img-title="名譽教授"  ><i class=""></i>名譽教授</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/practical-professor.html"      title="實務教師"    img-title="實務教師"  ><i class=""></i>實務教師</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/Professorjointappointment.html"      title="合聘教師"    img-title="合聘教師"  ><i class=""></i>合聘教師</a></span></li><li   data-index="6"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_98989.html"      title="感謝與追思"    img-title="感謝與追思"  ><i class=""></i>感謝與追思</a></span></li><li   data-index="7"  >		<span  ><a rel="noopener noreferrer"  href="../staff.html"      title="行政人員"    img-title="行政人員"  ><i class=""></i>行政人員</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="4"> <div id="Group_135061_qdALNjjmIc" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="135061" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group nav" data-index="4" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/admissions.html"      title="入學資訊"    img-title="入學資訊"  ><i class=""></i>入學資訊</a></span></h3></div></div><div class="ct"><div class="in"> <div id="Group_135062_jjfQCJhpKs" data-SitesModuleSN="75" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="135062" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text nav" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="https://www.aca.ntu.edu.tw/w/aca/LocalAdmission "      title="臺大招生資訊"    img-title="臺大招生資訊"  ><i class=""></i>臺大招生資訊</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/qualifying-exam.html"      title="甄試入學簡章"    img-title="甄試入學簡章"  ><i class=""></i>甄試入學簡章</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/entrance-exam.html"      title="招生考試簡章"    img-title="招生考試簡章"  ><i class=""></i>招生考試簡章</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/past-exam.html"      title="歷屆考古題"    img-title="歷屆考古題"  ><i class=""></i>歷屆考古題</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/international-students.html"      title="國際生"    img-title="國際生"  ><i class=""></i>國際生</a></span></li><li   data-index="6"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/ochkmc-students.html"      title="僑港澳生"    img-title="僑港澳生"  ><i class=""></i>僑港澳生</a></span></li><li   data-index="7"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/mainland-chinese-students.html"      title="陸生"    img-title="陸生"  ><i class=""></i>陸生</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="5"> <div id="Group_93054_QqkfVoGsxn" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="93054" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group nav" data-index="5" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-map.html"      title="課程規劃"    img-title="課程規劃"  ><i class=""></i>課程規劃</a></span></h3></div></div><div class="ct"><div class="in"> <div id="Group_93055_JkaDpoFdKs" data-SitesModuleSN="75" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="93055" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text nav" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-map.html"      title="課程地圖"    img-title="課程地圖"  ><i class=""></i>課程地圖</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="https://course.ntu.edu.tw/search/dept?d=3420 "      title="課表與課程大綱"    img-title="課表與課程大綱"  ><i class=""></i>課表與課程大綱</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-regulation.html"      title="修業規定"    img-title="修業規定"  ><i class=""></i>修業規定</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../students/statute-and-form.html"      title="學位考試資訊"    img-title="學位考試資訊"  ><i class=""></i>學位考試資訊</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../students/cross-school-course-cooperation.html"      title="校際與跨系選課"    img-title="校際與跨系選課"  ><i class=""></i>校際與跨系選課</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="6"> <div id="Group_93058_vIGfKnDhag" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="93058" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group nav" data-index="6" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../publications/e-report.html"      title="出版發表"    img-title="出版發表"  ><i class=""></i>出版發表</a></span></h3></div></div><div class="ct"><div class="in"> <div id="Group_93059_bQPnEknXhu" data-SitesModuleSN="75" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="93059" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text nav" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="https://medium.com/@ntujour2022"      title="[另開新視窗]新聞所Medium"   target="_blank"   img-title="新聞所Medium"  ><i class=""></i>新聞所Medium</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../publications/e-report.html"      title="前期所報"    img-title="前期所報"  ><i class=""></i>前期所報</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../publications/master-thesis.html"      title="畢業生論文"    img-title="畢業生論文"  ><i class=""></i>畢業生論文</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../publications/books.html"      title="報導專書"    img-title="報導專書"  ><i class=""></i>報導專書</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../publications/ntu-news-forum.html"      title="臺大新聞論壇"    img-title="臺大新聞論壇"  ><i class=""></i>臺大新聞論壇</a></span></li><li   data-index="6"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_178002.html"      title="畢業生就業狀況"    img-title="畢業生就業狀況"  ><i class=""></i>畢業生就業狀況</a></span></li><li   data-index="7"  >		<span  ><a rel="noopener noreferrer"  href="https://datajournalism.ntu.edu.tw/"      title="台大資料新聞"    img-title="台大資料新聞"  ><i class=""></i>台大資料新聞</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="7"> <div id="Group_93060_IjtWYexmsc" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="93060" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group nav" data-index="7" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../resident-reporter.html"      title="獎補助"    img-title="獎補助"  ><i class=""></i>獎補助</a></span></h3></div></div><div class="ct"><div class="in"> <div id="Group_93061_ggPQEKtupb" data-SitesModuleSN="75" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="93061" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text nav" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="2"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_167406.html"      title="榮譽"    img-title="榮譽"  ><i class=""></i>榮譽</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="https://advisory.ntu.edu.tw/CMS/Scholarship?pageId=232"      title="本校獎學金"    img-title="本校獎學金"  ><i class=""></i>本校獎學金</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li></ul></div></div></div></div> <div class="list-text breadcrumb" data-index="2" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="3"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../Default.html"   title="首頁"   target="_self"   img-title="首頁"  ><i class=""></i>首頁</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../event.html"   title="消息與活動"   target="_self"   img-title="消息與活動"  ><i class=""></i>消息與活動</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="News2_n_35498_sms_26668.html"   title="活動資訊"   target="_self"   img-title="活動資訊"  ><i class=""></i>活動資訊</a></span></li></ul>
+</div></div></div></div></div></div></div></div> <div id="base-content" class="group base-content" data-index="2" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="group base-page-area" data-index="1" data-type="3" data-child="2"><div class="in"><div class="ct"><div class="in"> <div id="Group_93047_hXTIbekBgY" data-Margin_right="" data-sort="" data-bgColor="" data-AddParentGroup="" data-GroupSN="93047" data-WidthDeskTop="" data-anchor="" data-tabType="3" class="group base-aside" data-index="1" data-Margin_DefaultSetting="false" data-type="3" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="ct"><div class="in"> <div class="simple-text accesskey" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="#Accesskey_L" id="Accesskey_L" accesskey="L" title="左方次要連結區，此區塊列有本網站的次要連結">:::</a></span></div></div></div></div> <div id="Group_93048_pgIeCDbDSH" data-SitesModuleSN="8" data-Margin_right="" data-sort="2" data-bgColor="" data-AddParentGroup="" data-GroupSN="93048" data-WidthDeskTop="" data-anchor="" data-tabType="0" class="list-text minor-nav is-pad-hide is-phone-hide" data-index="1" data-Margin_DefaultSetting="false" data-type="0" data-bgClass="" data-WidthMobile="" data-groupname="" data-WidthPad="" data-Margin_left="" data-MenuWidth="" data-isgroup="true" data-setLen="0" data-Margin_bottom="" data-child="1" data-Margin_Top=""><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"   title="消息與活動"    img-title="消息與活動"  ><i class=""></i>消息與活動</a></span></h4></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../news/News_n_35497_sms_26652.html"      title="最新消息"    img-title="最新消息"  ><i class=""></i>最新消息</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="News2_n_35498_sms_26668.html"      title="活動資訊"    img-title="活動資訊"  ><i class=""></i>活動資訊</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../international-communication.html"      title="國際交流"    img-title="國際交流"  ><i class=""></i>國際交流</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../academic-activity.html"      title="學術活動"    img-title="學術活動"  ><i class=""></i>學術活動</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="https://coss.ntu.edu.tw/coss504.html "      title="[另開新視窗]社科院心輔室"   target="_blank"   img-title="社科院心輔室"  ><i class=""></i>社科院心輔室</a></span></li></ul>
+</div></div></div></div></div></div></div></div> <div class="group base-section" data-index="2" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="simple-text accesskey" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="#Accesskey_C" id="Accesskey_C" accesskey="C" title="中間主要內容區，此區塊呈現網頁的網頁內容">:::</a></span></div></div></div></div> <div class="group page-header" data-index="1" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="group default info" data-index="1" data-type="3" data-child="2"><div class="in"><div class="ct"><div class="in"> <div class="simple-text heading" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><h3><span>活動資訊</span></h3></div></div></div></div> <div class="group default msg-tool" data-index="2" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="simple-text accesskey" data-func="{&#39;focusContent&#39;:{}}" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="#CCMS_Content" title="跳過此子選單列請按[Enter]，繼續則按[Tab]">_</a></span></div></div></div></div> <div class="list-text user-tool" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="return false;"   title="網頁功能"   target="_self"   img-title="網頁功能"  ><i class=""></i>網頁功能</a></span></h4></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="2"><li   data-index="1"  class="print"  >		<span  ><a rel="noopener noreferrer"  href="javascript:CCMS_Print(366);"   title="列印內容"   target="_self"   img-title="列印內容"  ><i class=""></i>列印內容</a></span></li><li   data-index="2"  class="bopomofo"  >		<span  ><a rel="noopener noreferrer"  href="#"   title="Bopomofo"    img-title="Bopomofo"  ><i class=""></i>Bopomofo</a></span></li></ul>
+</div></div></div></div> <div class="list-text share" data-index="2" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><h4   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="#"   title="分享"    img-title="分享"  ><i class=""></i>分享</a></span></h4></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="6"><li   data-index="1"  class="facebook"  >		<span  ><a rel="noopener noreferrer"  href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));"   title="Share to Facebook[另開新視窗]"   target="_self"   img-title="Share to Facebook[另開新視窗]"  ><i class=""></i>Facebook</a></span></li><li   data-index="2"  class="plurk"  >		<span  ><a rel="noopener noreferrer"  href="javascript: void(window.open('http://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent(location.href)) ));"   title="Share toPlurk[另開新視窗]"   target="_self"   img-title="Share toPlurk[另開新視窗]"  ><i class=""></i>Plurk</a></span></li><li   data-index="3"  class="twitter"  >		<span  ><a rel="noopener noreferrer"  href="javascript: void(window.open('http://twitter.com/home/?status='.concat(encodeURIComponent(document.title)) .concat(' ') .concat(encodeURIComponent(location.href))));"   title="Share to twitter[另開新視窗]"   target="_self"   img-title="Share to twitter[另開新視窗]"  ><i class=""></i>Twitter</a></span></li><li   data-index="4"  class="line"  >		<span  ><a rel="noopener noreferrer"  href="javascript: void(window.open('http://line.naver.jp/R/msg/text/?'.concat(encodeURIComponent(location.href)) ));"   title="Share to line[另開新視窗]"   target="_self"   img-title="Share to line[另開新視窗]"  ><i class=""></i>line</a></span></li><li   data-index="5"  class="email"  >		<span  ><a rel="noopener noreferrer"  href="javascript:  void(window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&amp;body=' +  encodeURIComponent(document.URL)));"   title="Share to email[另開新視窗]"   target="_self"   img-title="Share to email[另開新視窗]"  ><i class=""></i>Email</a></span></li><li   data-index="6"  class="linkedin"  >		<span  ><a rel="noopener noreferrer"  href="javascript:  void(window.open('https://www.linkedin.com/shareArticle?url='.concat(encodeURIComponent(location.href)) ));"   title="Share to LinkedIn[另開新視窗]"   target="_self"   img-title="Share to LinkedIn[另開新視窗]"  ><i class=""></i>LinkedIn</a></span></li></ul>
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div> <div class="group page-content " id="CCMS_Content" data-func="{&#39;linkType&#39;:{&#39;domains&#39;:[&#39;https://webpageprod-ws.ntu.edu.tw&#39;,&#39;https://webpageprod-ws.ntu.edu.tw&#39;]}}" data-index="2" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in">
+    <div class="area-form page-search is-active" data-type="0" data-child="1" data-func="{'reset':{},'toggleBtn':{'cookie':'true','focusActive':false}}">
+        <div class="in">
+            <div class="hd">
+                <div class="in">
+                    <h4 data-index="0"><span><a href="#" title="單元查詢">單元查詢</a></span></h4>
+                </div>
+            </div>
+            <div class="ct">
+                <div class="in">
+                    <div class="fieldset" id="Searchbox">
+                        <label for="txtSearch"><span class="search" data-before="關鍵字： "></span></label>  <input id="search-box" type="text" class="validate" autofocus autocomplete="off">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <table id="DataWarehouseName_ID1" style="display: none"></table>
+
+ <div class="group-list message SearchUl" data-type="4" data-child="50"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="50"><li data-index="1"> <div class="area-essay message" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_258988.html" class="div"  title="【活動】ETtoday 總編林妏純談網路新聞產製與自律"  target="_self"  data-ccms_hitcount='258988' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/258988/4174dd85-e10b-439a-934b-42641d400518@710x470.png')"><img src="001/Upload/366/relpic/26668/258988/4174dd85-e10b-439a-934b-42641d400518@710x470.png" alt="【活動】ETtoday 總編林妏純談網路新聞產製與自律"></span></div>  <div class="essay">    <div class="caption"><span>【活動】ETtoday 總編林妏純談網路新聞產製與自律</span></div>    <div class="p">      <p><span>ETtoday 總編輯林妏純10月7日受邀至台大新聞所演講，分享網路媒體如何在流量掛帥的壓力下取捨新聞、在求快的同時堅持事實查證、取得授權。林妏純身兼台灣網路新聞自律聯盟召集人，也強調集體自律，重建專業倫理的重要性。
+
+投身新聞職場四十餘年，林妏純見證報紙、電視的輝煌時代，然而，當前社群媒體使用...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="2"> <div class="area-essay message" data-index="2" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_257550.html" class="div"  title="【活動】訪問學者 Alexander Haentzschel 談德國媒體與跨國平台"  target="_self"  data-ccms_hitcount='257550' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/257550/e3f32c98-5ac4-4e6c-a932-fcf0cfb98af1@710x470.jpg')"><img src="001/Upload/366/relpic/26668/257550/e3f32c98-5ac4-4e6c-a932-fcf0cfb98af1@710x470.jpg" alt="【活動】訪問學者 Alexander Haentzschel 談德國媒體與跨國平台"></span></div>  <div class="essay">    <div class="caption"><span>【活動】訪問學者 Alexander Haentzschel 談德國媒體與跨國平台</span></div>    <div class="p">      <p><span>9/9（二）大眾傳播理論課堂，邀請 SRH University Heiderberg 媒體與傳播學教授&nbsp;Alexander Haentzschel 分享「德國媒體與跨國平台」 的專題講座，讓學生對平台經濟及歐洲媒體的回應方式有更實際的理解。
+
+Alexander Haentzsche...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="3"> <div class="area-essay message" data-index="3" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_257534.html" class="div"  title="【活動預告】《家鎖：華人家庭這個巨獸》與家庭書寫"  target="_self"  data-ccms_hitcount='257534' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/257534/ac38dd0b-53a7-456a-8e3f-884ce758b117@710x470.png')"><img src="001/Upload/366/relpic/26668/257534/ac38dd0b-53a7-456a-8e3f-884ce758b117@710x470.png" alt="【活動預告】《家鎖：華人家庭這個巨獸》與家庭書寫"></span></div>  <div class="essay">    <div class="caption"><span>【活動預告】《家鎖：華人家庭這個巨獸》與家庭書寫</span></div>    <div class="p">      <p><span>思覺失調症的哥哥、中風的父親、失智的母親，面對家庭與疾病的巨獸，排山倒海的壓力。身為小女兒的她，得先活下來......
+
+&nbsp;
+
+是記者也是作家的譚蕙芸，如何透過書寫回應與凝視自身生命經驗，去詮釋這些複雜難解的家庭創傷？《家鎖：華人家庭這個巨獸》書寫之後，名為家庭的枷鎖解開了嗎？
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="4"> <div class="area-essay message" data-index="4" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_254584.html" class="div"  title="【活動】「看見抵抗與希望：種族清洗政策下的以巴和平吶喊」講座"  target="_self"  data-ccms_hitcount='254584' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/254584/516298ea-b07b-4677-8e92-14ab94d42919@710x470.jpg')"><img src="001/Upload/366/relpic/26668/254584/516298ea-b07b-4677-8e92-14ab94d42919@710x470.jpg" alt="【活動】「看見抵抗與希望：種族清洗政策下的以巴和平吶喊」講座"></span></div>  <div class="essay">    <div class="caption"><span>【活動】「看見抵抗與希望：種族清洗政策下的以巴和平吶喊」講座</span></div>    <div class="p">      <p><span>
+
+󠀠「看見抵抗與希望：種族清洗政策下的以巴和平吶喊」講座
+
+&nbsp;
+
+
+
+
+
+ 戰爭爆發&hellip;&hellip;紀錄者該站在哪裡？如何觀看與思考？
+
+政治與暴力如何滲透日常？我們應當以何種姿態抵抗？
+
+面對強力壓迫，你會選擇沉默？還是挺身而出？
+
+�...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="5"> <div class="area-essay message" data-index="5" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_254585.html" class="div"  title="【活動】臺大新聞所學者講座｜譚蕙芸"  target="_self"  data-ccms_hitcount='254585' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/254585/3a523c31-624a-4921-bcf1-41f2e4898241@710x470.jpg')"><img src="001/Upload/366/relpic/26668/254585/3a523c31-624a-4921-bcf1-41f2e4898241@710x470.jpg" alt="【活動】臺大新聞所學者講座｜譚蕙芸"></span></div>  <div class="essay">    <div class="caption"><span>【活動】臺大新聞所學者講座｜譚蕙芸</span></div>    <div class="p">      <p><span>臺大新聞所學者講座｜譚蕙芸
+
+今年春天來場時代的文字共鳴吧！
+臺大新聞所特邀「香港中文大學新聞與傳播學院高級講師 譚蕙芸」於 4/17（四）、4/18（五）到所上舉辦2場講座，分享文字書寫與新聞特寫，歡迎踴躍報名～
+
+【場次資訊】
+場次一：為甚麼我還寫字
+在媒體技術日新月異的環境裡，傳...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="6"> <div class="area-essay message" data-index="6" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_246560.html" class="div"  title="【活動】2024年假訊息認知調查暨高峰論壇"  target="_self"  data-ccms_hitcount='246560' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/246560/08c3b3bf-ec0e-47d4-aa30-a3d04cad3f6d@710x470.png')"><img src="001/Upload/366/relpic/26668/246560/08c3b3bf-ec0e-47d4-aa30-a3d04cad3f6d@710x470.png" alt="【活動】2024年假訊息認知調查暨高峰論壇"></span></div>  <div class="essay">    <div class="caption"><span>【活動】2024年假訊息認知調查暨高峰論壇</span></div>    <div class="p">      <p><span>
+
+臺大新聞所 x 臺灣韌性社會研究中心【2024年假訊息認知調查暨高峰論壇】
+&nbsp;日期：12/20
+&nbsp;時間：13:00&ndash;16:15
+&nbsp;地點：臺大社科院梁國樹國際會議廳
+&nbsp;立即報名：https://forms.gle/YQXLg4WAZt...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="7"> <div class="area-essay message" data-index="7" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_244147.html" class="div"  title="【活動】臺大新聞所論壇｜「AI時代的新聞教育與媒體識讀：解碼技術轉型與資訊信任」"  target="_self"  data-ccms_hitcount='244147' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/244147/7d3fdc07-661a-4f07-aec8-a414932f3cf9@710x470.png')"><img src="001/Upload/366/relpic/26668/244147/7d3fdc07-661a-4f07-aec8-a414932f3cf9@710x470.png" alt="【活動】臺大新聞所論壇｜「AI時代的新聞教育與媒體識讀：解碼技術轉型與資訊信任」"></span></div>  <div class="essay">    <div class="caption"><span>【活動】臺大新聞所論壇｜「AI時代的新聞教育與媒體識讀：解碼技術轉型與資訊信任」</span></div>    <div class="p">      <p><span>
+
+
+
+臺大新聞所論壇 重磅登場！
+
+「AI時代的新聞教育與媒體識讀：解碼技術轉型與資訊信任」
+
+日期｜2024.12.13 (五)
+
+時間｜上半場13:00-14:30，下半場14:45-16:15
+
+地點｜ 臺大社科院3F 梁國樹國際會議廳
+
+主辦單位｜國立臺灣大學新...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="8"> <div class="area-essay message" data-index="8" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_243181.html" class="div"  title="【活動轉知】2024 臺灣人權短片頒獎典禮暨放映座談"  target="_self"  data-ccms_hitcount='243181' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/243181/7cd056e4-92f2-491c-b2f3-708a5910b5ee@710x470.jpg')"><img src="001/Upload/366/relpic/26668/243181/7cd056e4-92f2-491c-b2f3-708a5910b5ee@710x470.jpg" alt="【活動轉知】2024 臺灣人權短片頒獎典禮暨放映座談"></span></div>  <div class="essay">    <div class="caption"><span>【活動轉知】2024 臺灣人權短片頒獎典禮暨放映座談</span></div>    <div class="p">      <p><span>
+</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="9"> <div class="area-essay message" data-index="9" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_242697.html" class="div"  title="【活動提醒】《國際影人「凝視真相，在當下路上」講座》「宣傳 VS. 報導：假新聞之戰」"  target="_self"  data-ccms_hitcount='242697' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/242697/68810d81-1943-4503-afa8-e1355dc37abe@710x470.jpg')"><img src="001/Upload/366/relpic/26668/242697/68810d81-1943-4503-afa8-e1355dc37abe@710x470.jpg" alt="【活動提醒】《國際影人「凝視真相，在當下路上」講座》「宣傳 VS. 報導：假新聞之戰」"></span></div>  <div class="essay">    <div class="caption"><span>【活動提醒】《國際影人「凝視真相，在當下路上」講座》「宣傳 VS. 報導：假新聞之戰」</span></div>    <div class="p">      <p><span>
+
+【就是明天】2024&nbsp;臺灣國際人權影展《國際影人「凝視真相，在當下路上」講座》
+
+
+
+
+
+「人權既是普世議題，更容易在日常生活視而不見。」
+
+2024&nbsp;臺灣國際人權影展《國際影人「凝視真相，在當下路上」講座》開放索票啦！✨
+
+宣傳&nbsp;VS.&n...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="10"> <div class="area-essay message" data-index="10" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_242587.html" class="div"  title="【活動】2024臺灣國際人權影展｜國際影人「雷蒙娜・狄亞茲 Ramona S. DIAZ」講座"  target="_self"  data-ccms_hitcount='242587' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/242587/5fe8e211-3602-4791-a3e5-86c2bc04a29d@710x470.png')"><img src="001/Upload/366/relpic/26668/242587/5fe8e211-3602-4791-a3e5-86c2bc04a29d@710x470.png" alt="【活動】2024臺灣國際人權影展｜國際影人「雷蒙娜・狄亞茲 Ramona S. DIAZ」講座"></span></div>  <div class="essay">    <div class="caption"><span>【活動】2024臺灣國際人權影展｜國際影人「雷蒙娜・狄亞茲 Ramona S. DIAZ」講座</span></div>    <div class="p">      <p><span>2024臺灣國際人權影展｜國際影人「雷蒙娜&middot;狄亞茲 Ramona S. DIAZ」講座
+
+
+
+【活動資訊】
+
+時間：09/20 (五) 19:00-20:30&nbsp;(18:30開放報到）
+
+地點：台大社科院 310 梁國樹國際會議中心
+
+主辦單位：國家人權博物...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="11"> <div class="area-essay message" data-index="11" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_236721.html" class="div"  title="【活動】當代地緣政治與新聞專業演講"  target="_self"  data-ccms_hitcount='236721' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/236721/4b8d2f37-b31a-48dd-8344-3b0390e45fd4@710x470.jpg')"><img src="001/Upload/366/relpic/26668/236721/4b8d2f37-b31a-48dd-8344-3b0390e45fd4@710x470.jpg" alt="【活動】當代地緣政治與新聞專業演講"></span></div>  <div class="essay">    <div class="caption"><span>【活動】當代地緣政治與新聞專業演講</span></div>    <div class="p">      <p><span>放暑假了，何不利用時間來了解重要的地緣政治、新聞專業議題，探討其中的挑戰與機遇？
+
+我們特別邀請到三位重量級嘉賓，免費參與，絕對收穫滿滿～期待您的參與！
+
+報名表單：https://docs.google.com/forms/d/e/1FAIpQLSfGEdFdDzptl8fdwSwxPC-...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="12"> <div class="area-essay message" data-index="12" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_236338.html" class="div"  title="【活動】卓越新聞獎重要演講及「亞洲新聞專業論壇」"  target="_self"  data-ccms_hitcount='236338' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/236338/940423a8-6b63-408c-bbdc-fa88d6f3ead0@710x470.png')"><img src="001/Upload/366/relpic/26668/236338/940423a8-6b63-408c-bbdc-fa88d6f3ead0@710x470.png" alt="【活動】卓越新聞獎重要演講及「亞洲新聞專業論壇」"></span></div>  <div class="essay">    <div class="caption"><span>【活動】卓越新聞獎重要演講及「亞洲新聞專業論壇」</span></div>    <div class="p">      <p><span>卓越新聞獎重要演講
+
+日期：6月21日
+時間：下午2:00-4:30
+地點：新聞所103大教室
+
+
+
+杉田弘毅先生是此次論壇的日本代表，杉田先生在6/21(五)下午到台大演講，杉田先生的簡歷及照片如附。
+
+
+
+卓越新聞獎「亞洲新聞專業論壇」
+
+
+
+台大新聞所協辦今年的...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="13"> <div class="area-essay message" data-index="13" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_236336.html" class="div"  title="【活動徵人】「亞洲新聞專業論壇」外賓接待及寫稿"  target="_self"  data-ccms_hitcount='236336' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/236336/19d26f7d-3de8-489d-8480-8fe1b5796d08@710x470.jpg')"><img src="001/Upload/366/relpic/26668/236336/19d26f7d-3de8-489d-8480-8fe1b5796d08@710x470.jpg" alt="【活動徵人】「亞洲新聞專業論壇」外賓接待及寫稿"></span></div>  <div class="essay">    <div class="caption"><span>【活動徵人】「亞洲新聞專業論壇」外賓接待及寫稿</span></div>    <div class="p">      <p><span>新聞所協辦今年的「亞洲新聞專業論壇」將於6/22-23兩天舉行。
+
+今年論壇共有八位外賓，需要四位能夠英語應對的同學協助接待（接待照時數X185元）。
+
+另外，也需要六位同學幫忙寫稿（５個場次＋１場閉門演講），
+每篇文稿約4500字，稿費7000元，活動後刊登於卓越新聞電子報．
+但閉門演...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="14"> <div class="area-essay message" data-index="14" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_233411.html" class="div"  title="【活動預告】總統大選期間的假訊息攻擊與台灣社會因應之道報告發表暨論壇"  target="_self"  data-ccms_hitcount='233411' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/233411/79e3af35-8b5e-4a93-ada5-059660eb9964@710x470.png')"><img src="001/Upload/366/relpic/26668/233411/79e3af35-8b5e-4a93-ada5-059660eb9964@710x470.png" alt="【活動預告】總統大選期間的假訊息攻擊與台灣社會因應之道報告發表暨論壇"></span></div>  <div class="essay">    <div class="caption"><span>【活動預告】總統大選期間的假訊息攻擊與台灣社會因應之道報告發表暨論壇</span></div>    <div class="p">      <p><span>總統大選期間的假訊息攻擊與台灣社會因應之道
+
+報告發表暨論壇
+&nbsp;
+
+時間： 2024/4/12(五)下午2:00-4:30
+
+地點：臺大社科院102 階梯教室(定吾講堂)
+
+預定流程：
+
+一、報告發表： AI Disinformation Attacks and Ta...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="15"> <div class="area-essay message" data-index="15" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_233078.html" class="div"  title="【活動】CNN首任北京分社社長Mike Chinoy 新書講座《中國任務: 美國駐華記者口述史》 "  target="_self"  data-ccms_hitcount='233078' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/233078/12c2b234-71b3-469f-9fc0-b57d96b5b5c1@710x470.png')"><img src="001/Upload/366/relpic/26668/233078/12c2b234-71b3-469f-9fc0-b57d96b5b5c1@710x470.png" alt="【活動】CNN首任北京分社社長Mike Chinoy 新書講座《中國任務: 美國駐華記者口述史》 "></span></div>  <div class="essay">    <div class="caption"><span>【活動】CNN首任北京分社社長Mike Chinoy 新書講座《中國任務: 美國駐華記者口述史》 </span></div>    <div class="p">      <p><span>報導中國是新聞界中最艱難的任務之一，卻也至關重要
+
+國際媒體如何報導中國，深深影響美國及其他政府的外交政策，並塑造全世界的輿論風向
+
+&nbsp;
+
+3月20日新聞所邀請到首任 CNN 北京分社社長 Mike Chinoy
+
+帶著他的新書《中國任務: 美國駐華記者口述史》進行新書分享...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="16"> <div class="area-essay message" data-index="16" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_220142.html" class="div"  title="【紀錄】美國在台協會處長孫曉雅臺大演講(二)美國在台協會處長孫曉雅臺大演講： 盛讚臺灣性別平等 勉勵學子勇於展現獨特"  target="_self"  data-ccms_hitcount='220142' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/220142/28ac02da-7bf5-4828-81c5-880499cc8a46@710x470.jpg')"><img src="001/Upload/366/relpic/26668/220142/28ac02da-7bf5-4828-81c5-880499cc8a46@710x470.jpg" alt="【紀錄】美國在台協會處長孫曉雅臺大演講(二)美國在台協會處長孫曉雅臺大演講： 盛讚臺灣性別平等 勉勵學子勇於展現獨特"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】美國在台協會處長孫曉雅臺大演講(二)美國在台協會處長孫曉雅臺大演講： 盛讚臺灣性別平等 勉勵學子勇於展現獨特</span></div>    <div class="p">      <p><span>美國在台協會（AIT）處長孫曉雅（Sandra Oudkirk）2023年12月4日至國立臺灣大學演講，盛讚臺灣的民主與性別平等，面對中國的資訊戰、假訊息攻擊，也做了相當完善的保護措施。作為美國在台協會第一位女性處長，孫曉雅處長勉勵學生不受性別限制，在職場上發揮自我的獨特性。
+
+&nbsp;
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="17"> <div class="area-essay message" data-index="17" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_220141.html" class="div"  title="【紀錄】美國在台協會處長孫曉雅臺大演講(ㄧ)支持臺灣民主選舉 攜手對抗網路攻擊"  target="_self"  data-ccms_hitcount='220141' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/220141/30dd1dfc-bd19-46ab-909b-1ac295153637@710x470.jpg')"><img src="001/Upload/366/relpic/26668/220141/30dd1dfc-bd19-46ab-909b-1ac295153637@710x470.jpg" alt="【紀錄】美國在台協會處長孫曉雅臺大演講(ㄧ)支持臺灣民主選舉 攜手對抗網路攻擊"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】美國在台協會處長孫曉雅臺大演講(ㄧ)支持臺灣民主選舉 攜手對抗網路攻擊</span></div>    <div class="p">      <p><span>國立臺灣大學新聞研究所與雙語教育中心共邀美國在台協會（AIT）處長孫曉雅（Sandra Oudkirk）以2023年度政策報告為題，於12月4日下午至臺大發表演講。孫曉雅處長回顧今年度政策、工作心得與未來規劃，並以網路安全為核心，強調臺美關係與民主價值的發展願景，作為民主盟友，美國將堅定支持臺灣，並...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="18"> <div class="area-essay message" data-index="18" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_219992.html" class="div"  title="【活動】 AIT處長孫曉雅演講"Cybersecurity and Disinformation""  target="_self"  data-ccms_hitcount='219992' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/219992/21cc4dbc-9b3c-4ea6-ba94-e95b483e9167@710x470.jpg')"><img src="001/Upload/366/relpic/26668/219992/21cc4dbc-9b3c-4ea6-ba94-e95b483e9167@710x470.jpg" alt="【活動】 AIT處長孫曉雅演講"Cybersecurity and Disinformation""></span></div>  <div class="essay">    <div class="caption"><span>【活動】 AIT處長孫曉雅演講"Cybersecurity and Disinformation"</span></div>    <div class="p">      <p><span>美國在台協會處長孫曉雅 網路安全與假訊息
+
+臺大新聞所與雙語教育中心共同邀請到美國在台協會（AIT）孫曉雅處長
+
+在12月4日來到臺灣大學
+
+網際網路帶來極大的便利徹底顛覆生活
+
+是這個世代的我們正在深切體會
+
+在讚頌網路豐富優點的同時
+
+所帶來的隱患也逐漸被關注
+
+無論...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="19"> <div class="area-essay message" data-index="19" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_219912.html" class="div"  title="【活動】科技創新與社會韌性"  target="_self"  data-ccms_hitcount='219912' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/219912/800aeb38-a3aa-4f76-b7f1-be57289800a0@710x470.jpg')"><img src="001/Upload/366/relpic/26668/219912/800aeb38-a3aa-4f76-b7f1-be57289800a0@710x470.jpg" alt="【活動】科技創新與社會韌性"></span></div>  <div class="essay">    <div class="caption"><span>【活動】科技創新與社會韌性</span></div>    <div class="p">      <p><span>
+
+
+選舉將至，社群平台充斥多方消息，你知道AI系統能怎麼協助偵測嗎？
+AI生成技術還有哪些潛力等待開發和應用呢？
+如果AI對社會帶來不平等的影響時，我們怎麼成為更加負責、縮小差距的使用者？又如何重新建構AI的治理規範？
+
+&nbsp;
+
+AI的進步和創新，在人際互動、訊息傳播、醫...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="20"> <div class="area-essay message" data-index="20" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_215529.html" class="div"  title="【紀錄】黑暗之後的光亮：蘋果日報紀錄片《我們的黑暗時代》映後座談"  target="_self"  data-ccms_hitcount='215529' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/215529/8f9f9b32-10ac-4bbf-8808-ba869481cf0c@710x470.jpg')"><img src="001/Upload/366/relpic/26668/215529/8f9f9b32-10ac-4bbf-8808-ba869481cf0c@710x470.jpg" alt="【紀錄】黑暗之後的光亮：蘋果日報紀錄片《我們的黑暗時代》映後座談"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】黑暗之後的光亮：蘋果日報紀錄片《我們的黑暗時代》映後座談</span></div>    <div class="p">      <p><span>香港在《國安法》正式實施後，媒體環境受到嚴重限制，一些香港媒體人決定出走，到海外建立新的網路媒體，試圖將當今香港主流媒體不報的新聞，繼續報導給所有的香港人。
+
+&nbsp;
+
+5月23日，臺大新聞所學生會與社科院學生會共同舉辦「我們的黑暗時代：蘋果日報紀錄片放映會」，並於映後邀請兩位前香港《...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="21"> <div class="area-essay message" data-index="21" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_215527.html" class="div"  title="【紀錄】在臺灣寫世界：《轉角國際》編輯如何做國際新聞？"  target="_self"  data-ccms_hitcount='215527' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/215527/1b5135e9-59e2-4a4a-b3d9-15c587ce7a01@710x470.jpg')"><img src="001/Upload/366/relpic/26668/215527/1b5135e9-59e2-4a4a-b3d9-15c587ce7a01@710x470.jpg" alt="【紀錄】在臺灣寫世界：《轉角國際》編輯如何做國際新聞？"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】在臺灣寫世界：《轉角國際》編輯如何做國際新聞？</span></div>    <div class="p">      <p><span>《轉角國際》成立於2015年，為臺灣知名的國際新聞媒體。在沒有駐外記者、沒有充足人力的情況下，《轉角國際》四位編輯每日選擇重要或自己拿手的題目，蒐集國際各大通訊社、媒體的新聞，或追蹤國際新聞記者的Twitter，深入剖析國際事件，也透過Podcast讓臺灣公民更貼近國際新聞。
+
+&nbsp;
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="22"> <div class="area-essay message" data-index="22" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_215526.html" class="div"  title="【2023年假訊息年度調查發表暨高峰論壇2】社會對假訊息的「病識感」提高，專家呼籲共同打造信任的資訊生態圈"  target="_self"  data-ccms_hitcount='215526' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/215526/356c8c25-d49c-4e13-9814-8ce5332f320e@710x470.jpg')"><img src="001/Upload/366/relpic/26668/215526/356c8c25-d49c-4e13-9814-8ce5332f320e@710x470.jpg" alt="【2023年假訊息年度調查發表暨高峰論壇2】社會對假訊息的「病識感」提高，專家呼籲共同打造信任的資訊生態圈"></span></div>  <div class="essay">    <div class="caption"><span>【2023年假訊息年度調查發表暨高峰論壇2】社會對假訊息的「病識感」提高，專家呼籲共同打造信任的資訊生態圈</span></div>    <div class="p">      <p><span>由臺灣事實查核基金會委託民間調查單位及臺大社科院執行的「2023年假訊息年度調查」於5月19日發表，也邀請學者專家及政府官員對此調查發表意見。與會者表示，民眾收到假訊息的比例上升，顯見大家對假訊息的「病識感」已提升，接下來最重要的是重拾社會信任，建立良好的資訊生態圈，包含對假訊息傳遞的立法限制、要求...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="23"> <div class="area-essay message" data-index="23" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_215525.html" class="div"  title="【2023年假訊息年度調查發表暨高峰論壇1】使用查核工具辨識假訊息比例提升，中間選民是事實查核最重要的溝通對象"  target="_self"  data-ccms_hitcount='215525' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/215525/9fad8739-a40e-4502-9227-493120421297@710x470.jpg')"><img src="001/Upload/366/relpic/26668/215525/9fad8739-a40e-4502-9227-493120421297@710x470.jpg" alt="【2023年假訊息年度調查發表暨高峰論壇1】使用查核工具辨識假訊息比例提升，中間選民是事實查核最重要的溝通對象"></span></div>  <div class="essay">    <div class="caption"><span>【2023年假訊息年度調查發表暨高峰論壇1】使用查核工具辨識假訊息比例提升，中間選民是事實查核最重要的溝通對象</span></div>    <div class="p">      <p><span>臺灣事實查核基金會再度委託民間調查單位及臺大學者執行「假訊息年度調查」，結果指出民眾對於假訊息的警覺提高，使用查核工具識假的比例亦提升。調查也發現，事實查核有助於民眾釐清真實，但人們的黨派立場影響其對政治類事實查核結果的態度，因此事實查核最重要溝通的對象應是中間選民。
+
+&nbsp;
+
+今年...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="24"> <div class="area-essay message" data-index="24" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_214879.html" class="div"  title="【紀錄】拾起那些被否定掉的題目與聲音──關注公益議題的「多多益善」"  target="_self"  data-ccms_hitcount='214879' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/214879/a41b07b0-a064-4fd8-b42b-d5d4eee5dfac@710x470.jpg')"><img src="001/Upload/366/relpic/26668/214879/a41b07b0-a064-4fd8-b42b-d5d4eee5dfac@710x470.jpg" alt="【紀錄】拾起那些被否定掉的題目與聲音──關注公益議題的「多多益善」"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】拾起那些被否定掉的題目與聲音──關注公益議題的「多多益善」</span></div>    <div class="p">      <p><span>4月26日晚上，台大新聞所學生會與社工所學生會，共同邀請關注公益議題的NPO媒體「多多益善」總編輯葉靜倫及主編黃愉婷，向大家分享多多益善成立的原因，以及多多益善最重視的「編輯力」。
+
+&nbsp;
+
+葉靜倫從出版社編輯做起，再進入NPO工作，最後結合媒體專業與她關心的社福議題，創立了「多多益...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="25"> <div class="area-essay message" data-index="25" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_214878.html" class="div"  title="【紀錄】【在場 · 非虛構寫作獎學金 — 講座紀錄】走入生命的田野，在場的重要性"  target="_self"  data-ccms_hitcount='214878' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/214878/1cbcb28e-bee5-4fe8-a6c8-d15936b5e577@710x470.jpg')"><img src="001/Upload/366/relpic/26668/214878/1cbcb28e-bee5-4fe8-a6c8-d15936b5e577@710x470.jpg" alt="【紀錄】【在場 · 非虛構寫作獎學金 — 講座紀錄】走入生命的田野，在場的重要性"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】【在場 · 非虛構寫作獎學金 — 講座紀錄】走入生命的田野，在場的重要性</span></div>    <div class="p">      <p><span>當AI時代來臨，為何我們還需要走入現場？幾位非虛構寫作者以自身「在場」的經驗說明，唯有進到他人生命的田野，才能挖掘出不被看見的歷史故事，才能避免被偏頗的資訊框架住，才能真實感受到人的溫度與情緒。
+
+&nbsp;
+
+5月5日，「在場 &middot; 非虛構寫作獎學金」於臺大新聞所舉辦講座，由...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="26"> <div class="area-essay message" data-index="26" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_214877.html" class="div"  title="【紀錄】【2023年台大新聞所論壇2】永續發展，臺灣媒體能做與應做的事"  target="_self"  data-ccms_hitcount='214877' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/214877/0dd2a509-83d5-483a-9e47-903dcc60c088@710x470.jpg')"><img src="001/Upload/366/relpic/26668/214877/0dd2a509-83d5-483a-9e47-903dcc60c088@710x470.jpg" alt="【紀錄】【2023年台大新聞所論壇2】永續發展，臺灣媒體能做與應做的事"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】【2023年台大新聞所論壇2】永續發展，臺灣媒體能做與應做的事</span></div>    <div class="p">      <p><span>當「永續發展」的概念在國際間愈加重視時，臺灣媒體整體而言對此關注度卻不高。4月21日，臺大新聞所在臺大法律系霖澤館辦理論壇「全球化、地方新聞與永續發展」，第二場主題為「守護台灣 &mdash; &mdash; 氣候變遷及永續發展」。會中許多媒體人皆表示，媒體人應該擔任永續發展概念的轉譯者，讓民眾更願...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="27"> <div class="area-essay message" data-index="27" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_214876.html" class="div"  title="【紀錄】【2023年台大新聞所論壇1】全球化下的地方新聞，傳遞沒被聽見的小聲音"  target="_self"  data-ccms_hitcount='214876' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/214876/1325ac80-2a66-4425-b883-52c9788c77d0@710x470.jpg')"><img src="001/Upload/366/relpic/26668/214876/1325ac80-2a66-4425-b883-52c9788c77d0@710x470.jpg" alt="【紀錄】【2023年台大新聞所論壇1】全球化下的地方新聞，傳遞沒被聽見的小聲音"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】【2023年台大新聞所論壇1】全球化下的地方新聞，傳遞沒被聽見的小聲音</span></div>    <div class="p">      <p><span>全球化下，國際新聞躍上新聞版面，地方新聞人力與版面則不斷縮編。4月21日，臺大新聞所在臺大法律系霖澤館辦理論壇「全球化、地方新聞與永續發展」，第一場主題為「愈在地、愈全球 &mdash; &mdash; 台灣地方新聞現況」，會中有線電視地方台及報社記者皆表示，地方新聞仍有其價值，因為是與當地民眾最貼...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="28"> <div class="area-essay message" data-index="28" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_212684.html" class="div"  title="【活動】全球化、地方新聞與永續發展"  target="_self"  data-ccms_hitcount='212684' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/212684/ec476912-2b9d-4b94-9102-b81a3e685cda@710x470.png')"><img src="001/Upload/366/relpic/26668/212684/ec476912-2b9d-4b94-9102-b81a3e685cda@710x470.png" alt="【活動】全球化、地方新聞與永續發展"></span></div>  <div class="essay">    <div class="caption"><span>【活動】全球化、地方新聞與永續發展</span></div>    <div class="p">      <p><span>
+臺大新聞所論壇
+
+主題：「全球化、地方新聞與永續發展」
+
+時間：2023.4.21 (Fri)
+
+地點：台大法律學院霖澤館國際會議廳
+
+報名連結：https://forms.gle/hLdroLysqsSTzNfu5
+
+&nbsp;&mdash;&mdash;&mdash;&...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="29"> <div class="area-essay message" data-index="29" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_213229.html" class="div"  title="【紀錄】德國學者 Jeanette Hofmann 談數位治理 應對平台問責並善加處理不法內容"  target="_self"  data-ccms_hitcount='213229' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/213229/a106f4be-1b71-47c4-965c-85ed51c75d74@710x470.jpg')"><img src="001/Upload/366/relpic/26668/213229/a106f4be-1b71-47c4-965c-85ed51c75d74@710x470.jpg" alt="【紀錄】德國學者 Jeanette Hofmann 談數位治理 應對平台問責並善加處理不法內容"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】德國學者 Jeanette Hofmann 談數位治理 應對平台問責並善加處理不法內容</span></div>    <div class="p">      <p><span>德國柏林自由大學政治學者 Jeanette Hofmann 於 3 月 15 日蒞臨臺大社科院演講，分享歐盟數位治理現狀。她指出，歐盟透過《數位市場法（Digital Market Act）》、《數位服務法（Digital Service Act）》等規範，對具有守門地位的大型平台課責，並因應假訊息...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="30"> <div class="area-essay message" data-index="30" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_211979.html" class="div"  title="【紀錄】諾貝爾和平獎得主Maria Ressa紀錄片，展現媒體人逆流的勇氣與希望"  target="_self"  data-ccms_hitcount='211979' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/211979/46584554-69b0-402c-a7b4-529fdf9f5e4b@710x470.jpg')"><img src="001/Upload/366/relpic/26668/211979/46584554-69b0-402c-a7b4-529fdf9f5e4b@710x470.jpg" alt="【紀錄】諾貝爾和平獎得主Maria Ressa紀錄片，展現媒體人逆流的勇氣與希望"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】諾貝爾和平獎得主Maria Ressa紀錄片，展現媒體人逆流的勇氣與希望</span></div>    <div class="p">      <p><span>在不實資訊滿天飛的世代，你對新聞媒體是否還抱持希望？2月22日，臺大新聞所學生會與臺灣事實查核教育基金會合作，主辦《A Thousand Cuts》紀錄片放映會。該片揭露在菲律賓杜特蒂強人政權下，獨立新聞媒體Rappler因批評時政而遭迫害，創辦人瑪麗亞．瑞薩（Maria Ressa）雖被判刑但仍堅...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="31"> <div class="area-essay message" data-index="31" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_209113.html" class="div"  title="【紀錄】數位傳播新趨勢論壇（二）：資訊操控危及民主 應完善管制與查證能力"  target="_self"  data-ccms_hitcount='209113' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/209113/782e2126-84d1-4538-9373-d2f0eca9167a@710x470.jpg')"><img src="001/Upload/366/relpic/26668/209113/782e2126-84d1-4538-9373-d2f0eca9167a@710x470.jpg" alt="【紀錄】數位傳播新趨勢論壇（二）：資訊操控危及民主 應完善管制與查證能力"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】數位傳播新趨勢論壇（二）：資訊操控危及民主 應完善管制與查證能力</span></div>    <div class="p">      <p><span>隨著疫情、選舉、中國議題成為近期台灣社會的關注焦點，相關假消息、陰謀論也在網路上擴大流傳。面對不實訊息，學者建議從科技、法律面向管制，也指出媒體的自我培力及民眾的識讀能力，才是因應資訊危機的重要關鍵。
+
+記者／劉騏瑋
+
+點此往Medium閱讀
+
+
+
+
+
+
+臺大新聞所於12月9日...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="32"> <div class="area-essay message" data-index="32" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_209112.html" class="div"  title="【紀錄】數位傳播新趨勢論壇（一）：新聞媒體面對數位浪潮 力求轉型及優化讀者體驗"  target="_self"  data-ccms_hitcount='209112' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/209112/61d8dd17-7858-4c50-b901-181f383c9d02@710x470.jpg')"><img src="001/Upload/366/relpic/26668/209112/61d8dd17-7858-4c50-b901-181f383c9d02@710x470.jpg" alt="【紀錄】數位傳播新趨勢論壇（一）：新聞媒體面對數位浪潮 力求轉型及優化讀者體驗"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】數位傳播新趨勢論壇（一）：新聞媒體面對數位浪潮 力求轉型及優化讀者體驗</span></div>    <div class="p">      <p><span>數位浪潮下民眾接收新聞的習慣改變，也危及傳統媒體的營收及影響力。該如何因應平台對傳統媒體經營型態的破壞，學者專家及媒體業者認為，應致力於產製優質內容、加速數位轉型，並優化閱聽人體驗，同時也應向平台爭取合理的分潤以維繫生存。
+
+記者／劉騏瑋
+
+點此往Medium閱讀
+
+
+
+
+
+
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="33"> <div class="area-essay message" data-index="33" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_206661.html" class="div"  title="【紀錄】張乾琦談烏克蘭戰地攝影：面對不公不義 我有責任去紀錄"  target="_self"  data-ccms_hitcount='206661' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/206661/f1122d81-8cf0-4af6-aded-8e6d5e27da81@710x470.jpg')"><img src="001/Upload/366/relpic/26668/206661/f1122d81-8cf0-4af6-aded-8e6d5e27da81@710x470.jpg" alt="【紀錄】張乾琦談烏克蘭戰地攝影：面對不公不義 我有責任去紀錄"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】張乾琦談烏克蘭戰地攝影：面對不公不義 我有責任去紀錄</span></div>    <div class="p">      <p><span>本年度卓越新聞獎新聞志業特殊貢獻獎得主、國際知名攝影師張乾琦，在臺大新聞所現身說法，分享4度前往烏克蘭戰地拍攝的經驗。直擊戰爭殘酷的同時，他表示，到前線長期紀錄，不只是身為影像記者的責任，更是從國際事件中看見自己、看見台灣的途徑。面對「台灣會不會成為下一個烏克蘭」的擔憂，張乾琦從烏克蘭人保家衛國的決...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="34"> <div class="area-essay message" data-index="34" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_206628.html" class="div"  title="【活動】數位傳播新趨勢：新聞實踐、資訊操控危機與平台管理政策"  target="_self"  data-ccms_hitcount='206628' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/206628/f0b9f8ed-c48b-4297-98c7-04244c3f0ddb@710x470.jpg')"><img src="001/Upload/366/relpic/26668/206628/f0b9f8ed-c48b-4297-98c7-04244c3f0ddb@710x470.jpg" alt="【活動】數位傳播新趨勢：新聞實踐、資訊操控危機與平台管理政策"></span></div>  <div class="essay">    <div class="caption"><span>【活動】數位傳播新趨勢：新聞實踐、資訊操控危機與平台管理政策</span></div>    <div class="p">      <p><span>
+【臺大新聞所研討會】數位傳播新趨勢：新聞實踐、資訊操控危機與平台管理政策
+
+
+
+時間: 2022. 12.9 (Fri)&nbsp; 9:00-16:20&nbsp;
+
+
+
+地點: 臺大法律學院霖澤館國際會議廳
+
+
+
+報名連結：https://forms.gle/ujzb...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="35"> <div class="area-essay message" data-index="35" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_205928.html" class="div"  title="【紀錄】外媒記者經驗分享：當能力俱足，機會就是你的"  target="_self"  data-ccms_hitcount='205928' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/205928/41ccd04f-9002-44cd-a812-078af221bf78@710x470.jpg')"><img src="001/Upload/366/relpic/26668/205928/41ccd04f-9002-44cd-a812-078af221bf78@710x470.jpg" alt="【紀錄】外媒記者經驗分享：當能力俱足，機會就是你的"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】外媒記者經驗分享：當能力俱足，機會就是你的</span></div>    <div class="p">      <p><span>
+
+
+
+
+
+在外國媒體工作是許多新聞所同學的夢想，但需要培養哪些重要能力才能實現所願？台灣外籍記者聯誼會成員分享職涯經驗，並提醒在學生，除了語言能力之外，個人特色的展現、多元技能的培養與對國際議題的興趣更是必備要素。
+
+記者／劉騏瑋
+
+點此往Medium閱讀
+
+
+
+
+
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="36"> <div class="area-essay message" data-index="36" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_205215.html" class="div"  title="【紀錄】新聞所學生分享出國交換經驗 建議善用校內獎助資源 依據自身需求與興趣選擇校系"  target="_self"  data-ccms_hitcount='205215' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/205215/352b8e11-0897-47f1-b33a-edb3b938ddc4@710x470.jpg')"><img src="001/Upload/366/relpic/26668/205215/352b8e11-0897-47f1-b33a-edb3b938ddc4@710x470.jpg" alt="【紀錄】新聞所學生分享出國交換經驗 建議善用校內獎助資源 依據自身需求與興趣選擇校系"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】新聞所學生分享出國交換經驗 建議善用校內獎助資源 依據自身需求與興趣選擇校系</span></div>    <div class="p">      <p><span>在臺大新聞所學生會主辦的出國交換分享會中，三位同學分享至日本、德國及比利時交換的申請經驗。她們認為，出國有助於拓展視野、豐富文化體驗，也建議有意申請者從環境、課程與制度考量校系，並依據需求規劃學習進度。
+
+記者／劉騏瑋
+
+點此往Medium閱讀
+
+
+
+
+
+
+圖1：近30位同學於...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="37"> <div class="area-essay message" data-index="37" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_205000.html" class="div"  title="【紀錄】新聞產業與平台責任論壇（三）：數位平台挹注新聞業發展 學者提四種模式"  target="_self"  data-ccms_hitcount='205000' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/205000/51728ec1-e9a2-4944-95fc-6369e676efcf@710x470.jpg')"><img src="001/Upload/366/relpic/26668/205000/51728ec1-e9a2-4944-95fc-6369e676efcf@710x470.jpg" alt="【紀錄】新聞產業與平台責任論壇（三）：數位平台挹注新聞業發展 學者提四種模式"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】新聞產業與平台責任論壇（三）：數位平台挹注新聞業發展 學者提四種模式</span></div>    <div class="p">      <p><span>面對新聞業營收大幅下滑，使用新聞內容的數位平台該如何負責？台大新聞所所長洪貞玲提出四種路徑，包括市場力與議價模式、著作鄰接權模式、設置基金或是課徵稅金等模式，呼籲平台業者與新聞業界真誠溝通，協商出共識方案。雜誌公會理事長、天下雜誌董事長吳迎春也呼籲，數位平台應展現誠意，政府應協助新聞業與平台談判。
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="38"> <div class="area-essay message" data-index="38" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_204996.html" class="div"  title="【紀錄】新聞產業與平台責任論壇（二）：新聞業攸關民主 李永得支持平台為新聞付費 郭耀煌呼籲政府積極推動新聞媒體轉型策略"  target="_self"  data-ccms_hitcount='204996' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/204996/c7be8d3d-c58a-4e34-8068-4c51269c7bf4@710x470.jpg')"><img src="001/Upload/366/relpic/26668/204996/c7be8d3d-c58a-4e34-8068-4c51269c7bf4@710x470.jpg" alt="【紀錄】新聞產業與平台責任論壇（二）：新聞業攸關民主 李永得支持平台為新聞付費 郭耀煌呼籲政府積極推動新聞媒體轉型策略"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】新聞產業與平台責任論壇（二）：新聞業攸關民主 李永得支持平台為新聞付費 郭耀煌呼籲政府積極推動新聞媒體轉型策略</span></div>    <div class="p">      <p><span>
+台灣首度平面新聞產業調查結果公布，文化部長李永得回應指出，新聞業與大型平台關係失衡，影響言論自由、民主體制，政府勢必要有所介入，「文化部的基本立場是支持新聞付費」。成大特聘教授、前政務委員郭耀煌也建議，政府應積極規劃推動新聞產業之數位轉型策略，讓臺灣成為全球接收華人圈訊息最可信賴的來源。
+
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="39"> <div class="area-essay message" data-index="39" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_204990.html" class="div"  title="【紀錄】新聞產業與平台責任論壇（一）：首度平面媒體產業大調查 報業十年營收砍半第四權角色面臨挑戰"  target="_self"  data-ccms_hitcount='204990' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/204990/217f6443-a596-4282-8acc-89523db21324@710x470.jpg')"><img src="001/Upload/366/relpic/26668/204990/217f6443-a596-4282-8acc-89523db21324@710x470.jpg" alt="【紀錄】新聞產業與平台責任論壇（一）：首度平面媒體產業大調查 報業十年營收砍半第四權角色面臨挑戰"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】新聞產業與平台責任論壇（一）：首度平面媒體產業大調查 報業十年營收砍半第四權角色面臨挑戰</span></div>    <div class="p">      <p><span>台灣首個平面媒體產業調查結果公布，印證新聞業雪崩式衰頹的慘況！調查結果呈現三大重點：新聞消費市場萎縮、廣告營收衰退，以及新聞工作機會減少。平面新聞業營收大幅衰頹，尤其報紙十年營收幾乎砍半；相對地，數位平台襲奪廣告市場，在內容流通上，一方面影響新聞導流，一方面扮演內容篩選的角色，致使傳統媒體的第四權角...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="40"> <div class="area-essay message" data-index="40" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_204628.html" class="div"  title="【活動】台大新聞所論壇：新聞產業與平台責任"  target="_self"  data-ccms_hitcount='204628' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/204628/13abf58a-bdea-4ac3-bd8e-938227cd7562@710x470.png')"><img src="001/Upload/366/relpic/26668/204628/13abf58a-bdea-4ac3-bd8e-938227cd7562@710x470.png" alt="【活動】台大新聞所論壇：新聞產業與平台責任"></span></div>  <div class="essay">    <div class="caption"><span>【活動】台大新聞所論壇：新聞產業與平台責任</span></div>    <div class="p">      <p><span>數位匯流下，資訊服務、內容流通與廣告資金大幅轉向數位平台，傳統新聞產業的內容產製與營收模式面臨巨大挑戰與衝擊。面對數位廣告襲奪的趨勢，各國政府開始推動立法與政策因應。歐洲推出著作鄰接權規範、澳洲制定新聞議價法以降，我國各界也開始討論，展開新聞產業的調查、建立平台問責機制、思考健全資訊生態的方案。
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="41"> <div class="area-essay message" data-index="41" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_109479.html" class="div"  title="【紀錄】電視媒體面臨挑戰 產官學盼健全市場體制、壯大公共電視"  target="_self"  data-ccms_hitcount='109479' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/109479/4eaaed06-ecb3-479d-abfb-92494c56f2e3@710x470.jpg')"><img src="001/Upload/366/relpic/26668/109479/4eaaed06-ecb3-479d-abfb-92494c56f2e3@710x470.jpg" alt="【紀錄】電視媒體面臨挑戰 產官學盼健全市場體制、壯大公共電視"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】電視媒體面臨挑戰 產官學盼健全市場體制、壯大公共電視</span></div>    <div class="p">      <p><span>台大新聞所今（30）日舉辦「電視媒體制度」論壇，從產業結構、內容品質與政策規劃三面向切入，探討商業電視與公共電視的發展。會中邀集產、官、學界代表，指出電視新聞的市場產業變化以及提供活水的建議，新任公視董事長胡元輝並提出公共媒體的挑戰與未來規劃。
+
+記者／黃立安
+
+點此往Medium閱讀
+
+...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="42"> <div class="area-essay message" data-index="42" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_107665.html" class="div"  title="【活動】電視媒體制度：結構、內容與政策的辯證"  target="_self"  data-ccms_hitcount='107665' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/107665/d3518396-2c7a-4727-9f16-673b7397dbc3@710x470.jpg')"><img src="001/Upload/366/relpic/26668/107665/d3518396-2c7a-4727-9f16-673b7397dbc3@710x470.jpg" alt="【活動】電視媒體制度：結構、內容與政策的辯證"></span></div>  <div class="essay">    <div class="caption"><span>【活動】電視媒體制度：結構、內容與政策的辯證</span></div>    <div class="p">      <p><span>在數位化浪潮下，傳統媒體面臨多重挑戰，然而電視仍是台灣民眾最主要的接收資訊來源，尤其是電視新聞。本次論壇以電視媒體制度為主要討論議題，關切商業電視與公共電視的發展。論壇分成兩場，包括電視新聞的競爭與提昇，公共媒體的匍匐與前進兩大議題，邀請電視經營者、公協會與媒改團體代表、傳播學者、政策制定者等參與討...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="43"> <div class="area-essay message" data-index="43" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_106867.html" class="div"  title="【紀錄】陳柔縉紀念展開幕座談 媒體人及學者推崇作品的時代意義"  target="_self"  data-ccms_hitcount='106867' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/106867/2c736e91-4df8-413c-9afc-9cce70b34388@710x470.jpg')"><img src="001/Upload/366/relpic/26668/106867/2c736e91-4df8-413c-9afc-9cce70b34388@710x470.jpg" alt="【紀錄】陳柔縉紀念展開幕座談 媒體人及學者推崇作品的時代意義"></span></div>  <div class="essay">    <div class="caption"><span>【紀錄】陳柔縉紀念展開幕座談 媒體人及學者推崇作品的時代意義</span></div>    <div class="p">      <p><span>
+
+國立臺大大學圖書館4月28日推出陳柔縉紀念展並舉辦開幕座談，邀請多位媒體人及學者共襄盛舉。（攝／鄭曉雯）
+
+&nbsp;
+
+記者／黃立安
+
+&nbsp;
+
+點此往Medium閱讀
+
+&nbsp;
+
+台灣文史作家陳柔縉於2021年末意外過世，徒留遺憾。為紀念這位驟逝的書...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="44"> <div class="area-essay message" data-index="44" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_106139.html" class="div"  title="【活動】從報刊冊頁開出玫瑰：臺灣歷史故事作家陳柔縉紀念展開幕座談"  target="_self"  data-ccms_hitcount='106139' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/106139/af360501-c3d6-4c80-9c3a-33ba7f50348c@710x470.png')"><img src="001/Upload/366/relpic/26668/106139/af360501-c3d6-4c80-9c3a-33ba7f50348c@710x470.png" alt="【活動】從報刊冊頁開出玫瑰：臺灣歷史故事作家陳柔縉紀念展開幕座談"></span></div>  <div class="essay">    <div class="caption"><span>【活動】從報刊冊頁開出玫瑰：臺灣歷史故事作家陳柔縉紀念展開幕座談</span></div>    <div class="p">      <p><span>
+
+陳柔縉是當代最出色的臺灣歷史故事作家・傑出的調查報導記者。在其慧眼與妙筆下，諸多龐雜的訃聞記事、名錄廣告，竟能編織出政商家族系譜，蔓延綻放時代人物的精采故事。
+
+&nbsp;
+
+成長於臺灣民主轉型關鍵時代的陳柔縉，著作影響力遍及新聞採訪、歷史認知、知識轉譯，仍澆灌許多世情與微物的花蕾...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="45"> <div class="area-essay message" data-index="45" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_104442.html" class="div"  title="【影片】新聞所三十而立歲月點滴"  target="_self"  data-ccms_hitcount='104442' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/104442/bc512da2-f710-4aa7-ae20-ac1236f29543@710x470.png')"><img src="001/Upload/366/relpic/26668/104442/bc512da2-f710-4aa7-ae20-ac1236f29543@710x470.png" alt="【影片】新聞所三十而立歲月點滴"></span></div>  <div class="essay">    <div class="caption"><span>【影片】新聞所三十而立歲月點滴</span></div>    <div class="p">      <p><span>
+
+解嚴之後不久，臺大新聞所於 1991 年成立，至今已經三十年！三十年來，我們見證臺灣民主化過程中，新聞業從威權侍從走向專業自主；也見證網路興起後，傳統媒體由盛轉衰並苦思出路，數位平台上眾聲喧嘩卻也百病叢生。
+
+我們認為，這是最壞的時代，也是最好的時代。新聞作為民主社會的重要機制，監督權力...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="46"> <div class="area-essay message" data-index="46" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_103257.html" class="div"  title="【活動】假消息年度報告出爐！9成民眾支持立法建立平台自律機制"  target="_self"  data-ccms_hitcount='103257' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/103257/c4b1fd0d-3598-453d-b3da-5d3171ffdc58@710x470.jpg')"><img src="001/Upload/366/relpic/26668/103257/c4b1fd0d-3598-453d-b3da-5d3171ffdc58@710x470.jpg" alt="【活動】假消息年度報告出爐！9成民眾支持立法建立平台自律機制"></span></div>  <div class="essay">    <div class="caption"><span>【活動】假消息年度報告出爐！9成民眾支持立法建立平台自律機制</span></div>    <div class="p">      <p><span>
+
+台灣事實查核教育基金會與台大新聞所，舉辦2022年假訊息年度調查發表暨高峰論壇，邀請產官學三方共襄盛舉。（攝/鄭曉雯）
+
+&nbsp;
+
+&nbsp;
+
+記者／黃立安
+
+&nbsp;
+
+&nbsp;
+
+近年來假消息氾濫，今（18）日台灣事實查核教育基金會公布假訊息年度...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="47"> <div class="area-essay message" data-index="47" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_83036.html" class="div"  title="【活動】台大新聞所學會舉辦媒體實習經驗分享會"  target="_self"  data-ccms_hitcount='83036' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/83036/f5ee3628-67d1-4dd3-b06b-59b1aeeafd25@710x470.png')"><img src="001/Upload/366/relpic/26668/83036/f5ee3628-67d1-4dd3-b06b-59b1aeeafd25@710x470.png" alt="【活動】台大新聞所學會舉辦媒體實習經驗分享會"></span></div>  <div class="essay">    <div class="caption"><span>【活動】台大新聞所學會舉辦媒體實習經驗分享會</span></div>    <div class="p">      <p><span>累積實習經驗對之後找工作大有幫助，台大新聞所學會邀請所上和政大傳碩的親朋好友一起來分享，交流實習經驗之餘，藉機向各位偷學幾招！
+
+
+日期：2021/10/12（二）
+時間：19:20 - 21:30
+地點：台大新聞所 103 室
+人數：30 人
+注意事項：進場時將會記名，請配戴口罩，並...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="48"> <div class="area-essay message" data-index="48" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_78432.html" class="div"  title="【活動】新聞所三十周年「後疫情時代的媒體狂飆」線上論壇"  target="_self"  data-ccms_hitcount='78432' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/78432/4add12f9-b3ac-479e-bb94-b7aba7e212dc@710x470.png')"><img src="001/Upload/366/relpic/26668/78432/4add12f9-b3ac-479e-bb94-b7aba7e212dc@710x470.png" alt="【活動】新聞所三十周年「後疫情時代的媒體狂飆」線上論壇"></span></div>  <div class="essay">    <div class="caption"><span>【活動】新聞所三十周年「後疫情時代的媒體狂飆」線上論壇</span></div>    <div class="p">      <p><span>
+
+&nbsp;
+
+臺大新聞所為慶祝30週年，舉辦了系列活動，敬邀您參加5月22日於線上語音社交平台Clubhouse舉辦的線上論壇「後疫情時代的媒體狂飆」。
+
+在媒體科技的帶動下，新聞與數位內容發生巨大改變。傳統媒體不斷創新之際，各種網路及社群媒體更是方興未艾，也提供媒體人更多樣的發展...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="49"> <div class="area-essay message" data-index="49" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_59057.html" class="div"  title="【活動】精神疾病與紀實寫作者：《成為一個新人》新書講座"  target="_self"  data-ccms_hitcount='59057' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/59057/23189644-8c21-487b-811f-f8c825b1b5c3@710x470.jpg')"><img src="001/Upload/366/relpic/26668/59057/23189644-8c21-487b-811f-f8c825b1b5c3@710x470.jpg" alt="【活動】精神疾病與紀實寫作者：《成為一個新人》新書講座"></span></div>  <div class="essay">    <div class="caption"><span>【活動】精神疾病與紀實寫作者：《成為一個新人》新書講座</span></div>    <div class="p">      <p><span>
+
+攝影／曾原信
+
+&nbsp;
+
+上個月底，這些報導被集結成新書發行，臺大新聞所學生會有幸邀請記者張子午前來演講，談精神疾病與精神患者，也談新聞記者在報導時的定位和角色。邀請您一同聆聽與交流。
+
+&nbsp;
+
+他走進小燈泡媽媽家中，與受害者家屬對談。他專訪林奕含，聆聽精神患者...</span></p>    </div>  </div></a></div></div></div></div></li><li data-index="50"> <div class="area-essay message" data-index="50" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><a  href="News_Content_n_35498_s_46388.html" class="div"  title="【活動】紅色警戒：中國大外宣計畫與媒體資訊戰"  target="_self"  data-ccms_hitcount='46388' >  <div class="img"><span style="background-image: url('001/Upload/366/relpic/26668/46388/83c12178-16fd-4500-a942-84db720a8140@710x470.jpg')"><img src="001/Upload/366/relpic/26668/46388/83c12178-16fd-4500-a942-84db720a8140@710x470.jpg" alt="【活動】紅色警戒：中國大外宣計畫與媒體資訊戰"></span></div>  <div class="essay">    <div class="caption"><span>【活動】紅色警戒：中國大外宣計畫與媒體資訊戰</span></div>    <div class="p">      <p><span>2009年，中國政府啟動大外宣計畫，投入大筆資金在全球「發聲」；2019年，「假新聞」成為台灣媒體業的關鍵字，言論自由與新聞自由的危機終於浮上檯面。十年之間，中國究竟如何透過其政治和經濟實力影響全球的媒體輿論，而被國際研究認為是假新聞重災區的台灣又如何面對四處伏流的資訊襲擊？台灣公民社會與公共領域面...</span></p>    </div>  </div></a></div></div></div></div></li></ul></div></div></div></div></div></div></div></div> <div class="group page-footer" data-index="3" data-type="3" data-child="4"><div class="in"><div class="ct"><div class="in"> <div class="area-editor system-info" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"></div></div></div></div> <div class="list-text detail" data-index="2" data-type="0"><div class="in"><div class="ct"><div class="in"></div></div></div></div> <div class="list-text jump-tool" data-index="3" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="2"><li   data-index="1"  class="back"  >		<span  ><a rel="noopener noreferrer"  href="javascript:window.location =document.referrer;"   title="回上一頁"   target="_self"   img-title="回上一頁"  ><i class=""></i>回上一頁</a></span></li><li   data-index="2"  class="to-top"  >		<span  ><a rel="noopener noreferrer"  href="#"   title="回最上面"    img-title="回最上面"  ><i class=""></i>回最上面</a></span></li></ul>
+</div></div></div></div>
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div> <div class="group base-footer" data-func="{&#39;toggleBtn&#39;:{&#39;btnOrangeText&#39;:&#39;close&#39;,&#39;btnActiveText&#39;:&#39;open&#39;,&#39;focusActive&#39;:false}}" data-index="3" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"   title="close"    img-title="close"  ><i class=""></i>close</a></span></h3></div></div><div class="ct"><div class="in"> <div class="group-list nav" data-func="{&#39;setNavLen&#39;:{}}" data-index="1" data-type="4" data-child="7"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li data-index="1"> <div class="group nav" data-index="1" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../about/intro.html"      title="認識本所"    img-title="認識本所"  ><i class=""></i>認識本所</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="4"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../about/intro.html"      title="本所介紹"    img-title="本所介紹"  ><i class=""></i>本所介紹</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../about/mission.html"      title="宗旨與目標"    img-title="宗旨與目標"  ><i class=""></i>宗旨與目標</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../about/gallery.html"      title="新聞所圖集"    img-title="新聞所圖集"  ><i class=""></i>新聞所圖集</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../about/transportation.html"      title="聯絡我們"    img-title="聯絡我們"  ><i class=""></i>聯絡我們</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="2"> <div class="group nav" data-index="2" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../event.html"      title="消息與活動"    img-title="消息與活動"  ><i class=""></i>消息與活動</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../news/News_n_35497_sms_26652.html"      title="最新消息"    img-title="最新消息"  ><i class=""></i>最新消息</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="News2_n_35498_sms_26668.html"      title="活動資訊"    img-title="活動資訊"  ><i class=""></i>活動資訊</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../international-communication.html"      title="國際交流"    img-title="國際交流"  ><i class=""></i>國際交流</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../academic-activity.html"      title="學術活動"    img-title="學術活動"  ><i class=""></i>學術活動</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="https://coss.ntu.edu.tw/coss504.html "      title="[另開新視窗]社科院心輔室"   target="_blank"   img-title="社科院心輔室"  ><i class=""></i>社科院心輔室</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="3"> <div class="group nav" data-index="3" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/faculty.html"      title="師資陣容"    img-title="師資陣容"  ><i class=""></i>師資陣容</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/fulltime-professor.html"      title="專任教師"    img-title="專任教師"  ><i class=""></i>專任教師</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/parttime-professor.html"      title="兼任教師"    img-title="兼任教師"  ><i class=""></i>兼任教師</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_105608.html"      title="名譽教授"    img-title="名譽教授"  ><i class=""></i>名譽教授</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/practical-professor.html"      title="實務教師"    img-title="實務教師"  ><i class=""></i>實務教師</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../faculty/Professorjointappointment.html"      title="合聘教師"    img-title="合聘教師"  ><i class=""></i>合聘教師</a></span></li><li   data-index="6"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_98989.html"      title="感謝與追思"    img-title="感謝與追思"  ><i class=""></i>感謝與追思</a></span></li><li   data-index="7"  >		<span  ><a rel="noopener noreferrer"  href="../staff.html"      title="行政人員"    img-title="行政人員"  ><i class=""></i>行政人員</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="4"> <div class="group nav" data-index="4" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/admissions.html"      title="入學資訊"    img-title="入學資訊"  ><i class=""></i>入學資訊</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="https://www.aca.ntu.edu.tw/w/aca/LocalAdmission "      title="臺大招生資訊"    img-title="臺大招生資訊"  ><i class=""></i>臺大招生資訊</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/qualifying-exam.html"      title="甄試入學簡章"    img-title="甄試入學簡章"  ><i class=""></i>甄試入學簡章</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/entrance-exam.html"      title="招生考試簡章"    img-title="招生考試簡章"  ><i class=""></i>招生考試簡章</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/past-exam.html"      title="歷屆考古題"    img-title="歷屆考古題"  ><i class=""></i>歷屆考古題</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/international-students.html"      title="國際生"    img-title="國際生"  ><i class=""></i>國際生</a></span></li><li   data-index="6"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/ochkmc-students.html"      title="僑港澳生"    img-title="僑港澳生"  ><i class=""></i>僑港澳生</a></span></li><li   data-index="7"  >		<span  ><a rel="noopener noreferrer"  href="../admissions/mainland-chinese-students.html"      title="陸生"    img-title="陸生"  ><i class=""></i>陸生</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="5"> <div class="group nav" data-index="5" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-map.html"      title="課程規劃"    img-title="課程規劃"  ><i class=""></i>課程規劃</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-map.html"      title="課程地圖"    img-title="課程地圖"  ><i class=""></i>課程地圖</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="https://course.ntu.edu.tw/search/dept?d=3420 "      title="課表與課程大綱"    img-title="課表與課程大綱"  ><i class=""></i>課表與課程大綱</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../students/course-regulation.html"      title="修業規定"    img-title="修業規定"  ><i class=""></i>修業規定</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../students/statute-and-form.html"      title="學位考試資訊"    img-title="學位考試資訊"  ><i class=""></i>學位考試資訊</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../students/cross-school-course-cooperation.html"      title="校際與跨系選課"    img-title="校際與跨系選課"  ><i class=""></i>校際與跨系選課</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="6"> <div class="group nav" data-index="6" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../publications/e-report.html"      title="出版發表"    img-title="出版發表"  ><i class=""></i>出版發表</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="https://medium.com/@ntujour2022"      title="[另開新視窗]新聞所Medium"   target="_blank"   img-title="新聞所Medium"  ><i class=""></i>新聞所Medium</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="../publications/e-report.html"      title="前期所報"    img-title="前期所報"  ><i class=""></i>前期所報</a></span></li><li   data-index="3"  >		<span  ><a rel="noopener noreferrer"  href="../publications/master-thesis.html"      title="畢業生論文"    img-title="畢業生論文"  ><i class=""></i>畢業生論文</a></span></li><li   data-index="4"  >		<span  ><a rel="noopener noreferrer"  href="../publications/books.html"      title="報導專書"    img-title="報導專書"  ><i class=""></i>報導專書</a></span></li><li   data-index="5"  >		<span  ><a rel="noopener noreferrer"  href="../publications/ntu-news-forum.html"      title="臺大新聞論壇"    img-title="臺大新聞論壇"  ><i class=""></i>臺大新聞論壇</a></span></li><li   data-index="6"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_178002.html"      title="畢業生就業狀況"    img-title="畢業生就業狀況"  ><i class=""></i>畢業生就業狀況</a></span></li><li   data-index="7"  >		<span  ><a rel="noopener noreferrer"  href="https://datajournalism.ntu.edu.tw/"      title="台大資料新聞"    img-title="台大資料新聞"  ><i class=""></i>台大資料新聞</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="7"> <div class="group nav" data-index="7" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><h3   data-index="0"  >		<span  ><a rel="noopener noreferrer"  href="../resident-reporter.html"      title="獎補助"    img-title="獎補助"  ><i class=""></i>獎補助</a></span></h3></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="2"><li   data-index="1"  >		<span  ><a rel="noopener noreferrer"  href="cp_n_167406.html"      title="榮譽"    img-title="榮譽"  ><i class=""></i>榮譽</a></span></li><li   data-index="2"  >		<span  ><a rel="noopener noreferrer"  href="https://advisory.ntu.edu.tw/CMS/Scholarship?pageId=232"      title="本校獎學金"    img-title="本校獎學金"  ><i class=""></i>本校獎學金</a></span></li></ul>
+</div></div></div></div></div></div></div></div></li></ul></div></div></div></div> <div class="group default v-a" data-index="1" data-type="3"><div class="in"><div class="ct"><div class="in"> <div class="area-editor address" data-func="{&#39;linkToMap&#39;:{&#39;bindClass&#39;:&#39;.map&#39;,&#39;linkClass&#39;:&#39;is-map&#39;}}" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><p>地址：10617 臺北市羅斯福路四段一號 No.1, Sec. 4, Roosevelt Road, Taipei, 10617 Taiwan<br />
+TEL： 886-2-3366-3131&nbsp;&nbsp;E-mail：cpl@ntu.edu.tw<br />
+國立臺灣大學新聞研究所&nbsp;版權所有 Copyright &copy; 2019&nbsp;The Graduate Institute of Journalism National Taiwan University&nbsp;All Rights Reserved</p>
+</div></div></div></div> <div class="list-pic icon" data-index="2" data-type="0"><div class="in"><div class="ct"><div class="in"></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B389CE0C" />
+</div></form>
+    <script src="../js/require.js"></script>
+    <script>
+        requirejs.config({ baseUrl: 'js' });
+        requirejs(['main'], function (func) {
+            func();
+        });
+    </script>
+    <script>
+        $(function () {
+            $('.page-caption-p a').each(function (k, v) {
+                var title = $(v).attr('title') || '';
+                var html = $(v).html();
+                if (title === '') {
+                    $(v).attr('title', $(v).attr('name') || 'Js');
+                }
+                if (html === '') {
+                    $(v).remove();
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>
+

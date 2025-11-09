@@ -1,0 +1,414 @@
+{
+  "fulltime": [
+    {
+      "name": "謝吉隆 副教授兼所長",
+      "photo": "../images/faculty/jerryhsieh.png",
+      "phone": "(02)33669867",
+      "email": "jerryhsieh@ntu.edu.tw",
+      "teaching": "新聞資料分析（Data Analysis in Journalism）、網頁設計與敘事（Web Design for Storytelling）、社群媒介與輿論分析（Social Media and Public Opinion Analysis）新聞資料處理與視覺化呈現（Journalism Processing and Visualization）",
+      "research": "社群輿論分析（Social Opinion Analysis）、社會網絡分析（Social network analysis）、文字探勘（Text Mining）、生成式人工智慧應用（Applications of Generative AI）、社會模擬（Social simulation）",
+      "file": "jerryhsieh.html"
+    },
+    {
+      "name": "林麗雲 教授",
+      "photo": "../images/faculty/lihyunlin.png",
+      "phone": "",
+      "email": "lihyunlin2@gmail.com",
+      "teaching": "新聞史、媒介社會學、傳播理論",
+      "research": "傳播史、媒介社會學、比較傳播制度",
+      "file": "lihyunlin.html"
+    },
+    {
+      "name": "洪貞玲 教授",
+      "photo": "../images/faculty/clhung.jpg",
+      "phone": "(02)33663124",
+      "email": "clhung@ntu.edu.tw",
+      "teaching": "新聞與法律、全球化與傳播、公民新聞、傳播政治經濟學",
+      "research": "新科技與弱勢傳播權（著重於原住民傳播）、傳播法規與政策、傳播政治經濟學、新聞自由、公民新聞、全球化與傳播",
+      "file": "clhung.html"
+    },
+    {
+      "name": "林照真 教授",
+      "photo": "../images/faculty/carolinelin.jpg",
+      "phone": "(02)33661738",
+      "email": "carolinelin@ntu.edu.tw",
+      "teaching": "視覺化新聞、調查報導、多媒體製作、深度報導、採訪與寫作",
+      "research": "媒體轉型研究、新媒體研究、資料新聞學、收視率研究、災難新聞研究、科學傳播",
+      "file": "carolinelin.html"
+    },
+    {
+      "name": "Adrian Rauchfleisch（劉好迪） 教授",
+      "photo": "../images/faculty/RauchfleischA.png",
+      "phone": "",
+      "email": "adrian.rauchfleisch@gmail.com",
+      "teaching": "",
+      "research": "",
+      "file": "RauchfleischA.html"
+    },
+    {
+      "name": "蔡蕙如 副教授",
+      "photo": "../images/faculty/tsaihuiju.jpg",
+      "phone": "",
+      "email": "tsaihuiju@ntu.edu.tw",
+      "teaching": "媒介社會學專題、文化研究、質化研究、傳播理論",
+      "research": "新媒體與公民參與、公共廣電與平台研究、新聞產業與新科技、大眾文化與新媒體環境、文化研究與方法",
+      "file": "tsaihuiju.html"
+    },
+    {
+      "name": "詹怡宜 副教授",
+      "photo": "../images/faculty/chanii311.png",
+      "phone": "",
+      "email": "chanii311@ntu.edu.tw",
+      "teaching": "影像報導一、影像報導二、公共政策與政治新聞報導",
+      "research": "",
+      "file": "chanii311.html"
+    }
+  ],
+  "parttime": [
+    {
+      "name": "王泰俐 教授",
+      "photo": "../images/faculty/wangtaili.png",
+      "phone": "",
+      "email": "",
+      "teaching": "政治傳播、媒介心理學與實務、影像新聞雜誌、傳播研究方法、電子媒體實習",
+      "research": "媒體心理、正向心理學、政治傳播、影像新聞、網路傳播"
+    },
+    {
+      "name": "陳順孝 教授",
+      "photo": "../images/faculty/chenshunhsiao.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "新聞產業創新",
+      "research": ""
+    },
+    {
+      "name": "谷玲玲 副教授",
+      "photo": "../images/faculty/kulingling.png",
+      "phone": "(02)33663122",
+      "email": "Examining the Competition among Facebook, Line, and Email. International Telecommunication Society Asia- Pacific Conference, Kyoto, Japan.",
+      "teaching": "傳播統計、資訊科技與資訊社會、新聞英文寫作、媒體實習",
+      "research": "傳播科技、媒體管理、網路傳播、大眾傳播"
+    }
+  ],
+  "honorary": [
+    {
+      "name": "張錦華 名譽教授",
+      "photo": "../images/faculty/changchinhwa.png",
+      "phone": "(02)33663121",
+      "email": "cchwa@ntu.edu.tw",
+      "teaching": "1. 大眾傳播理論 (Theories of Mass Communication)",
+      "research": "大眾傳播理論、質化研究方法、多元文化論與傳播研究"
+    }
+  ],
+  "joint": [
+    {
+      "name": "劉靜怡（與國發所合聘） 教授",
+      "photo": "../images/faculty/liuchingi.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "資訊法制專題、法律與科技專題：科技法律與科技決策、資訊社會專題",
+      "research": "資訊法與電信法、人權法制、法律經濟分析"
+    }
+  ],
+  "practical": [
+    {
+      "id": "lichihte",
+      "name": "李志德",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/lichihte.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "採訪寫作二",
+      "research": "",
+      "education": [],
+      "experience": [
+        "公視新聞部經理",
+        "聯合報政治組記者",
+        "蘋果日報大陸中心記者",
+        "美國自由亞洲電台",
+        "端傳媒",
+        "台大中文系畢業",
+        "淡江大學國際事務與戰略研究所碩士"
+      ]
+    },
+    {
+      "id": "liangyufang",
+      "name": "梁玉芳",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/liangyufang.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "採訪寫作二",
+      "research": "",
+      "education": [
+        "政治大學資訊管理學士",
+        "政治大學新聞研究所碩士"
+      ],
+      "experience": [
+        "聯合報記者"
+      ]
+    },
+    {
+      "id": "archietse",
+      "name": "Archie Tse",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/archie-tse.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "新聞資訊視覺化",
+      "research": "",
+      "education": [
+        "美國密蘇里大學新聞研究所碩士"
+      ],
+      "experience": [
+        "紐約時報新聞圖表資深編輯",
+        "1984年美國青少年雙人溜冰比賽冠軍（與妹妹Ginger）"
+      ]
+    },
+    {
+      "id": "lihsuehli",
+      "name": "李雪莉",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/lihsuehli.png",
+      "phone": "",
+      "email": "",
+      "teaching": "採訪寫作一",
+      "research": "",
+      "education": [
+        "政治大學",
+        "台灣大學",
+        "加拿大McGill大學訪問學人",
+        "香港中文大學訪問學人"
+      ],
+      "experience": [
+        "非營利媒體《報導者》營運長兼總主筆",
+        "《報導者》第二任總編輯（2018.9-2023.9）",
+        "臺大新聞所兼任助理教授（2016至今）",
+        "跨國聯合調查媒體ERC（環境報導聯盟）董事會成員",
+        "《天下雜誌》副總編輯、北京特派記者、影視中心總製作人"
+      ]
+    },
+    {
+      "id": "liyenfu",
+      "name": "李彥甫",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/liyenfu.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "新聞編輯與資訊設計",
+      "research": "媒體經營管理及策略發展、資訊設計、數位內容服務開發",
+      "education": [
+        "清華大學電機工程學士"
+      ],
+      "experience": [
+        "聯合線上公司總經理（2013.04迄今）",
+        "聯合報系總管理處總經理辦公室主任（2010.08迄今）",
+        "台北市雜誌公會副理事長（2015迄今）",
+        "中華民國數位出版聯盟常務理事（2014迄今）",
+        "聯合報採訪中心科技記者(1993-2000)",
+        "聯合線上公司營運長特別助理(2000-2003)",
+        "聯合知識庫經理(2001-2007)",
+        "聯合報系資訊中心主任(2002-2003)",
+        "聯合新聞網內容部經理(2008-2010)",
+        "聯合報系編務內容發展處專案經理(2005-2010)",
+        "聯合線上公司副總經理(2006-2010)",
+        "三立電視台數位內容事業部總監(2010)",
+        "世新大學新聞系兼任講師(2007-2009)"
+      ]
+    },
+    {
+      "id": "huangchaohui",
+      "name": "黃兆徽",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/huangchaohui.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "影像報導一",
+      "research": "",
+      "education": [
+        "師大環境教育研究所博士班",
+        "台大新聞研究所碩士",
+        "台大法律系法學組學士"
+      ],
+      "experience": [
+        "華視新聞部經理",
+        "中央廣播電台董事",
+        "台大新聞研究所實務教師/兼任助理教授",
+        "台灣事實查核中心總編審",
+        "金鐘獎評審、金視獎評審、文化部中小學優良讀物雜誌類評審",
+        "公視青少年兒少新聞總編輯",
+        "紀錄片導演/電視節目製作人/獨立記者",
+        "天下雜誌影視中心召集人/製作人",
+        "民視異言堂專題記者/生技節目執行製作人",
+        "公視新聞部主播/採訪中心記者/國際新聞編譯",
+        "新新聞週刊採訪記者",
+        "中央廣播電台節目製作人、主持人"
+      ]
+    },
+    {
+      "id": "yangkuangsheng",
+      "name": "楊光昇",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/yangkuangsheng.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "新聞攝影",
+      "research": "",
+      "education": [
+        "世新大學圖文傳播暨數位出版學系碩士",
+        "世界新聞專科學校電影製作科技術組"
+      ],
+      "experience": [
+        "財團法人日月光文教基金會媒體部主編",
+        "聯合報攝影中心綜合組組長",
+        "中央日報攝影記者",
+        "中國時報攝影記者"
+      ]
+    },
+    {
+      "id": "liulijen",
+      "name": "劉力仁",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/liulijen.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "採訪寫作二",
+      "research": "",
+      "education": [
+        "臺北大學自然資源與環境管理所博士",
+        "台灣大學國家發展研究所碩士",
+        "逢甲大學環境科學系學士"
+      ],
+      "experience": [
+        "自由時報生活中心副組長",
+        "自由時報記者"
+      ]
+    },
+    {
+      "id": "kuochunglun",
+      "name": "郭崇倫",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/kuochunglun.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "東亞新聞專題",
+      "research": "",
+      "education": [
+        "台大地質系（後轉政治系）",
+        "台大政治研究所碩士",
+        "美國芝加哥大學政治研究所博士班",
+        "傅爾布萊特獎學金"
+      ],
+      "experience": [
+        "聯合報副總編輯兼影音新聞處國際新聞中心主任",
+        "《全球瞭望》節目主持人",
+        "中國時報紐約特派記者",
+        "中國時報執行副總編輯督導國際新聞與大陸新聞",
+        "商業週刊總主筆",
+        "時報周刊總編輯"
+      ]
+    },
+    {
+      "id": "hsiaofuyuan",
+      "name": "蕭富元",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/hsiaofuyuan.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "採訪寫作二",
+      "research": "",
+      "education": [
+        "Indiana University, Bloomington Comparative Literature 碩士",
+        "台灣大學中文系學士"
+      ],
+      "experience": [
+        "天下雜誌總主筆（2005年09月－）",
+        "天下雜誌出版部總編輯兼總監（1999年08月－2005年07月）",
+        "遠見雜誌採訪編輯－主編（1989年04月－1999年07月）"
+      ]
+    },
+    {
+      "id": "chengkaichun",
+      "name": "鄭凱駿",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/chengkaichun.png",
+      "phone": "",
+      "email": "",
+      "teaching": "影像報導二",
+      "research": "",
+      "education": [],
+      "experience": [
+        "過癮科技公司Go Inside創辦人",
+        "影視節目監製、編導，擅長國際節目企劃、製作與發行",
+        "Discovery頻道與TLC旅遊生活頻道台灣與北亞區製作人",
+        "多家國際媒體特約記者、研究員與製作人（BBC、路透社、阿拉伯半島電視台、Newsweek等）",
+        "Taipei Times特約撰稿",
+        "亞洲電視獎、亞洲創意影藝大獎與台灣金鐘獎評審與召集人"
+      ]
+    },
+    {
+      "id": "changchiehping",
+      "name": "張潔平",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/changchiehping.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "兩岸三地新聞專題",
+      "research": "",
+      "education": [],
+      "experience": [
+        "Matters Lab創辦人",
+        "香港大學新聞系講師",
+        "香港浸會大學傳理學院講師",
+        "香港《端傳媒》總編輯",
+        "《號外》雜誌副主編",
+        "紐約時報中文網專欄撰稿人",
+        "《亞洲週刊》記者",
+        "2009美國國務院青年領袖計劃入選",
+        "2010亞洲出版協會年度記者",
+        "2019Google新聞創新挑戰獎"
+      ]
+    },
+    {
+      "id": "huangchepin",
+      "name": "黃哲斌",
+      "title": "實務教師／兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/huangchepin.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "媒體創新、新聞個案研究、英美媒體趨勢",
+      "research": "資訊素養、媒體與科技、媒體數位轉型、媒體內容創新、網路傳播",
+      "education": [
+        "政治大學新聞研究所碩士",
+        "輔仁大學大眾傳播系學士"
+      ],
+      "experience": [
+        "《天下雜誌》編輯顧問（2022.07迄今）",
+        "《天下雜誌》特約記者、作者（2010-2022）",
+        "《中國時報》調查記者（2008-2010）",
+        "《中時電子報》主編、副總編輯（2000-2008）",
+        "《中國時報》編輯（1997-2000）",
+        "《中國時報》記者（1994-1997）",
+        "《影響電影雜誌》總編輯（1992-1993）"
+      ]
+    },
+    {
+      "id": "fangterlin",
+      "name": "方德琳",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/fangtelin.jpg",
+      "phone": "",
+      "email": "",
+      "teaching": "財經新聞寫作",
+      "research": "",
+      "education": [
+        "台大社會學碩士",
+        "台大經濟學士"
+      ],
+      "experience": [
+        "非營利媒體《報導者》總編輯",
+        "《今周刊》雜誌副總編輯與經研室負責人"
+      ]
+    }
+  ]
+}

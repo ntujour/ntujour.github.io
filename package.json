@@ -1,0 +1,17 @@
+{
+  "name": "journalism-ntu-website",
+  "version": "2.0.0",
+  "description": "NTU Journalism Department Website - Rebuilt with Tailwind CSS",
+  "scripts": {
+    "build": "npm run build:templates && npm run build:css",
+    "build:templates": "python3 build-templates.py",
+    "build:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --watch",
+    "dev": "npm run build && npm run watch:css",
+    "validate": "python3 scripts/validate-html.py",
+    "test": "npm run validate"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

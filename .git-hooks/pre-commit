@@ -1,0 +1,20 @@
+#!/bin/sh
+# Pre-commit hook for journalism-ntu website
+# Automatically builds templates before committing
+
+echo "🔨 Running pre-commit hook..."
+
+# Build templates
+echo "📝 Building templates..."
+python3 build-templates.py
+
+if [ $? -ne 0 ]; then
+    echo "❌ Template build failed! Commit aborted."
+    exit 1
+fi
+
+# Add any modified HTML files
+git add -u *.html faculty/*.html admissions/*.html students/*.html publications/*.html about/*.html 2>/dev/null
+
+echo "✅ Pre-commit checks passed!"
+exit 0

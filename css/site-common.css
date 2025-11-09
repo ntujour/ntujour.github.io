@@ -1,0 +1,182 @@
+/* 台大新聞所網站共用樣式 */
+
+/* 原始色系 */
+.site-banner {
+    background-color: #f5f5f5;
+    background-image: url('../images/hd-bg-lt.png'), url('../images/hd-bg-rt.png');
+    background-position: left bottom, right bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 60%, auto 60%;
+    position: relative;
+}
+
+.site-sitemap {
+    background-color: #efa22a;
+}
+
+.site-footer {
+    background-color: #3e0f0f;
+}
+
+body {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.container-1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Sticky Navigation */
+.site-nav {
+    background-color: #671919;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Navigation dropdown */
+.nav-item {
+    position: relative;
+}
+
+.nav-item.has-dropdown > a::after {
+    content: ' ▼';
+    font-size: 0.7em;
+    margin-left: 4px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #671919;
+    min-width: 180px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    padding: 0.5rem 0;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.15s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #991b1b;
+}
+
+/* Active and hover states - only text color changes */
+.nav-item > a:hover {
+    color: #efa22a !important;
+}
+
+.nav-item > a.active {
+    color: #efa22a;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Faculty Tabs */
+.faculty-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.faculty-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s, transform 0.2s;
+    min-width: 100px;
+}
+
+.faculty-tab:hover {
+    background-color: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+.faculty-tab.active {
+    background-color: #671919;
+}
+
+.faculty-tab.active .faculty-tab-name {
+    color: #ffffff;
+}
+
+.faculty-tab-name {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1f2937;
+    text-align: center;
+}
+
+/* Faculty Detail Cards (for practical-professor.html with tabs) */
+.faculty-tabs ~ #faculty-details .faculty-detail-card {
+    display: none;
+    padding: 1.5rem 0;
+}
+
+.faculty-tabs ~ #faculty-details .faculty-detail-card.active {
+    display: block;
+}
+
+/* Other faculty detail pages show all cards */
+.faculty-detail-card {
+    margin-bottom: 1.5rem;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
