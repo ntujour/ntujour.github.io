@@ -41,11 +41,30 @@ venv/
 *.temp
 .backup
 
-# Large archive (handled separately)
+# ============ 專案特定設定 ============
+
+# Archive 資料夾（舊的遷移腳本，不需上傳）
 archive/
 
-# Compiled CSS (can be regenerated)
-css/tailwind.css
+# 建置工具（本地使用，不上傳到 GitHub Pages）
+cms.py
+build-templates.py
+scripts/
 
-# Admin tools (optional - remove this line if you want to share the editor)
-# admin/
+# 模板資料夾（用於建置，不上傳）
+templates/
+
+# 資料備份（不上傳）
+data/backups/
+data/*_backup*.csv
+data/content_backup*.csv
+
+# 編譯的 CSS（如果使用 Tailwind CLI 編譯）
+# 注意：如果 GitHub Pages 需要這個檔案，請移除這一行
+# css/tailwind.css
+
+# 說明文件（可選，根據需求決定是否上傳）
+# BUILD_VS_FRONTEND.md
+# QUICK_START.md
+# IMAGE_NAMING_CONVENTION.md
+# IMAGE_UPLOAD_GUIDE.md

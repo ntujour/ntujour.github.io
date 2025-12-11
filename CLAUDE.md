@@ -24,10 +24,7 @@ journalism-ntu.github.io/
 ├── 📄 article.html / article-view.html  # 文章頁面
 │
 ├── 🔧 build-templates.py            # 【重要】模板建置腳本
-├── 🔧 convert-to-templates.py       # 【重要】HTML 轉模板腳本
-│
-├── 📊 faculty_data.json             # 【重要】教師資料庫
-├── 📊 faculty-mapping.csv           # 【重要】教師照片對應表
+├── 🔧 cms.py                        # 【重要】整合 CMS 系統（一鍵啟動）
 │
 ├── 📁 templates/                    # 【重要】共用模板
 │   ├── site-banner.html            # Banner 模板
@@ -58,7 +55,10 @@ journalism-ntu.github.io/
 │
 ├── 📁 css/                          # 樣式表
 ├── 📁 js/                           # JavaScript
-├── 📁 data/                         # 資料檔案（CSV 等）
+│
+├── 📁 data/                         # 【重要】資料檔案
+│   ├── faculty_data.json           # 【重要】教師資料庫
+│   ├── faculty-mapping.csv         # 【重要】教師照片對應表
 │   ├── content.csv                 # 【重要】新聞與活動資料
 │   └── backups/                    # 自動備份目錄
 │
@@ -66,16 +66,25 @@ journalism-ntu.github.io/
 │   ├── content-editor-v2.html      # 內容編輯器 v2
 │   └── EDITOR_V2_README.md         # 編輯器說明
 │
-├── 🔧 cms.py                        # 【重要】整合 CMS 系統（一鍵啟動）
-├── 🔧 parse-content.py              # 內容抽取腳本
-├── 🔧 deduplicate-content.py        # 內容去重腳本
-│
-├── 📁 python-scripts/               # 資料處理腳本（37 個）
+├── 📁 scripts/                      # 【重要】輔助腳本（分類整理）
+│   ├── build/                      # 建置相關腳本
+│   │   └── convert-to-templates.py # HTML 轉模板（一次性設定）
+│   ├── data/                       # 資料處理腳本
+│   │   ├── parse-content.py        # 內容抽取腳本
+│   │   ├── deduplicate-content.py  # 內容去重腳本
+│   │   ├── organize-images.py      # 圖片整理腳本
+│   │   └── ...                     # 其他資料處理工具
+│   ├── maintenance/                # 維護工具腳本
+│   │   ├── cleanup-css-links.py    # CSS 清理
+│   │   ├── fix-path-prefix.py      # 路徑修正
+│   │   └── ...                     # 其他維護工具
 │   └── README.md                   # 腳本分類說明
 │
-├── 📁 scripts/                      # Shell 腳本
 ├── 📁 docs/                         # 專案文檔
+│
 ├── 📁 archive/                      # 已廢棄的舊檔案
+│   ├── python-scripts/             # 舊的遷移腳本（37 個）
+│   └── scripts-legacy/             # 其他已棄用腳本
 │
 ├── 📄 README.md                     # 專案說明
 ├── 📄 CLAUDE.md                     # 本文檔
@@ -93,8 +102,8 @@ journalism-ntu.github.io/
 
 **檔案位置**：
 - 模板：`templates/`
-- 建置腳本：`build-templates.py`
-- 轉換腳本：`convert-to-templates.py`
+- 建置腳本：`build-templates.py`（根目錄）
+- 轉換腳本：`scripts/build/convert-to-templates.py`（一次性設定，不常用）
 
 **工作原理**：
 1. HTML 中使用標記：`{{site-banner}}`、`{{site-nav}}`、`{{site-sitemap}}`、`{{site-footer}}`
@@ -120,8 +129,8 @@ python3 build-templates.py
 ### 2. 教師資料系統 👥
 
 **資料來源**：
-- `faculty_data.json` - 主要教師資料庫（動態載入用）
-- `faculty-mapping.csv` - 教師照片對應表（維護用）
+- `data/faculty_data.json` - 主要教師資料庫（動態載入用）
+- `data/faculty-mapping.csv` - 教師照片對應表（維護用）
 
 **照片管理**：
 - 位置：`images/faculty/`
@@ -141,7 +150,7 @@ python3 build-templates.py
 **修改教師資料**：
 ```bash
 # 1. 編輯 JSON
-vim faculty_data.json
+vim data/faculty_data.json
 
 # 2. 如需更新照片，確保檔名與 ID 一致
 cp new-photo.jpg images/faculty/[英文ID].jpg
@@ -246,10 +255,10 @@ python3 cms.py
 
 ```bash
 # 從 HTML 檔案抽取內容到 CSV
-python3 parse-content.py
+python3 scripts/data/parse-content.py
 
 # 去除重複資料
-python3 deduplicate-content.py
+python3 scripts/data/deduplicate-content.py
 ```
 
 **重要提醒**：
@@ -258,28 +267,38 @@ python3 deduplicate-content.py
 - 💾 每次儲存前會自動備份，備份檔案位於 `data/backups/`
 - 🔒 離開前會檢查是否有未儲存的變更
 
-### 4. 資料處理腳本 🐍
+### 4. 輔助腳本系統 🐍
 
-**位置**：`python-scripts/`（37 個腳本）
+**位置**：`scripts/`（分類整理後的輔助工具）
 
-**分類**：
-- 教師照片處理（7 個）
-- 教師資料處理（9 個）
-- 頁面修正（7 個）
-- 導航更新（7 個）
-- 其他工具（7 個）
+**資料夾結構**：
+- `scripts/build/` - 建置相關腳本（如 convert-to-templates.py）
+- `scripts/data/` - 資料處理腳本（如 parse-content.py, deduplicate-content.py）
+- `scripts/maintenance/` - 維護工具腳本（如 cleanup-css-links.py, fix-path-prefix.py）
 
 **使用時機**：
 - ✅ 一次性資料修正
 - ✅ 批量更新檔案
 - ✅ 資料格式轉換
+- ✅ 網站維護和清理
 
 **執行方式**：
 ```bash
-python3 python-scripts/[腳本名稱].py
+# 資料處理
+python3 scripts/data/[腳本名稱].py
+
+# 維護工具
+python3 scripts/maintenance/[腳本名稱].py
+
+# 建置工具
+python3 scripts/build/[腳本名稱].py
 ```
 
-**注意**：這些是維護工具，不是日常使用腳本
+**詳細說明**：請參閱 `scripts/README.md`
+
+**注意**：
+- 這些是維護工具，不是日常使用腳本
+- 舊的遷移腳本（37 個）已移至 `archive/python-scripts/`
 
 ---
 
@@ -304,7 +323,7 @@ python3 build-templates.py
 cp photo.jpg images/faculty/newteacher.jpg
 
 # 2. 編輯教師資料
-vim faculty_data.json
+vim data/faculty_data.json
 # 在對應類別中加入：
 # {
 #   "id": "newteacher",
@@ -316,7 +335,7 @@ vim faculty_data.json
 # }
 
 # 3. 更新 CSV（可選）
-vim faculty-mapping.csv
+vim data/faculty-mapping.csv
 
 # 4. 檢查頁面
 # 開啟 faculty/faculty.html 檢查是否正確顯示
@@ -481,7 +500,7 @@ npm run build:css
    - 執行 `build-templates.py`
 
 2. **修改教師資料**：
-   - 編輯 `faculty_data.json`
+   - 編輯 `data/faculty_data.json`
    - 確保照片檔名與 ID 一致
 
 3. **新增頁面**：
@@ -542,9 +561,16 @@ npm run build:css
 
 ### 必要檔案（不可刪除）
 
+**核心腳本**：
 - `build-templates.py` - 模板建置
-- `faculty_data.json` - 教師資料
-- `faculty-mapping.csv` - 照片對應
+- `cms.py` - CMS 系統
+
+**資料檔案**：
+- `data/faculty_data.json` - 教師資料
+- `data/faculty-mapping.csv` - 照片對應
+- `data/content.csv` - 新聞與活動
+
+**模板和資源**：
 - `templates/` - 所有模板
 - `images/faculty/` - 教師照片
 - `css/`, `js/` - 樣式和腳本
@@ -554,12 +580,15 @@ npm run build:css
 - `README.md` - 專案說明
 - `CLAUDE.md` - 本文檔
 - `templates/README.md` - 模板系統說明
-- `python-scripts/README.md` - 腳本分類說明
+- `scripts/README.md` - 輔助腳本說明
+- `admin/EDITOR_V2_README.md` - CMS 編輯器說明
 - `docs/` - 其他文檔
 
 ### 可刪除/已歸檔
 
-- `archive/` - 舊版檔案
+- `archive/` - 舊版檔案和已廢棄的腳本
+  - `archive/python-scripts/` - 舊的遷移腳本（37 個）
+  - `archive/scripts-legacy/` - 其他已棄用腳本
 - `node_modules/` - 可用 `npm install` 重建
 
 ---
@@ -572,8 +601,11 @@ npm run build:css
 # 建置模板
 python3 build-templates.py
 
-# 轉換 HTML 為使用模板（首次設定）
-python3 convert-to-templates.py
+# 啟動 CMS 系統
+python3 cms.py
+
+# 轉換 HTML 為使用模板（首次設定，不常用）
+python3 scripts/build/convert-to-templates.py
 
 # 安裝依賴
 npm install
@@ -582,19 +614,35 @@ npm install
 npm run build:css
 
 # 執行資料處理腳本
-python3 python-scripts/[腳本名].py
+python3 scripts/data/[腳本名].py
+python3 scripts/maintenance/[腳本名].py
 ```
 
 ### 重要路徑
 
 ```
+# 核心系統
 cms.py                           # 啟動 CMS 系統
+build-templates.py               # 建置模板
+
+# 內容管理
 admin/content-editor-v2.html     # 內容編輯器
 data/content.csv                 # 新聞與活動資料
+
+# 模板系統
 templates/site-nav.html          # 修改導航列
 templates/site-banner.html       # 修改 Banner
-faculty_data.json                # 修改教師資料
+templates/site-footer.html       # 修改頁尾
+
+# 教師資料
+data/faculty_data.json           # 教師資料庫
+data/faculty-mapping.csv         # 教師照片對應
 images/faculty/                  # 教師照片
+
+# 輔助腳本
+scripts/data/                    # 資料處理腳本
+scripts/maintenance/             # 維護工具
+scripts/build/                   # 建置腳本
 ```
 
 ### 聯絡資訊
@@ -606,6 +654,37 @@ images/faculty/                  # 教師照片
 ---
 
 ## 歷史記錄
+
+### 2025-12-11
+
+#### 專案結構重新整理
+- ✅ **資料檔案集中管理**：
+  - 移動 `faculty_data.json` 和 `faculty-mapping.csv` 到 `data/` 資料夾
+  - 統一資料檔案位置，便於備份和管理
+
+- ✅ **輔助腳本分類整理**：
+  - 建立 `scripts/build/`、`scripts/data/`、`scripts/maintenance/` 三個子資料夾
+  - 移動 14 個根目錄的 Python 腳本到對應分類
+  - 根目錄只保留核心腳本：`build-templates.py`、`cms.py`
+
+- ✅ **舊腳本歸檔**：
+  - 移動 `python-scripts/`（37 個舊遷移腳本）到 `archive/`
+  - 移動已棄用的 `save-csv-server.py` 到 `archive/scripts-legacy/`
+
+- ✅ **路徑引用更新**：
+  - 更新所有移動後腳本的 `BASE_DIR` 路徑
+  - 更新 6 個 JS 檔案中的 `faculty_data.json` 路徑引用
+  - 確保所有引用正確指向新位置
+
+- ✅ **文檔更新**：
+  - 建立 `scripts/README.md` 說明輔助腳本分類和用途
+  - 更新 `CLAUDE.md` 反映新的專案結構
+  - 更新所有路徑引用和使用說明
+
+#### 專案結構改進
+- **更清晰的目錄結構**：核心腳本和輔助工具明確分離
+- **更好的可維護性**：按功能分類，易於尋找和管理
+- **更簡潔的根目錄**：只保留最常用的核心檔案
 
 ### 2025-11-09
 
@@ -661,7 +740,7 @@ images/faculty/                  # 教師照片
    - 記得執行建置腳本
 
 2. **資料驅動設計**：
-   - 教師頁面由 `faculty_data.json` 驅動
+   - 教師頁面由 `data/faculty_data.json` 驅動
    - 修改資料而非 HTML
 
 3. **路徑處理**：
@@ -671,9 +750,9 @@ images/faculty/                  # 教師照片
 ### 協作原則
 
 1. **先讀文檔**：
-   - 閱讀本文檔
-   - 查看 `templates/README.md`
-   - 檢查 `python-scripts/README.md`
+   - 閱讀本文檔（CLAUDE.md）
+   - 查看 `templates/README.md`（模板系統說明）
+   - 檢查 `scripts/README.md`（輔助腳本說明）
 
 2. **保持一致**：
    - 遵循現有命名規則
@@ -689,12 +768,13 @@ images/faculty/                  # 教師照片
 |------|------|
 | 改導航 | 編輯 `templates/site-nav.html` → 建置 |
 | 改 Banner | 編輯 `templates/site-banner.html` → 建置 |
-| 加教師 | 編輯 `faculty_data.json` + 照片 |
+| 加教師 | 編輯 `data/faculty_data.json` + 照片 |
 | 改樣式 | 編輯 CSS 檔案 |
 | 新頁面 | 複製 `example-page.html` → 建置 |
+| 管理內容 | 執行 `python3 cms.py` 啟動編輯器 |
 
 ---
 
-**最後更新**：2025-11-08
+**最後更新**：2025-12-11
 **維護者**：Claude AI + 台大新聞所團隊
-**文檔版本**：1.0
+**文檔版本**：2.0

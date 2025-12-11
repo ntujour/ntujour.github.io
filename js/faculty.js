@@ -13,7 +13,7 @@ async function loadFulltimeFaculty() {
 
     try {
         // Fetch faculty data
-        const response = await fetch('../faculty_data.json');
+        const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
         // Render faculty photo cards - open in new tab
@@ -37,7 +37,7 @@ async function loadParttimeFaculty() {
 
     try {
         // Fetch faculty data
-        const response = await fetch('../faculty_data.json');
+        const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
         if (!data.parttime || data.parttime.length === 0) {
@@ -66,7 +66,7 @@ async function loadPracticalFaculty() {
 
     try {
         // Fetch faculty data
-        const response = await fetch('../faculty_data.json');
+        const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
         if (!data.practical || data.practical.length === 0) {
@@ -101,7 +101,7 @@ async function loadHonoraryFaculty() {
 
     try {
         // Fetch faculty data
-        const response = await fetch('../faculty_data.json');
+        const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
         if (!data.honorary || data.honorary.length === 0) {
@@ -130,7 +130,7 @@ async function loadJointFaculty() {
 
     try {
         // Fetch faculty data
-        const response = await fetch('../faculty_data.json');
+        const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
         if (!data.joint || data.joint.length === 0) {

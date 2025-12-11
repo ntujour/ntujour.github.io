@@ -9,7 +9,7 @@ async function loadFulltimeFacultyDetails() {
 
     try {
         // Fetch faculty data
-        const response = await fetch('../faculty_data.json');
+        const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
         if (!data.fulltime || data.fulltime.length === 0) {
