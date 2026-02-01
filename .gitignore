@@ -53,8 +53,7 @@ data/content_backup*.csv
 
 # Note: build-templates.py, scripts/, templates/ are committed so Netlify can run the build.
 
-# Nested git repo — add as submodule or remove graduate/.git to track as normal files
-graduate/
+# graduate/ is part of the site (unlisted sub-page; only reachable by URL, not in nav).
 
 # 編譯的 CSS（如果使用 Tailwind CLI 編譯）
 # 注意：如果 GitHub Pages 需要這個檔案，請移除這一行
