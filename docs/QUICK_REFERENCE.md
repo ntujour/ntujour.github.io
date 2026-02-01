@@ -157,7 +157,7 @@ git push
 
 2. **連結 GitHub Repository**
    - New site from Git → GitHub
-   - 選擇 `jirlong/ntujour-web`
+   - 選擇 `jirlong/ntujour.github.io`
    - 建置設定：
      - Build command: `python3 build-templates.py`
      - Publish directory: `.`

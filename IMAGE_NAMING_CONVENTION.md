@@ -76,7 +76,7 @@ id,type,title,image
 ## 📁 目錄結構
 
 ```
-ntujour-web/
+ntujour.github.io/
 └── images/
     ├── news/                      # 新聞圖片
     │   ├── news-259107-1.png

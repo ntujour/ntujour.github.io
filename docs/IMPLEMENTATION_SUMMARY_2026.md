@@ -227,7 +227,7 @@ python3 -m http.server 8000
 如有問題，請參考：
 - [Decap CMS 官方文件](https://decapcms.org/docs/)
 - [Netlify 文件](https://docs.netlify.com/)
-- [GitHub Issues](https://github.com/jirlong/ntujour-web/issues)
+- [GitHub Issues](https://github.com/jirlong/ntujour.github.io/issues)
 
 ---
 

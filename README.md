@@ -30,8 +30,8 @@ Modern, responsive academic website built with **Tailwind CSS**, **vanilla JavaS
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/journalism-ntu/journalism-ntu.github.io.git
-cd journalism-ntu.github.io
+git clone https://github.com/jirlong/ntujour.github.io.git
+cd ntujour.github.io
 
 # 2. Install dependencies
 npm install

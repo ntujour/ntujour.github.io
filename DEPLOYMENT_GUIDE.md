@@ -137,7 +137,7 @@
    ```
 
 3. **選擇專案資料夾**
-   - 選擇 `ntujour-web` 資料夾
+   - 選擇 `ntujour.github.io` 資料夾
 
 4. **Commit 變更**
    - GitHub Desktop 會自動顯示變更的檔案

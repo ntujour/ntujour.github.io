@@ -590,7 +590,7 @@ public_folder: "/images/uploads"
 
 - **專案維護**: 台大新聞所資訊小組
 - **技術支援**: [開發者聯絡方式]
-- **CMS 問題回報**: [GitHub Issues](https://github.com/jirlong/ntujour-web/issues)
+- **CMS 問題回報**: [GitHub Issues](https://github.com/jirlong/ntujour.github.io/issues)
 
 ---
 
