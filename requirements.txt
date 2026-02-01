@@ -1,0 +1,2 @@
+# Used by scripts/data/generate-faculty-json.py (YAML front matter parsing)
+PyYAML>=6.0

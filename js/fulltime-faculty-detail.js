@@ -12,13 +12,13 @@ async function loadFulltimeFacultyDetails() {
         const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
-        if (!data.fulltime || data.fulltime.length === 0) {
+        if (!data['專任'] || data['專任'].length === 0) {
             container.innerHTML = '<div class="text-center py-12 text-gray-500">暫無資料</div>';
             return;
         }
 
         // Render faculty detail cards
-        const cardsHTML = data.fulltime.map((faculty, index) => `
+        const cardsHTML = data['專任'].map((faculty, index) => `
             <div id="faculty-${index}" class="faculty-detail-card bg-white border border-gray-200 rounded-lg p-6 md:p-8">
                 <div class="flex flex-col md:flex-row gap-6">
                     <!-- Photo -->

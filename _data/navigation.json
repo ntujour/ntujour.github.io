@@ -1,0 +1,116 @@
+{
+  "items": [
+    {
+      "label_zh": "首頁",
+      "label_en": "Home",
+      "url_zh": "/index.html",
+      "url_en": "/en/index.html",
+      "children": []
+    },
+    {
+      "label_zh": "關於我們",
+      "label_en": "About Us",
+      "url_zh": "/about/intro.html",
+      "url_en": "/en/about/intro.html",
+      "children": [
+        {
+          "label_zh": "所長的話",
+          "label_en": "Director's Message",
+          "url_zh": "/about/intro.html",
+          "url_en": "/en/about/intro.html"
+        },
+        {
+          "label_zh": "宗旨與目標",
+          "label_en": "Mission & Goals",
+          "url_zh": "/about/mission.html",
+          "url_en": "/en/about/mission.html"
+        },
+        {
+          "label_zh": "交通資訊",
+          "label_en": "Transportation",
+          "url_zh": "/about/transportation.html",
+          "url_en": "/en/about/transportation.html"
+        },
+        {
+          "label_zh": "所史與回顧",
+          "label_en": "History & Gallery",
+          "url_zh": "/about/gallery.html",
+          "url_en": "/en/about/gallery.html"
+        }
+      ]
+    },
+    {
+      "label_zh": "師資介紹",
+      "label_en": "Faculty",
+      "url_zh": "/faculty/faculty.html",
+      "url_en": "/en/faculty/faculty.html",
+      "children": [
+        {
+          "label_zh": "師資總覽",
+          "label_en": "All Faculty",
+          "url_zh": "/faculty/faculty.html",
+          "url_en": "/en/faculty/faculty.html"
+        },
+        {
+          "label_zh": "專任教師",
+          "label_en": "Full-time Faculty",
+          "url_zh": "/faculty/fulltime-professor.html",
+          "url_en": "/en/faculty/fulltime-professor.html"
+        },
+        {
+          "label_zh": "實務教師",
+          "label_en": "Practical Faculty",
+          "url_zh": "/faculty/practical-professor.html",
+          "url_en": "/en/faculty/practical-professor.html"
+        },
+        {
+          "label_zh": "兼任教師",
+          "label_en": "Part-time Faculty",
+          "url_zh": "/faculty/parttime-professor.html",
+          "url_en": "/en/faculty/parttime-professor.html"
+        }
+      ]
+    },
+    {
+      "label_zh": "入學資訊",
+      "label_en": "Admissions",
+      "url_zh": "/admissions/admissions.html",
+      "url_en": "/en/admissions/admissions.html",
+      "children": [
+        {
+          "label_zh": "招生資訊",
+          "label_en": "Admission Info",
+          "url_zh": "/admissions/admissions.html",
+          "url_en": "/en/admissions/admissions.html"
+        },
+        {
+          "label_zh": "入學考古題",
+          "label_en": "Past Exams",
+          "url_zh": "/admissions/past-exam.html",
+          "url_en": "/en/admissions/past-exam.html"
+        }
+      ]
+    },
+    {
+      "label_zh": "學生學習",
+      "label_en": "Students",
+      "url_zh": "/students/curriculum.html",
+      "url_en": "/en/students/curriculum.html",
+      "children": []
+    },
+    {
+      "label_zh": "最新消息",
+      "label_en": "News",
+      "url_zh": "/news.html",
+      "url_en": "/en/news.html",
+      "children": []
+    },
+    {
+      "label_zh": "系所活動",
+      "label_en": "Activities",
+      "url_zh": "/activities.html",
+      "url_en": "/en/activities.html",
+      "children": []
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 <!-- Skip to main content link for accessibility -->
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-red-800 focus:text-white">跳到主要內容</a>
 
-<!-- Banner -->
+<!-- Banner (動態載入) -->
 <header class="site-banner py-6" role="banner">
+    <!-- 內容將由 load-banner.js 動態載入 -->
     <div class="container-1200">
         <h1 class="text-4xl font-bold text-gray-800 mb-2">
             <a href="{{path_prefix}}index.html" class="hover:text-gray-600 transition" style="text-decoration: none; color: inherit;">國立臺灣大學新聞研究所</a>
@@ -11,3 +12,8 @@
         <p class="text-gray-600 text-base">培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才</p>
     </div>
 </header>
+
+<!-- 載入 Banner 動態腳本 -->
+<script src="{{path_prefix}}js/load-banner.js"></script>
+<!-- 載入多語言支援 -->
+<script src="{{path_prefix}}js/i18n.js"></script>

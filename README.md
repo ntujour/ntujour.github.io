@@ -9,9 +9,9 @@ Modern, responsive academic website built with **Tailwind CSS**, **vanilla JavaS
 
 **Key Features**:
 - ✨ Template-based architecture (centralized banner, navigation, footer)
-- 📝 **Integrated CMS** with change tracking and auto-backup
-- 📊 JSON/CSV data-driven content
-- 🚀 Automated build process
+- 📝 **Decap CMS** (Git-based) for Banner, navigation, news/activities, faculty via `/admin/`
+- 📊 JSON data-driven content; `_data/` for bilingual Banner/settings; `news/_posts`, `activities/_posts`, `faculty/_profiles` (Markdown) → `data/*.json` at build
+- 🚀 **Decap + Netlify + GitHub Pages**: push or CMS publish → Netlify build → deploy
 - ♿ Accessibility features (skip links, ARIA labels)
 - 📱 Fully responsive design
 - 🎨 Clean, professional styling
@@ -45,18 +45,30 @@ npm run build
 
 ### Content Management (CMS)
 
-```bash
-# Start integrated CMS system
-python3 cms.py
+Content is managed via **Decap CMS** (Git-based):
 
-# Browser will auto-open to http://localhost:8080/admin/content-editor-v2.html
-# - Edit news and activities with visual editor
-# - Track all changes (add/update/delete)
-# - Auto-backup on save to data/backups/
-# - Warning before closing with unsaved changes
-```
+- **URL**: `https://your-site.netlify.app/admin/` (after Netlify + Identity setup)
+- **Managed**: Banner (`_data/banner.json`), navigation, site settings; news/activities/faculty (Markdown in `_posts`/`_profiles`)
+- **Login**: Netlify Identity
+- **Deploy**: Single path — Decap + Netlify + GitHub Pages. See [docs/DEPLOY_DECAP_NETLIFY.md](docs/DEPLOY_DECAP_NETLIFY.md), [ARCHITECTURE.md](ARCHITECTURE.md), [CLAUDE.md](CLAUDE.md).
 
 ### Development Workflow
+
+**One-command local dev (recommended)**:
+
+```bash
+# Start: generate JSON from .md → build templates → run Netlify Dev (opens browser at http://localhost:8888)
+./start.sh
+
+# When done: press Ctrl+C in the terminal, then run stop.sh to write all updates to static files
+./stop.sh
+# Then: git add / commit
+```
+
+`start.sh` runs: `pip install -r requirements.txt` → `generate-news-json.py` → `generate-activities-json.py` → `generate-faculty-json.py` → `build-templates.py` → `netlify dev`.  
+`stop.sh` runs the same generate + build step so `data/*.json` and built HTML are up to date from current `news/_posts`, `activities/_posts`, and `faculty/_profiles` (`.md`). Requires [Netlify CLI](https://docs.netlify.com/cli/get-started/): `npm install -g netlify-cli`.
+
+**Other commands**:
 
 ```bash
 # Build templates + CSS
@@ -94,15 +106,16 @@ journalism-ntu.github.io/
 │   │   ├── tailwind.css          # Compiled Tailwind CSS
 │   │   ├── site-common.css       # Custom site styles
 │   │   └── input.css             # Tailwind source
-│   ├── js/                       # JavaScript files (16 active)
+│   ├── js/                       # JavaScript (homepage, news, faculty, banner, etc.)
 │   └── images/                   # Images (53MB)
 │
 ├── 📊 Data
-│   ├── faculty_data.json         # Faculty information (MAIN SOURCE)
-│   ├── faculty-mapping.csv       # Photo mapping reference
 │   └── data/
-│       ├── content.csv           # News & activities data (119 items)
-│       └── backups/              # Auto-backups on save
+│       ├── faculty_data.json     # From faculty/_profiles/*.md (build)
+│       ├── news.json             # From news/_posts/*.md (build)
+│       ├── activities.json       # From activities/_posts/*.md (build)
+│       ├── faculty-mapping.csv   # Photo mapping reference
+│       └── backups/              # Auto-backups
 │
 ├── 📑 Content Directories
 │   ├── faculty/                  # Faculty pages
@@ -121,20 +134,18 @@ journalism-ntu.github.io/
 │   ├── convert-and-build.py      # Convert & build utility
 │   └── package.json              # Build scripts
 │
-├── 📝 CMS System
-│   ├── cms.py                    # Integrated CMS server (one-click start)
+├── 📝 CMS & Data
 │   ├── admin/
-│   │   ├── content-editor-v2.html # Visual content editor
-│   │   └── EDITOR_V2_README.md   # Editor documentation
-│   ├── parse-content.py          # HTML to CSV extraction
-│   └── deduplicate-content.py    # CSV deduplication
+│   │   ├── index.html            # Decap CMS entry
+│   │   └── config.yml            # CMS config (Banner, navigation, etc.)
+│   ├── _data/                    # Banner, navigation, site settings (JSON)
+│   └── scripts/data/             # generate-*-json.py (build from _posts/_profiles)
 │
 ├── 🛠️ Scripts
-│   ├── scripts/
-│   │   ├── validate-html.py      # HTML validator
-│   │   ├── optimize-images.py    # Image optimizer
-│   │   └── setup-git-hooks.sh    # Hook installer
-│   └── python-scripts/           # Data processing (37 scripts)
+│   └── scripts/
+│       ├── data/                 # generate-news-json, generate-activities-json, generate-faculty-json
+│       ├── validate-html.py      # HTML validator
+│       └── setup-git-hooks.sh   # Optional: auto-build on commit
 │
 ├── 📚 Documentation
 │   ├── README.md                 # This file

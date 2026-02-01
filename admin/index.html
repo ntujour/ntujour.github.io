@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>台大新聞所 內容管理系統 | NTU Journalism CMS</title>
+
+    <!-- 使用與主網站相同的樣式 -->
+    <link rel="stylesheet" href="../css/tailwind.css">
+    <link rel="stylesheet" href="../css/site-common.css">
+
+    <style>
+        /* ==========================================
+           遵循 CLAUDE.md 中的樣式與佈局規範
+           ========================================== */
+
+        /* 1. 字體大小與主網站一致 */
+        body {
+            font-size: 15px !important;
+            line-height: 1.6 !important;
+        }
+
+        /* 2. 主列表頁面（集合頁面）- 置中並限制寬度 */
+        body>div,
+        #nc-root {
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        /* 3. CMS 頂部導航樣式（深紅色，與主網站一致） */
+        [class*="AppHeader"] {
+            background-color: #671919 !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        /* 4. CMS 導航標籤樣式 */
+        [class*="AppHeader"] a,
+        [class*="AppHeader"] button {
+            color: #ffffff !important;
+            font-size: 15px !important;
+        }
+
+        [class*="AppHeader"] a:hover,
+        [class*="AppHeader"] button:hover {
+            color: #efa22a !important;
+        }
+
+        /* 5. 按鈕顏色（主色系） */
+        button[class*="primary"],
+        button[color="primary"] {
+            background-color: #671919 !important;
+        }
+
+        button[class*="primary"]:hover {
+            background-color: #991b1b !important;
+        }
+
+    </style>
+
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body class="bg-white">
+    <!-- Decap CMS -->
+    <div id="nc-root"></div>
+
+    <!-- Decap CMS (CDN) -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+
+</html>

@@ -46,18 +46,15 @@ venv/
 # Archive 資料夾（舊的遷移腳本，不需上傳）
 archive/
 
-# 建置工具（本地使用，不上傳到 GitHub Pages）
-cms.py
-build-templates.py
-scripts/
-
-# 模板資料夾（用於建置，不上傳）
-templates/
-
 # 資料備份（不上傳）
 data/backups/
 data/*_backup*.csv
 data/content_backup*.csv
+
+# Note: build-templates.py, scripts/, templates/ are committed so Netlify can run the build.
+
+# Nested git repo — add as submodule or remove graduate/.git to track as normal files
+graduate/
 
 # 編譯的 CSS（如果使用 Tailwind CLI 編譯）
 # 注意：如果 GitHub Pages 需要這個檔案，請移除這一行

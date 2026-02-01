@@ -14,32 +14,25 @@ document.addEventListener('DOMContentLoaded', function() {
     loadLatestActivities();
 });
 
-// Load latest news (first 3 items)
+// Load latest news (first 3 items) from data/news.json (generated from news/_posts)
 async function loadLatestNews() {
     const newsListElement = document.getElementById('news-list');
 
     try {
-        // Fetch real data from CSV
-        const response = await fetch('data/content.csv');
+        const response = await fetch('data/news.json');
         if (!response.ok) {
             throw new Error('Failed to load news data');
         }
-
-        const csvText = await response.text();
-        const allContent = parseCSV(csvText);
-
-        // Filter news items, sort by date (newest first), take first 3
-        const news = allContent
-            .filter(item => item.type === 'news')
+        const data = await response.json();
+        const news = data
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .slice(0, 3)
             .map(item => ({
                 id: item.id,
-                title: item.title.replace(/【.*?】/, '').trim(), // Remove category prefix
-                excerpt: stripHTML(item.content).substring(0, 100),
+                title: (item.title || '').replace(/【.*?】/, '').trim(),
+                excerpt: stripHTML(item.content || '').substring(0, 100),
                 date: item.date,
-                category: item.category,
-                slug: item.originalFile || `News_Content_n_35497_s_${item.id}.html`
+                category: item.category || ''
             }));
 
         renderNewsCards(newsListElement, news, 'news');
@@ -49,34 +42,27 @@ async function loadLatestNews() {
     }
 }
 
-// Load latest activities (first 3 items)
+// Load latest activities (first 3 items) from data/activities.json (generated from activities/_posts)
 async function loadLatestActivities() {
     const activitiesListElement = document.getElementById('activities-list');
 
     try {
-        // Fetch real data from CSV
-        const response = await fetch('data/content.csv');
+        const response = await fetch('data/activities.json');
         if (!response.ok) {
             throw new Error('Failed to load activities data');
         }
-
-        const csvText = await response.text();
-        const allContent = parseCSV(csvText);
-
-        // Filter activity items, sort by date (newest first), take first 3
-        const activities = allContent
-            .filter(item => item.type === 'activity')
+        const data = await response.json();
+        const activities = data
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .slice(0, 3)
             .map(item => ({
                 id: item.id,
-                title: item.title.replace(/【.*?】/, '').trim(), // Remove category prefix
-                excerpt: stripHTML(item.content).substring(0, 100),
+                title: (item.title || '').replace(/【.*?】/, '').trim(),
+                excerpt: stripHTML(item.content || '').substring(0, 100),
                 date: item.date,
                 category: item.category || '活動',
                 time: item.time,
-                location: item.location,
-                slug: item.originalFile || `News_Content_n_35498_s_${item.id}.html`
+                location: item.location
             }));
 
         renderNewsCards(activitiesListElement, activities, 'activities');
@@ -86,12 +72,10 @@ async function loadLatestActivities() {
     }
 }
 
-// Render news/activity cards
+// Render news/activity cards (links to article-view.html?type=...&id=...)
 function renderNewsCards(container, items, type) {
-    const folder = type === 'news' ? 'news' : 'activities';
-
     const cardsHTML = items.map(item => `
-        <article class="bg-white border border-gray-200 rounded hover:shadow-md transition-shadow cursor-pointer" onclick="window.location.href='${folder}/${item.slug}'">
+        <article class="bg-white border border-gray-200 rounded hover:shadow-md transition-shadow cursor-pointer" onclick="window.location.href='article-view.html?type=${type === 'news' ? 'news' : 'activity'}&id=${item.id}'">
             <div class="p-4">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="inline-block px-2 py-1 text-xs rounded bg-red-100 text-red-800">${item.category}</span>
@@ -120,50 +104,6 @@ function formatDate(dateString) {
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}年${month}月${day}日`;
-}
-
-// CSV Parser (inline for simplicity)
-function parseCSV(csvText) {
-    const lines = csvText.split('\n');
-    const headers = lines[0].split(',').map(h => h.trim());
-    const data = [];
-
-    for (let i = 1; i < lines.length; i++) {
-        if (!lines[i].trim()) continue;
-
-        const values = parseCSVLine(lines[i]);
-        if (values.length === headers.length) {
-            const obj = {};
-            headers.forEach((header, index) => {
-                obj[header] = values[index];
-            });
-            data.push(obj);
-        }
-    }
-
-    return data;
-}
-
-function parseCSVLine(line) {
-    const values = [];
-    let current = '';
-    let inQuotes = false;
-
-    for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-
-        if (char === '"') {
-            inQuotes = !inQuotes;
-        } else if (char === ',' && !inQuotes) {
-            values.push(current.trim());
-            current = '';
-        } else {
-            current += char;
-        }
-    }
-
-    values.push(current.trim());
-    return values;
 }
 
 // Add smooth scroll behavior

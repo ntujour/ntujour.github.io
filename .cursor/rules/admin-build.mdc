@@ -1,0 +1,18 @@
+---
+description: After editing admin custom script, run build:admin and update cms-custom.js
+globs: admin-src/**/*
+alwaysApply: false
+---
+
+# Admin custom script build (Option A)
+
+When you **edit** any file under `admin-src/` (especially `admin-src/cms-custom.js`):
+
+1. **Run the build** from project root:
+   ```bash
+   npm run build:admin
+   ```
+2. **Expect output**: `admin/cms-custom.js` is regenerated (minified). Do not skip this step.
+3. **When suggesting commits**: Include `admin/cms-custom.js` in the commit (and any `admin-src/` changes) so deploy stays unchanged—Netlify/GitHub Pages serve the built file with no server-side build.
+
+If the user only asked for a non-admin change, you do not need to run `build:admin`. Run it only when you have modified files under `admin-src/`.

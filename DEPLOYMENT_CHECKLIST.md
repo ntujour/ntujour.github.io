@@ -9,16 +9,16 @@
 ### ✅ **必要檔案確認**
 
 ```bash
-# 執行以下命令檢查關鍵檔案
-ls -lh css/tailwind.css data/faculty_data.json data/content.csv
+# 執行以下命令檢查關鍵檔案（Netlify 建置會產生 data/*.json）
+ls -lh css/tailwind.css data/faculty_data.json data/news.json data/activities.json
 ```
 
 - [ ] `css/tailwind.css` 存在且不為空
 - [ ] `data/faculty_data.json` 存在且格式正確
-- [ ] `data/content.csv` 存在且格式正確
 - [ ] `data/activities.json` 存在
 - [ ] `data/news.json` 存在
 - [ ] `index.html` 在根目錄
+- [ ] `build-templates.py`、`scripts/`、`templates/` 已提交（Netlify 建置需要）
 - [ ] `images/faculty/` 資料夾有教師照片
 
 ---
@@ -27,20 +27,17 @@ ls -lh css/tailwind.css data/faculty_data.json data/content.csv
 
 ```bash
 # 檢查這些檔案不會被忽略（應該要上傳）
-git check-ignore -v data/faculty_data.json data/content.csv css/tailwind.css
+git check-ignore -v data/faculty_data.json data/news.json css/tailwind.css build-templates.py
 # 如果沒有輸出，表示這些檔案會被上傳（正確）
 ```
 
-**應該上傳**：
-- [ ] `data/faculty_data.json` 不在 .gitignore 中
-- [ ] `data/content.csv` 不在 .gitignore 中
+**應該上傳**（Decap + Netlify 建置需要）：
+- [ ] `data/faculty_data.json`、`data/news.json`、`data/activities.json` 不在 .gitignore 中
 - [ ] `css/tailwind.css` 不在 .gitignore 中
+- [ ] `build-templates.py`、`scripts/`、`templates/` 不在 .gitignore 中（Netlify 建置會執行）
 
 **不應上傳**：
-- [ ] `cms.py` 在 .gitignore 中
-- [ ] `scripts/` 資料夾在 .gitignore 中
-- [ ] `templates/` 資料夾在 .gitignore 中
-- [ ] `archive/` 資料夾在 .gitignore 中
+- [ ] `archive/` 在 .gitignore 中
 - [ ] `data/backups/` 在 .gitignore 中
 
 ---
@@ -81,14 +78,9 @@ echo $?  # 應該輸出 0（表示格式正確）
 
 #### 新聞與活動資料
 
-```bash
-# 檢查 CSV 格式（應該有 header）
-head -1 data/content.csv
-```
-
-- [ ] `content.csv` 有正確的 header
-- [ ] 至少有一筆新聞或活動資料
-- [ ] 相關圖片都存在於 `images/news/` 或 `images/activities/`
+- [ ] `news/_posts/`、`activities/_posts/` 內有 Markdown 文章（或由 Decap CMS 發布）
+- [ ] 建置後 `data/news.json`、`data/activities.json` 存在且格式正確
+- [ ] 相關圖片存在於 `images/uploads/` 或指定路徑
 
 ---
 
@@ -146,23 +138,11 @@ git push -u origin main
 
 ### **更新內容時**
 
-```bash
-# 1. 編輯內容
-vim data/content.csv
-
-# 2. 本地測試
-python3 -m http.server 8000
-
-# 3. Commit
-git add data/content.csv
-git commit -m "更新新聞：[標題]"
-
-# 4. 推送
-git push
-```
+- **新聞/活動/師資**：使用 Decap CMS（`/admin/`）編輯 → 發布即提交至 GitHub；或編輯 `news/_posts/`、`activities/_posts/`、`faculty/_profiles/` 的 Markdown 後執行 `./stop.sh`（或 Netlify 建置）產生 `data/*.json`，再 commit 並 push。
+- **Banner/導航/網站設定**：Decap CMS「網站設定」或直接編輯 `_data/*.json` → commit 並 push。
 
 **檢查清單**：
-- [ ] 本地測試過新內容
+- [ ] 本地測試過新內容（可執行 `./start.sh` 預覽）
 - [ ] Commit 訊息清楚描述變更
 - [ ] 只加入需要的檔案（不要 `git add .` 全部加入）
 

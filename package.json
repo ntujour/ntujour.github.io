@@ -6,12 +6,14 @@
     "build": "npm run build:templates && npm run build:css",
     "build:templates": "python3 build-templates.py",
     "build:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --minify",
+    "build:admin": "esbuild admin-src/cms-custom.js --bundle --minify --outfile=admin/cms-custom.js",
     "watch:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --watch",
     "dev": "npm run build && npm run watch:css",
     "validate": "python3 scripts/validate-html.py",
     "test": "npm run validate"
   },
   "devDependencies": {
+    "esbuild": "^0.24.0",
     "tailwindcss": "^3.4.0"
   }
 }

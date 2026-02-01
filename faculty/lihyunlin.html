@@ -203,7 +203,7 @@
     <script>
         // 從文件名提取教師 ID
         const fileName = window.location.pathname.split('/').pop().replace('.html', '');
-        const markdownFile = `content/${fileName}.md`;
+        const markdownFile = `_profiles/${fileName}.md`;
 
         // 載入並渲染 Markdown
         async function loadFacultyContent() {
@@ -215,24 +215,32 @@
 
                 const markdown = await response.text();
 
-                // 解析 Markdown 開頭的聯絡資訊
-                const lines = markdown.split('\n');
-                let facultyName = '';
-                let email = '';
-                let teaching = '';
-                let contentStartIndex = 0;
-
-                for (let i = 0; i < lines.length; i++) {
-                    if (lines[i].startsWith('# ')) {
-                        facultyName = lines[i].substring(2).trim();
-                    } else if (lines[i].includes('**Email：**')) {
-                        email = lines[i].replace('**Email：**', '').trim();
-                    } else if (lines[i].includes('**授課領域：**')) {
-                        teaching = lines[i].replace('**授課領域：**', '').trim();
-                    } else if (lines[i].trim() === '---') {
-                        contentStartIndex = i + 1;
-                        break;
+                // 解析：支援 CMS（YAML 前言）或純 Markdown 格式
+                let facultyName = '', email = '', teaching = '', mainContent = '';
+                if (markdown.trim().startsWith('---')) {
+                    const parts = markdown.split(/^---\s*$/m);
+                    const yamlBlock = (parts[1] || '').trim();
+                    mainContent = (parts[2] || '').trim();
+                    const mName = yamlBlock.match(/^name:\s*["']?([^"'\n]+)["']?/m);
+                    const mTitle = yamlBlock.match(/^title:\s*["']?([^"'\n]+)["']?/m);
+                    const mEmail = yamlBlock.match(/^email:\s*["']?([^"'\n]+)["']?/m);
+                    facultyName = [mName?.[1]?.trim(), mTitle?.[1]?.trim()].filter(Boolean).join(' ') || '';
+                    email = mEmail?.[1]?.trim() || '';
+                    const expertiseIdx = yamlBlock.search(/^expertise:\s*$/m);
+                    const afterExpertise = expertiseIdx >= 0 ? yamlBlock.slice(expertiseIdx) : '';
+                    const expertiseSection = afterExpertise.split(/^\w+:/m)[0] || '';
+                    const expertiseMatches = expertiseSection.matchAll(/^\s*-\s*["']([^"']+)["']\s*$/gm);
+                    teaching = Array.from(expertiseMatches).map(m => m[1]).join('、') || '';
+                } else {
+                    const lines = markdown.split('\n');
+                    let contentStartIndex = 0;
+                    for (let i = 0; i < lines.length; i++) {
+                        if (lines[i].startsWith('# ')) facultyName = lines[i].substring(2).trim();
+                        else if (lines[i].includes('**Email：**')) email = lines[i].replace('**Email：**', '').trim();
+                        else if (lines[i].includes('**授課領域：**')) teaching = lines[i].replace('**授課領域：**', '').trim();
+                        else if (lines[i].trim() === '---') { contentStartIndex = i + 1; break; }
                     }
+                    mainContent = lines.slice(contentStartIndex).join('\n');
                 }
 
                 // 更新頁面標題和教師姓名
@@ -265,8 +273,7 @@
                 }
                 document.getElementById('contact-info').innerHTML = contactHTML;
 
-                // 渲染主要內容（從分隔線之後開始）
-                const mainContent = lines.slice(contentStartIndex).join('\n');
+                // 渲染主要內容
                 const html = marked.parse(mainContent);
                 document.getElementById('markdown-content').innerHTML = html;
 

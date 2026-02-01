@@ -14,7 +14,6 @@ ACTIVE_JS=(
     "joint-faculty-detail.js"
     "parttime-faculty-detail.js"
     "practical-faculty-detail.js"
-    "csv-parser.js"
 )
 
 echo "===== Identifying Unused JS Files ====="

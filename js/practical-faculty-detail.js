@@ -13,13 +13,13 @@ async function loadPracticalFacultyDetails() {
         const response = await fetch('../data/faculty_data.json');
         const data = await response.json();
 
-        if (!data.practical || data.practical.length === 0) {
+        if (!data['實務'] || data['實務'].length === 0) {
             tabsContainer.innerHTML = '<div class="text-center py-12 text-gray-500 w-full">暫無資料</div>';
             return;
         }
 
         // Render faculty tabs
-        const tabsHTML = data.practical.map((faculty, index) => {
+        const tabsHTML = data['實務'].map((faculty, index) => {
             const photoSrc = faculty.photo || '';
             const photoHTML = photoSrc
                 ? `<img src="${photoSrc}" alt="${faculty.name}" class="w-20 h-20 object-cover rounded-lg">`
@@ -39,7 +39,7 @@ async function loadPracticalFacultyDetails() {
         tabsContainer.innerHTML = tabsHTML;
 
         // Render faculty detail cards
-        const detailsHTML = data.practical.map((faculty, index) => {
+        const detailsHTML = data['實務'].map((faculty, index) => {
             const photoSrc = faculty.photo || '';
             const photoHTML = photoSrc
                 ? `<img src="${photoSrc}" alt="${faculty.name}" class="w-64 h-64 object-cover rounded-lg shadow-md">`
@@ -129,7 +129,7 @@ async function loadPracticalFacultyDetails() {
         // Handle URL hash if present (for direct linking)
         if (window.location.hash) {
             const facultyId = window.location.hash.substring(1).replace('faculty-', '');
-            const targetIndex = data.practical.findIndex(f => f.id === facultyId);
+            const targetIndex = data['實務'].findIndex(f => f.id === facultyId);
             if (targetIndex !== -1) {
                 switchToFaculty(targetIndex);
             }

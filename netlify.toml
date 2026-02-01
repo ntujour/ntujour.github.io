@@ -1,0 +1,77 @@
+# Netlify 配置文件
+# 部署流程：Decap CMS + Netlify + GitHub Pages（push 或 CMS 發布 → 本建置 → 靜態站）
+
+# ====== 建置設定 ======
+[build]
+  publish = "."
+  # 1. Python 依賴 2. 從 news/_posts、activities/_posts、faculty/_profiles 產生 data/*.json 3. 建置模板
+  command = "pip install -q -r requirements.txt && python3 scripts/data/generate-news-json.py && python3 scripts/data/generate-activities-json.py && python3 scripts/data/generate-faculty-json.py && python3 build-templates.py"
+
+# Node.js 版本
+[build.environment]
+  NODE_VERSION = "18"
+
+# ====== 重定向規則 ======
+
+# 404 錯誤頁面
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# ====== Headers 設定（安全性與效能優化） ======
+
+# 為所有頁面設定安全 Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # 內容安全政策
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.netlify.com"
+    
+    # HTTPS 強制
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    
+    # XSS 保護
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    
+    # 推薦者政策
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 為靜態資源設定快取
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# 為 JSON 資料檔案設定較短的快取（可能經常更新）
+[[headers]]
+  for = "/_data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+# ====== Netlify Identity 設定 ======
+# 這些設定在 Netlify Dashboard 中完成，這裡僅作為備註
+
+# 啟用方式：
+# 1. 登入 Netlify Dashboard
+# 2. 進入 Site Settings → Identity
+# 3. 點擊 "Enable Identity"
+# 4. 啟用 "Git Gateway"
+# 5. 允許外部註冊：關閉（僅邀請）
+# 6. 邀請管理員使用者
+
+# ====== 本地開發設定 ======
+# 本地測試 Netlify 功能：
+# $ netlify dev

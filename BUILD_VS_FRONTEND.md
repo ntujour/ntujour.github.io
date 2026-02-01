@@ -19,7 +19,6 @@
 
 ```
 build-templates.py              # 模板建置工具
-cms.py                          # CMS 內容管理系統
 scripts/                        # 所有建置腳本
   ├── build/
   │   ├── convert-to-templates.py
@@ -147,19 +146,8 @@ git push
 
 ### **更新新聞與活動時**：
 
-```bash
-# 1. 啟動 CMS
-python3 cms.py
-
-# 2. 在編輯器中修改內容
-
-# 3. 儲存到 data/content.csv
-
-# 4. 提交到 Git（前端會自動載入新資料）
-git add data/content.csv
-git commit -m "更新新聞"
-git push
-```
+- 使用 **Decap CMS**：登入 `/admin/`（Netlify Identity）→ 編輯新聞/活動集合 → 發布（自動提交至 GitHub）。
+- 或直接編輯 `data/content.csv` 後 `git add` / `git commit` / `git push`。
 
 ---
 
@@ -180,9 +168,8 @@ git push
 建立 `.gitignore` 來排除不需要上傳的檔案：
 
 ```gitignore
-# 建置工具（本地使用）
-cms.py
-build-templates.py
+# 建置工具（若僅本地使用；Netlify 建置時通常需保留 build-templates.py、templates/）
+# build-templates.py
 scripts/
 
 # 資料來源（建置時讀取）

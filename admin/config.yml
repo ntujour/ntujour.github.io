@@ -1,0 +1,241 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# 本地開發模式（開發時使用）
+local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# 啟用編輯工作流（草稿、審核、發布）
+# 註解：本地開發時不需要，部署到 Netlify 後可啟用
+# publish_mode: editorial_workflow
+
+# 語言設定
+locale: 'zh_Hant'
+
+# ====== 集合定義 ======
+collections:
+  # ========================================
+  # 1. 網站全域設定
+  # ========================================
+  - name: "settings"
+    label: "網站設定"
+    files:
+      
+      # Banner 內容管理
+      - label: "Banner 設定"
+        name: "banner"
+        file: "_data/banner.json"
+        fields:
+          - label: "中文標題"
+            name: "title_zh"
+            widget: "string"
+            default: "國立臺灣大學新聞研究所"
+            hint: "顯示在頁面頂部的主標題（中文）"
+          
+          - label: "英文標題"
+            name: "title_en"
+            widget: "string"
+            default: "Graduate Institute of Journalism, National Taiwan University"
+            hint: "顯示在頁面頂部的主標題（英文）"
+          
+          - label: "中文副標題"
+            name: "subtitle_zh"
+            widget: "text"
+            default: "培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才"
+            hint: "顯示在主標題下方的副標題（中文）"
+          
+          - label: "英文副標題"
+            name: "subtitle_en"
+            widget: "text"
+            default: "Cultivating journalism professionals for the new era | Combining theory and practice"
+            hint: "顯示在主標題下方的副標題（英文）"
+          
+          - label: "Logo 圖片"
+            name: "logo"
+            widget: "image"
+            required: false
+            hint: "選填。上傳 Logo 圖片會顯示在標題上方"
+      
+      # 導航選單管理
+      - label: "導航選單"
+        name: "navigation"
+        file: "_data/navigation.json"
+        fields:
+          - label: "選單項目"
+            name: "items"
+            widget: "list"
+            hint: "編輯網站主選單"
+            fields:
+              - {label: "中文名稱", name: "label_zh", widget: "string"}
+              - {label: "英文名稱", name: "label_en", widget: "string"}
+              - {label: "中文連結", name: "url_zh", widget: "string", hint: "例如：/about/intro.html"}
+              - {label: "英文連結", name: "url_en", widget: "string", hint: "例如：/en/about/intro.html"}
+              - label: "子選單"
+                name: "children"
+                widget: "list"
+                required: false
+                hint: "選填。如果需要下拉子選單，在此新增項目"
+                fields:
+                  - {label: "中文名稱", name: "label_zh", widget: "string"}
+                  - {label: "英文名稱", name: "label_en", widget: "string"}
+                  - {label: "中文連結", name: "url_zh", widget: "string"}
+                  - {label: "英文連結", name: "url_en", widget: "string"}
+      
+      # 網站全域資訊
+      - label: "網站資訊"
+        name: "site"
+        file: "_data/site_settings.json"
+        fields:
+          - {label: "網站名稱（中文）", name: "site_name_zh", widget: "string"}
+          - {label: "網站名稱（英文）", name: "site_name_en", widget: "string"}
+          - {label: "聯絡電話", name: "phone", widget: "string", hint: "例如：(02) 3366-3383"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "地址（中文）", name: "address_zh", widget: "string"}
+          - {label: "地址（英文）", name: "address_en", widget: "string"}
+          - {label: "辦公時間", name: "office_hours", widget: "string", required: false}
+          - {label: "Facebook 連結", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram 連結", name: "instagram", widget: "string", required: false}
+          - {label: "YouTube 連結", name: "youtube", widget: "string", required: false}
+
+  # ========================================
+  # 2. 新聞/消息（雙語）
+  # ========================================
+  - name: "news"
+    label: "最新消息"
+    folder: "news/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    description: "排序請選「發布日期」由新到舊，以顯示最新在前。"
+    # 用 en dash 「 – 」 當欄位分隔，避免標題內符號把一列切成多欄、表頭錯位。
+    summary: "{{title}} – {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ["date", "commit_date", "title"]
+    fields:
+      - {label: "標題（中文）", name: "title", widget: "string"}
+      - {label: "標題（英文）", name: "title_en", widget: "string", required: false}
+      - {label: "發布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - label: "分類"
+        name: "category"
+        widget: "select"
+        options: ["招生", "榮譽", "徵才", "演講", "學術", "活動", "公告"]
+        default: "公告"
+      - {label: "內文（中文）", name: "body", widget: "markdown"}
+      - {label: "內文（英文）", name: "body_en", widget: "markdown", required: false}
+      - {label: "封面圖片", name: "image", widget: "image", required: false}
+      - {label: "精選文章", name: "featured", widget: "boolean", default: false, hint: "勾選後會顯示在首頁"}
+      - label: "語言版本"
+        name: "lang"
+        widget: "select"
+        options: 
+          - {label: "僅中文", value: "zh"}
+          - {label: "僅英文", value: "en"}
+          - {label: "雙語", value: "both"}
+        default: "zh"
+
+  # ========================================
+  # 3. 系所活動（雙語）
+  # ========================================
+  - name: "activities"
+    label: "系所活動"
+    folder: "activities/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    description: "排序請選「活動日期」由新到舊，以顯示最新在前。"
+    # 用 en dash 「 – 」 當欄位分隔（標題內勿用此符號）。勿用 「 · 」 因多筆標題含此字元會把一列切成多欄、表頭錯位。
+    summary: "{{title}} – {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ["date", "commit_date", "title"]
+    fields:
+      - {label: "標題（中文）", name: "title", widget: "string"}
+      - {label: "標題（英文）", name: "title_en", widget: "string", required: false}
+      - {label: "活動日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm"}
+      - label: "分類"
+        name: "category"
+        widget: "select"
+        options: ["講座", "專題", "參訪", "工作坊", "研討會", "其他"]
+        default: "其他"
+      - {label: "活動時間", name: "time", widget: "string", required: false, hint: "例如：14:00-16:00"}
+      - {label: "活動地點", name: "location", widget: "string", required: false}
+      - {label: "主講人/主持人", name: "speaker", widget: "string", required: false}
+      - {label: "內文（中文）", name: "body", widget: "markdown"}
+      - {label: "內文（英文）", name: "body_en", widget: "markdown", required: false}
+      - {label: "封面圖片", name: "image", widget: "image", required: false}
+      - {label: "精選活動", name: "featured", widget: "boolean", default: false}
+      - label: "語言版本"
+        name: "lang"
+        widget: "select"
+        options: 
+          - {label: "僅中文", value: "zh"}
+          - {label: "僅英文", value: "en"}
+          - {label: "雙語", value: "both"}
+        default: "zh"
+
+  # ========================================
+  # 4. 教師資料（雙語）
+  # ========================================
+  - name: "faculty"
+    label: "師資介紹"
+    folder: "faculty/_profiles"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "id"
+    summary: "{{name}} · {{category}} · 修改：{{commit_date | date('YYYY-MM-DD') | default('今天')}}"
+    sortable_fields: ["commit_date", "name", "category"]
+    fields:
+      - {label: "英文 ID", name: "id", widget: "string", hint: "用於照片檔名和 URL，使用小寫英文，例如：jerryhsieh"}
+      - {label: "姓名（中文）", name: "name", widget: "string"}
+      - {label: "姓名（英文）", name: "name_en", widget: "string"}
+      - {label: "職稱（中文）", name: "title", widget: "string", hint: "例如：教授"}
+      - {label: "職稱（英文）", name: "title_en", widget: "string", hint: "例如：Professor"}
+      - label: "類別"
+        name: "category"
+        widget: "select"
+        options:
+          - {label: "專任", value: "專任"}
+          - {label: "兼任", value: "兼任"}
+          - {label: "合聘", value: "合聘"}
+          - {label: "榮譽", value: "榮譽"}
+          - {label: "實務", value: "實務"}
+          - {label: "追思", value: "追思"}
+          - {label: "職員", value: "職員"}
+      - {label: "照片", name: "photo", widget: "image", hint: "建議尺寸：400x400px"}
+      - {label: "電話", name: "phone", widget: "string", required: false}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "辦公室", name: "office", widget: "string", required: false}
+      - {label: "個人網站", name: "website", widget: "string", required: false}
+      - label: "個人頁面內文（學歷、經歷、期刊論文、研討會論文等）"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "顯示於教師個人頁面的完整內文，支援 Markdown。請往下捲動即可編輯研討會論文等區塊。"
+      - label: "專長（中文）"
+        name: "expertise"
+        widget: "list"
+        hint: "每行一個專長領域"
+      - label: "專長（英文）"
+        name: "expertise_en"
+        widget: "list"
+        required: false
+      - {label: "簡介（中文）", name: "bio", widget: "markdown", required: false}
+      - {label: "簡介（英文）", name: "bio_en", widget: "markdown", required: false}
+      - label: "學歷"
+        name: "education"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "中文", name: "zh", widget: "string"}
+          - {label: "英文", name: "en", widget: "string", required: false}
+      - label: "經歷"
+        name: "experience"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "中文", name: "zh", widget: "string"}
+          - {label: "英文", name: "en", widget: "string", required: false}
+      - label: "研究領域"
+        name: "research"
+        widget: "list"
+        required: false
+      - {label: "顯示順序", name: "order", widget: "number", default: 100, hint: "數字越小越前面"}
+

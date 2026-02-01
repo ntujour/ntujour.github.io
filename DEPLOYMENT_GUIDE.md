@@ -83,10 +83,9 @@
 └── article-view.js
 
 📁 data/
-├── faculty_data.json    ⭐ 前端需要！
-├── content.csv          ⭐ 前端需要！
-├── activities.json      ⭐ 前端需要！
-├── news.json           ⭐ 前端需要！
+├── faculty_data.json    ⭐ 前端需要（由 faculty/_profiles/*.md 建置產生）
+├── activities.json      ⭐ 前端需要（由 activities/_posts/*.md 建置產生）
+├── news.json            ⭐ 前端需要（由 news/_posts/*.md 建置產生）
 ├── e-reports.csv
 └── faculty-mapping.csv  （可選，前端不需要）
 
@@ -98,44 +97,26 @@
 └── regulations/      # 修業規定圖片
 
 📁 admin/
-├── content-editor-v2.html   （可選，如果要線上編輯）
-└── EDITOR_V2_README.md      （可選）
+├── index.html              # Decap CMS 入口
+└── config.yml              # CMS 配置
+
+📁 _data/
+├── banner.json
+├── navigation.json
+└── site_settings.json
 ```
 
-### ❌ **不需上傳**（本地建置工具）
+### ❌ **不需上傳**（可選加入 .gitignore）
 
 ```
-🔨 建置工具
-├── cms.py
-├── build-templates.py
-└── scripts/
-    ├── build/
-    ├── data/
-    └── maintenance/
-
-📝 模板檔案
-└── templates/
-    ├── site-banner.html
-    ├── site-nav.html
-    ├── site-sitemap.html
-    ├── site-footer.html
-    └── site-head-common.html
-
 📦 開發環境
 ├── node_modules/
-├── __pycache__/
-├── .vscode/
-├── .idea/
-└── .DS_Store
-
-💾 備份檔案
+├── archive/
 └── data/backups/
-    └── content_*_backup.csv
+```
 
-🗄️ 舊檔案
-└── archive/
-    ├── python-scripts/
-    └── scripts-legacy/
+**必須保留在 repo**（Netlify 建置需要）：
+- `build-templates.py`、`scripts/`、`templates/`
 ```
 
 ---
@@ -257,29 +238,21 @@ git push
 
 ### **情境 2：更新新聞或活動**
 
-#### 使用 CMS（推薦）
+#### 使用 Decap CMS（推薦，需先設定 Netlify + Identity）
+
+- 登入 `https://your-site.netlify.app/admin/` → 選擇新聞或活動集合 → 編輯 → 發布（自動提交至 GitHub）。
+
+#### 直接編輯 Markdown（不經 CMS）
 
 ```bash
-# 1. 本地啟動 CMS
-python3 cms.py
+# 1. 編輯活動文章
+vim activities/_posts/YYYY-MM-DD-slug.md
 
-# 2. 在瀏覽器編輯器中新增/編輯內容
-# 網址：http://localhost:8080/admin/content-editor-v2.html
+# 2. 產生 JSON 並建置（或等 Netlify 建置）
+./stop.sh   # 或：python3 scripts/data/generate-activities-json.py && python3 build-templates.py
 
-# 3. 儲存後，Commit 並推送
-git add data/content.csv images/news/ images/activities/
-git commit -m "更新新聞：[新聞標題]"
-git push
-```
-
-#### 直接編輯 CSV
-
-```bash
-# 1. 編輯 content.csv
-vim data/content.csv
-
-# 2. Commit 並推送
-git add data/content.csv
+# 3. Commit 並推送
+git add activities/_posts/ data/activities.json
 git commit -m "新增活動：[活動標題]"
 git push
 ```
@@ -306,17 +279,15 @@ git push
 
 ## ⚠️ 重要注意事項
 
-### **1. .gitignore 已設定**
-- ✅ 建置工具（cms.py, scripts/）不會上傳
-- ✅ 模板檔案（templates/）不會上傳
-- ✅ 備份檔案（data/backups/）不會上傳
+### **1. .gitignore 已設定**（依專案設定）
+- ✅ 備份檔案（data/backups/）可加入 .gitignore
 - ✅ 開發環境檔案（node_modules/, .vscode/）不會上傳
+- 註：build-templates.py、templates/、scripts/ 通常保留在 repo 內供 Netlify 建置使用
 
 ### **2. 資料檔案必須上傳**
-- ⚠️ `data/faculty_data.json` - 前端需要
-- ⚠️ `data/content.csv` - 前端需要
-- ⚠️ `data/activities.json` - 前端需要
-- ⚠️ `data/news.json` - 前端需要
+- ⚠️ `data/faculty_data.json` - 前端需要（建置自 faculty/_profiles）
+- ⚠️ `data/activities.json` - 前端需要（建置自 activities/_posts）
+- ⚠️ `data/news.json` - 前端需要（建置自 news/_posts）
 
 ### **3. CSS 檔案必須上傳**
 - ⚠️ `css/tailwind.css` - 網站樣式必需
@@ -430,24 +401,25 @@ git push
 
 ### **更新網站的完整流程**
 
+**方式一：Decap CMS（推薦）**
+1. 登入 `https://your-site.netlify.app/admin/`
+2. 編輯新聞/活動/師資/Banner 等 → 儲存 → 發布
+3. 自動提交至 GitHub → Netlify 建置並部署（約 1–2 分鐘）
+
+**方式二：本地編輯後推送**
 ```bash
-# 1. 本地編輯內容
-vim data/content.csv
+# 1. 編輯 Markdown（news/_posts、activities/_posts、faculty/_profiles）或 _data/*.json
+# 2. 本地建置（可選，或交給 Netlify）
+./stop.sh
 
-# 2. 預覽變更（可選）
-python3 -m http.server 8000
-
-# 3. Commit
+# 3. Commit 並推送
 git add .
 git commit -m "更新內容"
-
-# 4. 推送
 git push
 
-# 5. 等待部署（1-2 分鐘）
-
-# 6. 檢查線上版本
-# https://[你的帳號].github.io/[repo名稱]
+# 4. 等待 Netlify 部署（1–2 分鐘）
+# 5. 檢查線上版本
+# https://your-site.netlify.app 或 https://[帳號].github.io/[repo]
 ```
 
 ---

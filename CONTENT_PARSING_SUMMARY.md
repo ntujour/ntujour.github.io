@@ -99,8 +99,8 @@ python3 parse-content.py
 # 啟動本地伺服器
 python3 -m http.server 8000
 
-# 在瀏覽器開啟
-open http://localhost:8000/admin/content-editor.html
+# 在瀏覽器開啟（或使用 Decap CMS /admin/ 管理內容）
+open http://localhost:8000/
 ```
 
 ### 3. 編輯內容

@@ -24,10 +24,10 @@ check_file() {
 
 check_file "css/tailwind.css"
 check_file "data/faculty_data.json"
-check_file "data/content.csv"
 check_file "data/activities.json"
 check_file "data/news.json"
 check_file "index.html"
+check_file "build-templates.py"
 
 echo ""
 
@@ -81,27 +81,12 @@ echo "🚫 檢查 .gitignore 設定..."
 
 if [ -f ".gitignore" ]; then
     echo "  ✅ .gitignore 存在"
-
-    # 檢查是否排除建置工具
-    if grep -q "cms.py" .gitignore; then
-        echo "  ✅ cms.py 已被排除"
-    else
-        echo "  ⚠️  cms.py 未被排除（建議排除）"
+    # build-templates.py, scripts/, templates/ must be committed for Netlify build (ignore comment lines)
+    if grep -v '^[[:space:]]*#' .gitignore 2>/dev/null | grep -qE '^scripts/|^templates/|build-templates\.py'; then
+        echo "  ⚠️  build-templates.py 或 scripts/ 不應在 .gitignore（Netlify 建置需要）"
         ((WARNINGS++))
-    fi
-
-    if grep -q "scripts/" .gitignore; then
-        echo "  ✅ scripts/ 已被排除"
     else
-        echo "  ⚠️  scripts/ 未被排除（建議排除）"
-        ((WARNINGS++))
-    fi
-
-    if grep -q "templates/" .gitignore; then
-        echo "  ✅ templates/ 已被排除"
-    else
-        echo "  ⚠️  templates/ 未被排除（建議排除）"
-        ((WARNINGS++))
+        echo "  ✅ 建置所需檔案可被提交"
     fi
 else
     echo "  ⚠️  .gitignore 不存在"

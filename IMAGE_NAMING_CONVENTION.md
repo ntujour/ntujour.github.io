@@ -131,40 +131,11 @@ id,type,title,image
 
 ## 🔧 技術實現
 
-### 後端（cms.py）
+### Decap CMS 與圖片上傳
 
-```python
-# 生成檔名
-safe_filename = f"{article_type}-{article_id}-{image_index}{ext}"
-
-# 決定目錄
-if article_type == 'activity':
-    upload_dir = ACTIVITIES_IMAGE_DIR  # images/activities/
-else:
-    upload_dir = NEWS_IMAGE_DIR        # images/news/
-
-# 回傳路徑
-relative_path = f"images/{dir_name}/{safe_filename}"
-```
-
-### 前端（content-editor-v2.html）
-
-```javascript
-// 生成或使用現有 ID
-if (!currentArticleId) {
-    currentArticleId = Date.now().toString();
-}
-
-// 上傳圖片
-fetch('/upload-image', {
-    body: JSON.stringify({
-        imageData: base64Data,
-        articleId: currentArticleId,      // 文章 ID
-        articleType: 'news',              // 類型
-        imageIndex: 1                     // 第幾張圖
-    })
-});
-```
+- **媒體目錄**：`images/uploads/`（於 `admin/config.yml` 設定 `media_folder`）。
+- 透過 Decap CMS 上傳的圖片會儲存於此，路徑寫入對應內容欄位。
+- 命名由 Decap CMS 或上傳流程決定；建議維持可讀檔名與適當副檔名。
 
 ---
 
