@@ -5,7 +5,7 @@ After you **push** this repo, confirm the following in the Netlify dashboard.
 ## 1. Site is connected to the repo
 
 - [ ] Netlify → **Site configuration** → **Build & deploy** → **Build settings**
-- [ ] **Repository** shows the correct GitHub repo (e.g. `jirlong/ntujour.github.io`)
+- [ ] **Repository** shows the correct GitHub repo: `ntujour/ntujour.github.io`
 - [ ] **Branch to deploy**: `main` (or your production branch)
 
 ## 2. Build command and publish dir come from `netlify.toml`

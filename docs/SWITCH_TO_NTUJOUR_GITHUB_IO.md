@@ -2,20 +2,10 @@
 
 This project’s **remote** is set to the **ntujour** org repo.
 
-## ⚠️ Repo was renamed to ntujour.github.io2
-
-After you pushed, GitHub reported: **"This repository moved. Please use the new location: https://github.com/ntujour/ntujour.github.io2.git"**
-
-- **Where to find the repo:** Under the **ntujour** organization, look for **ntujour.github.io2** (not ntujour.github.io).
-- **Direct link:** https://github.com/ntujour/ntujour.github.io2
-- Your push succeeded; the code is in that repo. Local `origin` has been updated to point to `ntujour.github.io2`.
-
-(GitHub may have renamed it because `ntujour.github.io` is a special name for a user/org Pages site and there was a conflict, or the org renamed it.)
-
 ## What was done
 
 1. **Remote updated**
-   - `origin` points to: `https://github.com/ntujour/ntujour.github.io2.git`
+   - `origin` points to: `https://github.com/ntujour/ntujour.github.io.git`
    - Future `git push` will go to this repo.
 
 2. **Docs updated**
