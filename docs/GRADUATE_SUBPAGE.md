@@ -1,8 +1,6 @@
-# graduate/ — 學生專用子網頁（未列在站上）
+# graduate/ — 學生專用子網頁（已移至其他資料夾）
 
-**graduate/** 為本網站的一部分，但**不列入主站導航**，僅能透過網址進入。
+**graduate/** 已從本 repo 移出，改放在**另一個資料夾**（不在此網站專案內）。
 
-- **用途**：學生專用區域（課程、修業、指導等）。
-- **網址**：`https://<你的網域>/graduate/` 或 `https://<你的網域>/graduate/index.html`
-- **導航**：主站選單與 sitemap 不顯示此區，只有知道連結的人可造訪。
-- **版本控制**：graduate 已納入本 repo（已移除內部的 `.git`），與主站一起建置與部署。
+- **本 repo**：不再包含 `graduate/`，建置與部署不會產出 `/graduate/` 子網頁。
+- **若之後要再納入**：可將 graduate 資料夾放回專案根目錄，並從 `.gitignore` 移除 `graduate/` 後再 commit。
