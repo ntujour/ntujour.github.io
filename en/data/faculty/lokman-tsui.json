@@ -1,0 +1,186 @@
+{
+  "slug": "lokman-tsui",
+  "name": "Lokman Tsui",
+  "nameZh": "徐洛文",
+  "title": "Assistant Professor",
+  "photo": "../image/Lokman%20Tsui.jpg",
+  "placeholder": "徐",
+  "contacts": [
+    { "type": "email", "value": "lokmantsui@ntu.edu.tw" },
+    { "type": "web", "text": "lokman.org", "url": "https://www.lokman.org" }
+  ],
+  "sections": [
+    {
+      "heading": "Education",
+      "type": "list",
+      "items": [
+        "Ph.D. in Communication, Annenberg School for Communication, University of Pennsylvania, USA (2010)",
+        "Certificate of Study in Law, Penn Law School, University of Pennsylvania, USA (2008)",
+        "Certificate in Comparative Media Law &amp; Policy, University of Oxford, UK (2004)",
+        "M.A. in China Studies, University of Leiden, Netherlands (2001)",
+        "B.A. in China Studies, University of Leiden, Netherlands (2001)"
+      ]
+    },
+    {
+      "heading": "Language",
+      "type": "text",
+      "content": "Fluent in English, Dutch, Cantonese and Mandarin Chinese.<br>Moderately fluent in German and French.<br>Reading knowledge of Latin, Classical Greek and Classical Chinese."
+    },
+    {
+      "heading": "Employment",
+      "type": "list",
+      "items": [
+        "Assistant Professor, The Graduate Institute of Journalism, National Taiwan University (2026–present)",
+        "Research Fellow, The Citizen Lab, The Munk School of Global Affairs, University of Toronto (2019–2026)",
+        "Assistant Professor, School of Journalism and Communication, Chinese University of Hong Kong (2014–2021)",
+        "Acting Public Policy Manager for Greater China (maternity cover), Twitter (2020)",
+        "Head of Free Expression in Asia and the Pacific, Google (2010–2014)",
+        "Assistant Professor, Department of Media and Communication, City University of Hong Kong (2010–2011)"
+      ]
+    },
+    {
+      "heading": "Books",
+      "type": "list",
+      "items": [
+        "Joseph Turow and Lokman Tsui, <em>The Hyperlinked Society: Questioning Connections in the Digital Age</em>. University of Michigan Press. (2008)"
+      ]
+    },
+    {
+      "heading": "Special Journal Issues",
+      "type": "list",
+      "items": [
+        "Lokman Tsui (ed), &quot;The Sociopolitical Internet in China.&quot; <em>China Information</em>, 19:2. (2005)"
+      ]
+    },
+    {
+      "heading": "Journal Articles and Other Publications",
+      "type": "list",
+      "items": [
+        "Eric Lai, Lokman Tsui and Tom Kellogg, National Security Deference or National Security Domination? The &quot;Glory to Hong Kong&quot; Injunction Saga and Hong Kong's Compromised Judiciary (December 2024). The Center for Asian Law at Georgetown University",
+        "Alberto Fittarelli and Lokman Tsui, Beautiful Bauhinia: &quot;HKLeaks&quot;– The Use of Covert and Overt Online Harassment Tactics to Repress the 2019 Hong Kong Protests (July 13, 2023). The Citizen Lab at the University of Toronto",
+        "Masashi Crete-Nishihata and Lokman Tsui, &quot;The truth of what's happening&quot; How Tibetan exile media develop and maintain journalistic authority, <em>Journalism</em> (2023)",
+        "Lokman Tsui and Francis Lee, How Journalists Understand the Threats and Opportunities of New Technologies: a study of security mindsets and its implications for press freedom, <em>Journalism</em> 22:6 (2021): 1317–1339",
+        "Masashi Crete-Nishihata, Josh Oliver, Christopher Parsons, Dawn Walker, Lokman Tsui and Ron Deibert, Distributed Tribes: The information security sub-cultures of journalism, <em>Digital Journalism</em> 8:8 (2020): 1068–1091",
+        "Lokman Tsui and Milan Ismangil, Beijing: from reactive to proactive global information control, in Ismangil, van der Schaaf and Deklerck (eds) Shifting Power and Human Rights Diplomacy: China, Strategic Studies initiated by Amnesty International Netherlands (2020): 109–118",
+        "Amanda Meng, Carl DiSalvo, Lokman Tsui and Michael Best, The Social Impact of Open Government Data in Hong Kong: Umbrella movement protests and adversarial politics, <em>The Information Society</em> 35:4 (2019): 216–228",
+        "Lokman Tsui, The Importance of Digital Security to Securing Press Freedom, <em>Journalism</em> 20:1 (2019): 80–82",
+        "Lokman Tsui and Stuart Hargreaves, Who Decides What is Personal Data? Testing the Access Principle with Telecommunication Companies Internet Providers in Hong Kong, <em>International Journal of Communication</em> 13 (2019): 1684–1698",
+        "Shen Fei and Lokman Tsui, Revisiting the Asian Values Thesis: An Empirical Study of Asian Values, Internet Use, and Support for Freedom of Expression in 11 Societies, <em>Asian Survey</em> 58:3 (2018): 535–556",
+        "Oscar Gandy and Lokman Tsui, On Personal Data Protection, Privacy and Surveillance, <em>Communication &amp; Society</em> 43 (2018): 1–34",
+        "Lokman Tsui, Review of Timothy Garton Ash, Free speech: ten principles for a connected world. Yale University Press: New Haven (2016) for <em>Information, Communication &amp; Society</em>, 21:12 (2018): 1842–1843",
+        "Stuart Hargreaves and Lokman Tsui, IP Addresses as Personal Data Under Hong Kong's Privacy Law An Introduction to the Access My Info HK Project, <em>Journal of Law, Information &amp; Science</em> 25:2 (2017)",
+        "Masashi Crete-Nishihata, Jeffrey Knockel, Blake Miller, Jason Q. Ng, Lotus Ruan, Lokman Tsui and Rohan Xiong, Remembering Liu Xiaobo: analyzing censorship of the death of Liu Xiaobo on Wechat and Weibo (July 16, 2017). The Citizen Lab at the University of Toronto",
+        "Shen Fei and Lokman Tsui, Public Opinion Toward Internet Freedom in Asia: A Survey of Internet Users from 11 Jurisdictions (May 4, 2016). Berkman Center Research Publication No. 2016-8",
+        "Lokman Tsui, The Coming Colonization of Hong Kong Cyberspace: government responses to the use of new technologies by the Umbrella Movement, <em>Chinese Journal of Communication</em> 8:4 (2015): 1–9",
+        "Lokman Tsui, Review of Guobin Yang, The Power of the Internet in China: Citizen Activism Online. Columbia University Press: New York (2009) for <em>China Information</em> 24:2 (2010): 222–223",
+        "Lokman Tsui, Rethinking Journalism Through Technology, in Barbie Zelizer (ed), <em>The Changing Faces of Journalism</em>, Routledge: London (2009): 53–56",
+        "Lokman Tsui, Entry on Audio/Video Streaming, <em>Encyclopedia of Journalism</em>, Routledge (2009)",
+        "Lokman Tsui, Hyperlinks in Newspapers and Blogs, in Joseph Turow and Lokman Tsui (eds), <em>The Hyperlinked Society: Questioning Connections in the Digital Age</em>, University of Michigan Press: Ann Arbor, MI (2008): 70–85",
+        "Lokman Tsui, An Inadequate Metaphor: The Great Firewall and Chinese Internet Censorship, <em>Global Dialogue</em> 9:1–2 (2007): 60–68",
+        "Lokman Tsui, Global Voices and Bridgeblogs, in Kate Coyer, Tony Dowmunt, Alan Fountain (eds), <em>Alternative Media Handbook</em>, Routledge: London (2007)",
+        "Lokman Tsui, Introduction to special issue &quot;Sociopolitical Internet in China&quot;, <em>China Information</em> 19:2 (2005): 181–188",
+        "Lokman Tsui, The Taste of Information: State Attempts to Control the Internet, <em>International Institute for Asia Studies Newsletter</em> 33 (2004): 8",
+        "Lokman Tsui, Review of Chin-chuan Lee (ed), Chinese Media, Global Contexts. Routledge Curzon: London (2003) for the <em>International Institute for Asia Studies Newsletter</em> 33 (2004): 36–37",
+        "Lokman Tsui, The Panopticon as an Anti-thesis of a Space of Freedom: Internet Regulation and Control in China, <em>China Information</em> 17:2 (2003): 65–82",
+        "Lokman Tsui, Review of Steven Levy, Crypto: How the Code Rebels Beat the Government – Saving Privacy in the Digital Age. Viking Press: New York (2001) for the Research Center for Cyberculture Studies, University of Washington (2002)"
+      ]
+    },
+    {
+      "heading": "Academic Conferences and Workshops",
+      "type": "list",
+      "items": [
+        "How does authoritarianism make us feel and why does this matter? Invited speaker at the Oxford Media Policy Summer Institute (2025)",
+        "What tools and methods to advance the study of digital authoritarianism and counter strategies? Roundtable discussant at the Decrypting Digital Authoritarianism conference, European University Institute, Italy (2024)",
+        "What is the cost of freedom? The case of Glory to Hong Kong. Invited speaker at the Oxford Media Policy Summer Institute (2024)",
+        "Punch Down Doxxing: HKLEAKS and the implications of state sponsored doxxing for digital authoritianism. Paper presented at the The Future of Hong Kong Studies workshop, held at Princeton University (2023)",
+        "Journalism without Journalists: How Exile Media Report on Tibet (with Masashi Crete-Nishihata), Paper presented at the International Communication Association Conference, Washington DC, United States (2019)",
+        "Policy Research Methods: Improving the Craft in the International. Panel presentation at the International Communication Association Conference, United States (2017)",
+        "Who Decides What is Personal Data? Invited speaker at the United Nations University, Macau (October 2017)",
+        "Internet censorship and internet governance. Invited speaker at the Annenberg-Oxford Media Policy Summer Institute (2016)",
+        "Requiring Passports for Ideas: Internet Sovereignty, Strategic Communications, and Public Diplomacy. Paper presented at the International Communication Association conference (2016)",
+        "Internet policy research and activism: the case of data protection laws. Invited speaker at the 臺港傳播碰撞與想像工作坊, hosted by Taiwan Normal University (2016)",
+        "Right to access personal data: the case of Hong Kong. Invited speaker at the Big Data and Data Governance conference hosted by the University of Hong Kong (2016)",
+        "A journalism of hospitality. Invited panelist at the Roundtable on Technology and Democracy, hosted by the Communications Colloquium, Graduate School of Journalism, Columbia University (2009)",
+        "Beyond Objectivity: Global Voices and the Future of Journalism, Berkman Center for Internet &amp; Society, Harvard University (2009)",
+        "Chinese Diaspora, the Reconstruction of Identity and the Internet. Paper presented at the Media, Citizenship and Struggle in China workshop, University of Oxford (2004)",
+        "The Great Firewall: How it Shapes our Understanding of the Internet in China, Paper presented at the Internet in China seminar, Goldsmiths, University of London (2004)"
+      ]
+    },
+    {
+      "heading": "Presentations for Civil Society, Government and Others",
+      "type": "list",
+      "items": [
+        "Trauma and Authoritarianism: Exile, invited writer for Authors' Reading Month, the largest literary festival in Central Europe, held in the Czech Republic and Slovakia (2025)",
+        "Glory to Hong Kong: deteriorating digital rights at China's periphery, invited panelist for RightsCon, held in Taiwan (2025)",
+        "When the long arm of authoritarianism reaches through your screen, invited panelist for the Global Voices Summit, held in Nepal (2024)",
+        "Authoritarianism and Technology, invited panelist for the Young Leaders Program, held by the Axel Springer Freedom Foundation, Germany (2024)",
+        "The Coming of TWLeaks: lessons learned from HKLeaks on building community resilience against doxxing, Paper presented at the China In The World conference, Taiwan (2023)",
+        "Countering Surveillance Tech Use, invited panelist at the Human Rights in the Digital Age conference, held by the Global Cooperation and Training Framework, Taiwan (2023)",
+        "Signal Private Messenger, Participant in stakeholder consultation session on Privacy and Security, hosted by the Signal Foundation, Germany (2023, 2024)",
+        "Civic Media Observatory, invited speaker for internal strategy workshop, hosted by Global Voices, Jordan (2023)",
+        "Press Freedom in Hong Kong, invited panelist at the Free Thinkers Festival Amsterdam, The Netherlands (2022)",
+        "On the Internet, Digital Security Practices, and the Pro-Democracy Movement in Hong Kong, invited speaker at the Gwangju Biennale (virtual), Korea (2020)",
+        "Hong Kong Protests and Internet Freedom, invited speaker at the Internet Freedom Festival (virtual) (2020)",
+        "The State of Freedom of Expression, Freedom of the Press, and Academic Freedom in Hong Kong, Our TV, interviewed by Emily Lau, Hong Kong (2020)",
+        "Lessons in Digital Security from Hong Kong Newsrooms, invited speaker at the &quot;Enemy of the People? The Dangers of Being a Journalist in 2019&quot; conference, held by the Foreign Correspondence Club, Hong Kong (2019)",
+        "How should Hong Kong's privacy laws be reformed? invited panelist for the Hong Kong IGF (2018)",
+        "Is China Changing the Internet? invited speaker for The New York Times Breakfast Briefing (2017)",
+        "Freedom Online Coalition, Participation at stakeholder consultation session, hosted at the Stockholm Internet Forum, Sweden (2017)",
+        "Internet Privacy and Security, invited speaker at the Hong Kong Youth Forum, Hong Kong (2016)",
+        "Surveillance from the State: Freedom of Speech and Self-Censorship, invited speaker at the Wikitopia: Surveillance and Privacy in a Post-Snowden Era (2016)",
+        "Is The Free and Open Internet Dying?, invited speaker for Raising the Bar, Hong Kong (2015)",
+        "Aspen Institute Dialogue on Diplomacy and Technology, invited as a Google representative, Communications and Society Program, The Aspen Institute, United States (2013)",
+        "Governance in the Age of the Internet and Free Trade Agreements, invited as a Google representative, INET Bangkok: The Power to Create, Internet Society, Thailand (2013)",
+        "Internet and Social Media in Asia: Battleground for Free Expression, invited as a Google representative, Forum Asia, Singapore (2012)",
+        "Intermediary Liability and Free Expression, invited as a Google representative, Silicon Valley Human Rights Conference, Access Now, United States (2011)",
+        "Understanding New Media Trends, invited as a Google representative, 3rd Media Legal Defence – South East Asia Conference, Malaysia (2011)",
+        "Technologies Changing Chinese Society, invited speaker for workshop on The Implications of the New and Emerging Media For Chinese Politics and Society, hosted by the United States Department of State, United States (2009)"
+      ]
+    },
+    {
+      "heading": "Awards and Honors",
+      "type": "list",
+      "items": [
+        "Faculty Associate, Berkman Klein Center for Internet &amp; Society, Harvard University (2015–2018)",
+        "The Gene Burd Urban Journalism Research Prize, Best Dissertation in Journalism Studies, International Communication Association (2011)",
+        "Top Student Paper, 6th Chinese Internet Research Conference, The University of Hong Kong (2008)"
+      ]
+    },
+    {
+      "heading": "Grants",
+      "type": "list",
+      "items": [
+        "General Research Fund, Research Grant Council of Hong Kong (2018–2020)",
+        "C-Grant for platform research, C-Centre, Chinese University of Hong Kong (2016)",
+        "MacArthur Foundation seed grant on journalism and digital security (2017–2018)"
+      ]
+    },
+    {
+      "heading": "Service (Selected)",
+      "type": "list",
+      "items": [
+        "Reviewer for academic journals, including <em>China Information</em>, <em>China Aktuell</em>, <em>Journalism: Theory, Practice &amp; Criticism</em>, <em>Chinese Journal of Communication</em>, <em>Social Media and Society</em>, <em>International Journal for Communication</em>, <em>Journal for Information Technology and Policy</em>, <em>China Perspectives</em>, <em>Global Media and Communication</em>, etc.",
+        "Reviewer of various fellowships and grants, including the Mozilla Foundation Fellowships (2019), the Global Voices Advocacy Awards (2015), the Rising Voices Citizen Media Grant (2011), and the Knight Foundation News Challenge (2010)",
+        "Chinese University of Hong Kong: participated in various committees and panels, including the Faculty Board of Social Science, and the Graduate and Undergraduate panel at the School of Journalism",
+        "<em>Journalism: Theory, Practice, and Criticism</em>: Editorial Board Member (2017–present)",
+        "Global Voices: Board Member (2023–2028)",
+        "Digital Asia Hub: Steering Committee Member (2016–present)",
+        "Internet Policy Observatory, The University of Pennsylvania: Board Member (2016–2017)"
+      ]
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "Freedom of Speech and Society",
+      "Information Technologies",
+      "Information Sociologies"
+    ],
+    "researchInterests": [],
+    "contact": {
+      "email": "lokmantsui@ntu.edu.tw"
+    },
+    "externalLinks": [
+      { "text": "lokman.org", "url": "https://www.lokman.org" }
+    ]
+  }
+}

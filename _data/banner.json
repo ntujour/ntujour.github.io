@@ -1,7 +1,10 @@
 {
+  "title": "國立臺灣大學新聞研究所",
   "title_zh": "國立臺灣大學新聞研究所",
   "title_en": "Graduate Institute of Journalism, National Taiwan University",
+  "subtitle": "培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才",
   "subtitle_zh": "培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才",
-  "subtitle_en": "Cultivating journalism professionals for the new era | Combining theory and practice to develop professionals with expertise and critical thinking",
-  "logo": ""
+  "subtitle_en": "Cultivating journalism and communication talent for the new era through a balance of theory and practice, with professional knowledge and critical thinking.",
+  "logo": "/images/branding/major_logo.png",
+  "show_logo": true
 }

@@ -1,0 +1,107 @@
+{
+  "slug": "hui-ju-tsai",
+  "name": "Hui-Ju Tsai",
+  "nameZh": "蔡蕙如",
+  "title": "Associate Professor",
+  "photo": "../image/Hui-Ju%20Tsai.jpg",
+  "placeholder": "蔡",
+  "contacts": [
+    { "type": "phone", "value": "+886-2-3366-3121" },
+    { "type": "email", "value": "tsaihuiju@ntu.edu.tw" },
+    { "type": "web", "text": "tintincai.wixsite.com/hjtsai", "url": "https://tintincai.wixsite.com/hjtsai" }
+  ],
+  "sections": [
+    {
+      "heading": "Education",
+      "type": "list",
+      "items": [
+        "Ph.D. in Mass Communication, Loughborough University, UK (2018)",
+        "M.A. in Journalism, National Taiwan University, Taiwan (2008)"
+      ]
+    },
+    {
+      "heading": "Experiences",
+      "type": "list",
+      "items": [
+        "Associate Professor, Graduate Institute of Journalism, National Taiwan University (2024.8–present)",
+        "Assistant Professor, Graduate Institute of Journalism, National Taiwan University (2022.8–2024.7)",
+        "Project-Appointed Assistant Professor, Department of Adult and Continuing Education, National Taiwan Normal University (2021.8–2022.7)",
+        "Assistant Professor, Department of Mass Communication, Tamkang University (2018.8–2021.7)"
+      ]
+    },
+    {
+      "heading": "Journal Articles",
+      "type": "list",
+      "items": [
+        "Meng, J., Lin, Y.-P., &amp; Tsai, H.-J. (2024). Environmental activism in the platform society: Spatial agency in digital maps. <em>New Media &amp; Society</em>, 26(12), 7058–7080.",
+        "Tsai, H.-J. (2023). Data activism: Initiatives, practices, and connections among NGO workers and open-source communities in a platformized civil society. <em>Communication and Society</em>, 64, 29–62. [In Chinese]",
+        "Tsai, H.-J. (2022). Platform capitalism: Spectacle and crisis of platformized cultural industries. <em>Taiwan: A Radical Quarterly in Social Studies</em>, 121, 209–217. [In Chinese]",
+        "Tsai, H.-J., &amp; Lin, Y.-P. (2021). Precarious media labor in the era of post-COVID-19: Rethinking the supporting policy for the film and TV industry globally and in Taiwan. <em>Mass Communication Research</em>, 148, 1–46. [In Chinese]",
+        "Tsai, H. (2021). Contextualizing the phenomenon of Big Data: A looming crisis of monopolies in the global media &amp; Big Tech. <em>Taiwan Journal of East Asian Studies</em>, 18(1), 89–130. [In Chinese]",
+        "Tsai, H. (2020). Audience commodity in the age of streaming services: An analysis of Netflix binge-watching and the associated audience labor through critical political economy of communications. <em>Chinese Journal of Communication Research</em>, 37, 83–112. [In Chinese]"
+      ]
+    },
+    {
+      "heading": "Book Chapters",
+      "type": "list",
+      "items": [
+        "Tsai, H. (2022). Critical visual literacy in the digital media era. In W.-C. Wang, Y.-P. Lin &amp; L.-J. Wang (Eds.), <em>Digital Communication Literacy Education in the AI Era</em> (pp. 233–255). Wunan, Taipei.",
+        "Tsai, H. (2021). Towards critical data research: Rethinking information and platform monopolies. In C.-D. Liu &amp; C.-S. Feng (Eds.), <em>Communication is Understanding: A Critical Analysis of Contemporary Cross-Strait Media Issues</em> (pp. 233–255). Taipei: NCCU COM Research &amp; Development Center.",
+        "Lin, Y.-P., &amp; Tsai, H.-J. (2020). Indie music as cool ambassadors? The international dimension of music policy in Taiwan, 2010–2017. In E. Tsai, T. Ho &amp; M. Jian (Eds.), <em>Made in Taiwan: Studies in Popular Music</em> (pp. 171–188). Routledge.",
+        "Tsai, H.-J., &amp; Lin, Y.-P. (2018). Neoliberalised development of cultural policies in Taiwan and a case of the Taiwanese film industry in a creative industries model. In V. Durrer, T. Miller &amp; D. O'Brien (Eds.), <em>The Routledge Handbook of Global Cultural Policy</em> (pp. 449–467). London: Routledge.",
+        "Tsai, H. (2016). Fighting the neoliberalised media market &amp; state interference: The interdependency of the Taiwan PTS and civil society organisations. In Lowe &amp; Yamamoto (Eds.), <em>Public Service Media Across Borders and Boundaries, RIPE@2015</em> (pp. 121–135). Goteborg: Nordicom."
+      ]
+    },
+    {
+      "heading": "Conference Papers",
+      "type": "list",
+      "items": [
+        "Tsai, H.-J. (2025, June). Contesting visibility: Taiwanese independent media's strategies under platformised audience metrics. Island Voices on the Move: Sinophone Research Forum – Taiwan Workshop, University of Leeds, UK.",
+        "Tsai, H.-J. (2024, September). Alternative pathways: Taiwanese independent media's strategies against platform logic. ANCHOR / ANGER AWEIGHT: Cultural Typhoon 2024, Japan.",
+        "Meng, J., Lin, Y.-P., &amp; Tsai, H.-J. (2023, July). App activism and negotiated politics in the digital age: Towards a typology. IAMCR 2023, Lyon, France.",
+        "Tsai, H.-J., &amp; Lin, Y.-P. (2022, May). Data activism in Taiwan: The practice and connection of NGO workers and open source communities in a platformized civil society. 72nd ICA Annual Conference, Paris, France.",
+        "Lin, Y.-P., &amp; Tsai, H.-J. (2021, September). New challenges of public service media in a streaming era: The case of PTS+ in Taiwan. RIPE@2021, Online Conference, Fribourg, Switzerland.",
+        "Tsai, H.-J., &amp; Lin, Y.-P. (2021, March). Neoliberalised cultural policy-making: The case of music-export policy in Taiwan since 2010. ICCPR 2020, Online Conference, Kyoto, Japan.",
+        "Tsai, H.-J., &amp; Lin, Y.-P. (2019, December). How does public service media survive the competition from new streaming services? The case of PTS+ in Taiwan. Subscription Video-on-Demand in East Asia Conference, Ritsumeikan University, Kyoto, Japan.",
+        "Lin, Y.-P., &amp; Tsai, H.-J. (2019, July). How Facebook transformed news production and distribution: An examination of news media organizations and social media curators in Taiwan. IAMCR 2019, Madrid, Spain.",
+        "Lin, Y.-P., &amp; Tsai, H.-J. (2019, May). National funding for supporting indie music? How Taiwanese government promotes music industry globally, 2011–2017. 69th ICA Annual Conference, Washington D.C., USA.",
+        "Tsai, H.-J. (2017, August). After the neoliberal reform: Creative industries in Taiwan. 13th Conference of the European Sociological Association, Athens, Greece.",
+        "Tsai, H.-J. (2016, November). The rapid and continuing expansion of the creative industries sector in Taiwan. ECREA 6th European Communication Conference, Prague, Czech Republic.",
+        "Tsai, H.-J. (2016, July). Neoliberal legislation of creative industries policy in Taiwan. International Conference on Cultural Policy Research 2016, Seoul, Korea."
+      ]
+    },
+    {
+      "heading": "Awards and Honors",
+      "type": "list",
+      "items": [
+        "Excellence in Teaching Award, Tamkang University (2020)",
+        "Chiang Ching-kuo Foundation for International Scholarly Exchange (2017–2018)",
+        "Santander Mobility Award, Loughborough University (2016)",
+        "John Guest Phillips Memorial Travelling Scholarship, Loughborough University (2015)",
+        "Santander Funding for Travel Awards and Research Collaboration, Loughborough University (2014)",
+        "Government Scholarships for Overseas Study (GSOS), Ministry of Education, Taiwan (2013–2016)"
+      ]
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "Science and Technology Communication and Society",
+      "Visual Culture Analysis",
+      "Seminar in Media Sociology",
+      "Cultural Studies",
+      "Communication Theories"
+    ],
+    "researchInterests": [
+      "New Media &amp; Civic Engagement",
+      "Platformisation of Communication",
+      "Public Service Media",
+      "Democratisation of Mass Culture"
+    ],
+    "contact": {
+      "email": "tsaihuiju@ntu.edu.tw"
+    },
+    "externalLinks": [
+      { "text": "tintincai.wixsite.com/hjtsai", "url": "https://tintincai.wixsite.com/hjtsai" }
+    ]
+  }
+}

@@ -52,6 +52,22 @@
   }
 
   /**
+   * 計算英文首頁連結
+   * @returns {string} 英文首頁 URL
+   */
+  function getEnglishUrl() {
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g) || []).length - 1;
+
+    if (depth === 0 || path === '/' || path === '/index.html') {
+      return 'en/index.html';
+    }
+
+    const prefix = '../'.repeat(depth);
+    return `${prefix}en/index.html`;
+  }
+
+  /**
    * 載入並渲染 Banner
    */
   async function loadBanner() {
@@ -72,25 +88,38 @@
       const data = await response.json();
       const lang = detectLanguage();
       const homeUrl = getHomeUrl();
-      
-      // 根據語言選擇對應內容
-      const title = lang === 'en' ? data.title_en : data.title_zh;
-      const subtitle = lang === 'en' ? data.subtitle_en : data.subtitle_zh;
-      const altTitle = lang === 'en' ? data.title_zh : data.title_en; // 顯示另一種語言
-      
-      // 渲染 Banner HTML
+      const titleZh = data.title_zh || data.title || '國立臺灣大學新聞研究所';
+      const titleEn = data.title_en || 'Graduate Institute of Journalism, National Taiwan University';
+      const subtitleZh = data.subtitle_zh || data.subtitle || '培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才';
+      const subtitleEn = data.subtitle_en || 'Cultivating journalism and communication talent for the new era through a balance of theory and practice, with professional knowledge and critical thinking.';
+      const title = lang === 'en' ? titleEn : titleZh;
+      const altTitle = lang === 'en' ? titleZh : titleEn;
+      const subtitle = lang === 'en' ? subtitleEn : subtitleZh;
+      const showLogo = Boolean(data.logo) && data.show_logo !== false;
+      const englishUrl = getEnglishUrl();
+      const logoHtml = showLogo
+        ? `<a class="site-banner-logo-link" href="${homeUrl}" aria-label="${titleZh}">
+            <img src="${data.logo}" alt="${titleZh}" class="site-banner-logo">
+          </a>`
+        : '';
+
       banner.innerHTML = `
         <div class="container-1200">
-          ${data.logo ? `<img src="${data.logo}" alt="Logo" class="mb-3" style="max-height: 60px;">` : ''}
-          <h1 class="text-4xl font-bold text-gray-800 mb-2">
-            <a href="${homeUrl}" 
-               class="hover:text-gray-600 transition" 
-               style="text-decoration: none; color: inherit;">
-              ${title}
-            </a>
-          </h1>
-          <p class="text-gray-700 text-base mb-1">${altTitle}</p>
-          <p class="text-gray-600 text-base">${subtitle}</p>
+          <div class="site-banner-shell${showLogo ? ' has-logo' : ''}">
+            <div class="site-banner-brand">
+              ${logoHtml}
+              <div class="site-banner-copy">
+                <h1 class="site-banner-title">
+                  <a href="${homeUrl}" class="site-banner-title-link">
+                    ${title}
+                  </a>
+                </h1>
+                <p class="site-banner-english">${altTitle}</p>
+                <p class="site-banner-subtitle">${subtitle}</p>
+              </div>
+            </div>
+            <a class="site-banner-english-link" href="${englishUrl}" target="_blank" rel="noopener noreferrer">English</a>
+          </div>
         </div>
       `;
       
@@ -100,23 +129,31 @@
       // 降級方案：使用預設內容
       const lang = detectLanguage();
       const homeUrl = getHomeUrl();
+      const titleZh = '國立臺灣大學新聞研究所';
+      const titleEn = 'Graduate Institute of Journalism, National Taiwan University';
+      const subtitleZh = '培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才';
+      const subtitleEn = 'Cultivating journalism and communication talent for the new era through a balance of theory and practice, with professional knowledge and critical thinking.';
+      const title = lang === 'en' ? titleEn : titleZh;
+      const altTitle = lang === 'en' ? titleZh : titleEn;
+      const subtitle = lang === 'en' ? subtitleEn : subtitleZh;
+      const englishUrl = getEnglishUrl();
       
       banner.innerHTML = `
         <div class="container-1200">
-          <h1 class="text-4xl font-bold text-gray-800 mb-2">
-            <a href="${homeUrl}" 
-               class="hover:text-gray-600 transition" 
-               style="text-decoration: none; color: inherit;">
-              ${lang === 'en' 
-                ? 'Graduate Institute of Journalism, National Taiwan University' 
-                : '國立臺灣大學新聞研究所'}
-            </a>
-          </h1>
-          <p class="text-gray-700 text-base mb-1">
-            ${lang === 'en' 
-              ? '國立臺灣大學新聞研究所' 
-              : 'Graduate Institute of Journalism, National Taiwan University'}
-          </p>
+          <div class="site-banner-shell">
+            <div class="site-banner-brand">
+              <div class="site-banner-copy">
+                <h1 class="site-banner-title">
+                  <a href="${homeUrl}" class="site-banner-title-link">
+                    ${title}
+                  </a>
+                </h1>
+                <p class="site-banner-english">${altTitle}</p>
+                <p class="site-banner-subtitle">${subtitle}</p>
+              </div>
+            </div>
+            <a class="site-banner-english-link" href="${englishUrl}" target="_blank" rel="noopener noreferrer">English</a>
+          </div>
         </div>
       `;
     }

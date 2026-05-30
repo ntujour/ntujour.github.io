@@ -1,0 +1,22 @@
+{
+  "slug": "liyenfu",
+  "name": "李彥甫",
+  "nameZh": "李彥甫",
+  "title": "兼任助理教授級專業技術人員",
+  "photo": "../../images/faculty/liyenfu.jpg",
+  "placeholder": "李",
+  "contacts": [],
+  "sidebar": {
+    "teachingField": [
+      "新聞編輯與資訊設計"
+    ],
+    "researchInterests": [
+      "媒體經營管理及策略發展",
+      "資訊設計",
+      "數位內容服務開發"
+    ],
+    "contact": {},
+    "externalLinks": []
+  },
+  "sections": []
+}

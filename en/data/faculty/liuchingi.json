@@ -1,0 +1,35 @@
+{
+  "slug": "liuchingi",
+  "name": "劉靜怡",
+  "nameZh": "劉靜怡",
+  "title": "合聘教授（與國發所合聘）",
+  "photo": "../../images/faculty/liuchingi.jpg",
+  "placeholder": "劉",
+  "contacts": [
+    {
+      "type": "web",
+      "text": "Personal Website",
+      "url": "http://www.nd.ntu.edu.tw/people/bio.php?PID=28"
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "資訊法制專題",
+      "法律與科技專題",
+      "資訊社會專題"
+    ],
+    "researchInterests": [
+      "資訊法與電信法",
+      "人權法制",
+      "法律經濟分析"
+    ],
+    "contact": {},
+    "externalLinks": [
+      {
+        "text": "Personal Website",
+        "url": "http://www.nd.ntu.edu.tw/people/bio.php?PID=28"
+      }
+    ]
+  },
+  "sections": []
+}

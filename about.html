@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tailwind.css">
+<link rel="stylesheet" href="css/site-common.css">
+
+
+    <title>關於我們 - 國立臺灣大學新聞研究所</title>
+    <meta name="description" content="國立臺灣大學新聞研究所 - 本所簡介、宗旨目標、交通資訊與捐款支持">
+</head>
+
+<body class="bg-white">
+    <!-- Skip to main content link for accessibility -->
+<a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-ntu-maroon focus:text-white">跳到主要內容</a>
+
+<!-- Banner -->
+<header id="site-banner" class="bg-[#f3f3f3] text-neutral-900 py-3 border-b border-neutral-300" role="banner">
+    <div class="container-1200">
+        <div class="site-banner-shell">
+            <div class="site-banner-brand">
+                <div class="site-banner-copy">
+                    <h1 class="site-banner-title">
+                        <a href="index.html" class="site-banner-title-link">國立臺灣大學新聞研究所</a>
+                    </h1>
+                    <p class="site-banner-english">Graduate Institute of Journalism, National Taiwan University</p>
+                    <p class="site-banner-subtitle">培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才</p>
+                </div>
+            </div>
+            <a class="site-banner-english-link" href="en/index.html" target="_blank" rel="noopener noreferrer">English</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Navigation -->
+<nav id="site-nav" class="bg-ntu-maroon border-y border-[#5f120d] shadow-none z-50">
+    <div class="container-1200">
+        <div class="flex flex-wrap items-center justify-between">
+            <!-- Mobile Menu Button -->
+            <button id="nav-toggle"
+                class="sm:hidden px-3 py-1.5 text-white border border-white/30 hover:bg-white/10 transition"
+                aria-label="選單">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menu Items -->
+            <div id="nav-menu" class="w-full sm:w-auto hidden sm:block">
+                <ul class="flex flex-col sm:flex-row sm:items-center gap-0 sm:gap-0 py-0">
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="about.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">關於本所</a>
+                        <div class="dropdown-menu">
+                            <a href="about.html#intro">本所簡介</a>
+                            <a href="about.html#mission">宗旨與目標</a>
+                            <a href="about.html#transportation">交通資訊</a>
+                            <a href="about.html#donate">捐款支持</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="faculty/faculty.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">本所成員</a>
+                        <div class="dropdown-menu">
+                            <a href="faculty/faculty.html#fulltime-faculty">專任教師</a>
+                            <a href="faculty/faculty.html#practical-faculty">實務教師</a>
+                            <a href="faculty/faculty.html#parttime-faculty">兼任教師</a>
+                            <a href="faculty/faculty.html#honorary-faculty">名譽教授</a>
+                            <a href="faculty/faculty.html#joint-faculty">合聘教師</a>
+                            <a href="faculty/faculty.html#retired-faculty">退休教師</a>
+                            <a href="staff.html">行政人員</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="admissions.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">入學資訊</a>
+                        <div class="dropdown-menu">
+                            <a href="admissions.html#qualifying">推甄入學</a>
+                            <a href="admissions.html#entrance">入學考試</a>
+                            <a href="admissions.html#past-exam">歷屆考古題</a>
+                            <a href="admissions.html#international">國際生</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="students/student-learning.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學生學習</a>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="publications/e-report.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學習成果</a>
+                        <div class="dropdown-menu">
+                            <a href="publications/114-graduation-exhibition.html">114學生畢業特展</a>
+                            <a href="https://medium.com/@ntujour2022" target="_blank" rel="noopener noreferrer">新聞所Medium<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="https://www.facebook.com/ntujournal/?locale=zh_TW" target="_blank" rel="noopener noreferrer">臺大新聞e論壇<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="publications/e-report.html">前期所報</a>
+                            <a href="publications/master-thesis.html">畢業生論文</a>
+                            <a href="publications/books.html">報導專書</a>
+                            <a href="publications/ntu-news-forum.html">臺大新聞論壇</a>
+                            <a href="publications/employment-status.html">畢業生就業狀況</a>
+                            <a href="https://datajournalism.ntu.edu.tw/" target="_blank" rel="noopener noreferrer">台大資料新聞<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="undergraduate.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">大學生</a>
+                        <div class="dropdown-menu">
+                            <a href="undergraduate/general-education.html">通識課</a>
+                            <a href="undergraduate/specialties.html">領域專長</a>
+                            <a href="undergraduate/admissions.html">入學資訊</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="news.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">最新消息</a>
+                    </li>
+                    <li class="nav-item w-full sm:w-auto">
+                        <a href="resources.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">相關資源</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            if (window.innerWidth < 640) {
+                if (navMenu && !navMenu.classList.contains('hidden') &&
+                    !navMenu.contains(event.target) &&
+                    !navToggle.contains(event.target)) {
+                    navMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+</script>
+
+
+    <!-- Page Header -->
+    <section id="page-header" class="bg-neutral-50 py-6">
+        <div class="container-1200">
+            <div class="max-w-4xl">
+                <h2 class="text-2xl font-bold text-neutral-900 mb-2">關於我們</h2>
+                <p class="text-neutral-600">國立臺灣大學新聞研究所</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="bg-white">
+
+        <!-- Intro Section -->
+        <section id="intro" class="py-16 scroll-mt-20 border-b border-neutral-200">
+            <div class="container-1200">
+                <div class="max-w-4xl mx-auto">
+                    <p class="category-label mb-2">ABOUT US</p>
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-8">本所簡介</h3>
+
+                    <div class="content-section mb-12">
+                        <h4 class="text-xl font-bold text-neutral-800 mb-4">本所介紹</h4>
+                        <div class="space-y-4 text-neutral-700 leading-relaxed text-lg">
+                            <p>人類社會進入二十世紀後半葉，大眾傳播現象如同電光石火般快速變遷發展，媒體爆炸、資訊多元、傳播科技日新月異。傳播資訊快速更迭與深刻滲透、衝擊了社會生活的方方面面，成為政治經濟的實質力量，也成為社會文化認同的重要資源，研究與探討傳播現象已成為人文社會科學界的焦點課題之一。
+                            </p>
+                            <p>其中，新聞傳播專業實踐是媒體現象中最重要的一環，相關的分析研究亦逐漸厚植其理論和範型，成為人文社會學中不可或缺的一環。這也是臺大為何在拒絕新聞科系50年後，終於改變認識，肯定新聞傳播科系具有專業的社會價值和學術內涵，在1991年設立了臺大新聞研究所（以下簡稱「本所」）。
+                            </p>
+                            <p>本所的設立是學術界和媒體界共同催生的成果：1986年間，一場來自臺大社會科學界和媒體界的領導者的聚會中，提出了倡議成立本所的發想，經過比較國內外的新聞院校制度後，決定以培養臺灣新聞界的進階人才，以及提升臺灣新聞專業水準為宗旨，並且與臺灣既有的新聞院校有所區隔。於是，仿照美國哥倫比亞大學新聞研究所的實務訓練模式，於1991年成立了臺灣第一所以提升新聞傳播專業實務為宗旨的研究所。
+                            </p>
+                            <p>本所雖然原師法哥倫比亞大學的新聞研究所，但是，為配合臺灣的教育制度和媒體環境，也發展一些明顯的差異。例如，哥倫比亞大學的新聞研究所是一個完全以進階實務訓練為主的研究所，所裡的專任師資全部都是實務界資深工作者；而本所在我國教育體制下，則強調必須兼顧學術要求及規範，並符合一般研究所的兩年學制；同時，專任師資仍需通過學術品質審查，專業實務教師則聘請業界資深優秀的工作者兼任授課。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h4 class="text-xl font-bold text-neutral-800 mb-4">本所特色與設備</h4>
+                        <div class="space-y-6 text-neutral-700 leading-relaxed text-lg">
+                            <p>為了達成本所的設立宗旨與教育目標，本所多年來也發展出實踐策略，具體落實在課程設計、教師教學、學生事務、研究表現等方面。經由具體的實踐，本所在國內新聞教育，深具特色。</p>
+
+                            <div>
+                                <h5 class="font-bold text-neutral-900 mb-2">1. 落實專業實務師資教學制、結合新聞實務脈動</h5>
+                                <p>本所延聘實務界優秀傑出之資深專業人士擔任實務課程教師。實務教師在獲聘本所教師時，已是資深的新聞工作者，並在專業工作上有傑出表現，受到學界與業界肯定。</p>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-neutral-900 mb-2">2. 提供五大類課程，結合校內外資源</h5>
+                                <p>本所核心必修課程包括「專業理論與法規」與「專業智能實作」。並根據四大教育目標，發展五個延伸選修課程（包括「理論／方法」、「媒體公民意識」、「國際視野課程」、「學域專長」以及「專業實作」）。
+                                </p>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-neutral-900 mb-2">3. 「從做中學」的專業實務課程教學</h5>
+                                <p>本所強調「從做中學」，小班制教學、個別的作業討論等，務期學生能夠在實作中同時增進新聞技藝智能，以及反思新聞工作者的專業角色與倫理。</p>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-neutral-900 mb-2">環境設備</h5>
+                                <p>本所除了一般課用教室外，尚有電腦教室、視聽教室、暗房、影棚等實際操作學習之教室。值得一提的是，本所學生皆配有研究空間，碩士班一、二年級學生每人配有1組桌椅、書櫃，及獨立的學生交誼廳。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section mt-12 pt-12 border-t border-neutral-200">
+                        <h4 class="text-xl font-bold text-neutral-800 mb-6">歷任所長</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-neutral-700 text-lg">
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第一任</span>
+                                <span class="flex-grow font-medium text-neutral-900">喻德基 教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">1991-1992</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第二任</span>
+                                <span class="flex-grow font-medium text-neutral-900">張錦華 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">1992-1997</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第三任</span>
+                                <span class="flex-grow font-medium text-neutral-900">谷玲玲 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">1997-2000</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第四任</span>
+                                <span class="flex-grow font-medium text-neutral-900">林鶴玲 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2000-2001</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第五任</span>
+                                <span class="flex-grow font-medium text-neutral-900">張錦華 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2002-2006</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第六任</span>
+                                <span class="flex-grow font-medium text-neutral-900">彭文正 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2006-2009</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第七任</span>
+                                <span class="flex-grow font-medium text-neutral-900">林麗雲 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2009-2012</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第八任</span>
+                                <span class="flex-grow font-medium text-neutral-900">洪貞玲 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2012-2015</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第九任</span>
+                                <span class="flex-grow font-medium text-neutral-900">王泰俐 教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2015-2016</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第十任</span>
+                                <span class="flex-grow font-medium text-neutral-900">林照真 教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2016-2018</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第十一任</span>
+                                <span class="flex-grow font-medium text-neutral-900">谷玲玲 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2018-2021</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第十二任</span>
+                                <span class="flex-grow font-medium text-neutral-900">洪貞玲 教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2021-2024</span>
+                            </div>
+                            <div class="flex items-center space-x-3 py-2 border-b border-neutral-100">
+                                <span class="w-16 text-sm text-neutral-500 font-medium shrink-0">第十三任</span>
+                                <span class="flex-grow font-medium text-neutral-900">謝吉隆 副教授</span>
+                                <span class="text-sm text-neutral-500 font-mono">2024-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="py-16 bg-neutral-50 scroll-mt-20 border-b border-neutral-200">
+            <div class="container-1200">
+                <div class="max-w-4xl mx-auto">
+                    <p class="category-label mb-2">MISSION</p>
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-8">宗旨與目標</h3>
+
+                    <div class="space-y-8 text-neutral-700 leading-relaxed text-lg">
+                        <div>
+                            <h4 class="text-xl font-bold text-neutral-800 mb-4">設立宗旨</h4>
+                            <p>本所創設於1991年，宗旨為<strong>「培養新聞傳播進階人才，提升新聞傳播專業水準」</strong>。本所成立之時，參考哥倫比亞大學新聞學院的辦學理念；該所以進階實務訓練為主。本所則考量到新聞記者除了技藝的訓練外，也應具備專業知識與分析問題的能力；而且理論與實務乃不可分割。因此，本所之新聞教育，乃同時重視專業理論與專業智能實作，並強調兩者之結合。
+                            </p>
+                            <p class="mt-4">
+                                本所以「提升新聞專業」為宗旨，在本地的新聞教育發展上深具特色。在臺灣，本所是唯一以提供進階的新聞專業教育作為目標的研究所。本所的定位明確，有所區隔，負有特殊的新聞教育使命。
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-neutral-800 mb-4">教育目標</h4>
+                            <p>專業的新聞工作者除了應具備新聞傳播的技藝，也應具備分析新聞議題的能力；而且，面對多元且急遽變動的社會與全球化的環境，新聞工作者應具備獨立思辯與尊重多元文化的公民意識、國際視野以及專業領域的知識。
+                            </p>
+                            <p class="mt-4 font-bold">因此，本所設定四項教育目標：</p>
+                            <ul class="list-disc list-inside mt-2 ml-4">
+                                <li>培養新聞傳播之技藝與智能。</li>
+                                <li>訓練獨立思辯與尊重多元之公民意識。</li>
+                                <li>提升國際視野。</li>
+                                <li>加強學術領域專長。</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-neutral-800 mb-4">核心能力</h4>
+                            <ul class="list-decimal list-inside space-y-3 ml-2">
+                                <li><strong>新聞採寫與分析能力：</strong>具備優秀的新聞採寫的能力，認識新聞傳播的本質和功能、反思新聞專業倫理、以及具備探討和分析新聞傳播議題的能力。
+                                </li>
+                                <li><strong>獨立思辯與社會關懷：</strong>具備獨立思考的批判能力、關懷公共議題與尊重不同的文化與社群的社會關懷。</li>
+                                <li><strong>全球/在地視野：</strong>具備全球/在地的思維，能認識及分析全球發展的趨勢及其對在地社會的影響。</li>
+                                <li><strong>跨領域專業知識：</strong>培養特定領域的專業知識，成為一名兼具基本新聞專業素養和專門知識領域的新聞工作者。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation Section -->
+        <section id="transportation" class="py-16 scroll-mt-20 border-b border-neutral-200">
+            <div class="container-1200">
+                <div class="max-w-4xl mx-auto">
+                    <p class="category-label mb-2">CONTACT</p>
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-8">交通資訊</h3>
+
+                    <div class="space-y-12">
+                        <div class="h-96 bg-neutral-200 rounded-2xl overflow-hidden shadow-md">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0022866234705!2d121.5404925!3d25.0194314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa25e0d9ba1b%3A0xfc95f3781fa498ac!2z5ZyL56uL6Ie654Gj5aSn5a245paw6IGe56CU56m25omA!5e0!3m2!1szh-TW!2stw!4v1635000000000!5m2!1szh-TW!2stw"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-neutral-50 p-6 rounded-2xl">
+                                <h4 class="text-xl font-bold text-neutral-900 mb-4">聯絡資訊</h4>
+                                <ul class="space-y-3 text-neutral-700">
+                                    <li><strong>地址：</strong>10617 臺北市大安區羅斯福路四段1號 新聞研究所</li>
+                                    <li><strong>電話：</strong>(02) 3366-3131</li>
+                                    <li><strong>Email：</strong>jour@ntu.edu.tw</li>
+                                    <li><strong>辦公時間：</strong>週一至週五 09:00-17:00</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-neutral-50 p-6 rounded-2xl">
+                                <h4 class="text-xl font-bold text-neutral-900 mb-4">交通方式</h4>
+                                <div class="space-y-4 text-neutral-700">
+                                    <div>
+                                        <strong>捷運：</strong>
+                                        <p class="text-sm mt-1">公館站（松山新店線）2號出口，沿羅斯福路步行進入臺大校園。</p>
+                                    </div>
+                                    <div>
+                                        <strong>公車：</strong>
+                                        <p class="text-sm mt-1">公館站、捷運公館站等多線公車可達。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donate Section -->
+        <section id="donate" class="py-16 bg-neutral-50 scroll-mt-20">
+            <div class="container-1200">
+                <div class="max-w-4xl mx-auto">
+                    <p class="category-label mb-2 text-center">DONATION</p>
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-8 text-center">捐款支持</h3>
+
+                    <div class="bg-white p-8 md:p-12 rounded-3xl shadow-soft text-center max-w-2xl mx-auto">
+                        <div class="w-16 h-16 bg-ntu-maroon/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-ntu-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        
+                        <p class="text-lg text-neutral-700 leading-relaxed mb-8">
+                            國立臺灣大學新聞研究所致力於培育具有專業知識與批判思考能力的新聞傳播人才。我們期盼能有更好的環境來培育下一代的新聞人才，您的支持是我們持續卓越的動力。
+                        </p>
+
+                        <a href="https://giving.ntu.edu.tw/Default.html" target="_blank" rel="noopener noreferrer"
+                            class="inline-block px-8 py-3 bg-ntu-maroon text-white font-semibold rounded-full text-base hover:bg-ntu-dark shadow-md hover:shadow-lg transition duration-200">
+                            前往臺大捐款系統
+                        </a>
+
+                        <div class="mt-8 text-xs text-neutral-500">
+                            * 請於捐款頁面中指定捐贈單位為「新聞研究所」。對教育、文化機構之捐贈，可列入綜合所得稅或營利事業所得稅之列舉扣除額。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- site-sitemap moved into site-footer partial to avoid duplicate footer blocks -->
+
+    <!-- Footer -->
+
+<section id="footer-module-band" class="site-module-band site-module-band--footer">
+    <div class="container-1200">
+        <div class="site-module-grid site-module-grid--strip"><a class="site-module-card site-module-card--strip" href="publications/114-graduation-exhibition.html" aria-label="114 畢業生特展" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/publications/liu.png" alt="114 畢業生特展" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.33% 70.33%; transform: scale(1.0); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">114 畢業生特展</strong>
+        <small class="site-module-subtitle">流／留：這個時代</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="news/2025-11-19-news-260367.html" aria-label="假訊息調查" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/news/bird02-1779892349.png" alt="假訊息調查" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.0% 16.0%; transform: scale(0.7); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">假訊息調查</strong>
+        <small class="site-module-subtitle">年度調查</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="news/2026-03-04-news-261571.html" aria-label="影像專業訓練" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/news/bird01-1779892339.png" alt="影像專業訓練" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 87.91% 2.94%; transform: scale(0.88); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">影像專業訓練</strong>
+        <small class="site-module-subtitle">課程與作品</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="activities/2026-04-15-activity-262463.html" aria-label="AI與新聞所" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/modules/20241213-AIIcon-1779865297.png" alt="AI與新聞所" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: -123.2% 90.3%; transform: scale(0.72); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">AI與新聞所</strong>
+        <small class="site-module-subtitle">相關課程</small>
+    </span>
+</a></div>
+    </div>
+</section>
+
+<section id="site-map" class="site-map-band"><div class="container-1200"><div class="site-map-grid"><div class="site-map-card"><h4 class="site-map-title">學生專區</h4><ul class="site-map-list"><li><a href="students/course-map.html" class="site-map-link">課程地圖</a></li><li><a href="students/course-regulation.html" class="site-map-link">修業規定</a></li><li><a href="students/statute-and-form.html" class="site-map-link">表單下載</a></li><li><a href="students/student-learning.html" class="site-map-link">學生學習</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">認識本所</h4><ul class="site-map-list"><li><a href="about.html#intro" class="site-map-link">本所介紹</a></li><li><a href="faculty/faculty.html" class="site-map-link">師資總覽</a></li><li><a href="publications/e-report.html" class="site-map-link">捐款支持</a></li><li><a href="about.html#transportation" class="site-map-link">聯絡我們</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">入學資訊</h4><ul class="site-map-list"><li><a href="admissions.html#qualifying" class="site-map-link">甄試入學</a></li><li><a href="admissions.html#entrance" class="site-map-link">招生考試</a></li><li><a href="admissions.html#past-exam" class="site-map-link">歷屆考古題</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">校友與連結</h4><ul class="site-map-list"><li><a href="about.html#donate" class="site-map-link">捐款支持</a></li><li><a href="resources.html" class="site-map-link">相關資源</a></li><li><a href="staff.html" class="site-map-link">行政人員</a></li><li><a href="news.html" class="site-map-link">最新消息</a></li></ul></div></div></div></section>
+<footer id="site-footer" class="bg-neutral-800 py-4 border-t border-neutral-600">
+    <div class="container-1200">
+        <div class="site-footer-grid">
+            <div class="site-footer-brand">
+                <p class="text-[15px] text-white/95 leading-relaxed mb-2 font-semibold">
+                    國立臺灣大學新聞研究所
+                </p>
+                <p class="text-[12px] text-white/85 leading-7 site-footer-copy">
+                    Copyright &copy; 2025 Graduate Institute of Journalism, National Taiwan University. All Rights Reserved.
+                </p>
+            </div>
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    10617 臺北市大安區羅斯福路四段一號<br>
+                    (02) 3366-3131
+                </p>
+            </div>
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    No. 1, Sec. 4, Roosevelt Road, Taipei, 10617 Taiwan<br>
+                    <a href="mailto:jour@ntu.edu.tw" class="hover:text-ntu-gold transition">jour@ntu.edu.tw</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="js/sticky-header.js"></script>
+</body>
+
+</html>

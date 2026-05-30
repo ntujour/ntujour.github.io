@@ -1,0 +1,61 @@
+{
+  "slug": "i-i-chan",
+  "name": "I-I Chan",
+  "nameZh": "詹怡宜",
+  "title": "Associate Professor",
+  "photo": "../image/I-I%20Chan.png",
+  "placeholder": "",
+  "contacts": [
+    { "type": "email", "value": "chanii311@ntu.edu.tw" }
+  ],
+  "sections": [
+    {
+      "heading": "Education",
+      "type": "list",
+      "items": [
+        "Master of Public Policy (MPP), University of Chicago, USA",
+        "B.A. in Political Science (Public Administration Division), National Taiwan University, Taiwan"
+      ]
+    },
+    {
+      "heading": "Professional Experience",
+      "type": "list",
+      "items": [
+        "Associate Professor, Graduate Institute of Journalism, National Taiwan University (2025–present)",
+        "Deputy General Manager, TVBS News Department (2020–2025)",
+        "Producer and Host, <em>Step by Step: Discovering New Taiwan</em>, TVBS (2004–2025)",
+        "Director, TVBS News Department (2007–2020)",
+        "Staff Reporter, News Anchor, Head of Political Desk, Head of Special Reports Desk, Deputy Director of News Gathering Center, Deputy Managing Editor &amp; Producer, TVBS (1993–2007)",
+        "Adjunct Lecturer, Department of Journalism, Shih Hsin University (2005–2006)",
+        "Political Reporter, <em>United Evening News</em> (1992–1993)",
+        "Political Reporter, <em>Independence Evening Post</em> (1991–1992)",
+        "International News Editor/Translator, <em>China Times</em> (1988–1989)"
+      ]
+    },
+    {
+      "heading": "Honors and Awards",
+      "type": "list",
+      "items": [
+        "Eisenhower Fellow, Eisenhower Fellowships, USA (2016)",
+        "Distinguished Award for Excellence in Communication Management, Chinese Communication Management Association, Taiwan (2015)",
+        "Award for Outstanding Contribution to Communication, Hsing Yun Truth, Goodness and Beauty Journalism Awards (2010)",
+        "Golden Wheel Award for Best Program Host, Rotary International Public Service Journalism Awards (2010)",
+        "Golden Bell Award, Educational and Informational Program Category, Step by Step: Discovering New Taiwan (2009)",
+        "Golden Bell Award, Best Host in Educational and Informational Programming, Step by Step: Discovering New Taiwan (2005)",
+        "Golden Bell Award, Best News Reporting, River of Love (Dahe Lian) Investigative Series (2000)"
+      ]
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "Television News Reporting",
+      "Government and Public Affairs Reporting",
+      "Current Affairs Forum: Planning and Production"
+    ],
+    "researchInterests": [],
+    "contact": {
+      "email": "chanii311@ntu.edu.tw"
+    },
+    "externalLinks": []
+  }
+}

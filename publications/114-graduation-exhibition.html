@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tailwind.css">
+<link rel="stylesheet" href="../css/site-common.css">
+
+
+    <title>114學生畢業特展 - 國立臺灣大學新聞研究所</title>
+    <meta name="description" content="國立臺灣大學新聞研究所114年度學生畢業特展《流／留：這個時代，一起來到新聞路口》">
+    <style>
+        body.exhibition-page {
+            background: #fdfdfd;
+            color: #1c1917;
+        }
+
+        body.exhibition-page #page-header,
+        body.exhibition-page #main-content,
+        body.exhibition-page #page-header + section,
+        body.exhibition-page #page-header + section + section {
+            background: transparent !important;
+        }
+
+        body.exhibition-page #page-header > .container-1200,
+        body.exhibition-page #main-content > .container-1200,
+        body.exhibition-page #page-header + section > .container-1200,
+        body.exhibition-page #page-header + section + section > .container-1200 {
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .exhibition-shell {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(122, 26, 20, 0.12);
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(56, 13, 11, 0.05);
+        }
+
+        .exhibition-shell::before,
+        .exhibition-shell::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            pointer-events: none;
+            filter: blur(2px);
+        }
+
+        .exhibition-shell::before {
+            right: -120px;
+            top: -80px;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(239, 162, 42, 0.08), transparent 72%);
+        }
+
+        .exhibition-shell::after {
+            left: -90px;
+            bottom: -110px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(122, 26, 20, 0.04), transparent 72%);
+        }
+
+        .year-badge {
+            width: 4.6rem;
+            height: 4.6rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(122, 26, 20, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.55rem;
+            line-height: 1;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            background: rgba(122, 26, 20, 0.03);
+            color: #7a1a14;
+        }
+
+        .poster-panel {
+            border: 1px solid rgba(122, 26, 20, 0.12);
+            background: #fbf9f6;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .poster-panel img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 807px;
+        }
+
+        .section-card {
+            border: 1px solid rgba(122, 26, 20, 0.12);
+            background: #faf8f5;
+            backdrop-filter: blur(8px);
+            color: #2f1a18;
+        }
+
+        .section-card--light {
+            border-color: rgba(122, 26, 20, 0.12);
+            background: rgba(255, 251, 245, 0.98);
+            color: #2f1a18;
+            box-shadow: 0 10px 30px rgba(56, 13, 11, 0.09);
+        }
+
+        .section-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.72rem;
+            border: 1px solid rgba(122, 26, 20, 0.2);
+            color: #7a1a14;
+            font-size: 0.82rem;
+            line-height: 1;
+            letter-spacing: 0.04em;
+            background: rgba(122, 26, 20, 0.04);
+        }
+
+        .section-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+            padding: 0.7rem 1rem;
+            border: 1px solid #7a1a14;
+            color: #7a1a14;
+            font-weight: 700;
+            transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .section-link:hover {
+            background: #7a1a14;
+            color: #fff;
+        }
+
+        .section-link--ghost {
+            border-color: rgba(122, 26, 20, 0.3);
+            color: #7a1a14;
+        }
+
+        .section-link--ghost:hover {
+            border-color: #7a1a14;
+            background: rgba(122, 26, 20, 0.08);
+            color: #7a1a14;
+        }
+
+        @media (max-width: 767px) {
+            .year-badge {
+                width: 4rem;
+                height: 4rem;
+                font-size: 1.35rem;
+            }
+
+            .poster-vertical-tag,
+            .poster-bottom-tag {
+                letter-spacing: 0.18em;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white exhibition-page">
+    <!-- Skip to main content link for accessibility -->
+<a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-ntu-maroon focus:text-white">跳到主要內容</a>
+
+<!-- Banner -->
+<header id="site-banner" class="bg-[#f3f3f3] text-neutral-900 py-3 border-b border-neutral-300" role="banner">
+    <div class="container-1200">
+        <div class="site-banner-shell">
+            <div class="site-banner-brand">
+                <div class="site-banner-copy">
+                    <h1 class="site-banner-title">
+                        <a href="../index.html" class="site-banner-title-link">國立臺灣大學新聞研究所</a>
+                    </h1>
+                    <p class="site-banner-english">Graduate Institute of Journalism, National Taiwan University</p>
+                    <p class="site-banner-subtitle">培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才</p>
+                </div>
+            </div>
+            <a class="site-banner-english-link" href="../en/index.html" target="_blank" rel="noopener noreferrer">English</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Navigation -->
+<nav id="site-nav" class="bg-ntu-maroon border-y border-[#5f120d] shadow-none z-50">
+    <div class="container-1200">
+        <div class="flex flex-wrap items-center justify-between">
+            <!-- Mobile Menu Button -->
+            <button id="nav-toggle"
+                class="sm:hidden px-3 py-1.5 text-white border border-white/30 hover:bg-white/10 transition"
+                aria-label="選單">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menu Items -->
+            <div id="nav-menu" class="w-full sm:w-auto hidden sm:block">
+                <ul class="flex flex-col sm:flex-row sm:items-center gap-0 sm:gap-0 py-0">
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../about.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">關於本所</a>
+                        <div class="dropdown-menu">
+                            <a href="../about.html#intro">本所簡介</a>
+                            <a href="../about.html#mission">宗旨與目標</a>
+                            <a href="../about.html#transportation">交通資訊</a>
+                            <a href="../about.html#donate">捐款支持</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../faculty/faculty.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">本所成員</a>
+                        <div class="dropdown-menu">
+                            <a href="../faculty/faculty.html#fulltime-faculty">專任教師</a>
+                            <a href="../faculty/faculty.html#practical-faculty">實務教師</a>
+                            <a href="../faculty/faculty.html#parttime-faculty">兼任教師</a>
+                            <a href="../faculty/faculty.html#honorary-faculty">名譽教授</a>
+                            <a href="../faculty/faculty.html#joint-faculty">合聘教師</a>
+                            <a href="../faculty/faculty.html#retired-faculty">退休教師</a>
+                            <a href="../staff.html">行政人員</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../admissions.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">入學資訊</a>
+                        <div class="dropdown-menu">
+                            <a href="../admissions.html#qualifying">推甄入學</a>
+                            <a href="../admissions.html#entrance">入學考試</a>
+                            <a href="../admissions.html#past-exam">歷屆考古題</a>
+                            <a href="../admissions.html#international">國際生</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../students/student-learning.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學生學習</a>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../publications/e-report.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學習成果</a>
+                        <div class="dropdown-menu">
+                            <a href="../publications/114-graduation-exhibition.html">114學生畢業特展</a>
+                            <a href="https://medium.com/@ntujour2022" target="_blank" rel="noopener noreferrer">新聞所Medium<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="https://www.facebook.com/ntujournal/?locale=zh_TW" target="_blank" rel="noopener noreferrer">臺大新聞e論壇<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="../publications/e-report.html">前期所報</a>
+                            <a href="../publications/master-thesis.html">畢業生論文</a>
+                            <a href="../publications/books.html">報導專書</a>
+                            <a href="../publications/ntu-news-forum.html">臺大新聞論壇</a>
+                            <a href="../publications/employment-status.html">畢業生就業狀況</a>
+                            <a href="https://datajournalism.ntu.edu.tw/" target="_blank" rel="noopener noreferrer">台大資料新聞<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../undergraduate.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">大學生</a>
+                        <div class="dropdown-menu">
+                            <a href="../undergraduate/general-education.html">通識課</a>
+                            <a href="../undergraduate/specialties.html">領域專長</a>
+                            <a href="../undergraduate/admissions.html">入學資訊</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../news.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">最新消息</a>
+                    </li>
+                    <li class="nav-item w-full sm:w-auto">
+                        <a href="../resources.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">相關資源</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            if (window.innerWidth < 640) {
+                if (navMenu && !navMenu.classList.contains('hidden') &&
+                    !navMenu.contains(event.target) &&
+                    !navToggle.contains(event.target)) {
+                    navMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+</script>
+
+
+    <main id="main-content" class="py-6 md:py-8">
+        <section class="container-1200">
+            <div class="exhibition-shell p-5 md:p-7 lg:p-8">
+                <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between mb-6">
+                    <div>
+                        <p class="text-[11px] uppercase tracking-[0.28em] text-neutral-500 mb-2">Publication / Graduation Showcase</p>
+                        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight">114學生畢業特展</h1>
+                        <p class="mt-2 text-neutral-700 max-w-3xl">
+                            以網頁形式整理第34屆臺灣大學新聞研究所學生成果，讓展覽、報導、獎項與頻道入口都能持續擴充。
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="section-chip">畢業特展</span>
+                        <span class="section-chip">出版發表</span>
+                        <span class="section-chip">114年度</span>
+                    </div>
+                </div>
+
+                <div class="poster-stage mb-5 flex justify-center">
+                    <div class="poster-panel w-full max-w-[807px]" aria-label="114學生畢業特展海報">
+                        <img src="../images/publications/liu.png" alt="114學生畢業特展海報">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-5 xl:grid-cols-[0.85fr_1.15fr]">
+                    <aside class="section-card p-5 md:p-6 flex flex-col gap-5 text-neutral-800">
+                        <div class="flex gap-2">
+                            <span class="year-badge">2</span>
+                            <span class="year-badge">0</span>
+                            <span class="year-badge">2</span>
+                            <span class="year-badge">6</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <p class="text-3xl md:text-4xl font-bold leading-tight text-neutral-900">6月3日至6月5日</p>
+                            <p class="text-2xl md:text-[2.05rem] font-semibold leading-tight text-neutral-900">上午10時至下午5時</p>
+                            <p class="text-2xl md:text-[2.15rem] font-semibold leading-tight text-neutral-900">臺大新聞所103室</p>
+                        </div>
+
+                        <div class="border-t border-neutral-200 pt-4 text-neutral-600">
+                            <p class="text-sm tracking-[0.18em] uppercase mb-2 text-neutral-500">Exhibition venue</p>
+                            <p class="text-base leading-7 text-neutral-600">臺灣大學新聞研究所</p>
+                            <p class="text-base leading-7 text-neutral-600">第34屆學生成果展覽</p>
+                        </div>
+                    </aside>
+
+                    <aside class="section-card p-5 md:p-6 flex flex-col gap-5 text-neutral-800">
+                        <div>
+                            <h2 class="text-2xl md:text-[2.2rem] font-bold leading-tight text-neutral-900">流／留：這個時代，一起來到新聞路口</h2>
+                            <p class="mt-3 text-neutral-700 leading-7">
+                                本屆畢業特展以「流／留」為主題，從流動的資訊、行動的影像，到被留下的記憶與觀點，整理學生在新聞實作中的成果與方法。
+                            </p>
+                        </div>
+
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="section-card p-4 text-neutral-800">
+                                <p class="text-sm text-neutral-500 mb-2">策展人</p>
+                                <p class="text-lg font-semibold text-neutral-900 leading-7">柯采瑜、張童寧、高于棋</p>
+                            </div>
+                            <div class="section-card p-4 text-neutral-800">
+                                <p class="text-sm text-neutral-500 mb-2">文字統籌 / 社群宣傳</p>
+                                <p class="text-lg font-semibold text-neutral-900 leading-7">高于棋</p>
+                            </div>
+                            <div class="section-card p-4 text-neutral-800">
+                                <p class="text-sm text-neutral-500 mb-2">視覺設計</p>
+                                <p class="text-lg font-semibold text-neutral-900 leading-7">柯采瑜</p>
+                            </div>
+                            <div class="section-card p-4 text-neutral-800">
+                                <p class="text-sm text-neutral-500 mb-2">展覽執行</p>
+                                <p class="text-lg font-semibold text-neutral-900 leading-7">楊佳臻、許雅淳、梁鈺杰、戴悅鈴、陳昀、李昀霏、鍾侑芸</p>
+                            </div>
+                        </div>
+
+                        <div class="section-card p-4 text-neutral-800">
+                            <p class="text-sm text-neutral-500 mb-2">畢業生</p>
+                            <p class="text-base leading-7 text-neutral-700">
+                                李昀霏、戴悅鈴、柯采瑜、林婕宇、高于棋、高子婷、龔子翔、張童寧、張玨瑄、許雅淳、陳昀、黃家安、黃俐珺、楊佳臻、鍾孟儒、鍾侑芸、詹莉瑩、梁鈺杰等
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#program" class="section-link section-link--ghost">查看展覽內容</a>
+                            <a href="../publications/e-report.html" class="section-link section-link--ghost">回到出版發表</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="program" class="container-1200 py-6 md:py-8">
+            <div class="section-card--light p-5 md:p-6 lg:p-7">
+                <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-6">
+                    <div>
+                        <p class="text-[11px] uppercase tracking-[0.28em] text-ntu-maroon mb-2">Publication Sections</p>
+                        <h2 class="text-2xl md:text-3xl font-bold">出版發表的分區入口</h2>
+                    </div>
+                    <p class="text-sm text-neutral-600 max-w-2xl">
+                        這個頁面先作為出版發表的總入口，之後可依主題拆成更多子頁。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
+                    <article class="section-card--light p-4 md:p-5 flex flex-col gap-3">
+                        <p class="text-xs uppercase tracking-[0.22em] text-ntu-maroon/70">Feature</p>
+                        <h3 class="text-xl font-bold leading-7">畢業特展</h3>
+                        <p class="text-sm text-neutral-600 leading-7">114年度「流・留」畢業特展，將學生作品與展覽資訊整合成一個獨立頁面。</p>
+                        <a href="../publications/114-graduation-exhibition.html" class="section-link mt-auto">前往頁面</a>
+                    </article>
+
+                    <article class="section-card--light p-4 md:p-5 flex flex-col gap-3">
+                        <p class="text-xs uppercase tracking-[0.22em] text-ntu-maroon/70">Media</p>
+                        <h3 class="text-xl font-bold leading-7">媒體發表</h3>
+                        <p class="text-sm text-neutral-600 leading-7">報導者等外部媒體發表可在此持續擴充為單獨頁面。</p>
+                        <div class="mt-auto">
+                            <span class="inline-flex px-3 py-1 text-xs font-semibold border border-neutral-300 text-neutral-500">建置中</span>
+                        </div>
+                    </article>
+
+                    <article class="section-card--light p-4 md:p-5 flex flex-col gap-3">
+                        <p class="text-xs uppercase tracking-[0.22em] text-ntu-maroon/70">Award</p>
+                        <h3 class="text-xl font-bold leading-7">學生獲獎</h3>
+                        <p class="text-sm text-neutral-600 leading-7">整理全球華文永續獎等學生得獎紀錄，讓成果可持續擴充。</p>
+                        <div class="mt-auto">
+                            <span class="inline-flex px-3 py-1 text-xs font-semibold border border-neutral-300 text-neutral-500">建置中</span>
+                        </div>
+                    </article>
+
+                    <article class="section-card--light p-4 md:p-5 flex flex-col gap-3">
+                        <p class="text-xs uppercase tracking-[0.22em] text-ntu-maroon/70">Data</p>
+                        <h3 class="text-xl font-bold leading-7">資料新聞</h3>
+                        <p class="text-sm text-neutral-600 leading-7">DataJournalismNTU 的入口可直接導到既有成果站。</p>
+                        <a href="https://datajournalism.ntu.edu.tw/" target="_blank" rel="noopener noreferrer" class="section-link mt-auto">前往網站</a>
+                    </article>
+
+                    <article class="section-card--light p-4 md:p-5 flex flex-col gap-3">
+                        <p class="text-xs uppercase tracking-[0.22em] text-ntu-maroon/70">Channel</p>
+                        <h3 class="text-xl font-bold leading-7">媒聽說頻道</h3>
+                        <p class="text-sm text-neutral-600 leading-7">Podcast / 影音頻道的整理頁，未來可直接放上單集卡片與平台連結。</p>
+                        <div class="mt-auto">
+                            <span class="inline-flex px-3 py-1 text-xs font-semibold border border-neutral-300 text-neutral-500">建置中</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-1200 py-4 md:py-6">
+            <div class="section-card p-5 md:p-6">
+                <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                    <div>
+                        <p class="text-[11px] uppercase tracking-[0.28em] text-neutral-500 mb-2">Archive</p>
+                        <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 animate-none">前期所報</h2>
+                        <p class="mt-2 text-neutral-700">既有的《前期所報》仍保留在這個區塊，方便快速查找歷期內容。</p>
+                    </div>
+                    <a href="#report-list" class="section-link section-link--ghost">直接跳到列表</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-2 bg-white" id="report-section">
+            <div class="container-1200">
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white border border-neutral-200 p-8">
+                        <h3 class="text-xl font-bold text-neutral-900 mb-6">歷期所報</h3>
+
+                        <ul class="report-list" id="report-list">
+                            <!-- Reports will be loaded dynamically -->
+                            <div class="text-center py-4 text-neutral-500">載入中...</div>
+                        </ul>
+
+                        <div class="mt-8 text-center text-neutral-600">
+                            <p class="text-sm">※ 更多歷期所報持續整理中，如需查詢特定期別請洽本所辦公室</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- site-sitemap moved into site-footer partial to avoid duplicate footer blocks -->
+
+    <!-- Footer -->
+
+<section id="footer-module-band" class="site-module-band site-module-band--footer">
+    <div class="container-1200">
+        <div class="site-module-grid site-module-grid--strip"><a class="site-module-card site-module-card--strip" href="../publications/114-graduation-exhibition.html" aria-label="114 畢業生特展" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/publications/liu.png" alt="114 畢業生特展" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.33% 70.33%; transform: scale(1.0); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">114 畢業生特展</strong>
+        <small class="site-module-subtitle">流／留：這個時代</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="../news/2025-11-19-news-260367.html" aria-label="假訊息調查" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/news/bird02-1779892349.png" alt="假訊息調查" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.0% 16.0%; transform: scale(0.7); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">假訊息調查</strong>
+        <small class="site-module-subtitle">年度調查</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="../news/2026-03-04-news-261571.html" aria-label="影像專業訓練" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/news/bird01-1779892339.png" alt="影像專業訓練" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 87.91% 2.94%; transform: scale(0.88); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">影像專業訓練</strong>
+        <small class="site-module-subtitle">課程與作品</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="../activities/2026-04-15-activity-262463.html" aria-label="AI與新聞所" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/modules/20241213-AIIcon-1779865297.png" alt="AI與新聞所" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: -123.2% 90.3%; transform: scale(0.72); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">AI與新聞所</strong>
+        <small class="site-module-subtitle">相關課程</small>
+    </span>
+</a></div>
+    </div>
+</section>
+
+<section id="site-map" class="site-map-band"><div class="container-1200"><div class="site-map-grid"><div class="site-map-card"><h4 class="site-map-title">學生專區</h4><ul class="site-map-list"><li><a href="../students/course-map.html" class="site-map-link">課程地圖</a></li><li><a href="../students/course-regulation.html" class="site-map-link">修業規定</a></li><li><a href="../students/statute-and-form.html" class="site-map-link">表單下載</a></li><li><a href="../students/student-learning.html" class="site-map-link">學生學習</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">認識本所</h4><ul class="site-map-list"><li><a href="../about.html#intro" class="site-map-link">本所介紹</a></li><li><a href="../faculty/faculty.html" class="site-map-link">師資總覽</a></li><li><a href="../publications/e-report.html" class="site-map-link">捐款支持</a></li><li><a href="../about.html#transportation" class="site-map-link">聯絡我們</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">入學資訊</h4><ul class="site-map-list"><li><a href="../admissions.html#qualifying" class="site-map-link">甄試入學</a></li><li><a href="../admissions.html#entrance" class="site-map-link">招生考試</a></li><li><a href="../admissions.html#past-exam" class="site-map-link">歷屆考古題</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">校友與連結</h4><ul class="site-map-list"><li><a href="../about.html#donate" class="site-map-link">捐款支持</a></li><li><a href="../resources.html" class="site-map-link">相關資源</a></li><li><a href="../staff.html" class="site-map-link">行政人員</a></li><li><a href="../news.html" class="site-map-link">最新消息</a></li></ul></div></div></div></section>
+<footer id="site-footer" class="bg-neutral-800 py-4 border-t border-neutral-600">
+    <div class="container-1200">
+        <div class="site-footer-grid">
+            <div class="site-footer-brand">
+                <p class="text-[15px] text-white/95 leading-relaxed mb-2 font-semibold">
+                    國立臺灣大學新聞研究所
+                </p>
+                <p class="text-[12px] text-white/85 leading-7 site-footer-copy">
+                    Copyright &copy; 2025 Graduate Institute of Journalism, National Taiwan University. All Rights Reserved.
+                </p>
+            </div>
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    10617 臺北市大安區羅斯福路四段一號<br>
+                    (02) 3366-3131
+                </p>
+            </div>
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    No. 1, Sec. 4, Roosevelt Road, Taipei, 10617 Taiwan<br>
+                    <a href="mailto:jour@ntu.edu.tw" class="hover:text-ntu-gold transition">jour@ntu.edu.tw</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="../js/sticky-header.js"></script>
+    <script src="../js/e-report-loader.js"></script>
+</body>
+
+</html>

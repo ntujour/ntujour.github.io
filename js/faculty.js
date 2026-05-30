@@ -1,4 +1,7 @@
 // Faculty page functionality (category keys: 專任, 兼任, 合聘, 榮譽, 實務, 追思, 職員)
+const CROP_RATIO = '3 / 2';
+const DEFAULT_IMAGE_CROP = { x: 50, y: 50, zoom: 1 };
+
 document.addEventListener('DOMContentLoaded', function() {
     loadFulltimeFaculty();
     loadParttimeFaculty();
@@ -8,6 +11,27 @@ document.addEventListener('DOMContentLoaded', function() {
     loadMemorialFaculty();
     loadStaffFaculty();
 });
+
+function normalizeImageCrop(crop) {
+    if (!crop || typeof crop !== 'object') return DEFAULT_IMAGE_CROP;
+    const x = Number.isFinite(Number(crop.x)) ? Number(crop.x) : DEFAULT_IMAGE_CROP.x;
+    const y = Number.isFinite(Number(crop.y)) ? Number(crop.y) : DEFAULT_IMAGE_CROP.y;
+    const zoom = Number.isFinite(Number(crop.zoom)) ? Number(crop.zoom) : DEFAULT_IMAGE_CROP.zoom;
+    return {
+        x: Math.min(100, Math.max(0, x)),
+        y: Math.min(100, Math.max(0, y)),
+        zoom: Math.min(4, Math.max(1, zoom)),
+    };
+}
+
+function renderCroppedImage(src, alt, crop, className) {
+    if (!src) return '';
+    const normalized = normalizeImageCrop(crop);
+    return `
+        <img src="${src}" alt="${alt}" class="${className}"
+            style="aspect-ratio: ${CROP_RATIO}; display: block; object-fit: cover; object-position: ${normalized.x}% ${normalized.y}%; transform: scale(${normalized.zoom}); transform-origin: center center;">
+    `;
+}
 
 // Load 專任 faculty data
 async function loadFulltimeFaculty() {
@@ -19,7 +43,7 @@ async function loadFulltimeFaculty() {
         const list = data['專任'] || [];
         const cardsHTML = list.map(faculty => `
             <a href="${faculty.file}" target="_blank" rel="noopener noreferrer" class="block text-center transition-transform hover:-translate-y-1">
-                <img src="${faculty.photo}" alt="${faculty.name}" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2">
+                ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-full h-auto object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2')}
                 <h4 class="text-sm font-medium text-gray-900">${faculty.name}</h4>
             </a>
         `).join('');
@@ -44,7 +68,7 @@ async function loadParttimeFaculty() {
         }
         const cardsHTML = list.map((faculty, index) => `
             <a href="parttime-professor-detail.html#faculty-${index}" class="block text-center transition-transform hover:-translate-y-1">
-                <img src="${faculty.photo}" alt="${faculty.name}" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2">
+                ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-full h-auto object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2')}
                 <h4 class="text-sm font-medium text-gray-900">${faculty.name}</h4>
             </a>
         `).join('');
@@ -71,7 +95,7 @@ async function loadPracticalFaculty() {
             if (!faculty.photo) return '';
             return `
                 <a href="practical-professor-detail.html#faculty-${index}" class="block text-center transition-transform hover:-translate-y-1">
-                    <img src="${faculty.photo}" alt="${faculty.name}" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2">
+                    ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-full h-auto object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2')}
                     <h4 class="text-sm font-medium text-gray-900">${faculty.name}</h4>
                 </a>
             `;
@@ -97,7 +121,7 @@ async function loadHonoraryFaculty() {
         }
         const cardsHTML = list.map((faculty, index) => `
             <a href="honorary-professor-detail.html#faculty-${index}" class="block text-center transition-transform hover:-translate-y-1">
-                <img src="${faculty.photo}" alt="${faculty.name}" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2">
+                ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-full h-auto object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2')}
                 <h4 class="text-sm font-medium text-gray-900">${faculty.name}</h4>
             </a>
         `).join('');
@@ -122,7 +146,7 @@ async function loadJointFaculty() {
         }
         const cardsHTML = list.map((faculty, index) => `
             <a href="joint-professor-detail.html#faculty-${index}" class="block text-center transition-transform hover:-translate-y-1">
-                <img src="${faculty.photo}" alt="${faculty.name}" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2">
+                ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-full h-auto object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2')}
                 <h4 class="text-sm font-medium text-gray-900">${faculty.name}</h4>
             </a>
         `).join('');
@@ -147,7 +171,7 @@ async function loadMemorialFaculty() {
         }
         const cardsHTML = list.map((faculty, index) => `
             <a href="memorial-professor-detail.html#faculty-${index}" class="block text-center transition-transform hover:-translate-y-1">
-                <img src="${faculty.photo}" alt="${faculty.name}" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2">
+                ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-full h-auto object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2')}
                 <h4 class="text-sm font-medium text-gray-900">${faculty.name}</h4>
             </a>
         `).join('');
@@ -172,7 +196,7 @@ async function loadStaffFaculty() {
         }
         const cardsHTML = list.map((faculty, index) => `
             <a href="staff-detail.html#faculty-${index}" class="block text-center transition-transform hover:-translate-y-1">
-                <img src="${faculty.photo}" alt="${faculty.name}" class="w-full aspect-square object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2">
+                ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-full h-auto object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow mb-2')}
                 <h4 class="text-sm font-medium text-gray-900">${faculty.name}</h4>
             </a>
         `).join('');

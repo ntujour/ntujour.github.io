@@ -1,7 +1,28 @@
 // Honorary faculty detail page functionality
+const CROP_RATIO = '3 / 2';
+const DEFAULT_IMAGE_CROP = { x: 50, y: 50, zoom: 1 };
+
 document.addEventListener('DOMContentLoaded', function() {
     loadHonoraryFacultyDetails();
 });
+
+function normalizeImageCrop(crop) {
+    if (!crop || typeof crop !== 'object') return DEFAULT_IMAGE_CROP;
+    const x = Number.isFinite(Number(crop.x)) ? Number(crop.x) : DEFAULT_IMAGE_CROP.x;
+    const y = Number.isFinite(Number(crop.y)) ? Number(crop.y) : DEFAULT_IMAGE_CROP.y;
+    const zoom = Number.isFinite(Number(crop.zoom)) ? Number(crop.zoom) : DEFAULT_IMAGE_CROP.zoom;
+    return {
+        x: Math.min(100, Math.max(0, x)),
+        y: Math.min(100, Math.max(0, y)),
+        zoom: Math.min(4, Math.max(1, zoom)),
+    };
+}
+
+function renderCroppedImage(src, alt, crop, className) {
+    if (!src) return '';
+    const normalized = normalizeImageCrop(crop);
+    return `<img src="${src}" alt="${alt}" class="${className}" style="aspect-ratio: ${CROP_RATIO}; display: block; object-fit: cover; object-position: ${normalized.x}% ${normalized.y}%; transform: scale(${normalized.zoom}); transform-origin: center center;">`;
+}
 
 // Load honorary faculty details
 async function loadHonoraryFacultyDetails() {
@@ -24,7 +45,7 @@ async function loadHonoraryFacultyDetails() {
                     <!-- Photo -->
                     ${faculty.photo ? `
                     <div class="flex-shrink-0">
-                        <img src="${faculty.photo}" alt="${faculty.name}" class="w-64 h-64 object-cover rounded-lg shadow-md mx-auto md:mx-0">
+                        ${renderCroppedImage(faculty.photo, faculty.name, faculty.photo_crop, 'w-64 h-auto object-cover rounded-lg shadow-md mx-auto md:mx-0')}
                     </div>
                     ` : ''}
 

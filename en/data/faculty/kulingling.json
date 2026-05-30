@@ -1,0 +1,38 @@
+{
+  "slug": "kulingling",
+  "name": "谷玲玲",
+  "nameZh": "谷玲玲",
+  "title": "兼任副教授",
+  "photo": "../../images/faculty/kulingling.png",
+  "placeholder": "谷",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "(02)33663122"
+    },
+    {
+      "type": "email",
+      "value": "kulingling@ntu.edu.tw"
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "傳播統計",
+      "資訊科技與資訊社會",
+      "新聞英文寫作",
+      "媒體實習"
+    ],
+    "researchInterests": [
+      "傳播科技",
+      "媒體管理",
+      "網路傳播",
+      "大眾傳播"
+    ],
+    "contact": {
+      "phone": "(02)33663122",
+      "email": "kulingling@ntu.edu.tw"
+    },
+    "externalLinks": []
+  },
+  "sections": []
+}

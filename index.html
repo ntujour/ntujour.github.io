@@ -3,216 +3,468 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tailwind.css">
+<link rel="stylesheet" href="css/site-common.css">
+<style>body { position: relative; isolation: isolate; }body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background-image: url("images/branding/ntujour-home-bg.png"); background-repeat: no-repeat; background-size: calc(min(1120px, 92vw) * 1.52) auto; background-position: 50% 0%; opacity: 0.3;}</style>
+
     <title>國立臺灣大學新聞研究所</title>
     <meta name="description" content="國立臺灣大學新聞研究所官方網站 - 培養具專業知識與批判思考能力的新聞傳播人才">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/tailwind.css">
-    <link rel="stylesheet" href="css/site-common.css">
-
-
-
-
 </head>
 
-<body class="bg-white">
+<body class="site-home">
     <!-- Skip to main content link for accessibility -->
-    <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-red-800 focus:text-white">跳到主要內容</a>
+<a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-ntu-maroon focus:text-white">跳到主要內容</a>
 
-    <!-- Banner (動態載入) -->
-    <header class="site-banner py-6" role="banner">
-        <!-- 內容將由 load-banner.js 動態載入 -->
-        <div class="container-1200">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">
-                <a href="index.html" class="hover:text-gray-600 transition"
-                    style="text-decoration: none; color: inherit;">國立臺灣大學新聞研究所</a>
-            </h1>
-            <p class="text-gray-700 text-base mb-1">Graduate Institute of Journalism, National Taiwan University</p>
-            <p class="text-gray-600 text-base">培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才</p>
+<!-- Banner -->
+<header id="site-banner" class="bg-[#f3f3f3] text-neutral-900 py-3 border-b border-neutral-300" role="banner">
+    <div class="container-1200">
+        <div class="site-banner-shell">
+            <div class="site-banner-brand">
+                <div class="site-banner-copy">
+                    <h1 class="site-banner-title">
+                        <a href="index.html" class="site-banner-title-link">國立臺灣大學新聞研究所</a>
+                    </h1>
+                    <p class="site-banner-english">Graduate Institute of Journalism, National Taiwan University</p>
+                    <p class="site-banner-subtitle">培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才</p>
+                </div>
+            </div>
+            <a class="site-banner-english-link" href="en/index.html" target="_blank" rel="noopener noreferrer">English</a>
         </div>
-    </header>
-
-    <!-- 載入 Banner 動態腳本 -->
-    <script src="js/load-banner.js"></script>
-    <!-- 載入多語言支援 -->
-    <script src="js/i18n.js"></script>
-
-
-
-
-
-
+    </div>
+</header>
 
     <!-- Navigation -->
-    <nav class="site-nav">
-        <div class="container-1200">
-            <ul class="flex flex-wrap items-center gap-2 py-3">
-                <li class="nav-item has-dropdown">
-                    <a href="about/intro.html"
-                        class="px-5 py-2.5 text-base text-white  rounded font-medium transition">關於我們</a>
-                    <div class="dropdown-menu">
-                        <a href="about/intro.html">本所簡介</a>
-                        <a href="about/transportation.html">交通資訊</a>
-                        <a href="about/donate.html">捐款支持</a>
-                    </div>
-                </li>
-                <li class="nav-item has-dropdown">
-                    <a href="faculty/faculty.html"
-                        class="px-5 py-2.5 text-base text-white rounded font-medium transition">師資陣容</a>
-                    <div class="dropdown-menu">
-                        <a href="faculty/fulltime-professor.html">專任教師</a>
-                        <a href="faculty/practical-professor.html">實務教師</a>
-                        <a href="faculty/parttime-professor.html">兼任教師</a>
-                        <a href="faculty/honorary-professor.html">名譽教授</a>
-                        <a href="faculty/joint-professor.html">合聘教師</a>
-                        <a href="staff.html">行政人員</a>
-                    </div>
-                </li>
-                <li class="nav-item has-dropdown">
-                    <a href="admissions/admissions.html"
-                        class="px-5 py-2.5 text-base text-white  rounded font-medium transition">入學資訊</a>
-                    <div class="dropdown-menu">
-                        <a href="admissions/qualifying-exam.html">推甄入學</a>
-                        <a href="admissions/entrance-exam.html">入學考試</a>
-                        <a href="admissions/past-exam.html">歷屆考古題</a>
-                        <a href="admissions/international-students.html">國際生</a>
-                        <a href="admissions/ochkmc-students.html">港澳僑生</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="students/student-learning.html"
-                        class="px-5 py-2.5 text-base text-white  rounded font-medium transition">學生學習</a></li>
-                <li class="nav-item"><a href="publications/e-report.html"
-                        class="px-5 py-2.5 text-base text-white  rounded font-medium transition">出版發表</a></li>
-                <li class="nav-item"><a href="news.html"
-                        class="px-5 py-2.5 text-base text-white  rounded font-medium transition">最新消息</a></li>
-                <li class="nav-item"><a href="resources.html"
-                        class="px-5 py-2.5 text-base text-white  rounded font-medium transition">相關資源</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav id="site-nav" class="bg-ntu-maroon border-y border-[#5f120d] shadow-none z-50">
+    <div class="container-1200">
+        <div class="flex flex-wrap items-center justify-between">
+            <!-- Mobile Menu Button -->
+            <button id="nav-toggle"
+                class="sm:hidden px-3 py-1.5 text-white border border-white/30 hover:bg-white/10 transition"
+                aria-label="選單">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
 
-
-
-
-
-
-
-    <!-- Latest News and Activities -->
-    <section class="py-6 bg-white">
-        <div class="container-1200">
-            <!-- News Section -->
-            <div class="mb-12">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-lg font-bold text-gray-900">最新消息</h3>
-                    <a href="news.html" class="text-sm text-gray-700 hover:text-gray-900 font-medium">查看全部 →</a>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="news-list">
-                    <!-- News cards will be loaded dynamically -->
-                    <div class="text-center py-4 col-span-full text-gray-500">載入中...</div>
-                </div>
+            <!-- Menu Items -->
+            <div id="nav-menu" class="w-full sm:w-auto hidden sm:block">
+                <ul class="flex flex-col sm:flex-row sm:items-center gap-0 sm:gap-0 py-0">
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="about.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">關於本所</a>
+                        <div class="dropdown-menu">
+                            <a href="about.html#intro">本所簡介</a>
+                            <a href="about.html#mission">宗旨與目標</a>
+                            <a href="about.html#transportation">交通資訊</a>
+                            <a href="about.html#donate">捐款支持</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="faculty/faculty.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">本所成員</a>
+                        <div class="dropdown-menu">
+                            <a href="faculty/faculty.html#fulltime-faculty">專任教師</a>
+                            <a href="faculty/faculty.html#practical-faculty">實務教師</a>
+                            <a href="faculty/faculty.html#parttime-faculty">兼任教師</a>
+                            <a href="faculty/faculty.html#honorary-faculty">名譽教授</a>
+                            <a href="faculty/faculty.html#joint-faculty">合聘教師</a>
+                            <a href="faculty/faculty.html#retired-faculty">退休教師</a>
+                            <a href="staff.html">行政人員</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="admissions.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">入學資訊</a>
+                        <div class="dropdown-menu">
+                            <a href="admissions.html#qualifying">推甄入學</a>
+                            <a href="admissions.html#entrance">入學考試</a>
+                            <a href="admissions.html#past-exam">歷屆考古題</a>
+                            <a href="admissions.html#international">國際生</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="students/student-learning.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學生學習</a>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="publications/e-report.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學習成果</a>
+                        <div class="dropdown-menu">
+                            <a href="publications/114-graduation-exhibition.html">114學生畢業特展</a>
+                            <a href="https://medium.com/@ntujour2022" target="_blank" rel="noopener noreferrer">新聞所Medium<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="https://www.facebook.com/ntujournal/?locale=zh_TW" target="_blank" rel="noopener noreferrer">臺大新聞e論壇<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="publications/e-report.html">前期所報</a>
+                            <a href="publications/master-thesis.html">畢業生論文</a>
+                            <a href="publications/books.html">報導專書</a>
+                            <a href="publications/ntu-news-forum.html">臺大新聞論壇</a>
+                            <a href="publications/employment-status.html">畢業生就業狀況</a>
+                            <a href="https://datajournalism.ntu.edu.tw/" target="_blank" rel="noopener noreferrer">台大資料新聞<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="undergraduate.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">大學生</a>
+                        <div class="dropdown-menu">
+                            <a href="undergraduate/general-education.html">通識課</a>
+                            <a href="undergraduate/specialties.html">領域專長</a>
+                            <a href="undergraduate/admissions.html">入學資訊</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="news.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">最新消息</a>
+                    </li>
+                    <li class="nav-item w-full sm:w-auto">
+                        <a href="resources.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">相關資源</a>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </div>
+</nav>
 
-            <!-- Activities Section -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            if (window.innerWidth < 640) {
+                if (navMenu && !navMenu.classList.contains('hidden') &&
+                    !navMenu.contains(event.target) &&
+                    !navToggle.contains(event.target)) {
+                    navMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+</script>
+
+
+    <section id="home-hero" class="pt-4 md:pt-5">
+        <div class="container-1200">
+            <div class="home-hero-grid">
+                <!-- Left side: Feature Card -->
+                <a href="publications/114-graduation-exhibition.html" class="hero-feature-card group block overflow-hidden shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg">
+                    <div class="hero-feature-flex">
+                        <div class="hero-feature-text p-6 md:p-8 flex flex-col justify-between h-full">
+                            <div>
+                                <p class="category-label mb-2">Featured / 焦點成果</p>
+                                <h2 class="hero-feature-title text-2xl md:text-3xl font-bold leading-tight mb-3">114學生畢業特展</h2>
+                                <p class="hero-feature-desc leading-relaxed text-sm md:text-[14.5px]">
+                                    「流／留：這個時代，一起來到新聞路口」。台大新聞所114年度學生畢業特展，記錄時代的流動與留影，呈現本屆畢業生的專業報導與觀察實踐。
+                                </p>
+                            </div>
+                            <div class="hero-feature-btn inline-flex items-center gap-2 border px-4 py-2 text-sm font-semibold self-start transition">
+                                前往特展頁面 <span aria-hidden="true">→</span>
+                            </div>
+                        </div>
+                        <div class="hero-feature-img-wrap">
+                            <img src="images/publications/liu.png" alt="114學生畢業特展海報" class="hero-feature-img">
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Right side: 2x2 grid flip card slideshow -->
+                <div id="hero-slideshow" class="home-hero-slides">
+<div class="hero-slide-group active"><figure class="hero-slide-card"><img src="images/news/image-1779765899.png" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure><figure class="hero-slide-card"><img src="images/hero/hero-8.jpg" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure><figure class="hero-slide-card"><img src="images/hero/hero-1.png" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure></div>
+<div class="hero-slide-group"><figure class="hero-slide-card"><img src="images/hero/hero-10.jpg" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure><figure class="hero-slide-card"><img src="images/hero/hero-4.png" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure><figure class="hero-slide-card"><img src="images/hero/hero-5.png" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure></div>
+<div class="hero-slide-group"><figure class="hero-slide-card"><img src="images/hero/hero-7.jpg" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure><figure class="hero-slide-card"><img src="images/hero/hero-6.png" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure><figure class="hero-slide-card"><img src="images/news/image-1779765899.png" alt="" class="hero-slide-image" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></figure></div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="main-content" class="home-columns-section">
+        <div class="container-1200">
+            <div class="home-columns-shell">
+                <div class="home-columns">
+                    <div class="home-panel">
+                        <div class="home-panel-header">
+                            <div class="home-panel-heading">
+                                <h2>最新消息</h2>
+                                <p>NEWS</p>
+                            </div>
+                            <a href="news.html" class="home-panel-link home-panel-link-small">更多訊息 &gt;</a>
+                        </div>
+                        <div id="news-list" class="home-news-list">
+<article class="home-news-item has-thumb">
+    <a href="news/2026-04-15-news-262462.html">
+        <div class="home-list-thumb"><img src="images/news/news-262462-1.png" alt="在移動中落腳 — — 新進教師徐洛文的認同與發聲實踐" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-04-15</time>
+                <span class="front-hashtags"><span class="front-hashtag">學術</span></span>
+            </div>
             <div>
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-lg font-bold text-gray-900">活動資訊</h3>
-                    <a href="activities.html" class="text-sm text-gray-700 hover:text-gray-900 font-medium">查看全部 →</a>
-                </div>
+                <h3>在移動中落腳 — — 新進教師徐洛文的認同與發聲實踐</h3>
+                <p class="home-news-excerpt">文／洪敬慧 剛抵台八週，徐洛文在開學前，到達這座既熟悉又陌生的城市。 不停遷移的人生軌跡 台大新聞所助理教授徐洛文（Lokman Tsui）形容自己的人生軌跡，從不出自長期規劃。徐洛文父母因經濟因素，…</p>
+            </div>
+        </div>
+    </a>
+</article>
+<article class="home-news-item has-thumb">
+    <a href="news/2026-03-04-news-261571.html">
+        <div class="home-list-thumb"><img src="images/news/news-261571-1.png" alt="115學年度碩士班招生考試口試說明" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-03-04</time>
+                <span class="front-hashtags"><span class="front-hashtag">招生</span><span class="front-hashtag">一般考試</span></span>
+            </div>
+            <div>
+                <h3>115學年度碩士班招生考試口試說明</h3>
+                <p class="home-news-excerpt">注意事項 請於115年3月9日（一）17時前繳交下列資料至新聞所辦公室（新聞所200室）： 大學歷年成績單正本壹份（應屆畢業生最後一學期除外） 個人資料表三份（請至本文下方下載） 請於口試前，繳交口試…</p>
+            </div>
+        </div>
+    </a>
+</article>
+<article class="home-news-item has-thumb">
+    <a href="news/2026-02-23-news-261821.html">
+        <div class="home-list-thumb"><img src="images/news/news-261821-1.png" alt="新聞所教授劉好迪榮獲114年度國科會傑出研究獎" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 71.5% 47.8%; transform: scale(1.37); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-02-23</time>
+                <span class="front-hashtags"><span class="front-hashtag">教師</span><span class="front-hashtag">獲獎</span></span>
+            </div>
+            <div>
+                <h3>新聞所教授劉好迪榮獲114年度國科會傑出研究獎</h3>
+                <p class="home-news-excerpt">新聞所教授劉好迪（Adrian Rauchfleisch）榮獲114年度國科會傑出研究獎～ 🏅 國科會完整獲獎名單： https://ais2m.ncku.edu.tw/upload/files/%E…</p>
+            </div>
+        </div>
+    </a>
+</article>
+<article class="home-news-item has-thumb">
+    <a href="news/2025-11-19-news-260367.html">
+        <div class="home-list-thumb"><img src="images/news/news-260367-1.png" alt="賀！新聞所所友與實務教師獲2025卓越新聞獎！" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2025-12-11</time>
+                <span class="front-hashtags"><span class="front-hashtag">教師</span><span class="front-hashtag">所友</span><span class="front-hashtag">榮譽</span></span>
+            </div>
+            <div>
+                <h3>賀！新聞所所友與實務教師獲2025卓越新聞獎！</h3>
+                <p class="home-news-excerpt">【平面及網路（文字）類　特寫新聞獎】 拯救失智囚徒 / 今周刊 陳禹蓁 完整報導連結：https://reurl.cc/LQ50bL  【平面及網路（文字）類　解釋報導獎】 【廢墟少年二部曲】凝視深淵…</p>
+            </div>
+        </div>
+    </a>
+</article>
+<article class="home-news-item has-thumb">
+    <a href="news/2025-12-06-news-260479.html">
+        <div class="home-list-thumb"><img src="images/news/image-1779462556.png" alt="賀！新聞所同學獲「第三十九屆吳舜文新聞獎」！" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2025-12-06</time>
+                <span class="front-hashtags"><span class="front-hashtag">學生</span><span class="front-hashtag">榮譽</span></span>
+            </div>
+            <div>
+                <h3>賀！新聞所同學獲「第三十九屆吳舜文新聞獎」！</h3>
+                <p class="home-news-excerpt">【學生新聞報導獎／首獎】 未成年無照駕駛專題 — 柯采瑜、張童寧、楊仁 完整報導連結：https://reurl.cc/0WekEA、https://reurl.cc/OmoQvD</p>
+            </div>
+        </div>
+    </a>
+</article>
+<article class="home-news-item has-thumb">
+    <a href="news/2025-11-30-news-260480.html">
+        <div class="home-list-thumb"><img src="images/news/image-1779464290.png" alt="賀！新聞所所友翁佩嫆、羅毓嘉獲「第二十一屆林榮三文學獎」" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2025-11-30</time>
+                <span class="front-hashtags"><span class="front-hashtag">所友</span><span class="front-hashtag">榮譽</span></span>
+            </div>
+            <div>
+                <h3>賀！新聞所所友翁佩嫆、羅毓嘉獲「第二十一屆林榮三文學獎」</h3>
+                <p class="home-news-excerpt">【散文獎首獎】 翁佩嫆〈菊島菜菜子〉 獲獎報導：https://art.ltn.com.tw/article/breakingnews/5239331 【新詩獎三獎】 羅毓嘉／耶路撒冷 獲獎報導：ht…</p>
+            </div>
+        </div>
+    </a>
+</article>
+</div>
+                    </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="activities-list">
-                    <!-- Activity cards will be loaded dynamically -->
-                    <div class="text-center py-4 col-span-full text-gray-500">載入中...</div>
+                    <div class="home-panel">
+                        <div class="home-panel-header">
+                            <div class="home-panel-heading">
+                                <h2>活動資訊</h2>
+                                <p>EVENTS</p>
+                            </div>
+                            <a href="activities.html" class="home-panel-link home-panel-link-small">更多活動 &gt;</a>
+                        </div>
+                        <div id="activities-list" class="home-activities-list">
+<article class="home-activity-item has-thumb">
+    <a href="activities/2026-05-21-activity-82081.html">
+        <div class="home-list-thumb"><img src="images/activities/image-1780138152.png" alt="2026亞洲新聞專業論壇" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-05-21</time>
+                <span class="front-hashtags"><span class="front-hashtag">論壇</span><span class="front-hashtag">協辦</span><span class="front-hashtag">AI</span></span>
+            </div>
+            <h3>2026亞洲新聞專業論壇</h3>
+            <p class="home-activity-excerpt">主辦單位｜財團法人卓越新聞獎基金會 協辦單位｜台灣大學新聞研究所 論壇時間｜2026年7月4日～2026年7月5日 論壇地點｜台灣大學法學院霖澤館國際會議廳 本屆論壇以「AI科技下的新聞編輯室挑戰」為…</p>
+        </div>
+    </a>
+</article>
+<article class="home-activity-item has-thumb">
+    <a href="activities/2026-04-15-activity-262463.html">
+        <div class="home-list-thumb"><img src="images/activities/activity-262463-1.jpg" alt="我的新聞人生路" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-04-15</time>
+                <span class="front-hashtags"><span class="front-hashtag">講座</span><span class="front-hashtag">媒體實務</span></span>
+            </div>
+            <h3>我的新聞人生路</h3>
+            <p class="home-activity-excerpt">當代媒體實務講座 講座分享 講題｜我的新聞人生路 講者｜李四端（現任大雲時堂主持人、MOMOTV董事長；曾任台視、華視主播、新聞部經理、 TVBS、東森等電視台主管、主持人） 時間｜2026年4月17…</p>
+        </div>
+    </a>
+</article>
+<article class="home-activity-item has-thumb">
+    <a href="activities/2026-03-10-activity-261830.html">
+        <div class="home-list-thumb"><img src="images/activities/activity-261830-1.png" alt="實際做一檔政論節目看看！" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-03-10</time>
+                <span class="front-hashtags"><span class="front-hashtag">課程紀要</span></span>
+            </div>
+            <h3>實際做一檔政論節目看看！</h3>
+            <p class="home-activity-excerpt">文／洪敬慧 這學期台大新聞所新開「時事議題製作實務」課程，授課教師詹怡宜說，這學期學生將在棚內完成政論節目錄製。從議題設定、設計標題、邀來賓，到現場所有安排，都由學生規劃與執行。透過實際製作，同學不僅…</p>
+        </div>
+    </a>
+</article>
+<article class="home-activity-item has-thumb">
+    <a href="activities/2026-03-10-activity-261831.html">
+        <div class="home-list-thumb"><img src="images/activities/activity-261831-1.jpg" alt="流量vs公共討論？主持人陳信聰的媒體實踐" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-03-10</time>
+                <span class="front-hashtags"><span class="front-hashtag">講座</span></span>
+            </div>
+            <h3>流量vs公共討論？主持人陳信聰的媒體實踐</h3>
+            <p class="home-activity-excerpt">時事論壇製作實務 講座分享 講題｜流量vs公共討論？主持人陳信聰的媒體實踐 講者｜陳信聰（華視新媒體部經理、網路節目《我想問的是…》主持人） 時間｜2026年3月13日（五）下午3:30 - 5:30…</p>
+        </div>
+    </a>
+</article>
+<article class="home-activity-item has-thumb">
+    <a href="activities/2026-03-09-activity-261829.html">
+        <div class="home-list-thumb"><img src="images/activities/activity-261829-1.png" alt="台大新聞所開設全新通識課與領域專長" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-03-09</time>
+                <span class="front-hashtags"><span class="front-hashtag">大學生</span><span class="front-hashtag">領域專長</span></span>
+            </div>
+            <h3>台大新聞所開設全新通識課與領域專長</h3>
+            <p class="home-activity-excerpt">文／洪敬慧 台大新聞所新設「數位新聞領域專長」課程，邀請大學生接觸媒體素養、新聞寫作等實務課程，整合數位敘事能力，製作出數位新聞專題。此領域專長課程，其中兩堂通識課「新聞寫作」、「當代媒體實務講座」於…</p>
+        </div>
+    </a>
+</article>
+<article class="home-activity-item has-thumb">
+    <a href="activities/2026-03-03-activity-261540.html">
+        <div class="home-list-thumb"><img src="images/activities/activity-261540-1.jpg" alt="Improving Journalist Safety" class="w-full" style="aspect-ratio: 3 / 2; display: block; object-fit: cover; object-position: 50.0% 50.0%; transform: scale(1.0); transform-origin: center center;"></div>
+        <div class="home-list-copy">
+            <div class="home-list-topline">
+                <time>2026-03-03</time>
+                <span class="front-hashtags"><span class="front-hashtag">演講</span></span>
+            </div>
+            <h3>Improving Journalist Safety</h3>
+            <p class="home-activity-excerpt">Attacks on journalists are evolving and increasing, both in quality and quantity, all over the world…</p>
+        </div>
+    </a>
+</article>
+</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sitemap (Quick Links) Section -->
-    <section class="site-sitemap py-8">
-        <div class="container-1200">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div>
-                    <h4 class="text-lg font-bold text-gray-900 mb-3">認識本所</h4>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="about/intro.html" class="text-gray-700 hover:text-gray-900">本所介紹</a></li>
-                        <li><a href="about/mission.html" class="text-gray-700 hover:text-gray-900">宗旨與目標</a></li>
-                        <li><a href="about/gallery.html" class="text-gray-700 hover:text-gray-900">新聞所圖集</a></li>
-                        <li><a href="about/transportation.html" class="text-gray-700 hover:text-gray-900">聯絡我們</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold text-gray-900 mb-3">師資陣容</h4>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="faculty/faculty.html" class="text-gray-700 hover:text-gray-900">師資總覽</a></li>
-                        <li><a href="faculty/fulltime-professor.html" class="text-gray-700 hover:text-gray-900">專任教師</a>
-                        </li>
-                        <li><a href="faculty/parttime-professor.html" class="text-gray-700 hover:text-gray-900">兼任教師</a>
-                        </li>
-                        <li><a href="staff.html" class="text-gray-700 hover:text-gray-900">行政人員</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold text-gray-900 mb-3">入學資訊</h4>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="admissions/admissions.html" class="text-gray-700 hover:text-gray-900">招生總覽</a></li>
-                        <li><a href="admissions/qualifying-exam.html" class="text-gray-700 hover:text-gray-900">甄試入學</a>
-                        </li>
-                        <li><a href="admissions/entrance-exam.html" class="text-gray-700 hover:text-gray-900">招生考試</a>
-                        </li>
-                        <li><a href="admissions/past-exam.html" class="text-gray-700 hover:text-gray-900">歷屆考古題</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold text-gray-900 mb-3">課程與出版</h4>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="students/course-map.html" class="text-gray-700 hover:text-gray-900">課程地圖</a></li>
-                        <li><a href="students/course-regulation.html" class="text-gray-700 hover:text-gray-900">修業規定</a>
-                        </li>
-                        <li><a href="publications/e-report.html" class="text-gray-700 hover:text-gray-900">前期所報</a></li>
-                        <li><a href="publications/master-thesis.html"
-                                class="text-gray-700 hover:text-gray-900">畢業生論文</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
+    <!-- site-sitemap moved into site-footer partial to avoid duplicate footer blocks -->
 
     <!-- Footer -->
-    <footer class="site-footer py-10 text-gray-400">
-        <div class="container-1200">
-            <div class="mb-8">
-                <p class="space-y-2 text-sm  text-white">
-                    地址：10617 臺北市大安區羅斯福路四段一號 國立臺灣大學新聞研究所</br>
-                    電話：(02) 3366-3383</br>
-                    Email：jour@ntu.edu.tw</br>
+
+<section id="footer-module-band" class="site-module-band site-module-band--footer">
+    <div class="container-1200">
+        <div class="site-module-grid site-module-grid--strip"><a class="site-module-card site-module-card--strip" href="publications/114-graduation-exhibition.html" aria-label="114 畢業生特展" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/publications/liu.png" alt="114 畢業生特展" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.33% 70.33%; transform: scale(1.0); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">114 畢業生特展</strong>
+        <small class="site-module-subtitle">流／留：這個時代</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="news/2025-11-19-news-260367.html" aria-label="假訊息調查" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/news/bird02-1779892349.png" alt="假訊息調查" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.0% 16.0%; transform: scale(0.7); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">假訊息調查</strong>
+        <small class="site-module-subtitle">年度調查</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="news/2026-03-04-news-261571.html" aria-label="影像專業訓練" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/news/bird01-1779892339.png" alt="影像專業訓練" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 87.91% 2.94%; transform: scale(0.88); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">影像專業訓練</strong>
+        <small class="site-module-subtitle">課程與作品</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="activities/2026-04-15-activity-262463.html" aria-label="AI與新聞所" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="images/modules/20241213-AIIcon-1779865297.png" alt="AI與新聞所" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: -123.2% 90.3%; transform: scale(0.72); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">AI與新聞所</strong>
+        <small class="site-module-subtitle">相關課程</small>
+    </span>
+</a></div>
+    </div>
+</section>
+
+<section id="site-map" class="site-map-band"><div class="container-1200"><div class="site-map-grid"><div class="site-map-card"><h4 class="site-map-title">學生專區</h4><ul class="site-map-list"><li><a href="students/course-map.html" class="site-map-link">課程地圖</a></li><li><a href="students/course-regulation.html" class="site-map-link">修業規定</a></li><li><a href="students/statute-and-form.html" class="site-map-link">表單下載</a></li><li><a href="students/student-learning.html" class="site-map-link">學生學習</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">認識本所</h4><ul class="site-map-list"><li><a href="about.html#intro" class="site-map-link">本所介紹</a></li><li><a href="faculty/faculty.html" class="site-map-link">師資總覽</a></li><li><a href="publications/e-report.html" class="site-map-link">捐款支持</a></li><li><a href="about.html#transportation" class="site-map-link">聯絡我們</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">入學資訊</h4><ul class="site-map-list"><li><a href="admissions.html#qualifying" class="site-map-link">甄試入學</a></li><li><a href="admissions.html#entrance" class="site-map-link">招生考試</a></li><li><a href="admissions.html#past-exam" class="site-map-link">歷屆考古題</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">校友與連結</h4><ul class="site-map-list"><li><a href="about.html#donate" class="site-map-link">捐款支持</a></li><li><a href="resources.html" class="site-map-link">相關資源</a></li><li><a href="staff.html" class="site-map-link">行政人員</a></li><li><a href="news.html" class="site-map-link">最新消息</a></li></ul></div></div></div></section>
+<footer id="site-footer" class="bg-neutral-800 py-4 border-t border-neutral-600">
+    <div class="container-1200">
+        <div class="site-footer-grid">
+            <div class="site-footer-brand">
+                <p class="text-[15px] text-white/95 leading-relaxed mb-2 font-semibold">
+                    國立臺灣大學新聞研究所
                 </p>
-                <p class="space-y-2 text-sm text-white">
-                    &copy; 2025 國立臺灣大學新聞研究所 版權所有
+                <p class="text-[12px] text-white/85 leading-7 site-footer-copy">
+                    Copyright &copy; 2025 Graduate Institute of Journalism, National Taiwan University. All Rights Reserved.
                 </p>
             </div>
-
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    10617 臺北市大安區羅斯福路四段一號<br>
+                    (02) 3366-3131
+                </p>
+            </div>
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    No. 1, Sec. 4, Roosevelt Road, Taipei, 10617 Taiwan<br>
+                    <a href="mailto:jour@ntu.edu.tw" class="hover:text-ntu-gold transition">jour@ntu.edu.tw</a>
+                </p>
+            </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 
-
-
-
-
-
-    <script src="js/homepage.js"></script>
+    <script src="js/sticky-header.js"></script>
+    <script src="js/hero-slider.js"></script>
 </body>
 
 </html>

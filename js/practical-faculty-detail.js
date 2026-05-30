@@ -1,7 +1,28 @@
 // Practical faculty detail page with tabs functionality
+const CROP_RATIO = '3 / 2';
+const DEFAULT_IMAGE_CROP = { x: 50, y: 50, zoom: 1 };
+
 document.addEventListener('DOMContentLoaded', function() {
     loadPracticalFacultyDetails();
 });
+
+function normalizeImageCrop(crop) {
+    if (!crop || typeof crop !== 'object') return DEFAULT_IMAGE_CROP;
+    const x = Number.isFinite(Number(crop.x)) ? Number(crop.x) : DEFAULT_IMAGE_CROP.x;
+    const y = Number.isFinite(Number(crop.y)) ? Number(crop.y) : DEFAULT_IMAGE_CROP.y;
+    const zoom = Number.isFinite(Number(crop.zoom)) ? Number(crop.zoom) : DEFAULT_IMAGE_CROP.zoom;
+    return {
+        x: Math.min(100, Math.max(0, x)),
+        y: Math.min(100, Math.max(0, y)),
+        zoom: Math.min(4, Math.max(1, zoom)),
+    };
+}
+
+function renderCroppedImage(src, alt, crop, className) {
+    if (!src) return '';
+    const normalized = normalizeImageCrop(crop);
+    return `<img src="${src}" alt="${alt}" class="${className}" style="aspect-ratio: ${CROP_RATIO}; display: block; object-fit: cover; object-position: ${normalized.x}% ${normalized.y}%; transform: scale(${normalized.zoom}); transform-origin: center center;">`;
+}
 
 // Load practical faculty details
 async function loadPracticalFacultyDetails() {
@@ -22,8 +43,8 @@ async function loadPracticalFacultyDetails() {
         const tabsHTML = data['實務'].map((faculty, index) => {
             const photoSrc = faculty.photo || '';
             const photoHTML = photoSrc
-                ? `<img src="${photoSrc}" alt="${faculty.name}" class="w-20 h-20 object-cover rounded-lg">`
-                : `<div class="w-20 h-20 rounded-lg bg-gray-100 flex items-center justify-center text-gray-400 text-xs">暫無照片</div>`;
+                ? renderCroppedImage(photoSrc, faculty.name, faculty.photo_crop, 'w-20 h-auto object-cover rounded-lg')
+                : `<div class="w-20 rounded-lg bg-gray-100 flex items-center justify-center text-gray-400 text-xs" style="aspect-ratio: ${CROP_RATIO};">暫無照片</div>`;
 
             // Special handling for Archie Tse (謝艾契)
             const displayName = faculty.name === '謝艾契' ? 'Archie Tse' : faculty.name;
@@ -42,8 +63,8 @@ async function loadPracticalFacultyDetails() {
         const detailsHTML = data['實務'].map((faculty, index) => {
             const photoSrc = faculty.photo || '';
             const photoHTML = photoSrc
-                ? `<img src="${photoSrc}" alt="${faculty.name}" class="w-64 h-64 object-cover rounded-lg shadow-md">`
-                : `<div class="w-64 h-64 rounded-lg bg-gray-100 flex items-center justify-center text-gray-400">暫無照片</div>`;
+                ? renderCroppedImage(photoSrc, faculty.name, faculty.photo_crop, 'w-64 h-auto object-cover rounded-lg shadow-md')
+                : `<div class="w-64 rounded-lg bg-gray-100 flex items-center justify-center text-gray-400" style="aspect-ratio: ${CROP_RATIO};">暫無照片</div>`;
 
             return `
                 <div id="faculty-${faculty.id}" class="faculty-detail-card ${index === 0 ? 'active' : ''}" data-index="${index}">

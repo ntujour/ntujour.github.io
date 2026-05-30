@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tailwind.css">
+<link rel="stylesheet" href="../css/site-common.css">
+
+
+    <title>領域專長 - 國立臺灣大學新聞研究所</title>
+    <meta name="description" content="國立臺灣大學新聞研究所大學生領域專長課程：包含數位新聞與計算傳播兩大領域專長，引導學生養成跨領域傳播、數據分析、網頁敘事與程式設計之實作能力。">
+    <style>
+        .course-node {
+            cursor: pointer;
+        }
+        .course-node rect.card-bg {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .course-node:hover rect.card-bg {
+            stroke: #7a1a14;
+            stroke-width: 2.5px;
+            fill: #faf5f5;
+        }
+        .course-node:hover text.title-text {
+            fill: #7a1a14;
+        }
+        .connector-line {
+            transition: stroke 0.25s, stroke-width 0.25s;
+        }
+        .connector-line.highlighted {
+            stroke: #7a1a14 !important;
+            stroke-width: 3px !important;
+        }
+        .objective-card {
+            border: 1px solid rgba(122, 26, 20, 0.08);
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(56, 13, 11, 0.02);
+            transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .objective-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(122, 26, 20, 0.2);
+            box-shadow: 0 10px 25px rgba(122, 26, 20, 0.06);
+        }
+        .specialty-section {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 3rem;
+            padding-top: 3rem;
+        }
+        .specialty-section:first-of-type {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .course-table th {
+            background-color: #f5efe4;
+            color: #4b311c;
+        }
+        .course-table tr:nth-child(even) {
+            background-color: #faf8f5;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Skip to main content link for accessibility -->
+<a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-ntu-maroon focus:text-white">跳到主要內容</a>
+
+<!-- Banner -->
+<header id="site-banner" class="bg-[#f3f3f3] text-neutral-900 py-3 border-b border-neutral-300" role="banner">
+    <div class="container-1200">
+        <div class="site-banner-shell">
+            <div class="site-banner-brand">
+                <div class="site-banner-copy">
+                    <h1 class="site-banner-title">
+                        <a href="../index.html" class="site-banner-title-link">國立臺灣大學新聞研究所</a>
+                    </h1>
+                    <p class="site-banner-english">Graduate Institute of Journalism, National Taiwan University</p>
+                    <p class="site-banner-subtitle">培育新時代新聞傳播人才｜結合理論與實務，培養具有專業知識與批判思考能力的新聞傳播專業人才</p>
+                </div>
+            </div>
+            <a class="site-banner-english-link" href="../en/index.html" target="_blank" rel="noopener noreferrer">English</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Navigation -->
+<nav id="site-nav" class="bg-ntu-maroon border-y border-[#5f120d] shadow-none z-50">
+    <div class="container-1200">
+        <div class="flex flex-wrap items-center justify-between">
+            <!-- Mobile Menu Button -->
+            <button id="nav-toggle"
+                class="sm:hidden px-3 py-1.5 text-white border border-white/30 hover:bg-white/10 transition"
+                aria-label="選單">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menu Items -->
+            <div id="nav-menu" class="w-full sm:w-auto hidden sm:block">
+                <ul class="flex flex-col sm:flex-row sm:items-center gap-0 sm:gap-0 py-0">
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../about.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">關於本所</a>
+                        <div class="dropdown-menu">
+                            <a href="../about.html#intro">本所簡介</a>
+                            <a href="../about.html#mission">宗旨與目標</a>
+                            <a href="../about.html#transportation">交通資訊</a>
+                            <a href="../about.html#donate">捐款支持</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../faculty/faculty.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">本所成員</a>
+                        <div class="dropdown-menu">
+                            <a href="../faculty/faculty.html#fulltime-faculty">專任教師</a>
+                            <a href="../faculty/faculty.html#practical-faculty">實務教師</a>
+                            <a href="../faculty/faculty.html#parttime-faculty">兼任教師</a>
+                            <a href="../faculty/faculty.html#honorary-faculty">名譽教授</a>
+                            <a href="../faculty/faculty.html#joint-faculty">合聘教師</a>
+                            <a href="../faculty/faculty.html#retired-faculty">退休教師</a>
+                            <a href="../staff.html">行政人員</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../admissions.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">入學資訊</a>
+                        <div class="dropdown-menu">
+                            <a href="../admissions.html#qualifying">推甄入學</a>
+                            <a href="../admissions.html#entrance">入學考試</a>
+                            <a href="../admissions.html#past-exam">歷屆考古題</a>
+                            <a href="../admissions.html#international">國際生</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../students/student-learning.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學生學習</a>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../publications/e-report.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學習成果</a>
+                        <div class="dropdown-menu">
+                            <a href="../publications/114-graduation-exhibition.html">114學生畢業特展</a>
+                            <a href="https://medium.com/@ntujour2022" target="_blank" rel="noopener noreferrer">新聞所Medium<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="https://www.facebook.com/ntujournal/?locale=zh_TW" target="_blank" rel="noopener noreferrer">臺大新聞e論壇<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="../publications/e-report.html">前期所報</a>
+                            <a href="../publications/master-thesis.html">畢業生論文</a>
+                            <a href="../publications/books.html">報導專書</a>
+                            <a href="../publications/ntu-news-forum.html">臺大新聞論壇</a>
+                            <a href="../publications/employment-status.html">畢業生就業狀況</a>
+                            <a href="https://datajournalism.ntu.edu.tw/" target="_blank" rel="noopener noreferrer">台大資料新聞<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../undergraduate.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">大學生</a>
+                        <div class="dropdown-menu">
+                            <a href="../undergraduate/general-education.html">通識課</a>
+                            <a href="../undergraduate/specialties.html">領域專長</a>
+                            <a href="../undergraduate/admissions.html">入學資訊</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="../news.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">最新消息</a>
+                    </li>
+                    <li class="nav-item w-full sm:w-auto">
+                        <a href="../resources.html"
+                            class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">相關資源</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            if (window.innerWidth < 640) {
+                if (navMenu && !navMenu.classList.contains('hidden') &&
+                    !navMenu.contains(event.target) &&
+                    !navToggle.contains(event.target)) {
+                    navMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+</script>
+
+
+    <!-- Page Header -->
+    <section id="page-header" class="bg-neutral-50 py-6">
+        <div class="container-1200">
+            <div class="max-w-4xl">
+                <p class="category-label mb-2">UNDERGRADUATE / SPECIALTIES</p>
+                <h1 class="text-2xl font-bold text-neutral-900 mb-2">領域專長</h1>
+                <p class="text-neutral-600">Graduate Institute of Journalism, National Taiwan University</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="py-8 bg-white">
+        <div class="container-1200">
+            <!-- Intro Section -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <h2 class="text-xl font-bold text-neutral-900 mb-4" id="intro-title">領域專長規劃理念</h2>
+                <p class="text-base text-neutral-700 leading-relaxed mb-6">
+                    國立臺灣大學新聞研究所為導引本校大學生結合人文社會關懷與實作敘事能力，開創多元傳播視野，特別規劃了<strong>「計算傳播 (Computational Communication)」</strong>與<strong>「數位新聞 (Digital Journalism)」</strong>兩大領域專長。
+                </p>
+                <p class="text-base text-neutral-700 leading-relaxed">
+                    此領域專長之課程設計採階梯式路徑：由淺入深，從 Level 1 基礎課程奠定核心學理與技術，進階至 Level 2 的理論與方法課程，最後藉由 Level 3 總整課程進行專題實作與社會對話。以下為兩大專長之詳細介紹、學習目標、課程架構圖及修課指引。
+                </p>
+                
+                <!-- Quick Anchor Links -->
+                <div class="flex flex-wrap gap-3 mt-8 justify-center">
+                    <a href="#computational-communication" class="px-5 py-2.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-sm font-semibold transition rounded-lg">計算傳播專長 (L1 二選一) ↓</a>
+                    <a href="#digital-journalism" class="px-5 py-2.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-sm font-semibold transition rounded-lg">數位新聞專長 (全必修) ↓</a>
+                </div>
+            </div>
+
+            <!-- COMPUTATIONAL COMMUNICATION SECTION -->
+            <section id="computational-communication" class="specialty-section">
+                <div class="max-w-4xl mx-auto mb-8">
+                    <span class="text-xs uppercase tracking-[0.2em] text-ntu-maroon font-bold">Specialty 01</span>
+                    <h2 class="text-2xl font-bold text-neutral-900 mt-1 mb-2">計算傳播領域專長</h2>
+                    <p class="text-sm text-neutral-500 mb-4">Computational Communication</p>
+                    
+                    <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-600 mb-6 pb-4 border-b border-neutral-100">
+                        <div><strong>主責教師：</strong>謝吉隆（新聞所 副教授）</div>
+                        <div><strong>預計施行時間：</strong>114學年度 第2學期</div>
+                    </div>
+
+                    <!-- Learning Objectives CC -->
+                    <h3 class="text-lg font-bold text-neutral-900 mb-4">學習目標 / Objectives</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="objective-card p-5 rounded-xl">
+                            <span class="text-xs font-bold text-ntu-maroon uppercase tracking-wider block mb-2">目標一 / Obj 1</span>
+                            <h4 class="text-sm font-bold text-neutral-900 mb-2">分析文本與社群資料</h4>
+                            <p class="text-xs text-neutral-600 leading-relaxed mb-3">學生能運用程式設計、資料分析與文字探勘方法，處理大數據文本與社群媒體資料，並進行資訊擷取、整理與分析。</p>
+                            <p class="text-[11px] text-neutral-400 leading-normal border-t border-neutral-50 pt-2 italic">Develop computational skills for analyzing textual and social media data. Apply programming, data analysis, and text mining methods.</p>
+                        </div>
+                        <div class="objective-card p-5 rounded-xl">
+                            <span class="text-xs font-bold text-ntu-maroon uppercase tracking-wider block mb-2">目標二 / Obj 2</span>
+                            <h4 class="text-sm font-bold text-neutral-900 mb-2">理論分析輿論與社會</h4>
+                            <p class="text-xs text-neutral-600 leading-relaxed mb-3">學生能結合傳播、政治與社會科學理論，觀察社群媒體中的輿論形成、資訊傳散與意識形態互動現象。</p>
+                            <p class="text-[11px] text-neutral-400 leading-normal border-t border-neutral-50 pt-2 italic">Analyze opinion via communication & social science theories. Examine online opinion, information diffusion, and ideological interactions.</p>
+                        </div>
+                        <div class="objective-card p-5 rounded-xl">
+                            <span class="text-xs font-bold text-ntu-maroon uppercase tracking-wider block mb-2">目標三 / Obj 3</span>
+                            <h4 class="text-sm font-bold text-neutral-900 mb-2">培育輿情風險分析人才</h4>
+                            <p class="text-xs text-neutral-600 leading-relaxed mb-3">學生能理解網路社群、平台與資訊環境的運作邏輯，並具備分析、監測與評估線上輿論與資訊風險的能力。</p>
+                            <p class="text-[11px] text-neutral-400 leading-normal border-t border-neutral-50 pt-2 italic">Cultivate risk analysis professionals. Understand digital media ecosystems, monitor discourse, and assess communication and information risks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Narrative CC -->
+                    <h3 class="text-lg font-bold text-neutral-900 mb-3">課程架構與修課指引</h3>
+                    <div class="text-sm text-neutral-700 leading-relaxed space-y-4 mb-8">
+                        <p>
+                            社群媒體已經成為近年民眾、政府與國家運用資通科技來做立場表達與政治溝通的主要平台之一。積極地，政府運用社群媒體可以改善與民眾的關係並防範風險。透過現在的資通科技尤其是社群媒體，業界單位與政府可以更快、更廣泛地傾聽公眾的關注並了解聽眾，也可以對風險 and 不確定性的問題採取行動，並在危機發生之前進行對話。通過對話，謠言可以被早日撲滅。然而，在此同時，社群媒體與輿論也對政府施政以及國家之間的競爭影響力遽增。訊息的大量且快速傳散有助於經營府民關係，但也可能因為社群媒體的環境而使得民眾的意識形態更為極化分歧，意識到政府可能會嘗試包裝資訊或企圖干預走向，甚至降低民眾對政府與新聞的信任感（Mourão et al., 2018）。社群媒體的使用就可能會使得原本已經受意識形態、政黨政治立場影響而分化的閱聽眾更為分化（Settle, 2018），而更鞏固原本黨派間與國與國之間的衝突。同時，情感性、喚起性和道德性的書寫、可補綴添寫的編輯、多元卻不互通的訊息來源（如Facebook、LINE，尤其是封閉性社群），往往也會使得訊息的可信任度降低，也會對施政效能和民主的發展也將形成阻礙。
+                        </p>
+                        <p>
+                            因應這樣的環境，本領域專長期望訓練一種<strong>輿情風險分析人才</strong>，能進入相關單位進行網路輿論監測、分析、管理、風險管理。其不僅要能夠辨析與掌握資訊的傳散，更要能夠有效地運用工具來協助單位或機構調節資訊。這樣的人才不只是政府公部門要，這也是媒體、社福與非營利組織，甚至是投資、行銷、社群編輯、服務業等各行各業都需要的能力。
+                        </p>
+                        <p>
+                            本專長將搭配議題化的問題導向教材，從基礎程式開始（社會科學程式設計課程），引導學生運用大數據方法進行傳播議題分析，並接續帶學生學習「結構取徑」（社群媒體與社會網絡分析課程）與「語彙取徑」（社群媒介輿論分析課程）的理論與進階方法，並輔以理論上與議題上的討論與教學（網路時代的政治傳播課程），最後以完成一學士論文或研討會論文為目標，挑選一傳播議題進行實作。
+                        </p>
+                        <p>
+                            學生在完成本專長後，預期除具有資料獲取、整理、分析、建模等大數據能力外，更能理解如何將這些技能，運用在攸關國家認同、意識形態、與政黨傾向等重要線上傳播議題上，成為國家或政府在面對現下或未來資訊時代解決線上訊息傳播問題的生力軍。
+                        </p>
+                        <p class="bg-neutral-50 p-4 border-l-4 border-ntu-maroon rounded text-neutral-600 text-xs leading-relaxed">
+                            <strong>修課指引與學分要求：</strong>本專長共需修滿 9 學分。Level 1 基礎課程（「社會科學程式設計」與「AI的社會科學應用」）採<strong>二選一</strong>方式修習（3 學分）；Level 2 則包含一門理論課程（「網路時代的政治傳播」，3 學分）與一門方法課程（「社群媒體與社會網絡分析」，3 學分），兩門皆為必修。在修畢前述三門課累積滿 9 學分後，方可在次學期修習 Level 3 總整課程（「社群媒介輿論分析」，3 學分），引導學生獨立完成一專題研究報告。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interactive SVG Map CC (Top-to-Bottom Layout) -->
+                <div class="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start mb-10 max-w-5xl mx-auto">
+                    <!-- SVG Visualizer -->
+                    <div class="bg-neutral-50 p-6 border border-neutral-200/80 rounded-2xl shadow-sm">
+                        <div class="text-center mb-4">
+                            <span class="text-xs font-bold text-neutral-500 uppercase tracking-wide">互動式課程地圖 (滑鼠懸停查看課程特性)</span>
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <svg class="w-full h-auto max-w-[480px]" viewBox="0 0 480 395" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arrow-cc" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#d7cbb8" />
+                                    </marker>
+                                    <marker id="arrow-cc-hover" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7a1a14" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Level Row Titles -->
+                                <text x="240" y="22" font-size="12" font-weight="bold" fill="#8a7757" text-anchor="middle">LEVEL 1 基礎課程 (二選一)</text>
+                                <text x="240" y="157" font-size="12" font-weight="bold" fill="#8a7757" text-anchor="middle">LEVEL 2 方法與理論 (全必修)</text>
+                                <text x="240" y="292" font-size="12" font-weight="bold" fill="#8a7757" text-anchor="middle">LEVEL 3 總整課程 (必修)</text>
+
+                                <!-- Bounding Box for L1 Option (Choose One) -->
+                                <rect x="12" y="32" width="456" height="92" rx="12" ry="12" fill="none" stroke="#bda689" stroke-width="1.5" stroke-dasharray="5,5" />
+                                <text x="240" y="117" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="middle">★ 基礎課程二選一 (Choose One of the Two)</text>
+
+                                <!-- Connector Paths -->
+                                <!-- CC-1 (120, 105) -> CC-3 (120, 175) -->
+                                <path d="M 120 105 L 120 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-cc)" data-from="CC-1" data-to="CC-3" class="connector-line" />
+                                <!-- CC-1 (120, 105) -> CC-4 (360, 175) -->
+                                <path d="M 120 105 C 120 135, 360 145, 360 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-cc)" data-from="CC-1" data-to="CC-4" class="connector-line" />
+                                <!-- CC-2 (360, 105) -> CC-3 (120, 175) -->
+                                <path d="M 360 105 C 360 135, 120 145, 120 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-cc)" data-from="CC-2" data-to="CC-3" class="connector-line" />
+                                <!-- CC-2 (360, 105) -> CC-4 (360, 175) -->
+                                <path d="M 360 105 L 360 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-cc)" data-from="CC-2" data-to="CC-4" class="connector-line" />
+
+                                <!-- CC-3 (220, 207.5) <-> CC-4 (260, 207.5) Bidirectional coupled arrows for parallel requirements -->
+                                <path d="M 228 207.5 L 252 207.5" fill="none" stroke="#e9c490" stroke-width="1.5" marker-start="url(#arrow-cc)" marker-end="url(#arrow-cc)" data-from="CC-3" data-to="CC-4" class="connector-line" />
+
+                                <!-- CC-3 (120, 240) -> CC-5 (240, 310) -->
+                                <path d="M 120 240 C 120 275, 240 270, 240 302" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-cc)" data-from="CC-3" data-to="CC-5" class="connector-line" />
+                                <!-- CC-4 (360, 240) -> CC-5 (240, 310) -->
+                                <path d="M 360 240 C 360 275, 240 270, 240 302" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-cc)" data-from="CC-4" data-to="CC-5" class="connector-line" />
+
+                                <!-- Course Cards -->
+                                <!-- CC-1: 社會科學程式設計 -->
+                                <g class="course-node group" data-id="CC-1" tabindex="0" role="button">
+                                    <rect x="20" y="40" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#d7cbb8" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="32" y="50" width="52" height="18" rx="4" ry="4" fill="#f5efe4" />
+                                    <text x="58" y="63" font-size="10" font-weight="bold" fill="#6f604d" text-anchor="middle">L1 基礎</text>
+                                    <text x="178" y="63" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">3 學分</text>
+                                    <text x="32" y="87" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">社會科學程式設計</text>
+                                </g>
+
+                                <!-- CC-2: AI的社會科學應用 -->
+                                <g class="course-node group" data-id="CC-2" tabindex="0" role="button">
+                                    <rect x="260" y="40" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#d7cbb8" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="272" y="50" width="52" height="18" rx="4" ry="4" fill="#f5efe4" />
+                                    <text x="298" y="63" font-size="10" font-weight="bold" fill="#6f604d" text-anchor="middle">L1 基礎</text>
+                                    <text x="418" y="63" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">3 學分</text>
+                                    <text x="272" y="87" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">AI的社會科學應用</text>
+                                </g>
+
+                                <!-- CC-3: 網路時代的政治傳播 -->
+                                <g class="course-node group" data-id="CC-3" tabindex="0" role="button">
+                                    <rect x="20" y="175" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#e9c490" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="32" y="185" width="52" height="18" rx="4" ry="4" fill="#fdf6eb" />
+                                    <text x="58" y="198" font-size="10" font-weight="bold" fill="#c27a20" text-anchor="middle">L2 理論</text>
+                                    <text x="178" y="198" font-size="10.5" font-weight="bold" fill="#7a1a14" text-anchor="end">英、3學分</text>
+                                    <text x="32" y="222" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">網路時代的政治傳播</text>
+                                </g>
+
+                                <!-- CC-4: 社群媒體與社會網絡分析 -->
+                                <g class="course-node group" data-id="CC-4" tabindex="0" role="button">
+                                    <rect x="260" y="175" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#e9c490" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="272" y="185" width="52" height="18" rx="4" ry="4" fill="#fdf6eb" />
+                                    <text x="298" y="198" font-size="10" font-weight="bold" fill="#c27a20" text-anchor="middle">L2 方法</text>
+                                    <text x="418" y="198" font-size="10.5" font-weight="bold" fill="#7a1a14" text-anchor="end">英、3學分</text>
+                                    <text x="272" y="222" font-size="12" font-weight="bold" fill="#1f2937" class="title-text transition-colors">社群媒體與網絡分析</text>
+                                </g>
+
+                                <!-- CC-5: 社群媒介輿論分析 -->
+                                <g class="course-node group" data-id="CC-5" tabindex="0" role="button">
+                                    <rect x="140" y="310" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#dca39f" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="152" y="320" width="52" height="18" rx="4" ry="4" fill="#faf0f0" />
+                                    <text x="178" y="333" font-size="10" font-weight="bold" fill="#a83d36" text-anchor="middle">L2 總整</text>
+                                    <text x="298" y="333" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">3 學分</text>
+                                    <text x="152" y="357" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">社群媒介輿論分析</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Details Box CC -->
+                    <div class="md:sticky md:top-24 bg-white border border-neutral-200 rounded-2xl shadow-soft p-6 min-h-[395px] flex flex-col justify-between" id="cc-details-panel">
+                        <!-- Default State -->
+                        <div class="h-full flex flex-col justify-center items-center text-center text-neutral-400 py-12 px-4" id="cc-default-state">
+                            <svg class="w-12 h-12 mb-3 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                            </svg>
+                            <p class="text-sm font-medium text-neutral-600">請將滑鼠移至課程節點上以查看課程說明</p>
+                            <p class="text-[11px] mt-1 text-neutral-400">Hover over a course node to view details</p>
+                        </div>
+                        <!-- Detailed State -->
+                        <div class="hidden h-full flex flex-col justify-between" id="cc-detail-state">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 border-b border-neutral-100 pb-3">
+                                    <span class="text-xs font-bold px-2 py-0.5 rounded tracking-wide" id="cc-detail-level"></span>
+                                    <span class="text-xs font-bold text-ntu-maroon" id="cc-detail-credits"></span>
+                                </div>
+                                <h5 class="text-base font-bold text-neutral-900 mb-3" id="cc-detail-name"></h5>
+                                <p class="text-xs text-neutral-600 leading-relaxed mb-4" id="cc-detail-desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CC Course Table -->
+                <div class="max-w-4xl mx-auto mb-12">
+                    <h3 class="text-base font-bold text-neutral-900 mb-3">課程清單與學分規則 / Curriculum Details</h3>
+                    <div class="overflow-x-auto rounded-lg border border-neutral-100 mb-4">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr>
+                                    <th class="p-3 font-semibold w-32">Level / 類別</th>
+                                    <th class="p-3 font-semibold w-40">課名</th>
+                                    <th class="p-3 font-semibold w-20">學分數</th>
+                                    <th class="p-3 font-semibold">說明</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-neutral-700">
+                                <tr>
+                                    <td class="p-3 font-medium bg-[#faf8f5]">Level 1 基礎 (二選一)</td>
+                                    <td class="p-3 font-bold text-neutral-900 bg-[#faf8f5]">社會科學程式設計</td>
+                                    <td class="p-3 bg-[#faf8f5]">3</td>
+                                    <td class="p-3 leading-normal bg-[#faf8f5]">社會科學程式設計課為學生學習程式設計與大數據方法從事傳播研究的開始，其以社科院常見的研究需求為藍圖，設計符合社科院學生學習的基礎程式技巧包含獲取、探索與分析資料等。<strong>(與AI的社會科學應用二選一)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Level 1 基礎 (二選一)</td>
+                                    <td class="p-3 font-bold text-neutral-900">AI的社會科學應用</td>
+                                    <td class="p-3">3</td>
+                                    <td class="p-3 leading-normal">因應AI的快速發展，本課程將引導學生運用程式代理人來設計數個社會科學相關服務，包含諮商聊天代理人、問卷發放AI合成使用者，或運用LLM進行質性文本分析。<strong>(與社會科學程式設計二選一)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium bg-[#faf8f5]">Level 2 理論 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900 bg-[#faf8f5]">網路時代的政治傳播</td>
+                                    <td class="p-3 bg-[#faf8f5]">英、3</td>
+                                    <td class="p-3 leading-normal bg-[#faf8f5]">本課程以網路上的政治傳播為主題，帶學生討論全球媒體格局變化、民粹主義在許多國家如何崛起、極端分子如何利用社交媒體傳播意識形態，以及政治參與者如何利用網路規避經典的守門人。<strong>(必修，與社群媒體與社會網絡分析互相搭配)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Level 2 方法 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900">社群媒體與社會網絡分析</td>
+                                    <td class="p-3">英、3</td>
+                                    <td class="p-3 leading-normal">本課程將介紹如何針對社群媒體上的數據進行分析，並特別著重社會網絡分析方法。學生將在課程中使用R語言尋找、獲取與分析社群數據，並觀察資訊操縱、極化與網軍等新近議題。<strong>(必修，與網路時代的政治傳播互相搭配)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium bg-[#faf8f5]">Level 3 總整 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900 bg-[#faf8f5]">社群媒介輿論分析</td>
+                                    <td class="p-3 bg-[#faf8f5]">3</td>
+                                    <td class="p-3 leading-normal bg-[#faf8f5]">相較於前述方法課程著重結構面向的分析，本課程將著重社群文本與語料處理。引導學生就當下社群媒體上的傳播議題進行分析研究。預期學生將獨立完成一專題研究報告、大專生論文、或碩士論文計畫書。<br><span class="text-ntu-maroon font-semibold">（註：學生必須獲得前述課程九學分後於次學期始可選修）</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-neutral-500">
+                        ※ 註：計算傳播專長要求至少修畢 9 學分（Level 1 基礎課 3 學分 + Level 2 理論與方法 6 學分）。累積此 9 學分後，始可於次學期選修 Level 3 總整課程「社群媒介輿論分析」（3 學分），取得完整的專長認證。
+                    </p>
+                </div>
+            </section>
+
+            <!-- DIGITAL JOURNALISM SECTION -->
+            <section id="digital-journalism" class="specialty-section">
+                <div class="max-w-4xl mx-auto mb-8">
+                    <span class="text-xs uppercase tracking-[0.2em] text-ntu-maroon font-bold">Specialty 02</span>
+                    <h2 class="text-2xl font-bold text-neutral-900 mt-1 mb-2">數位新聞領域專長</h2>
+                    <p class="text-sm text-neutral-500 mb-4">Digital Journalism</p>
+
+                    <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-600 mb-6 pb-4 border-b border-neutral-100">
+                        <div><strong>主責教師：</strong>謝吉隆（新聞所 副教授）</div>
+                        <div><strong>預計施行時間：</strong>114學年度 第2學期</div>
+                    </div>
+
+                    <!-- Learning Objectives DJ -->
+                    <h3 class="text-lg font-bold text-neutral-900 mb-4">學習目標 / Objectives</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="objective-card p-5 rounded-xl">
+                            <span class="text-xs font-bold text-ntu-maroon uppercase tracking-wider block mb-2">目標一 / Obj 1</span>
+                            <h4 class="text-sm font-bold text-neutral-900 mb-2">媒體理解與批判能力</h4>
+                            <p class="text-xs text-neutral-600 leading-relaxed mb-3">學生能辨識媒體與平台的內容生產機制、演算法影響、假訊息脈絡與公共議題呈現方式，具備批判性閱讀能力。</p>
+                            <p class="text-[11px] text-neutral-400 leading-normal border-t border-neutral-50 pt-2 italic">Develop media literacy and critical interpretation. Analyze media/platform content production, algorithms, bias, and misinformation.</p>
+                        </div>
+                        <div class="objective-card p-5 rounded-xl">
+                            <span class="text-xs font-bold text-ntu-maroon uppercase tracking-wider block mb-2">目標二 / Obj 2</span>
+                            <h4 class="text-sm font-bold text-neutral-900 mb-2">數據溝通與敘事能力</h4>
+                            <p class="text-xs text-neutral-600 leading-relaxed mb-3">學生能以清晰結構撰寫新聞與公共議題文字，並能使用資料分析與視覺化方法支持敘事與論述。</p>
+                            <p class="text-[11px] text-neutral-400 leading-normal border-t border-neutral-50 pt-2 italic">Communicate issues using data-supported reasoning. Write structured narratives and apply data analysis/visualization to support arguments.</p>
+                        </div>
+                        <div class="objective-card p-5 rounded-xl">
+                            <span class="text-xs font-bold text-ntu-maroon uppercase tracking-wider block mb-2">目標三 / Obj 3</span>
+                            <h4 class="text-sm font-bold text-neutral-900 mb-2">數位敘事與新聞產製</h4>
+                            <p class="text-xs text-neutral-600 leading-relaxed mb-3">學生能運用網頁與互動式媒體整合文字、影像與資料，製作可公開展示的數位新聞作品或社會議題敘事。</p>
+                            <p class="text-[11px] text-neutral-400 leading-normal border-t border-neutral-50 pt-2 italic">Create digital news & storytelling projects. Integrate text, data, images, and interactive design to build publishable web journalism.</p>
+                        </div>
+                    </div>
+
+                    <!-- Narrative DJ -->
+                    <h3 class="text-lg font-bold text-neutral-900 mb-3">課程架構與修課指引</h3>
+                    <div class="text-sm text-neutral-700 leading-relaxed space-y-4 mb-8">
+                        <p>
+                            本領域專長以<strong>「由理解到產製、由判讀到創作」</strong>作為核心學習進路。
+                        </p>
+                        <p>
+                            首先，在 <strong>Level 1 基礎課程</strong> 中，學生將透過「媒體素養」課程理解新聞與媒體內容的生產方式、平台與演算法的分發邏輯，以及假訊息與意識框架的形成，培養在資訊過載與平台化環境中進行判讀與思辨的能力；並透過「當代媒體實務講座」課程，由不同類型與媒體組織背景的新聞工作者分享其採編流程、專題製作、倫理判斷與職涯經驗，使學生能具體理解「新聞如何被做出來」及其背後的專業與現場脈絡。此階段旨在補足大學部學生對媒體與新聞制度的基本認識，建立公共討論與批判性閱讀的能力。
+                        </p>
+                        <p>
+                            接著在 <strong>Level 2 方法課程</strong>，學生將進入具體的新聞寫作與資料分析訓練。透過「新聞寫作」，學生將學習以清楚、有組織且具公共意義的方式描述議題，培養敘事與公共溝通能力；而「資料新聞與視覺敘事」則引導學生使用資料搜尋、整理、分析與視覺化工具，理解資料如何建構知識，以及資料呈現對敘事意義的影響，使學生具備以資料支撐觀點與構成報導內容的能力。此階段讓學生從理解媒體，進一步走向能夠自行生產有說服力的公共訊息。
+                        </p>
+                        <p>
+                            最後在 <strong>Level 3 總整課程</strong>「網頁設計與敘事」中，學生將整合前述素養、寫作能力與資料能力，運用 HTML、CSS、JavaScript 等基礎網頁語言與互動設計手法，將文字、影像、地圖、圖表與資料視覺化元素整合，完成一份可公開發布、可收錄於作品集的數位新聞專題。本階段強調的不僅是技術操作，而是能夠「向真實受眾發聲」，使學生能以具公共意義的數位作品參與社會討論。
+                        </p>
+                        <p>
+                            在未來發展上，本專長所累積的能力可跨足新聞業、文化內容產業、非營利組織、政策研究、資料視覺化、社群與內容策略等領域。完成作品集後，學生可作為數位內容編輯、資料新聞撰寫助理、資訊設計與內容企劃、社會倡議與公共溝通人才，或作為未來申請傳播、媒體、設計、資訊或人文社會研究相關研究所之作品與寫作佐證。本專長的核心訴求，是讓學生能夠理解世界、解析世界，並以合適的媒介形式向世界發聲。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interactive SVG Map DJ (Top-to-Bottom Layout) -->
+                <div class="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start mb-10 max-w-5xl mx-auto">
+                    <!-- SVG Visualizer -->
+                    <div class="bg-neutral-50 p-6 border border-neutral-200/80 rounded-2xl shadow-sm">
+                        <div class="text-center mb-4">
+                            <span class="text-xs font-bold text-neutral-500 uppercase tracking-wide">互動式課程地圖 (滑鼠懸停查看課程特性)</span>
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <svg class="w-full h-auto max-w-[480px]" viewBox="0 0 480 395" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arrow-dj" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#d7cbb8" />
+                                    </marker>
+                                    <marker id="arrow-dj-hover" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7a1a14" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Level Row Titles -->
+                                <text x="240" y="22" font-size="12" font-weight="bold" fill="#8a7757" text-anchor="middle">LEVEL 1 基礎課程 (全必修)</text>
+                                <text x="240" y="157" font-size="12" font-weight="bold" fill="#8a7757" text-anchor="middle">LEVEL 2 方法課程 (全必修)</text>
+                                <text x="240" y="292" font-size="12" font-weight="bold" fill="#8a7757" text-anchor="middle">LEVEL 3 總整課程 (必修)</text>
+
+                                <!-- Bounding Boxes for Required Rows -->
+                                <!-- L1 Required Option -->
+                                <rect x="12" y="32" width="456" height="92" rx="12" ry="12" fill="none" stroke="#7a1a14" stroke-opacity="0.15" stroke-width="1.5" />
+                                <text x="240" y="117" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="middle">★ 兩門皆為必修課程 (Both Required)</text>
+
+                                <!-- L2 Required Option -->
+                                <rect x="12" y="167" width="456" height="92" rx="12" ry="12" fill="none" stroke="#7a1a14" stroke-opacity="0.15" stroke-width="1.5" />
+                                <text x="240" y="252" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="middle">★ 兩門皆為必修課程 (Both Required)</text>
+
+                                <!-- Connector Paths -->
+                                <!-- DJ-1 (120, 105) -> DJ-3 (120, 175) -->
+                                <path d="M 120 105 L 120 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-dj)" data-from="DJ-1" data-to="DJ-3" class="connector-line" />
+                                <!-- DJ-1 (120, 105) -> DJ-4 (360, 175) -->
+                                <path d="M 120 105 C 120 135, 360 145, 360 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-dj)" data-from="DJ-1" data-to="DJ-4" class="connector-line" />
+                                
+                                <!-- DJ-1 (220, 72.5) <-> DJ-2 (260, 72.5) Bidirectional Coupled Arrow (Both are required) -->
+                                <path d="M 228 72.5 L 252 72.5" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-start="url(#arrow-dj)" marker-end="url(#arrow-dj)" data-from="DJ-1" data-to="DJ-2" class="connector-line" />
+
+                                <!-- DJ-2 (360, 105) -> DJ-3 (120, 175) -->
+                                <path d="M 360 105 C 360 135, 120 145, 120 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-dj)" data-from="DJ-2" data-to="DJ-3" class="connector-line" />
+                                <!-- DJ-2 (360, 105) -> DJ-4 (360, 175) -->
+                                <path d="M 360 105 L 360 167" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-dj)" data-from="DJ-2" data-to="DJ-4" class="connector-line" />
+                                
+                                <!-- DJ-3 (220, 207.5) <-> DJ-4 (260, 207.5) Bidirectional Coupled Arrow (Both are required) -->
+                                <path d="M 228 207.5 L 252 207.5" fill="none" stroke="#e9c490" stroke-width="1.5" marker-start="url(#arrow-dj)" marker-end="url(#arrow-dj)" data-from="DJ-3" data-to="DJ-4" class="connector-line" />
+
+                                <!-- DJ-3 (120, 240) -> DJ-5 (240, 310) -->
+                                <path d="M 120 240 C 120 275, 240 270, 240 302" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-dj)" data-from="DJ-3" data-to="DJ-5" class="connector-line" />
+                                <!-- DJ-4 (360, 240) -> DJ-5 (240, 310) -->
+                                <path d="M 360 240 C 360 275, 240 270, 240 302" fill="none" stroke="#d7cbb8" stroke-width="1.5" marker-end="url(#arrow-dj)" data-from="DJ-4" data-to="DJ-5" class="connector-line" />
+
+                                <!-- Course Cards -->
+                                <!-- DJ-1: 媒體素養 -->
+                                <g class="course-node group" data-id="DJ-1" tabindex="0" role="button">
+                                    <rect x="20" y="40" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#d7cbb8" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="32" y="50" width="52" height="18" rx="4" ry="4" fill="#f5efe4" />
+                                    <text x="58" y="63" font-size="10" font-weight="bold" fill="#6f604d" text-anchor="middle">L1 基礎</text>
+                                    <text x="178" y="63" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">3 學分</text>
+                                    <text x="32" y="87" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">媒體素養</text>
+                                </g>
+
+                                <!-- DJ-2: 當代媒體實務講座 -->
+                                <g class="course-node group" data-id="DJ-2" tabindex="0" role="button">
+                                    <rect x="260" y="40" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#d7cbb8" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="272" y="50" width="52" height="18" rx="4" ry="4" fill="#f5efe4" />
+                                    <text x="298" y="63" font-size="10" font-weight="bold" fill="#6f604d" text-anchor="middle">L1 基礎</text>
+                                    <text x="418" y="63" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">2 學分</text>
+                                    <text x="272" y="87" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">當代媒體實務講座</text>
+                                </g>
+
+                                <!-- DJ-3: 新聞寫作 -->
+                                <g class="course-node group" data-id="DJ-3" tabindex="0" role="button">
+                                    <rect x="20" y="175" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#e9c490" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="32" y="185" width="52" height="18" rx="4" ry="4" fill="#fdf6eb" />
+                                    <text x="58" y="198" font-size="10" font-weight="bold" fill="#c27a20" text-anchor="middle">L2 方法</text>
+                                    <text x="178" y="198" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">3 學分</text>
+                                    <text x="32" y="222" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">新聞寫作</text>
+                                </g>
+
+                                <!-- DJ-4: 資料新聞與視覺敘事 -->
+                                <g class="course-node group" data-id="DJ-4" tabindex="0" role="button">
+                                    <rect x="260" y="175" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#e9c490" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="272" y="185" width="52" height="18" rx="4" ry="4" fill="#fdf6eb" />
+                                    <text x="298" y="198" font-size="10" font-weight="bold" fill="#c27a20" text-anchor="middle">L2 方法</text>
+                                    <text x="418" y="198" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">3 學分</text>
+                                    <text x="272" y="222" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">資料新聞與視覺敘事</text>
+                                </g>
+
+                                <!-- DJ-5: 網頁設計與敘事 -->
+                                <g class="course-node group" data-id="DJ-5" tabindex="0" role="button">
+                                    <rect x="140" y="310" width="200" height="65" rx="10" ry="10" fill="#ffffff" stroke="#dca39f" stroke-width="1.5" class="card-bg transition-all duration-200" />
+                                    <rect x="152" y="320" width="52" height="18" rx="4" ry="4" fill="#faf0f0" />
+                                    <text x="178" y="333" font-size="10" font-weight="bold" fill="#a83d36" text-anchor="middle">L3 總整</text>
+                                    <text x="298" y="333" font-size="11" font-weight="bold" fill="#7a1a14" text-anchor="end">3 學分</text>
+                                    <text x="152" y="357" font-size="12.5" font-weight="bold" fill="#1f2937" class="title-text transition-colors">網頁設計與敘事</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Details Box DJ -->
+                    <div class="md:sticky md:top-24 bg-white border border-neutral-200 rounded-2xl shadow-soft p-6 min-h-[395px] flex flex-col justify-between" id="dj-details-panel">
+                        <!-- Default State -->
+                        <div class="h-full flex flex-col justify-center items-center text-center text-neutral-400 py-12 px-4" id="dj-default-state">
+                            <svg class="w-12 h-12 mb-3 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                            </svg>
+                            <p class="text-sm font-medium text-neutral-600">請將滑鼠移至課程節點上以查看課程說明</p>
+                            <p class="text-[11px] mt-1 text-neutral-400">Hover over a course node to view details</p>
+                        </div>
+                        <!-- Detailed State -->
+                        <div class="hidden h-full flex flex-col justify-between" id="dj-detail-state">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 border-b border-neutral-100 pb-3">
+                                    <span class="text-xs font-bold px-2 py-0.5 rounded tracking-wide" id="dj-detail-level"></span>
+                                    <span class="text-xs font-bold text-ntu-maroon" id="dj-detail-credits"></span>
+                                </div>
+                                <h5 class="text-base font-bold text-neutral-900 mb-3" id="dj-detail-name"></h5>
+                                <p class="text-xs text-neutral-600 leading-relaxed mb-4" id="dj-detail-desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DJ Course Table -->
+                <div class="max-w-4xl mx-auto mb-6">
+                    <h3 class="text-base font-bold text-neutral-900 mb-3">課程清單與學分規則 / Curriculum Details</h3>
+                    <div class="overflow-x-auto rounded-lg border border-neutral-100 mb-4">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr>
+                                    <th class="p-3 font-semibold w-32">Level / 類別</th>
+                                    <th class="p-3 font-semibold w-40">課名</th>
+                                    <th class="p-3 font-semibold w-20">學分數</th>
+                                    <th class="p-3 font-semibold">說明</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-neutral-700">
+                                <tr>
+                                    <td class="p-3 font-medium bg-[#faf8f5]">Level 1 基礎 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900 bg-[#faf8f5]">媒體素養</td>
+                                    <td class="p-3 bg-[#faf8f5]">3</td>
+                                    <td class="p-3 leading-normal bg-[#faf8f5]">理解新聞與媒體內容生產、平台演算法分發、假訊息與意識型態框架的形成，培養在資訊過載環境中辨識與批判的能力。<strong>(必修，與當代媒體實務講座互相搭配)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Level 1 基礎 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900">當代媒體實務講座</td>
+                                    <td class="p-3">2</td>
+                                    <td class="p-3 leading-normal">邀請具不同新聞類型與媒體組織背景的新聞實務工作者分享採編、倫理與職涯經驗，具體理解新聞產製的現場脈絡。<strong>(必修，與媒體素養互相搭配)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium bg-[#faf8f5]">Level 2 方法 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900 bg-[#faf8f5]">新聞寫作</td>
+                                    <td class="p-3 bg-[#faf8f5]">3</td>
+                                    <td class="p-3 leading-normal bg-[#faf8f5]">以新聞寫作為基礎，學習以清楚、正確的文字描述新聞、溝通議題，並促進公民參與公共討論。<strong>(必修，與資料新聞與視覺敘事互相搭配)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Level 2 方法 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900">資料新聞與視覺敘事</td>
+                                    <td class="p-3">3</td>
+                                    <td class="p-3 leading-normal">運用程式語言（R）獲取、剖析並視覺化資料，進行資料新聞產製，正確且有效率地呈現隱藏於數據中的公共議題。<strong>(必修，與新聞寫作互相搭配)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium bg-[#faf8f5]">Level 3 總整 (必修)</td>
+                                    <td class="p-3 font-bold text-neutral-900 bg-[#faf8f5]">網頁設計與敘事</td>
+                                    <td class="p-3 bg-[#faf8f5]">3</td>
+                                    <td class="p-3 leading-normal bg-[#faf8f5]">整合文字、影像、圖表與互動程式，利用 HTML/CSS/JS 製作可公開呈現的新聞專題，向真實受眾發聲。<strong>(必修)</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-neutral-500">
+                        ※ 註：數位新聞專長所有課程皆為<strong>必修項目，缺一不可</strong>（共 14 學分）。修習完畢後始可獲得專長證明。
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Bottom Navigation -->
+            <div class="max-w-4xl mx-auto mt-12 pt-8 border-t border-neutral-100 text-center">
+                <a href="../undergraduate.html" class="inline-block px-6 py-2 border border-ntu-maroon text-ntu-maroon hover:bg-ntu-maroon hover:text-white transition rounded font-medium text-sm">返回大學生專區</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- site-sitemap moved into site-footer partial to avoid duplicate footer blocks -->
+
+    <!-- Footer -->
+
+<section id="footer-module-band" class="site-module-band site-module-band--footer">
+    <div class="container-1200">
+        <div class="site-module-grid site-module-grid--strip"><a class="site-module-card site-module-card--strip" href="../publications/114-graduation-exhibition.html" aria-label="114 畢業生特展" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/publications/liu.png" alt="114 畢業生特展" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.33% 70.33%; transform: scale(1.0); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">114 畢業生特展</strong>
+        <small class="site-module-subtitle">流／留：這個時代</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="../news/2025-11-19-news-260367.html" aria-label="假訊息調查" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/news/bird02-1779892349.png" alt="假訊息調查" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 100.0% 16.0%; transform: scale(0.7); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">假訊息調查</strong>
+        <small class="site-module-subtitle">年度調查</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="../news/2026-03-04-news-261571.html" aria-label="影像專業訓練" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/news/bird01-1779892339.png" alt="影像專業訓練" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 87.91% 2.94%; transform: scale(0.88); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">影像專業訓練</strong>
+        <small class="site-module-subtitle">課程與作品</small>
+    </span>
+</a><a class="site-module-card site-module-card--strip" href="../activities/2026-04-15-activity-262463.html" aria-label="AI與新聞所" style="--module-bg-color: rgba(255, 255, 255, 0.35); --module-hover-bg-color: rgba(255, 255, 255, 0.96); --module-border-color: #EFA22B; --module-title-color: #7a1a14; --module-subtitle-color: #7a1a14;">
+    <span class="site-module-media">
+        <img src="../images/modules/20241213-AIIcon-1779865297.png" alt="AI與新聞所" class="site-module-image" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: -123.2% 90.3%; transform: scale(0.72); transform-origin: right bottom;">
+    </span>
+    <span class="site-module-copy">
+        <strong class="site-module-title">AI與新聞所</strong>
+        <small class="site-module-subtitle">相關課程</small>
+    </span>
+</a></div>
+    </div>
+</section>
+
+<section id="site-map" class="site-map-band"><div class="container-1200"><div class="site-map-grid"><div class="site-map-card"><h4 class="site-map-title">學生專區</h4><ul class="site-map-list"><li><a href="../students/course-map.html" class="site-map-link">課程地圖</a></li><li><a href="../students/course-regulation.html" class="site-map-link">修業規定</a></li><li><a href="../students/statute-and-form.html" class="site-map-link">表單下載</a></li><li><a href="../students/student-learning.html" class="site-map-link">學生學習</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">認識本所</h4><ul class="site-map-list"><li><a href="../about.html#intro" class="site-map-link">本所介紹</a></li><li><a href="../faculty/faculty.html" class="site-map-link">師資總覽</a></li><li><a href="../publications/e-report.html" class="site-map-link">捐款支持</a></li><li><a href="../about.html#transportation" class="site-map-link">聯絡我們</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">入學資訊</h4><ul class="site-map-list"><li><a href="../admissions.html#qualifying" class="site-map-link">甄試入學</a></li><li><a href="../admissions.html#entrance" class="site-map-link">招生考試</a></li><li><a href="../admissions.html#past-exam" class="site-map-link">歷屆考古題</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">校友與連結</h4><ul class="site-map-list"><li><a href="../about.html#donate" class="site-map-link">捐款支持</a></li><li><a href="../resources.html" class="site-map-link">相關資源</a></li><li><a href="../staff.html" class="site-map-link">行政人員</a></li><li><a href="../news.html" class="site-map-link">最新消息</a></li></ul></div></div></div></section>
+<footer id="site-footer" class="bg-neutral-800 py-4 border-t border-neutral-600">
+    <div class="container-1200">
+        <div class="site-footer-grid">
+            <div class="site-footer-brand">
+                <p class="text-[15px] text-white/95 leading-relaxed mb-2 font-semibold">
+                    國立臺灣大學新聞研究所
+                </p>
+                <p class="text-[12px] text-white/85 leading-7 site-footer-copy">
+                    Copyright &copy; 2025 Graduate Institute of Journalism, National Taiwan University. All Rights Reserved.
+                </p>
+            </div>
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    10617 臺北市大安區羅斯福路四段一號<br>
+                    (02) 3366-3131
+                </p>
+            </div>
+            <div class="site-footer-block">
+                <p class="text-[13px] text-white/95 leading-relaxed mb-0">
+                    No. 1, Sec. 4, Roosevelt Road, Taipei, 10617 Taiwan<br>
+                    <a href="mailto:jour@ntu.edu.tw" class="hover:text-ntu-gold transition">jour@ntu.edu.tw</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="../js/sticky-header.js"></script>
+    
+    <!-- Interaction Script for SVG Maps -->
+    <script>
+        const CC_COURSES = {
+            'CC-1': {
+                name: '社會科學程式設計',
+                level: 'Level 1 基礎',
+                credits: '3 學分',
+                description: '社會科學程式設計課為學生學習程式設計與大數據方法從事傳播研究的開始，其以社科院常見的研究需求為藍圖，設計符合社科院學生學習的基礎程式技巧包含獲取資料、視覺化探索資料、分析資料等，並主要以社科研究常用的政府（開放）數據和社群媒介資料為主題，講述這些方法的應用。'
+            },
+            'CC-2': {
+                name: 'AI的社會科學應用',
+                level: 'Level 1 基礎',
+                credits: '3 學分',
+                description: '因應AI的快速發展，本課程將引導學生運用程式代理人來設計數個社會科學相關服務，包含諮詢或諮商可能會用到的聊天代理人、問卷發放可能會用到的AI合成使用者，或者運用LLM來進行質性文本分析。這樣的做法，一方面能降低學生程式學習負荷，另一方面也符合目前業界的程式撰寫趨勢。'
+            },
+            'CC-3': {
+                name: '網路時代的政治傳播',
+                level: 'Level 2 理論',
+                credits: '3 學分 (英文授課)',
+                description: '本課程以網路上的政治傳播為主題，帶學生討論全球媒體格局如何變化，民粹主義在許多國家如何崛起，極端分子如何利用社交媒體傳播他們的意識形態，以及政治參與者如何利用網路環境來規避經典的守門人。'
+            },
+            'CC-4': {
+                name: '社群媒體與社會網絡分析',
+                level: 'Level 2 方法',
+                credits: '3 學分 (英文授課)',
+                description: '本課程將介紹如何針對社群媒體上的數據進行分析，並特別著重社會網絡分析方法。學生將被引導在課程中使用R語言以尋找、獲取、分析Twitter上的Tweets與使用者，並據此進行資訊操縱、意識形態極化、網軍等新近議題觀察。'
+            },
+            'CC-5': {
+                name: '社群媒介輿論分析',
+                level: 'Level 3 總整',
+                credits: '3 學分 (須滿前述9學分)',
+                description: '相較於前述方法課程著重結構面向的分析，本課程將著重社群文本與語料處理。引導學生就當下社群媒體上的傳播議題進行分析研究。本課程將從定題開始，帶學生逐步閱讀文獻、設計方法、分析到研究總結。預期學生將獨立完成一專題研究報告、大專生論文、或碩士論文計畫書與初步研究分析結果。（註：學生必須獲得前述課程九學分後於次學期始可選修）'
+            }
+        };
+
+        const DJ_COURSES = {
+            'DJ-1': {
+                name: '媒體素養',
+                level: 'Level 1 基礎',
+                credits: '3 學分',
+                description: '理解新聞與媒體內容的生產過程、平台與演算法的分發邏輯、假訊息與意識型態框架的形成，培養學生在資訊過載與平台化環境中辨識、判讀與批判的能力。'
+            },
+            'DJ-2': {
+                name: '當代媒體實務講座',
+                level: 'Level 1 基礎',
+                credits: '2 學分',
+                description: '邀請具不同新聞類型、不同媒體組織背景的新聞工作者與編輯現身談論專題製作、新聞倫理、業務流程與職涯經驗，使學生能夠具體理解「新聞如何被做出來」及其背後的專業判斷。'
+            },
+            'DJ-3': {
+                name: '新聞寫作',
+                level: 'Level 2 方法',
+                credits: '3 學分',
+                description: '數位新聞產製需要以新聞寫作為基礎，記者能會用清楚、正確的文字描述新聞和讀者溝通，亦可以促進公民理解和參與公共議題。本課程將帶領學習者理解新聞寫作的形式和要領。'
+            },
+            'DJ-4': {
+                name: '資料新聞與視覺敘事',
+                level: 'Level 2 方法',
+                credits: '3 學分',
+                description: '本課程將帶學習者運用程式語言（R）來獲取、剖析並視覺化資料，以產製資料新聞。透過一系列對紐約時報圖表的閱讀訓練，學習者將能夠正確、有效地運用不同的視覺化圖表以呈現資料中所潛藏的議題。'
+            },
+            'DJ-5': {
+                name: '網頁設計與敘事',
+                level: 'Level 3 總整',
+                credits: '3 學分',
+                description: '透過 HTML、CSS、JavaScript 等基礎工具，將文字、資料圖表、影像、地圖與互動操作整合為可公開呈現的網頁式數位新聞專題。此課程強調「向真實受眾溝通」的能力，而非僅在課堂內產製作業成果。'
+            }
+        };
+
+        function initSpecialtyInteraction(containerId, prefix, coursesData, arrowId, arrowHoverId) {
+            const container = document.getElementById(containerId);
+            const defaultState = document.getElementById(`${prefix}-default-state`);
+            const detailState = document.getElementById(`${prefix}-detail-state`);
+            const levelEl = document.getElementById(`${prefix}-detail-level`);
+            const creditsEl = document.getElementById(`${prefix}-detail-credits`);
+            const nameEl = document.getElementById(`${prefix}-detail-name`);
+            const descEl = document.getElementById(`${prefix}-detail-desc`);
+            const panel = document.getElementById(`${prefix}-details-panel`);
+
+            const nodes = container.querySelectorAll('.course-node');
+
+            nodes.forEach(node => {
+                const courseId = node.getAttribute('data-id');
+                const course = coursesData[courseId];
+
+                if (!course) return;
+
+                const handleEnter = () => {
+                    // Update Text content
+                    levelEl.textContent = course.level;
+                    creditsEl.textContent = course.credits;
+                    nameEl.textContent = course.name;
+                    descEl.textContent = course.description;
+
+                    // Level Badge Styling
+                    levelEl.className = 'text-xs font-bold px-2 py-0.5 rounded tracking-wide ';
+                    if (course.level.includes('Level 1')) {
+                        levelEl.className += 'bg-[#f5efe4] text-[#6f604d]';
+                    } else if (course.level.includes('Level 2')) {
+                        levelEl.className += 'bg-[#fdf6eb] text-[#c27a20]';
+                    } else {
+                        levelEl.className += 'bg-[#faf0f0] text-[#a83d36]';
+                    }
+
+                    // Toggle Visibility
+                    defaultState.classList.add('hidden');
+                    detailState.classList.remove('hidden');
+
+                    // Highlight details box border
+                    panel.style.borderColor = '#7a1a14';
+                    panel.style.boxShadow = '0 10px 25px rgba(122, 26, 20, 0.08)';
+
+                    // Highlight connector paths linked to/from this node
+                    container.querySelectorAll(`.connector-line[data-from="${courseId}"], .connector-line[data-to="${courseId}"]`).forEach(path => {
+                        path.classList.add('highlighted');
+                        if (path.getAttribute('marker-start')) {
+                            path.setAttribute('marker-start', `url(#${arrowHoverId})`);
+                        }
+                        path.setAttribute('marker-end', `url(#${arrowHoverId})`);
+                    });
+                };
+
+                const handleLeave = () => {
+                    // Reset details box styling
+                    panel.style.borderColor = '';
+                    panel.style.boxShadow = '';
+
+                    // Remove connector highlighting
+                    container.querySelectorAll(`.connector-line[data-from="${courseId}"], .connector-line[data-to="${courseId}"]`).forEach(path => {
+                        path.classList.remove('highlighted');
+                        if (path.getAttribute('marker-start')) {
+                            path.setAttribute('marker-start', `url(#${arrowId})`);
+                        }
+                        path.setAttribute('marker-end', `url(#${arrowId})`);
+                    });
+                };
+
+                node.addEventListener('mouseenter', handleEnter);
+                node.addEventListener('mouseleave', handleLeave);
+                
+                // Keyboard accessibility support
+                node.addEventListener('focus', handleEnter);
+                node.addEventListener('blur', handleLeave);
+            });
+        }
+
+        // Initialize both specialty interactive maps with corrected prefixes
+        document.addEventListener('DOMContentLoaded', () => {
+            initSpecialtyInteraction('computational-communication', 'cc', CC_COURSES, 'arrow-cc', 'arrow-cc-hover');
+            initSpecialtyInteraction('digital-journalism', 'dj', DJ_COURSES, 'arrow-dj', 'arrow-dj-hover');
+        });
+    </script>
+</body>
+
+</html>

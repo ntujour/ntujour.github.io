@@ -1,0 +1,34 @@
+{
+  "slug": "changchinhwa",
+  "name": "張錦華",
+  "nameZh": "張錦華",
+  "title": "名譽教授",
+  "photo": "../../images/faculty/changchinhwa.png",
+  "placeholder": "張",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "(02)33663121"
+    },
+    {
+      "type": "email",
+      "value": "cchwa@ntu.edu.tw"
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "大眾傳播理論"
+    ],
+    "researchInterests": [
+      "大眾傳播理論",
+      "質化研究方法",
+      "多元文化論與傳播研究"
+    ],
+    "contact": {
+      "phone": "(02)33663121",
+      "email": "cchwa@ntu.edu.tw"
+    },
+    "externalLinks": []
+  },
+  "sections": []
+}

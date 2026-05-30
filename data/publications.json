@@ -1,0 +1,66 @@
+[
+  {
+    "id": "data-journalism",
+    "title": "台大資料新聞",
+    "date": "2026-05-28",
+    "external_url": "https://datajournalism.ntu.edu.tw/",
+    "external_label": "前往網站",
+    "hashtags": [
+      "資料新聞",
+      "視覺化",
+      "Open Data"
+    ],
+    "excerpt": "台大資料新聞是新聞研究所相關的資料新聞成果站，收錄視覺作品、作者介紹、影片介紹、作品分類與 Open Data 相關內容。 這個入口適合放入資料新聞學、視覺敘事與跨域合作的整理頁面，讓外部觀眾能直接進…",
+    "content": "<p>台大資料新聞是新聞研究所相關的資料新聞成果站，收錄視覺作品、作者介紹、影片介紹、作品分類與 Open Data 相關內容。</p>\n<p>這個入口適合放入資料新聞學、視覺敘事與跨域合作的整理頁面，讓外部觀眾能直接進入站點瀏覽作品。</p>\n<ul>\n<li><a href=\"https://datajournalism.ntu.edu.tw/\">前往 datajournalismNTU</a></li>\n</ul>",
+    "content_html": "<p>台大資料新聞是新聞研究所相關的資料新聞成果站，收錄視覺作品、作者介紹、影片介紹、作品分類與 Open Data 相關內容。</p>\n<p>這個入口適合放入資料新聞學、視覺敘事與跨域合作的整理頁面，讓外部觀眾能直接進入站點瀏覽作品。</p>\n<ul>\n<li><a href=\"https://datajournalism.ntu.edu.tw/\">前往 datajournalismNTU</a></li>\n</ul>",
+    "content_markdown": "台大資料新聞是新聞研究所相關的資料新聞成果站，收錄視覺作品、作者介紹、影片介紹、作品分類與 Open Data 相關內容。\n\n這個入口適合放入資料新聞學、視覺敘事與跨域合作的整理頁面，讓外部觀眾能直接進入站點瀏覽作品。\n\n- [前往 datajournalismNTU](https://datajournalism.ntu.edu.tw/)"
+  },
+  {
+    "id": "employment-status",
+    "title": "畢業生就業狀況",
+    "date": "2026-05-28",
+    "external_url": "https://www.journalism.ntu.edu.tw/001/Upload/366/relfile/26651/94659/62f47980-af41-466e-bd53-20e2d023a599.pdf",
+    "external_label": "查看 PDF",
+    "hashtags": [
+      "校友",
+      "就業",
+      "調查"
+    ],
+    "excerpt": "本頁整理臺大新聞所畢業生就業狀況資料表。最新公開版本為 2023 年 3 月調查，橫跨第 21 屆至第 30 屆畢業生，方便快速查看校友去向與後續統計。 如需閱讀原始資料，請點選上方來源連結。",
+    "content": "<p>本頁整理臺大新聞所畢業生就業狀況資料表。最新公開版本為 2023 年 3 月調查，橫跨第 21 屆至第 30 屆畢業生，方便快速查看校友去向與後續統計。</p>\n<p>如需閱讀原始資料，請點選上方來源連結。</p>",
+    "content_html": "<p>本頁整理臺大新聞所畢業生就業狀況資料表。最新公開版本為 2023 年 3 月調查，橫跨第 21 屆至第 30 屆畢業生，方便快速查看校友去向與後續統計。</p>\n<p>如需閱讀原始資料，請點選上方來源連結。</p>",
+    "content_markdown": "本頁整理臺大新聞所畢業生就業狀況資料表。最新公開版本為 2023 年 3 月調查，橫跨第 21 屆至第 30 屆畢業生，方便快速查看校友去向與後續統計。\n\n如需閱讀原始資料，請點選上方來源連結。"
+  },
+  {
+    "id": "news-medium",
+    "title": "新聞所Medium",
+    "date": "2026-05-28",
+    "external_url": "https://medium.com/@ntujour2022",
+    "external_label": "前往 Medium",
+    "hashtags": [
+      "媒體發表",
+      "專題",
+      "觀點"
+    ],
+    "excerpt": "新聞所 Medium 收錄本所師生的延伸文字、短文與專題分享，可作為出版發表與媒體實作的入口。 如果你想先看外部站點，可以直接點上方的來源連結，或前往： - 新聞所 Medium",
+    "content": "<p>新聞所 Medium 收錄本所師生的延伸文字、短文與專題分享，可作為出版發表與媒體實作的入口。</p>\n<p>如果你想先看外部站點，可以直接點上方的來源連結，或前往：</p>\n<ul>\n<li><a href=\"https://medium.com/@ntujour2022\">新聞所 Medium</a></li>\n</ul>",
+    "content_html": "<p>新聞所 Medium 收錄本所師生的延伸文字、短文與專題分享，可作為出版發表與媒體實作的入口。</p>\n<p>如果你想先看外部站點，可以直接點上方的來源連結，或前往：</p>\n<ul>\n<li><a href=\"https://medium.com/@ntujour2022\">新聞所 Medium</a></li>\n</ul>",
+    "content_markdown": "新聞所 Medium 收錄本所師生的延伸文字、短文與專題分享，可作為出版發表與媒體實作的入口。\n\n如果你想先看外部站點，可以直接點上方的來源連結，或前往：\n\n- [新聞所 Medium](https://medium.com/@ntujour2022)"
+  },
+  {
+    "id": "ntu-e-forum",
+    "title": "臺大新聞e論壇",
+    "date": "2026-05-28",
+    "external_url": "https://www.facebook.com/ntujournal/?locale=zh_TW",
+    "external_label": "前往 Facebook",
+    "hashtags": [
+      "媒體發表",
+      "e論壇",
+      "Facebook"
+    ],
+    "excerpt": "臺大新聞 e 論壇是本所的社群與討論入口，適合放入活動紀錄、文章分享與對外訊息。 如要直接查看最新內容，請前往上方 Facebook 連結。",
+    "content": "<p>臺大新聞 e 論壇是本所的社群與討論入口，適合放入活動紀錄、文章分享與對外訊息。</p>\n<p>如要直接查看最新內容，請前往上方 Facebook 連結。</p>",
+    "content_html": "<p>臺大新聞 e 論壇是本所的社群與討論入口，適合放入活動紀錄、文章分享與對外訊息。</p>\n<p>如要直接查看最新內容，請前往上方 Facebook 連結。</p>",
+    "content_markdown": "臺大新聞 e 論壇是本所的社群與討論入口，適合放入活動紀錄、文章分享與對外訊息。\n\n如要直接查看最新內容，請前往上方 Facebook 連結。"
+  }
+]

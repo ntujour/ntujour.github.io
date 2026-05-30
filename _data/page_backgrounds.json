@@ -1,0 +1,12 @@
+[
+  {
+    "page": "index.html",
+    "enabled": true,
+    "image": "/images/branding/ntujour-home-bg.png",
+    "alignment": "center",
+    "offset_x": 0,
+    "offset_y": 0,
+    "opacity": 0.3,
+    "scale": 1.52
+  }
+]

@@ -1,0 +1,165 @@
+{
+  "slug": "adrian-rauchfleisch",
+  "name": "Adrian Rauchfleisch",
+  "nameZh": "",
+  "title": "Professor",
+  "photo": "../image/Adrian%20Rauchfleisch.png",
+  "placeholder": "AR",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "(02) 3366-3123"
+    },
+    {
+      "type": "email",
+      "value": "adrian.rauchfleisch@gmail.com"
+    },
+    {
+      "type": "web",
+      "text": "arauchfleisch.ch",
+      "url": "http://www.arauchfleisch.ch/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Education",
+      "type": "list",
+      "items": [
+        "Ph.D., University of Zurich, Switzerland",
+        "M.A., University of Zurich, Switzerland"
+      ]
+    },
+    {
+      "heading": "Academic Experiences",
+      "type": "list",
+      "items": [
+        "Associate Professor, Graduate Institute of Journalism, National Taiwan University (2021–present)",
+        "Assistant Professor, Graduate Institute of Journalism, National Taiwan University (2018–2021)",
+        "Senior Research and Teaching Associate, Department of Science, Crisis &amp; Risk Communication, IPMZ, University of Zurich (2017–2018)",
+        "Research and Teaching Associate, Department of Science, Crisis &amp; Risk Communication, IPMZ, University of Zurich (2013–2017)"
+      ]
+    },
+    {
+      "heading": "Professional Activities",
+      "type": "list",
+      "items": [
+        "Editorial board member, <em>New Media and Society</em>",
+        "Editorial board member, <em>Communication Theory</em>",
+        "Editorial board member, <em>Journal of Quantitative Description: Digital Media</em>"
+      ]
+    },
+    {
+      "heading": "Journal Articles",
+      "type": "list",
+      "items": [
+        "Andreas Jungherr, Adrian Rauchfleisch, Alexander Wuttke. (2026). Artificial Intelligence in Election Campaigns: Perceptions, Penalties, and Implications. <em>Political Communication</em>.",
+        "Adrian Rauchfleisch, Joshua Philip Suarez, Nikka Marie Sales, Andreas Jungherr. (2025). Winning and Losing with Artificial Intelligence: What Public Discourse About ChatGPT Tells Us About How Societies Make Sense of Technological Change. <em>Telematics and Informatics</em>.",
+        "Viktoria Cologna, et al. (2025). Trust in Scientists and Their Role in Society Across 68 Countries. <em>Nature Human Behaviour</em>.",
+        "Morley Weston, Daniel Vogler, Pascal Jürgens, Adrian Rauchfleisch, Mark Eisenegger. (2025). Tracking the Roots of Low News Usage on Smartphones – Do Individual Interests, Political Attitudes, and Media Consumption Habits Affect the Mobile News Use of Young Adults? <em>Journal of Broadcasting &amp; Electronic Media</em>.",
+        "Daniel Vogler, Adrian Rauchfleisch, Gabriele de Seta. (2025). The Short-Term Impact of an On-Site Literacy Intervention on Discerning Deepfake Videos Based on Visual Features. <em>Journalism &amp; Mass Communication Quarterly</em>.",
+        "Joshua Philip Suarez, Nikka Marie Sales, Adrian Rauchfleisch. (2025). Soft Disempowerment Dynamics in the 2022 FIFA World Cup. <em>Humanities and Social Sciences Communications</em>.",
+        "Andreas Jungherr, Adrian Rauchfleisch. (2025). Public Opinion on the Politics of AI Alignment: Cross-National Evidence on Expectations for AI Moderation From Germany and the United States. <em>Social Media + Society</em>.",
+        "Niels G. Mede, et al. (2025). Public Communication About Science in 68 Countries. <em>Science Communication</em>.",
+        "Niels G. Mede, et al. (2025). Perceptions of Science, Science Communication, and Climate Change Attitudes in 68 Countries – The TISP Dataset. <em>Scientific Data</em>.",
+        "Viktoria Cologna, et al. (2025). Extreme Weather Event Attribution Predicts Climate Policy Support Across the World. <em>Nature Climate Change</em>.",
+        "Adrian Rauchfleisch, Andreas Jungherr, Alexander Wuttke. (2025). Explaining Public Preferences for Regulating Artificial Intelligence in Election Campaigns: Evidence from the U.S. and Taiwan. <em>Telecommunications Policy</em>.",
+        "Adrian Rauchfleisch, Daniel Vogler, Gabriele de Seta. (2025). Deepfakes or Synthetic Media? The Effect of Euphemisms for Labeling Technology on Risk and Benefit Perceptions. <em>Social Media + Society</em>.",
+        "Morley Weston, Daniel Vogler, Adrian Rauchfleisch, Pascal Jürgens, Mark Eisenegger. (2025). Days, Schedules, and Attention: How Time Affects Mobile News Consumption Among Young Swiss People. <em>Mobile Media &amp; Communication</em>.",
+        "Andreas Jungherr, Adrian Rauchfleisch. (2025). Artificial Intelligence in Deliberation: The AI Penalty and the Emergence of a New Deliberative Divide. <em>Government Information Quarterly</em>.",
+        "Daniel Vogler, Adrian Rauchfleisch, Lisa Schwaiger. (2024). The System Is Corrupted, and the Mainstream Media Is Lying to Us! Exploring the Relation Between Affinity Toward Conspiracy Myths and Alternative News Media Usage. <em>International Journal of Public Opinion Research</em>.",
+        "Niels G. Mede, Adrian Rauchfleisch, Julia Metag, Mike S. Schäfer. (2024). The Interplay of Knowledge Overestimation, Social Media Use, and Populist Ideas. <em>Communication Research</em>.",
+        "Adrian Rauchfleisch, Jonas Kaiser. (2024). The Impact of Deplatforming the Far Right: An Analysis of YouTube and BitChute. <em>Information, Communication &amp; Society</em>.",
+        "Andreas Jungherr, Adrian Rauchfleisch. (2024). Negative Downstream Effects of Alarmist Disinformation Discourse: Evidence from the United States. <em>Political Behavior</em>.",
+        "Adrian Rauchfleisch, Andreas Jungherr. (2024). Blame and Obligation: The Importance of Libertarianism and Political Orientation in the Public Assessment of Disinformation in the United States. <em>Policy &amp; Internet</em>.",
+        "Adrian Rauchfleisch, Tzu-Hsuan Tseng, Jo-Ju Kao, Yi-Ting Liu. (2023). Taiwan's Public Discourse About Disinformation: The Role of Journalism, Academia, and Politics. <em>Journalism Practice</em>.",
+        "Daniel Vogler, Morley Weston, Quirin Ryffel, Adrian Rauchfleisch, Pascal Jürgens, Mark Eisenegger, Lisa Schwaiger, Urs Christen. (2023). Mobile News Consumption and Its Relation to Young Adults – Knowledge About and Participation in Referendums. <em>Media and Communication</em>.",
+        "Adrian Rauchfleisch, Jo-Ju Kao, Tzu-Hsuan Tseng, Chia-Tzu Ho, Lu-Yi Li. (2023). Maximizing Science Outreach on Facebook: An Analysis of Scientists' Communication Strategies in Taiwan. <em>Media and Communication</em>.",
+        "Adrian Rauchfleisch, Dario Siegen, Daniel Vogler. (2023). How COVID-19 Displaced Climate Change: Mediated Climate Change Activism and Issue Attention in the Swiss Media and Online Sphere. <em>Environmental Communication</em>.",
+        "Chung-Hong Chan, Adrian Rauchfleisch. (2023). Bayesian Multilevel Modeling and Its Application in Comparative Journalism Studies. <em>International Journal of Communication</em>.",
+        "Austin Horng-En Wang, Adrian Rauchfleisch. (2022). Understanding the #MilkTeaAlliance Movement. <em>Wilson China Fellowship Essays</em>.",
+        "Lisa Schwaiger, Jörg Schneider, Adrian Rauchfleisch, Mark Eisenegger. (2022). Mindsets of Conspiracy: A Typology of Affinities Towards Conspiracy Myths in Digital Environments. <em>Convergence</em>.",
+        "Lev Nachman, Adrian Rauchfleisch, Brian Hioe. (2022). How China Divides the Left: Competing Transnational Left-Wing Alternative Media on Twitter. <em>Media and Communication</em>.",
+        "Adrian Rauchfleisch, Daniel Vogler, Mark Eisenegger. (2021). Public Sphere in Crisis Mode: How the COVID-19 Pandemic Influenced Public Discourse and User Behaviour in the Swiss Twitter-sphere. <em>Javnost – The Public</em>.",
+        "Jonas Kaiser, Adrian Rauchfleisch, Yasodara Córdova. (2021). Fighting Zika With Honey: An Analysis of YouTube's Video Recommendations on Brazilian YouTube. <em>International Journal of Communication</em>.",
+        "Morley J. Weston, Adrian Rauchfleisch. (2021). Close to Beijing: Geographic Biases in People's Daily. <em>Media and Communication</em>.",
+        "Adrian Rauchfleisch, Mike S. Schäfer, Dario Siegen. (2021). Beyond the Ivory Tower: Measuring and Explaining Academic Engagement with Journalists, Politicians and Industry Representatives among Swiss Professors. <em>PLOS ONE</em>.",
+        "Adrian Rauchfleisch, Jo-yao Chi. (2020). Untangling Taiwan's Hybridity With Structural Dysfunctions. <em>Social Media + Society</em>.",
+        "Adrian Rauchfleisch, Daniel Vogler, Mark Eisenegger. (2020). Transnational News Sharing on Social Media: Measuring and Analysing Twitter News Media Repertoires of Domestic and Foreign Audience Communities. <em>Digital Journalism</em>.",
+        "Adrian Rauchfleisch, Jonas Kaiser. (2020). The German Far-right on YouTube: An Analysis of User Overlap and User Comments. <em>Journal of Broadcasting &amp; Electronic Media</em>.",
+        "Adrian Rauchfleisch, Jonas Kaiser. (2020). The False Positive Problem of Automatic Bot Detection in Social Science Research. <em>PLOS ONE</em>.",
+        "Jonas Kaiser, Adrian Rauchfleisch, Nikki Bourassa. (2020). Connecting the (Far-)Right Dots: A Topic Modeling and Hyperlink Analysis of (Far-)Right Media Coverage during the US Elections 2016. <em>Digital Journalism</em>.",
+        "Jonas Kaiser, Adrian Rauchfleisch. (2020). Birds of a Feather Get Recommended Together: Algorithmic Homophily in YouTube's Channel Recommendations in the United States and Germany. <em>Social Media + Society</em>.",
+        "Adrian Rauchfleisch, Julia Metag. (2020). Beyond Normalization and Equalization on Twitter: Politicians' Twitter Use during Non-Election Times and Influences of Media Attention. <em>Journal of Applied Journalism &amp; Media Studies</em>.",
+        "Simin Kargar, Adrian Rauchfleisch. (2019). State-Aligned Trolling in Iran and the Double-Edged Affordances of Instagram. <em>New Media &amp; Society</em>.",
+        "Jonas Kaiser, Adrian Rauchfleisch. (2019). Integrating Concepts of Counterpublics into Generalised Public Sphere Frameworks: Contemporary Transformations in Radical Forms. <em>Javnost – The Public</em>.",
+        "Mike S. Schäfer, Tobias Füchslin, Julia Metag, Silje Kristiansen, Adrian Rauchfleisch. (2018). The Different Audiences of Science Communication: A Segmentation Analysis of the Swiss Population's Perceptions of Science and Their Information and Media Use Patterns. <em>Public Understanding of Science</em>.",
+        "Adrian Rauchfleisch, Mike S. Schäfer. (2018). Structure and Development of Science Communication Research: Co-Citation Analysis of a Developing Field. <em>Journal of Science Communication</em>.",
+        "Marko Kovic, Adrian Rauchfleisch, Marc Sele, Christian Caspar. (2018). Digital Astroturfing in Politics: Definition, Typology, and Countermeasures. <em>Studies in Communication Sciences</em>.",
+        "Adrian Rauchfleisch, Mike S. Schäfer. (2018). Climate Change Politics and the Role of China: A Window of Opportunity to Gain Soft Power? <em>International Communication of Chinese Culture</em>.",
+        "Dorothee Arlt, Adrian Rauchfleisch, Mike S. Schäfer. (2018). Between Fragmentation and Dialogue: Twitter Communities and Political Debate About the Swiss &quot;Nuclear Withdrawal Initiative&quot;. <em>Environmental Communication</em>.",
+        "Adrian Rauchfleisch. (2017). The Public Sphere as an Essentially Contested Concept: A Co-Citation Analysis of the Last 20 Years of Public Sphere Research. <em>Communication and the Public</em>.",
+        "Julia Metag, Adrian Rauchfleisch. (2017). Journalists' Use of Political Tweets: Functions for Journalistic Work and the Role of Perceived Influences. <em>Digital Journalism</em>.",
+        "Adrian Rauchfleisch, Xenia Artho, Julia Metag, Senja Post, Mike S. Schäfer. (2017). How Journalists Verify User-Generated Content During Terrorist Crises: Analyzing Twitter Communication During the Brussels Attacks. <em>Social Media + Society</em>.",
+        "Marko Kovic, Adrian Rauchfleisch, Julia Metag, Christian Caspar, Julian Szenogrady. (2017). Brute Force Effects of Mass Media Presence and Social Media Activity on Electoral Outcome. <em>Journal of Information Technology &amp; Politics</em>.",
+        "Adrian Rauchfleisch, Julia Metag. (2016). The Special Case of Switzerland: Swiss Politicians on Twitter. <em>New Media &amp; Society</em>.",
+        "Adrian Rauchfleisch, Marko Kovic. (2016). The Internet and Generalized Functions of the Public Sphere: Transformative Potentials From a Comparative Perspective. <em>Social Media + Society</em>.",
+        "Adrian Rauchfleisch, Mike S. Schäfer. (2014). Multiple Public Spheres of Weibo: A Typology of Forms and Potentials of Online Public Spheres in China. <em>Information, Communication &amp; Society</em>.",
+        "Jörg Matthes, Adrian Rauchfleisch. (2013). The Swiss &quot;Tina Fey Effect&quot;: The Content of Late-Night Political Humor and the Negative Effects of Political Parody on the Evaluation of Politicians. <em>Communication Quarterly</em>."
+      ]
+    },
+    {
+      "heading": "Book Chapters",
+      "type": "list",
+      "items": [
+        "Brian Hioe, Adrian Rauchfleisch. (2026). The Alternative Media Landscape in Taiwan. <em>Routledge Handbook on Alternative and Participatory Journalism</em>.",
+        "Marko Kovic, Adrian Rauchfleisch. (2025). Astroturfing. <em>Elgar Encyclopedia of Political Communication</em>.",
+        "Daniel Vogler, Adrian Rauchfleisch. (2024). Deepfakes: Medienberichterstattung und Wahrnehmung in der Schweizer Bevölkerung. <em>Qualität der Medien. Jahrbuch 2024</em>.",
+        "Daniel Vogler, Morley Weston, Quirin Ryffel, Adrian Rauchfleisch, Pascal Jürgens, Mark Eisenegger, Lisa Schwaiger, Urs Christen. (2022). Mobile Mediennutzung und politisches Wissen von jungen Erwachsenen. <em>Qualität der Medien. Jahrbuch 2022</em>.",
+        "Daniel Vogler, Lisa Schwaiger, Adrian Rauchfleisch, Sibylle Marschlich, Dario Siegen, Linards Udris, Mark Eisenegger, Jörg Schneider. (2021). Wahrnehmung von Desinformation in der Schweiz. <em>Qualität der Medien. Jahrbuch 2021</em>.",
+        "Adrian Rauchfleisch, Daniel Vogler, Mark Eisenegger. (2020). Wie das Coronavirus die Schweizer Twitter-Communitys infizierte. <em>Qualität der Medien. Jahrbuch 2020</em>.",
+        "Daniel Vogler, Adrian Rauchfleisch, Mark Eisenegger, Lisa Schwaiger. (2019). Agenda-Setting auf Twitter – Welche Rolle spielen Informationsmedien in der Schweizer Twitter-Sphäre? <em>Qualität der Medien. Jahrbuch 2019</em>.",
+        "Adrian Rauchfleisch, Mike S. Schäfer. (2018). Wird die &quot;Science of Science Communication&quot; eine Disziplin? Bibliometrische Analyse des Status Quo und der Entwicklung eines wachsenden Forschungsfeldes. <em>Die Wissenschaftskommunikation. Rolle der Disziplinen</em>.",
+        "Adrian Rauchfleisch. (2017). Zitationsanalysen in der Kommunikationswissenschaft: Ein Vergleich zwischen der Öffentlichkeits- und der Agenda-Setting-Theorie. <em>100 Jahre Kommunikationswissenschaft in Deutschland</em>.",
+        "Adrian Rauchfleisch. (2017). Wissenschaft auf Twitter. <em>Perspektiven der Wissenschaftskommunikation im digitalen Zeitalter</em>.",
+        "Adrian Rauchfleisch, Mike S. Schäfer. (2017). Katz-und-Maus-Spiele im chinesischen Internet. <em>Smartphone-Demokratie: Fake News, Facebook, Bots, Populismus, Weibo, Civic Tech</em>.",
+        "Julia Metag, Adrian Rauchfleisch. (2016). Agenda-Building durch Twitter? Eine Analyse der Nutzung politischer Tweets durch Schweizer Journalistinnen und Journalisten. <em>Politische Online-Kommunikation</em>.",
+        "Adrian Rauchfleisch. (2016). Two Weeks on Twitter: COP21, Smoking Heads and Tweets from Outer Space. <em>Media Representations of Climate Change Politics at COP21</em>.",
+        "Mike S. Schäfer, Adrian Rauchfleisch. (2015). Neue Öffentlichkeiten in autoritären Gesellschaften? <em>Empirische Kultursoziologie</em>.",
+        "Adrian Rauchfleisch, Jean-François Mayoraz. (2015). Die Rolle von Sina Weibo im &quot;Kampf um die öffentliche Meinung&quot; in China. <em>Kommunikationspolitik für die digitale Gesellschaft</em>.",
+        "Adrian Rauchfleisch. (2015). Deutschsprachige Kommunikationswissenschaftler auf Twitter: Reputationsnetzwerke der Wissenschaftskommunikation. <em>Wissenschaftskommunikation im Wandel</em>."
+      ]
+    },
+    {
+      "heading": "Working Papers",
+      "type": "list",
+      "items": [
+        "Andreas Jungherr, Adrian Rauchfleisch. (2026). The Hidden Costs of AI-Mediated Political Outreach: Persuasion and AI Penalties in the US and UK. <em>arXiv</em>.",
+        "Alexander Wuttke, Adrian Rauchfleisch, Andreas Jungherr. (2025). Artificial Intelligence in Government: Why People Feel They Lose Control. <em>arXiv</em>."
+      ]
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "Social Media",
+      "Social Network Analysis",
+      "Communication Research Method",
+      "Networked Journalism"
+    ],
+    "researchInterests": [
+      "Social Media",
+      "Journalism Studies",
+      "Political Communication",
+      "Methods for Communication Science",
+      "Social Network Analysis"
+    ],
+    "contact": {
+      "email": "adrian.rauchfleisch@gmail.com"
+    },
+    "externalLinks": [
+      {
+        "text": "arauchfleisch.ch",
+        "url": "http://www.arauchfleisch.ch/"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "lokmantsui",
+  "name": "Lokman Tsui（徐洛文）",
+  "nameZh": "Lokman Tsui（徐洛文）",
+  "title": "助理教授",
+  "photo": "../../images/faculty/lokmantsui.jpg",
+  "placeholder": "L",
+  "contacts": [
+    {
+      "type": "email",
+      "value": "lokmantsui@ntu.edu.tw"
+    },
+    {
+      "type": "web",
+      "text": "Personal Website",
+      "url": "https://www.lokman.org"
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "言論自由與社會",
+      "資訊科技與資訊社會"
+    ],
+    "researchInterests": [],
+    "contact": {
+      "email": "lokmantsui@ntu.edu.tw"
+    },
+    "externalLinks": [
+      {
+        "text": "Personal Website",
+        "url": "https://www.lokman.org"
+      }
+    ]
+  },
+  "sections": []
+}

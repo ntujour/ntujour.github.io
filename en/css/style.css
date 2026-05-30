@@ -1,0 +1,1523 @@
+/* ============================================================
+   Graduate Institute of Journalism, National Taiwan University
+   Main Stylesheet — Color scheme matching ntujour.github.io
+   ============================================================ */
+
+:root {
+  /* === Core brand colors (from ntujour.github.io) === */
+  --maroon:        #671919;   /* nav background */
+  --maroon-dark:   #3e0f0f;   /* footer background */
+  --maroon-hover:  #991b1b;   /* dropdown / hover bg */
+  --gold:          #efa22a;   /* accent, active/hover nav text */
+  --gold-light:    #f4bb5a;
+
+  /* === Text (Tailwind gray scale from source site) === */
+  --text-900: #1f2937;   /* gray-800 — banner title */
+  --text-700: #374151;   /* gray-700 — banner subtitle */
+  --text-600: #4b5563;   /* gray-600 — tagline / secondary */
+  --text-500: #6b7280;   /* gray-500 — muted */
+
+  /* === Backgrounds === */
+  --banner-bg: #f5f5f5;  /* site-banner background */
+  --bg:        #ffffff;
+  --bg-alt:    #f9fafb;  /* section alternate */
+
+  /* === UI === */
+  --border:       #e5e7eb;
+  --shadow:       0 2px 8px rgba(103, 25, 25, 0.10);
+  --shadow-hover: 0 8px 24px rgba(103, 25, 25, 0.18);
+  --radius:       6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text-900);
+  line-height: 1.7;
+  font-size: 1.125rem; /* 1.125 × 16px = 18px at default; scales with html font-size at breakpoints */
+  overflow-x: hidden;
+}
+
+a { color: var(--maroon); }
+img { max-width: 100%; display: block; }
+
+
+/* ============================================================
+   SITE HEADER  (utility strip + main nav bar)
+   ============================================================ */
+
+.site-header {
+  display: grid;
+  grid-template-areas:
+    "brand topbar"
+    "brand nav";
+  grid-template-columns: auto 1fr;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(103, 25, 25, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Top utility strip ── */
+.site-header-topbar {
+  grid-area: topbar;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 3px 1.5rem 1px;
+}
+
+.site-header-util {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.header-util-sep {
+  color: rgba(103, 25, 25, 0.25);
+  font-size: 0.75rem;
+  font-family: -apple-system, sans-serif;
+  margin: 0 0.5rem;
+  user-select: none;
+}
+
+.site-header-brand {
+  grid-area: brand;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem 0 1.5rem;
+  text-decoration: none;
+}
+
+.site-header-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--maroon);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.site-header-sub {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.82rem;
+  color: rgba(103, 25, 25, 0.45);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  margin-top: 0.25rem;
+}
+
+/* Utility icons (FB, YT, NTU) */
+.site-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  color: var(--maroon);
+  opacity: 0.5;
+  text-decoration: none;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.site-header-icon:hover {
+  opacity: 1;
+  background: rgba(103, 25, 25, 0.07);
+}
+
+/* 中文 language link */
+.site-header-lang {
+  flex-shrink: 0;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: var(--maroon);
+  text-decoration: none;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid rgba(103, 25, 25, 0.3);
+  border-radius: 3px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.site-header-lang:hover {
+  color: #fff;
+  background: var(--maroon);
+  border-color: var(--maroon);
+}
+
+/* ── Header nav ── */
+.site-header-nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  min-height: 52px;
+}
+
+.header-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-right: 5px;
+}
+
+.header-nav-list > li {
+  display: flex;
+  align-items: stretch;
+}
+
+.header-nav-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 1.05rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-700);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.header-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  transition: background 0.15s;
+}
+
+.header-nav-link:hover {
+  color: var(--maroon);
+}
+
+.header-nav-link:hover::after {
+  background: var(--maroon);
+}
+
+.header-nav-link.active {
+  color: var(--maroon);
+  font-weight: 700;
+}
+
+.header-nav-link.active::after {
+  background: var(--gold);
+}
+
+
+/* ============================================================
+   PAGE LAYOUT
+   ============================================================ */
+
+.site-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 92px);
+}
+
+.sidebar-nav-sub-link {
+  display: block;
+  padding: 0.35rem 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-500);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.sidebar-nav-sub-link:hover {
+  color: var(--maroon);
+}
+
+/* ── Main content area ── */
+.site-main {
+  width: 100%;
+  min-width: 0;
+}
+
+.container-1200 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  background: linear-gradient(140deg, var(--maroon-dark) 0%, var(--maroon) 55%, #8b2020 100%);
+  color: white;
+  padding: 5rem 1rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -80px;
+  width: 500px; height: 500px;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -120px; left: -60px;
+  width: 380px; height: 380px;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+.hero-tag {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  max-width: 580px;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  opacity: 0.82;
+  max-width: 500px;
+  font-family: -apple-system, sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   SECTIONS — shared
+   ============================================================ */
+
+section { padding: 5rem 15% 10rem; }
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header { margin-bottom: 3.5rem; }
+
+.section-title {
+  font-size: 1.85rem;
+  color: var(--maroon);
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.65rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 44px; height: 3px;
+  background: var(--gold);
+}
+
+.section-desc {
+  font-family: -apple-system, sans-serif;
+  font-size: 1rem;
+  color: var(--text-500);
+  margin-top: 0.8rem;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   INTRODUCTION
+   ============================================================ */
+
+#introduction { background: var(--bg); }
+
+.intro-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro-text p {
+  margin-bottom: 1rem;
+  font-size: 1.02rem;
+  color: var(--text-900);
+  line-height: 1.85;
+}
+
+.intro-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.pillar-tag {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(103,25,25,0.06);
+}
+
+.pillar-card-img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.pillar-card-text {
+  padding: 0.9rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  border-top: 3px solid var(--maroon);
+  flex: 1;
+}
+
+.pillar-card-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--maroon);
+  letter-spacing: 0.02em;
+}
+
+.pillar-card-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.84rem;
+  color: var(--text-600);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .intro-pillars { grid-template-columns: repeat(2, 1fr); }
+}
+
+.intro-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--maroon);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-500);
+  margin-top: 0.3rem;
+  letter-spacing: 0.04em;
+}
+
+
+/* ============================================================
+   NEWS
+   ============================================================ */
+
+#news { background: var(--bg-alt); }
+
+.news-list {
+  border-top: 1px solid var(--border);
+}
+
+.news-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  background: none;
+  color: inherit;
+}
+
+.news-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.news-date-full {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-500);
+  white-space: nowrap;
+}
+
+.news-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.news-tag {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  background: var(--maroon);
+  color: white;
+  flex-shrink: 0;
+}
+
+.news-tag.tag-event   { background: #1b6b3a; }
+.news-tag.tag-award   { background: var(--gold); color: var(--maroon-dark); }
+.news-tag.tag-forum   { background: #5a4280; }
+.news-tag.tag-lecture { background: #1a6b7a; }
+
+.news-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-900);
+  line-height: 1.5;
+}
+
+.news-card:hover .news-title { color: var(--maroon); }
+
+.news-excerpt {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-500);
+  line-height: 1.55;
+}
+
+.news-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.news-page-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--text-700);
+  transition: border-color 0.15s, color 0.15s;
+}
+.news-page-btn:hover:not(:disabled) { border-color: var(--maroon); color: var(--maroon); }
+.news-page-btn:disabled { opacity: 0.35; cursor: default; }
+
+.news-page-info {
+  font-size: 0.85rem;
+  color: var(--text-500);
+}
+
+
+/* ============================================================
+   FACULTY
+   ============================================================ */
+
+#faculty { background: var(--bg); }
+
+.faculty-label {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.faculty-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 160px;
+  gap: 1.25rem;
+}
+
+.faculty-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: row;
+}
+
+.faculty-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* Full-time cards are wrapped in <a> — reset link styles */
+a.faculty-card {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Non-full-time panels: no lift, no underline on name */
+.faculty-tab-panel:not(#faculty-fulltime) .faculty-card:hover {
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+}
+
+.faculty-card-remembrance {
+  border-top: 3px solid var(--text-500);
+  opacity: 0.88;
+}
+
+.faculty-photo-wrap {
+  width: 110px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.faculty-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.faculty-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-hover) 100%);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.faculty-body { padding: 1.25rem; }
+
+.faculty-name {
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--maroon);
+  text-decoration: none;
+  display: block;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+
+a.faculty-card:hover .faculty-name { text-decoration: underline; }
+
+.faculty-badge {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-500);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.faculty-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.ftag {
+  font-family: -apple-system, sans-serif;
+  font-size: 9.5px;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  background: var(--bg-alt);
+  color: var(--text-500);
+  border: 1px solid var(--border);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer { background: var(--maroon-dark); }
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem 6rem;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.footer-bottom {
+  background: #2a0808;
+}
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-brand-name {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.footer-brand-univ {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-brand-desc {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 1rem;
+  line-height: 1.65;
+  max-width: 300px;
+}
+
+.footer-col h4 {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-col p,
+.footer-col a {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.84rem;
+  display: block;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.footer-col a:hover { color: white; }
+
+.footer-bottom-inner a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-bottom-inner a:hover { color: rgba(255,255,255,0.8); }
+
+
+/* ============================================================
+   FACULTY PROFILE PAGES
+   ============================================================ */
+
+.profile-breadcrumb {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1rem;
+}
+
+.profile-breadcrumb-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-500);
+}
+
+.profile-breadcrumb a { color: var(--maroon); text-decoration: none; }
+.profile-breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb-sep { opacity: 0.4; }
+
+.profile-header {
+  background: var(--maroon);
+  color: white;
+  padding: 3.5rem 1rem 3rem;
+}
+
+.profile-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.profile-photo-wrap {
+  width: 160px; height: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.25);
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.1);
+}
+
+.profile-photo-large {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.profile-placeholder-large {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-300);
+}
+
+.profile-dept {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  color: white;
+}
+
+.profile-title-text {
+  font-family: -apple-system, sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1.5rem;
+}
+
+.profile-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.profile-contact-item {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.profile-contact-item a { color: rgba(255,255,255,0.9); text-decoration: none; }
+.profile-contact-item a:hover { color: white; text-decoration: underline; }
+
+/* Profile meta strip — Teaching Field + Research Interests */
+.profile-meta {
+  background: white;
+  padding: 0 1rem;
+  margin-top: 2rem;
+}
+.profile-meta-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 3rem;
+  padding: 2rem 0;
+}
+.profile-meta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.profile-meta-label {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-500);
+}
+.profile-meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.profile-body { background: var(--bg); padding: 4rem 1rem; }
+
+.profile-body-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 5rem;
+  align-items: start;
+}
+
+.profile-section { margin-bottom: 3.5rem; }
+
+.profile-section h2 {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--maroon);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.profile-section p {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--text-900);
+}
+
+.profile-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.profile-section li {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-900);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.profile-section li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.profile-sidebar { position: sticky; top: 92px; }
+
+.sidebar-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+}
+
+.sidebar-card h3 {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-500);
+  margin-bottom: 0.85rem;
+}
+
+.sidebar-card p,
+.sidebar-card a {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-900);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.sidebar-card a { color: var(--maroon); }
+.sidebar-card a:hover { text-decoration: underline; }
+
+.research-pill {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--text-500);
+  margin: 0.25rem 0.25rem 0 0;
+}
+
+
+/* ============================================================
+   FACULTY — SECTION HEADINGS & COMPACT CARDS
+   ============================================================ */
+
+/* ── Faculty tab bar ── */
+.faculty-tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+
+.faculty-tab-btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--bg-alt);
+  color: var(--text-600);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+  bottom: -2px;
+}
+
+.faculty-tab-btn:hover {
+  background: var(--bg);
+  color: var(--maroon);
+}
+
+.faculty-tab-btn.active {
+  background: var(--maroon);
+  color: #fff;
+  border-color: var(--maroon);
+  border-bottom-color: var(--maroon);
+}
+
+/* ── Faculty tab panels ── */
+.faculty-tab-panel {
+  display: none;
+}
+
+.faculty-tab-panel.active {
+  display: block;
+}
+
+.faculty-section-heading {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--maroon);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 3rem 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.faculty-section-heading.heading-fulltime {
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  margin-top: 0;
+}
+
+.faculty-section-heading.heading-remembrance {
+  color: var(--text-700);
+  border-bottom-color: #d1d5db;
+}
+
+
+.faculty-compact-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--maroon);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.85rem 1rem;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.faculty-compact-card.card-remembrance {
+  border-left-color: var(--text-500);
+}
+
+.faculty-compact-photo-wrap {
+  width: 80px;
+  height: 96px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--bg);
+}
+
+.faculty-compact-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.faculty-compact-placeholder-sm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-hover) 100%);
+  color: rgba(255,255,255,0.45);
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.faculty-compact-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.faculty-compact-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--maroon);
+  display: block;
+  margin-bottom: 0.15rem;
+  line-height: 1.3;
+}
+
+.faculty-compact-card.card-remembrance .faculty-compact-name {
+  color: var(--text-700);
+}
+
+.faculty-compact-zh {
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: var(--text-500);
+}
+
+.faculty-compact-title {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-700);
+  margin-bottom: 0.2rem;
+}
+
+.faculty-compact-sub {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.76rem;
+  color: var(--text-500);
+  line-height: 1.45;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 960px) {
+  html { font-size: 15px; }
+  .faculty-grid { grid-template-columns: 1fr; }
+  .intro-body { gap: 1.5rem; }
+  .footer-cols { grid-template-columns: 1fr; gap: 2rem; }
+  .profile-body-inner { grid-template-columns: 1fr; }
+  .profile-sidebar { display: none; }
+  .profile-meta-inner { grid-template-columns: 1fr; }
+
+
+  /* News: stack meta (tag + date) above content (title + excerpt) */
+  .news-card {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .news-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  /* Faculty tabs: smaller buttons and labels */
+  .faculty-tab-btn {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header-nav { display: none; }
+  .site-header-topbar { display: none; }
+  .site-header-sub { font-size: 0.72rem; margin-top: 0.15rem; }
+  .faculty-photo-wrap { width: 90px; }
+  .news-card { gap: 0.4rem; }
+  .footer-cols { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .profile-header-inner { grid-template-columns: 1fr; }
+  .profile-photo-wrap { width: 120px; height: 150px; }
+}
+
+@media (max-width: 600px) {
+  html { font-size: 13px; }
+  .site-header-sub { font-size: 0.62rem; margin-top: 0.1rem; }
+  .ftag { font-size: 0.6rem; padding: 0.12rem 0.35rem; }
+  .faculty-name, .faculty-compact-name { font-size: 1.2rem; }
+  .news-excerpt { display: none; }
+}
+
+@media (max-width: 480px) {
+  .faculty-photo-wrap { width: 80px; }
+  .intro-stats { gap: 1.5rem; }
+  section { padding: 3.5rem 6% 7rem; }
+  .hero { padding: 4rem 1rem 3rem; }
+}
+
+/* ============================================================
+   Visiting Scholars
+   ============================================================ */
+.scholars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+}
+
+.scholars-header-row {
+  display: grid;
+  grid-template-columns: 0.7fr 1.1fr 60px 220px;
+  gap: 1rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--bg-alt);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-500);
+}
+
+.scholar-row {
+  display: grid;
+  grid-template-columns: 0.7fr 1.1fr 60px 220px;
+  align-items: start;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.scholar-row:last-child { border-bottom: none; }
+.scholar-row:nth-child(even) { background: var(--bg-alt); }
+.scholar-row:hover { background: #fef9f0; }
+
+.scholar-name {
+  font-weight: 600;
+  color: var(--text-900);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.scholar-name-zh {
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: var(--text-500);
+  margin-left: 0.35rem;
+}
+.scholar-affil {
+  font-size: 0.875rem;
+  color: var(--text-600);
+  line-height: 1.4;
+}
+.scholar-period {
+  font-size: 0.875rem;
+  color: var(--text-500);
+  white-space: nowrap;
+}
+.scholar-area-cell {
+  display: flex;
+}
+.scholar-area {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  background: #f3e6e6;
+  color: var(--maroon);
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .scholars-header-row { display: none; }
+  .scholars-list { border-top: 1px solid var(--border); border-radius: var(--radius); }
+  .scholar-row { grid-template-columns: 1fr 1fr; gap: 0.25rem; }
+  .scholar-period, .scholar-area-cell { display: none; }
+}
+
+/* ============================================================
+   Curriculum
+   ============================================================ */
+.curriculum-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.curriculum-text p {
+  color: var(--text-600);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.curriculum-text p:last-child { margin-bottom: 0; }
+
+/* ── Track tabs ── */
+.track-tabs {}
+.track-tab-bar {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: -1px;
+}
+.track-tab-btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--bg-alt);
+  color: var(--text-600);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.01em;
+}
+.track-tab-btn:hover {
+  background: var(--bg);
+  color: var(--maroon);
+}
+.track-tab-btn.active {
+  background: var(--maroon);
+  color: #fff;
+  border-color: var(--maroon);
+}
+.track-panel {
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  position: relative;
+  z-index: 0;
+}
+.track-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.course-group {}
+.course-group-label {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--maroon);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.course-group-note {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-500);
+  text-transform: none;
+  letter-spacing: 0;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1rem 0.4rem;
+}
+.course-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+.course-list li {
+  color: var(--text-600);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  padding: 0.1rem 0;
+}
+.track-notes {
+  margin: 0;
+  padding-left: 1.3rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.1rem;
+}
+.track-notes li {
+  font-size: 0.88rem;
+  color: var(--text-500);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+.track-notes li:last-child { margin-bottom: 0; }
+
+/* ── Curriculum footer note ── */
+.curriculum-footer-note {
+  color: var(--text-600);
+  line-height: 1.75;
+  margin: 0;
+}
+.curriculum-footer-note a {
+  color: var(--maroon);
+  text-decoration: underline;
+  word-break: break-all;
+}
+.curriculum-footer-note a:hover { color: var(--maroon-hover); }
+
+/* ============================================================
+   Image Gallery (before Introduction)
+   ============================================================ */
+#gallery {
+  padding: 0;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-viewport {
+  width: 100%;
+  height: 520px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  gap: 6px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.gallery-viewport::-webkit-scrollbar { display: none; }
+
+.gallery-slide {
+  min-width: 48%;
+  height: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s;
+  color: var(--maroon);
+}
+.gallery-arrow:hover { background: #fff; }
+.gallery-arrow-prev { left: 1.25rem; }
+.gallery-arrow-next { right: 1.25rem; }
+
+@media (max-width: 720px) {
+  .gallery-viewport { height: 420px; }
+  .gallery-slide { min-width: 80%; }
+}

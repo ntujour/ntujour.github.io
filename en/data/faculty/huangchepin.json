@@ -1,0 +1,26 @@
+{
+  "slug": "huangchepin",
+  "name": "黃哲斌",
+  "nameZh": "黃哲斌",
+  "title": "實務教師／兼任助理教授級專業技術人員",
+  "photo": "../../images/faculty/huangchepin.jpg",
+  "placeholder": "黃",
+  "contacts": [],
+  "sidebar": {
+    "teachingField": [
+      "媒體創新",
+      "新聞個案研究",
+      "英美媒體趨勢"
+    ],
+    "researchInterests": [
+      "資訊素養",
+      "媒體與科技",
+      "媒體數位轉型",
+      "媒體內容創新",
+      "網路傳播"
+    ],
+    "contact": {},
+    "externalLinks": []
+  },
+  "sections": []
+}

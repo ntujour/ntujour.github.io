@@ -1,0 +1,47 @@
+{
+  "slug": "adrianrauchfleisch",
+  "name": "Adrian Rauchfleisch",
+  "nameZh": "Adrian Rauchfleisch",
+  "title": "教授",
+  "photo": "../../images/faculty/RauchfleischA.png",
+  "placeholder": "A",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "(02)33663123"
+    },
+    {
+      "type": "email",
+      "value": "adrian.rauchfleisch@gmail.com"
+    },
+    {
+      "type": "web",
+      "text": "Personal Website",
+      "url": "http://www.arauchfleisch.ch/"
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "Social Media and Social Network Analysis",
+      "Networked Journalism"
+    ],
+    "researchInterests": [
+      "Social media",
+      "Journalism studies",
+      "Political communication",
+      "* Methods for communication science",
+      "* Social network analysis"
+    ],
+    "contact": {
+      "phone": "(02)33663123",
+      "email": "adrian.rauchfleisch@gmail.com"
+    },
+    "externalLinks": [
+      {
+        "text": "Personal Website",
+        "url": "http://www.arauchfleisch.ch/"
+      }
+    ]
+  },
+  "sections": []
+}

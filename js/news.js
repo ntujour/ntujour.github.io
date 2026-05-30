@@ -45,16 +45,17 @@ function renderNewsList() {
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = item.content;
         const textContent = tempDiv.textContent || tempDiv.innerText || '';
-        const excerpt = textContent.substring(0, 100);
+    const excerpt = textContent.substring(0, 100);
+    const hashtags = renderHashtags(item.hashtags);
 
-        return `
+    return `
         <article class="bg-white border border-gray-200 rounded hover:shadow-md transition-shadow cursor-pointer" onclick="window.location.href='article-view.html?type=news&id=${item.id}'">
             <div class="p-4">
                 <div class="flex items-center gap-2 mb-2">
-                    <span class="inline-block px-2 py-1 text-xs rounded bg-red-100 text-red-800">${item.category}</span>
                     <time class="text-xs text-gray-500">${formatDate(item.date)}</time>
+                    ${hashtags}
                 </div>
-                <h3 class="text-base font-bold text-gray-900 mb-2 line-clamp-2">${item.title}</h3>
+                <h3 class="text-base font-normal text-gray-900 mb-2 line-clamp-1">${item.title}</h3>
                 <p class="text-sm text-gray-600 line-clamp-3">${excerpt}...（繼續閱讀）</p>
             </div>
         </article>
@@ -62,6 +63,39 @@ function renderNewsList() {
     }).join('');
 
     container.innerHTML = cardsHTML;
+}
+
+function renderHashtags(hashtags) {
+    const tags = normalizeHashtags(hashtags);
+    if (tags.length === 0) return '';
+    return `
+        <span class="inline-flex flex-wrap items-center gap-x-2 gap-y-0.5">
+            ${tags.map((tag) => `<span class="text-[11px] font-semibold text-ntu-maroon">${escapeHtml(tag)}</span>`).join('')}
+        </span>
+    `;
+}
+
+function normalizeHashtags(value) {
+    if (!value) return [];
+    const raw = Array.isArray(value) ? value : String(value).split(/[\n,]+/);
+    const seen = new Set();
+    const tags = [];
+    for (const entry of raw) {
+        const tag = String(entry).trim().replace(/^#/, '');
+        if (!tag || seen.has(tag)) continue;
+        seen.add(tag);
+        tags.push(tag);
+    }
+    return tags;
+}
+
+function escapeHtml(value) {
+    return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
 }
 
 function renderPagination() {

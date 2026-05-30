@@ -1,0 +1,355 @@
+{
+  "fulltime": [
+    {
+      "name": "Ji-Lung Hsieh",
+      "nameZh": "謝吉隆",
+      "title": "Associate Professor & Director",
+      "photo": "../images/faculty/jerryhsieh.png",
+      "placeholder": "謝",
+      "tags": [
+        "Data Journalism",
+        "Web Design",
+        "Social Network Analysis"
+      ],
+      "profileUrl": "faculty/ji-lung-hsieh.html"
+    },
+    {
+      "name": "Lih-Yun Lin",
+      "nameZh": "林麗雲",
+      "title": "Professor",
+      "photo": "../images/faculty/lihyunlin.png",
+      "tags": [
+        "History of News",
+        "Media Sociology",
+        "Communication Theories"
+      ],
+      "profileUrl": "faculty/lih-yun-lin.html"
+    },
+    {
+      "name": "Chen-Ling Hung",
+      "nameZh": "洪貞玲",
+      "title": "Professor",
+      "photo": "../images/faculty/clhung.jpg",
+      "placeholder": "洪",
+      "tags": [
+        "Communication Laws",
+        "Globalization",
+        "Political Economy"
+      ],
+      "profileUrl": "faculty/chen-ling-hung.html"
+    },
+    {
+      "name": "Adrian Rauchfleisch",
+      "title": "Professor",
+      "photo": "image/Adrian%20Rauchfleisch.png",
+      "placeholder": "AR",
+      "tags": [
+        "Social Media",
+        "Political Communication",
+        "Communication Methods"
+      ],
+      "profileUrl": "faculty/adrian-rauchfleisch.html"
+    },
+    {
+      "name": "Hui-Ju Tsai",
+      "nameZh": "蔡蕙如",
+      "title": "Associate Professor",
+      "photo": "../images/faculty/tsaihuiju.jpg",
+      "placeholder": "蔡",
+      "tags": [
+        "STS",
+        "Cultural Studies",
+        "Public Service Media"
+      ],
+      "profileUrl": "faculty/hui-ju-tsai.html"
+    },
+    {
+      "name": "I-I Chan",
+      "nameZh": "詹怡宜",
+      "title": "Associate Professor",
+      "photo": "../images/faculty/chanii311.png",
+      "tags": [
+        "TV Journalism",
+        "News Production",
+        "Public Affairs"
+      ],
+      "profileUrl": "faculty/i-i-chan.html"
+    },
+    {
+      "name": "Lokman Tsui",
+      "nameZh": "徐洛文",
+      "title": "Assistant Professor",
+      "photo": "image/Lokman%20Tsui.jpg",
+      "placeholder": "徐",
+      "tags": [
+        "Information Sociologies",
+        "Freedom of Speech",
+        "Digital Security"
+      ],
+      "profileUrl": "faculty/lokman-tsui.html"
+    },
+    {
+      "name": "Adrian Rauchfleisch",
+      "nameZh": "Adrian Rauchfleisch",
+      "title": "教授",
+      "photo": "../images/faculty/RauchfleischA.png",
+      "tags": [],
+      "placeholder": "A",
+      "profileUrl": "faculty/adrianrauchfleisch.html"
+    },
+    {
+      "name": "Lokman Tsui（徐洛文）",
+      "nameZh": "Lokman Tsui（徐洛文）",
+      "title": "助理教授",
+      "photo": "../images/faculty/lokmantsui.jpg",
+      "tags": [],
+      "placeholder": "L",
+      "profileUrl": "faculty/lokmantsui.html"
+    }
+  ],
+  "adjunct": [
+    {
+      "name": "Tai-Li Wang",
+      "nameZh": "王泰俐",
+      "title": "Professor",
+      "photo": "../images/faculty/wangtaili.png",
+      "tags": [
+        "Media Psychology",
+        "Political Communication"
+      ]
+    },
+    {
+      "name": "Shuen-Xiao Chen",
+      "nameZh": "陳順孝",
+      "title": "Professor",
+      "photo": "../images/faculty/chenshunhsiao.jpg",
+      "tags": [
+        "News Industry Innovation",
+        "Media Literacy"
+      ]
+    },
+    {
+      "name": "Lin-Lin Ku",
+      "nameZh": "古玲玲",
+      "title": "Associate Professor",
+      "photo": "image/Lin-Lin%20Ku.png",
+      "tags": [
+        "Communication Statistics",
+        "News Writing in English"
+      ]
+    },
+    {
+      "name": "谷玲玲",
+      "nameZh": "谷玲玲",
+      "title": "兼任副教授",
+      "photo": "../images/faculty/kulingling.png",
+      "tags": [],
+      "placeholder": "谷"
+    }
+  ],
+  "specialist": [
+    {
+      "name": "Chie-De Li",
+      "nameZh": "李志德",
+      "photo": "../images/faculty/lichihte.jpg",
+      "tags": [
+        "Reporting & Writing (II)"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Yu-Fang Liang",
+      "nameZh": "梁玉芳",
+      "photo": "../images/faculty/liangyufang.jpg",
+      "tags": [
+        "Reporting & Writing (II)"
+      ],
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "name": "Sherry Lee",
+      "nameZh": "李雪莉",
+      "photo": "../images/faculty/lihsuehli.png",
+      "tags": [
+        "Reporting & Writing (I)"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Yan-Fu Lee",
+      "nameZh": "李彥甫",
+      "photo": "../images/faculty/liyenfu.jpg",
+      "tags": [
+        "News Editing & Information Design"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Kuan-Sheng Yang",
+      "nameZh": "楊光昇",
+      "photo": "../images/faculty/yangkuangsheng.jpg",
+      "tags": [
+        "Photo Journalism"
+      ],
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "name": "Li-Ren Liou",
+      "nameZh": "劉力仁",
+      "photo": "../images/faculty/liulijen.jpg",
+      "tags": [
+        "Reporting & Writing (I)"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Kai-Chun Cheng",
+      "nameZh": "鄭凱駿",
+      "photo": "../images/faculty/chengkaichun.png",
+      "tags": [
+        "TV News Reporting (II)"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Fu-Yuan Shiau",
+      "nameZh": "蕭富元",
+      "photo": "../images/faculty/hsiaofuyuan.jpg",
+      "tags": [
+        "Reporting & Writing"
+      ],
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "name": "Jie-Ping Zhang",
+      "nameZh": "張潔平",
+      "photo": "../images/faculty/changchiehping.jpg",
+      "tags": [
+        "Greater China Journalism"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Je-Bin Huang",
+      "nameZh": "黃哲斌",
+      "photo": "../images/faculty/huangchepin.jpg",
+      "tags": [
+        "Digital Innovation & Media Management"
+      ],
+      "title": "實務教師／兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "De-Lin Fang",
+      "nameZh": "方德琳",
+      "photo": "../images/faculty/fangtelin.jpg",
+      "tags": [
+        "Business & Finance Reporting"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Wan-Yu Wu",
+      "nameZh": "吳婉瑜",
+      "photo": "../images/faculty/wuwanyu.jpg",
+      "tags": [
+        "Digital Innovation & Media Management"
+      ],
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "name": "Archie Tse",
+      "nameZh": "Archie Tse",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/archie-tse.jpg",
+      "tags": [],
+      "placeholder": "A"
+    },
+    {
+      "name": "黃兆徽",
+      "nameZh": "黃兆徽",
+      "title": "兼任助理教授級專業技術人員",
+      "photo": "../images/faculty/huangchaohui.jpg",
+      "tags": [],
+      "placeholder": "黃"
+    },
+    {
+      "name": "郭崇倫",
+      "nameZh": "郭崇倫",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/kuochunglun.jpg",
+      "tags": [],
+      "placeholder": "郭"
+    }
+  ],
+  "emeritus": [
+    {
+      "name": "Chin-Hua Chang",
+      "nameZh": "張錦華",
+      "title": "Emeritus Professor",
+      "photo": "../images/faculty/changchinhwa.png",
+      "tags": [
+        "Mass Communication Theory",
+        "Critical Theory",
+        "Multiculturalism"
+      ]
+    }
+  ],
+  "joint": [
+    {
+      "name": "Ching-Yi Liu",
+      "nameZh": "劉靜怡",
+      "title": "Professor",
+      "photo": "../images/faculty/liuchingi.jpg",
+      "tags": [
+        "Information Law",
+        "Human Rights Law",
+        "Law & Economics"
+      ]
+    },
+    {
+      "name": "Hui-Chieh Su",
+      "nameZh": "蘇慧婕",
+      "title": "Associate Professor",
+      "photo": "image/Hui-Chieh%20Su.jpg",
+      "tags": [
+        "Media Law",
+        "Constitutional Theory",
+        "Freedom of Speech"
+      ]
+    }
+  ],
+  "remembrance": [
+    {
+      "name": "Rou-Jin Chen",
+      "nameZh": "陳柔縉",
+      "photo": "../images/faculty/chenjoumin.jpg",
+      "tags": [
+        "Reporting & Writing (II)"
+      ],
+      "title": "兼任副教授級專業技術人員（感謝與追思）"
+    },
+    {
+      "name": "Yen-Yuan Ni",
+      "nameZh": "倪炎元",
+      "title": "Professor",
+      "photo": "../images/faculty/niyenyuan.jpg",
+      "tags": [
+        "Public Relations",
+        "News Reporting"
+      ]
+    }
+  ],
+  "retired": [
+    {
+      "name": "Chao-Chen Lin",
+      "nameZh": "林照真",
+      "title": "Professor",
+      "photo": "../images/faculty/carolinelin.jpg",
+      "placeholder": "林",
+      "tags": [
+        "Visual Journalism",
+        "Investigative Journalism"
+      ]
+    }
+  ]
+}

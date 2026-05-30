@@ -1,0 +1,49 @@
+{
+  "slug": "jerryhsieh",
+  "name": "謝吉隆",
+  "nameZh": "謝吉隆",
+  "title": "副教授兼所長",
+  "photo": "../../images/faculty/jerryhsieh.png",
+  "placeholder": "謝",
+  "contacts": [
+    {
+      "type": "phone",
+      "value": "(02)33669867"
+    },
+    {
+      "type": "email",
+      "value": "jerryhsieh@ntu.edu.tw"
+    },
+    {
+      "type": "web",
+      "text": "Personal Website",
+      "url": "https://sites.google.com/view/cclab/home"
+    }
+  ],
+  "sidebar": {
+    "teachingField": [
+      "新聞資料分析",
+      "網頁設計與敘事",
+      "社群媒介與輿論分析",
+      "新聞資料處理與視覺化呈現"
+    ],
+    "researchInterests": [
+      "社群輿論分析",
+      "社會網絡分析",
+      "文字探勘",
+      "生成式人工智慧應用",
+      "社會模擬"
+    ],
+    "contact": {
+      "phone": "(02)33669867",
+      "email": "jerryhsieh@ntu.edu.tw"
+    },
+    "externalLinks": [
+      {
+        "text": "Personal Website",
+        "url": "https://sites.google.com/view/cclab/home"
+      }
+    ]
+  },
+  "sections": []
+}
