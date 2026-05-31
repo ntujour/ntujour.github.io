@@ -1,17 +1,11 @@
 [
   {
-    "name": "Matthew Powers",
-    "nameZh": "",
-    "affiliation": "University of Washington, USA",
-    "period": "Nov 25-29, 2024",
-    "area": "Media & Democracy"
-  },
-  {
     "name": "Alexander Haentzschel",
     "nameZh": "",
     "affiliation": "SRH University, Germany",
     "period": "2025",
-    "area": "Media Industry"
+    "area": "Media Industry",
+    "profileUrl": "https://gscholar.ntu.edu.tw/carl-alexander-haentzschel/"
   },
   {
     "name": "Weronika Jakubczak",
@@ -21,11 +15,28 @@
     "area": "Cyber Security"
   },
   {
+    "name": "Matthew Powers",
+    "nameZh": "",
+    "affiliation": "University of Washington, USA",
+    "period": "Nov 25-29, 2024",
+    "area": "Media & Democracy",
+    "profileUrl": "https://com.uw.edu/person/matthew-powers/"
+  },
+  {
+    "name": "Chiao-ning Su",
+    "nameZh": "蘇巧寧",
+    "affiliation": "Oakland University, USA",
+    "period": "2023 - 2024",
+    "area": "International Communication",
+    "profileUrl": "https://gscholar.ntu.edu.tw/chiao-ning-su/"
+  },
+  {
     "name": "Neal E Robbins",
     "nameZh": "",
     "affiliation": "Postgraduate in SOAS, London University, UK",
     "period": "2023",
-    "area": "Taiwan Studies"
+    "area": "Taiwan Studies",
+    "profileUrl": "https://gscholar.ntu.edu.tw/neal-e-robbins/"
   },
   {
     "name": "Han-Teng Liao",
