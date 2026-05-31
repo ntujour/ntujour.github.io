@@ -138,7 +138,7 @@ body:not(.site-home) main#main-content > section {
     padding: 0;
     list-style: none;
     color: #ffffff;
-    font-size: 0.84rem;
+    font-size: 13px;
     line-height: 1.35;
 }
 
@@ -199,7 +199,7 @@ body:not(.site-home) main#main-content > section {
     background: #f5efe4;
     color: #6f604d;
     padding: 8px 14px;
-    font-size: 0.92rem;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.1;
     transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
@@ -250,7 +250,7 @@ body:not(.site-home) main#main-content > section {
 .news-archive-empty {
     padding: 18px 16px;
     color: #8a7757;
-    font-size: 0.92rem;
+    font-size: 14px;
 }
 
 .site-module-grid {
@@ -369,7 +369,7 @@ body:not(.site-home) main#main-content > section {
 .site-module-subtitle {
     display: block;
     color: var(--module-subtitle-color, #737373);
-    font-size: 0.84rem;
+    font-size: 13px;
     line-height: 1.35;
     font-weight: 400;
 }
@@ -719,7 +719,7 @@ body:not(.site-home) main#main-content > section {
     }
 
     .site-module-subtitle {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .site-module-media {
@@ -965,7 +965,7 @@ body:not(.site-home) main#main-content > section {
 
 .faculty-tab-name {
     margin-top: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 500;
     color: #1f2937;
     text-align: center;
@@ -1084,7 +1084,7 @@ body:not(.site-home) main#main-content > section {
 .tab-button {
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 500;
     color: #525252;
     background: transparent;
@@ -1199,7 +1199,7 @@ body:not(.site-home) main#main-content > section {
     border: 1px solid #d4d4d4;
     border-radius: 0.5rem;
     color: #7a1a14;
-    font-size: 0.875rem;
+    font-size: 14px;
     transition: all 0.2s;
     margin-top: 0.5rem;
     margin-right: 0.5rem;
@@ -1245,7 +1245,7 @@ body:not(.site-home) main#main-content > section {
     display: block;
     padding: 0.375rem 0;
     color: #525252;
-    font-size: 0.875rem;
+    font-size: 14px;
     transition: color 0.15s;
 }
 
