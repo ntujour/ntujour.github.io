@@ -15,6 +15,35 @@
 
     <title>假訊息認知調查 - 國立臺灣大學新聞研究所</title>
     <meta name="description" content="國立臺灣大學新聞研究所假訊息認知調查計畫介紹，追蹤理解大眾對假消息的感知、辨識與社會資訊韌性">
+    <style>
+        #main-content {
+            position: relative;
+        }
+        #main-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 480px;
+            background-image: url('../images/branding/misinformation-bg.jpg');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            opacity: 0.06; /* Super faint background watermark */
+            pointer-events: none;
+            z-index: 0;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        }
+        .section-shifted {
+            padding-top: 200px;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 </head>
 
 <body class="bg-white">
@@ -182,7 +211,7 @@
         <div class="container-1200">
             <div class="max-w-4xl mx-auto">
                 <!-- Section 1 -->
-                <section class="mb-10">
+                <section class="mb-10 section-shifted">
                     <h2 class="text-2xl font-bold text-neutral-900 border-b-2 border-ntu-maroon pb-2 mb-6">緣起：理解社會韌性，應對假消息常態化</h2>
                     <div class="text-neutral-700 leading-relaxed space-y-5 text-base md:text-lg">
                         <p>
