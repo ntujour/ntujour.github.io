@@ -101,6 +101,7 @@
                             <a href="../publications/114-graduation-exhibition.html">114學生畢業特展</a>
                             <a href="https://medium.com/@ntujour2022" target="_blank" rel="noopener noreferrer">新聞所Medium<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
                             <a href="https://www.facebook.com/ntujournal/?locale=zh_TW" target="_blank" rel="noopener noreferrer">臺大新聞e論壇<svg class="inline-block w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="dodgerblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -0.1em;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            <a href="../publications/media-heard.html">KnowNews 媒聽說</a>
                             <a href="../publications/e-report.html">前期所報</a>
                             <a href="../publications/master-thesis.html">畢業生論文</a>
                             <a href="../publications/books.html">報導專書</a>
@@ -223,6 +224,50 @@
                                     </a>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Past Events Gallery -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold text-neutral-900 border-b-2 border-ntu-maroon pb-2 mb-6">歷年發表會與活動剪影</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="gallery-container">
+                        <!-- Left Side: Large Active Image Preview -->
+                        <div class="lg:col-span-2 relative overflow-hidden rounded-xl bg-neutral-100 shadow-soft border border-neutral-200 aspect-[3/2]">
+                            <img id="gallery-preview" 
+                                 src="../images/hero/hero-4.png" 
+                                 alt="2024年度假訊息大調查發表會" 
+                                 class="w-full h-full object-cover transition-opacity duration-300 ease-in-out">
+                            <!-- Caption overlay with glassmorphism -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-black/55 backdrop-blur-md text-white py-3 px-4">
+                                <p id="gallery-caption" class="text-sm md:text-base font-medium leading-relaxed transition-opacity duration-300 ease-in-out">
+                                    2024年度假訊息大調查發表會，探討新興AI科技與假消息影響
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Thumbnails -->
+                        <div class="lg:col-span-1">
+                            <div class="grid grid-cols-3 lg:grid-cols-2 gap-3" id="gallery-thumbnails-container">
+                                <button type="button" class="gallery-thumb-btn aspect-square relative overflow-hidden rounded-lg border-2 border-ntu-maroon ring-2 ring-ntu-maroon/20 opacity-100 transition-all duration-300" data-index="0">
+                                    <img src="../images/hero/hero-4.png" alt="2024年度假訊息大調查發表會" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                                </button>
+                                <button type="button" class="gallery-thumb-btn aspect-square relative overflow-hidden rounded-lg border-2 border-transparent opacity-60 hover:opacity-100 transition-all duration-300" data-index="1">
+                                    <img src="../images/activities/activity-26668-23.jpg" alt="假訊息年度調查發表會，吸引產官學各界專家深入交流" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                                </button>
+                                <button type="button" class="gallery-thumb-btn aspect-square relative overflow-hidden rounded-lg border-2 border-transparent opacity-60 hover:opacity-100 transition-all duration-300" data-index="2">
+                                    <img src="../images/activities/activity-26668-22.jpg" alt="歷年調查發表會座談，探討平台自律、立法規範與事實查核" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                                </button>
+                                <button type="button" class="gallery-thumb-btn aspect-square relative overflow-hidden rounded-lg border-2 border-transparent opacity-60 hover:opacity-100 transition-all duration-300" data-index="3">
+                                    <img src="../images/activities/activity-215525-1.jpg" alt="2023年假訊息年度調查發表會，研究團隊發表大眾查核工具使用趨勢" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                                </button>
+                                <button type="button" class="gallery-thumb-btn aspect-square relative overflow-hidden rounded-lg border-2 border-transparent opacity-60 hover:opacity-100 transition-all duration-300" data-index="4">
+                                    <img src="../images/activities/activity-215526-1.jpg" alt="2023年高峰論壇，專家學者探討建立信任的資訊生態圈" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                                </button>
+                                <button type="button" class="gallery-thumb-btn aspect-square relative overflow-hidden rounded-lg border-2 border-transparent opacity-60 hover:opacity-100 transition-all duration-300" data-index="5">
+                                    <img src="../images/activities/activity-103257-1.jpg" alt="2022年首屆假訊息年度大調查發表會，產官學代表共襄盛舉" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -430,6 +475,109 @@
 
 
     <script src="../js/sticky-header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryData = [
+                {
+                    src: '../images/hero/hero-4.png',
+                    caption: '2024年度假訊息大調查發表會，探討新興AI科技與假消息影響'
+                },
+                {
+                    src: '../images/activities/activity-26668-23.jpg',
+                    caption: '假訊息年度調查發表會，吸引產官學各界專家深入交流'
+                },
+                {
+                    src: '../images/activities/activity-26668-22.jpg',
+                    caption: '歷年調查發表會座談，探討平台自律、立法規範與事實查核'
+                },
+                {
+                    src: '../images/activities/activity-215525-1.jpg',
+                    caption: '2023年假訊息年度調查發表會，研究團隊發表大眾查核工具使用趨勢'
+                },
+                {
+                    src: '../images/activities/activity-215526-1.jpg',
+                    caption: '2023年高峰論壇，專家學者探討建立信任的資訊生態圈'
+                },
+                {
+                    src: '../images/activities/activity-103257-1.jpg',
+                    caption: '2022年首屆假訊息年度大調查發表會，產官學代表共襄盛舉'
+                }
+            ];
+
+            let currentIndex = 0;
+            let slideInterval = null;
+            const intervalTime = 4000; // 4 seconds
+
+            const previewImg = document.getElementById('gallery-preview');
+            const captionText = document.getElementById('gallery-caption');
+            const thumbnails = document.querySelectorAll('.gallery-thumb-btn');
+            const gallerySection = document.getElementById('gallery-container');
+
+            function showImage(index) {
+                if (index === currentIndex) return;
+
+                // Update active state of thumbnails
+                thumbnails.forEach((thumb, i) => {
+                    if (i === index) {
+                        thumb.classList.add('border-ntu-maroon', 'ring-2', 'ring-ntu-maroon/20', 'opacity-100');
+                        thumb.classList.remove('border-transparent', 'opacity-60');
+                    } else {
+                        thumb.classList.remove('border-ntu-maroon', 'ring-2', 'ring-ntu-maroon/20', 'opacity-100');
+                        thumb.classList.add('border-transparent', 'opacity-60');
+                    }
+                });
+
+                currentIndex = index;
+                const imgData = galleryData[index];
+
+                // Fade out preview image and caption
+                previewImg.classList.add('opacity-0');
+                captionText.classList.add('opacity-0');
+
+                // After transition finishes, update source and fade back in
+                setTimeout(() => {
+                    previewImg.src = imgData.src;
+                    previewImg.alt = imgData.caption;
+                    captionText.textContent = imgData.caption;
+                    previewImg.classList.remove('opacity-0');
+                    captionText.classList.remove('opacity-0');
+                }, 200);
+            }
+
+            function nextSlide() {
+                const nextIndex = (currentIndex + 1) % galleryData.length;
+                showImage(nextIndex);
+            }
+
+            function startSlideshow() {
+                if (slideInterval) clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+
+            function stopSlideshow() {
+                if (slideInterval) {
+                    clearInterval(slideInterval);
+                    slideInterval = null;
+                }
+            }
+
+            // Setup mouseover / hover events on thumbnails
+            thumbnails.forEach((thumb) => {
+                thumb.addEventListener('mouseenter', () => {
+                    stopSlideshow();
+                    const index = parseInt(thumb.getAttribute('data-index'), 10);
+                    showImage(index);
+                });
+            });
+
+            // Pause slideshow on hover of entire section, resume on leave
+            gallerySection.addEventListener('mouseenter', stopSlideshow);
+            gallerySection.addEventListener('mouseleave', startSlideshow);
+
+            // Initialize slideshow
+            startSlideshow();
+        });
+    </script>
 </body>
 
 </html>
