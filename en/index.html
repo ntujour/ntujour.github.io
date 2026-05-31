@@ -545,8 +545,11 @@
       const zh = s.nameZh ? `<span class="scholar-name-zh">(${esc(s.nameZh)})</span>` : '';
       const fc = s.area ? (FIELD_CLASS[s.area] || 'sfield-default') : '';
       const area = s.area ? `<span class="scholar-area ${fc}">${esc(s.area)}</span>` : '';
+      const nameHtml = s.profileUrl
+        ? `<a href="${esc(s.profileUrl)}" target="_blank" rel="noopener" class="scholar-link">${esc(s.name)}</a>`
+        : esc(s.name);
       return `<div class="scholar-row">
-          <div class="scholar-name">${esc(s.name)}${zh}</div>
+          <div class="scholar-name">${nameHtml}${zh}</div>
           <div class="scholar-affil">${esc(s.affiliation || '')}</div>
           <div class="scholar-period">${esc(s.period || '')}</div>
           <div class="scholar-area-cell">${area}</div>

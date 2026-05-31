@@ -1658,3 +1658,15 @@ footer { background: var(--maroon-dark); }
     height: 390px;
   }
 }
+
+.scholar-link {
+  color: var(--maroon);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.scholar-link:hover {
+  color: var(--maroon-hover);
+  text-decoration: underline;
+}
