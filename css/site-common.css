@@ -226,6 +226,27 @@ body:not(.site-home) main#main-content > section {
     display: none;
 }
 
+.news-archive-panel {
+    position: relative;
+    z-index: 1;
+}
+
+.news-archive-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    height: 280px;
+    background-image: url("../images/branding/ntujour-home-bg.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
 .news-archive-empty {
     padding: 18px 16px;
     color: #8a7757;
