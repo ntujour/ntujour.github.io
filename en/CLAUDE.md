@@ -203,7 +203,7 @@ The HTML at `faculty/<slug>.html` is a **thin shell** — it loads `js/faculty-p
 1. **Edit `data/faculty/<slug>.json`** — add or update the relevant field
 2. **Open preview** — start a local server and open the faculty page in browser:
    ```bash
-   cd /Users/hebe/Desktop/web/ntujour-en.github.io
+   cd /Users/jirlong/Library/CloudStorage/Dropbox/Programming/ntujour
    python3 -m http.server 8080 &
    open "http://localhost:8080/faculty/<slug>.html"
    ```
@@ -249,7 +249,7 @@ Then open a browser tab to `https://ntujour.github.io/en/`:
 ---
 
 ## Development Workflow
-- Working directory: `/Users/hebe/Desktop/web/ntujour-en.github.io/` (main branch)
+- Working directory: `/Users/jirlong/Library/CloudStorage/Dropbox/Programming/ntujour/` (main branch)
 - Worktree (legacy): `.claude/worktrees/agitated-hamilton-bceda0/` — sync with `cp` if used
 - Commit to `main` branch directly; push to `origin` to deploy on GitHub Pages
 - `LOG.md` records every prompt session (date, summary, files changed)
