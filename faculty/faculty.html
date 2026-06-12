@@ -177,10 +177,6 @@
         <div class="container-1200">
             <div class="bg-white">
                 <div class="flex flex-wrap gap-2 mb-5" id="faculty-filter-bar">
-                    <button type="button" data-faculty-category="all"
-                        class="tab-button faculty-filter-btn active inline-flex items-center gap-2 border px-4 py-2 text-sm font-medium transition">
-                        全部 <span data-count="all" class="text-xs opacity-70"></span>
-                    </button>
                     <button type="button" data-faculty-category="fulltime"
                         class="tab-button faculty-filter-btn inline-flex items-center gap-2 border px-4 py-2 text-sm font-medium transition">
                         專任教師 <span data-count="fulltime" class="text-xs opacity-70"></span>
@@ -208,6 +204,10 @@
                     <button type="button" data-faculty-category="staff"
                         class="tab-button faculty-filter-btn inline-flex items-center gap-2 border px-4 py-2 text-sm font-medium transition">
                         職員 <span data-count="staff" class="text-xs opacity-70"></span>
+                    </button>
+                    <button type="button" data-faculty-category="all"
+                        class="tab-button faculty-filter-btn active inline-flex items-center gap-2 border px-4 py-2 text-sm font-medium transition">
+                        全部 <span data-count="all" class="text-xs opacity-70"></span>
                     </button>
                 </div>
                 <div id="faculty-status" class="sr-only">資料載入中…</div>
@@ -294,7 +294,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             const pathPrefix = '../';
             const categories = [
-                { key: 'all', label: '全部' },
                 { key: 'fulltime', label: '專任教師' },
                 { key: 'parttime', label: '兼任教師' },
                 { key: 'practical', label: '實務教師' },
@@ -302,6 +301,7 @@
                 { key: 'joint', label: '合聘教師' },
                 { key: 'retired', label: '退休教師' },
                 { key: 'staff', label: '職員' },
+                { key: 'all', label: '全部' },
             ];
             const buttons = Array.from(document.querySelectorAll('[data-faculty-category]'));
             const grid = document.getElementById('faculty-grid');
