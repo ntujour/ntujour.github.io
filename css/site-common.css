@@ -9,6 +9,10 @@ body {
     background-color: #efefef;
 }
 
+:root {
+    --content-anchor-gap: 16px;
+}
+
 .container-1200 {
     width: min(calc(100% - 32px), var(--site-container-width, 1200px));
     max-width: none;
@@ -37,6 +41,10 @@ body:not(.site-home) #page-header + section + section {
 
 body:not(.site-home) #page-header {
     padding-block: 16px 0 !important;
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(var(--banner-height, 88px) + var(--site-nav-height, 56px));
+    z-index: 45;
 }
 
 body:not(.site-home) #page-header > .container-1200,
@@ -51,6 +59,7 @@ body:not(.site-home) main#main-content > section > .container-1200 {
 
 body:not(.site-home) #page-header > .container-1200 {
     padding: 18px clamp(18px, 2.2vw, 28px);
+    box-shadow: 0 3px 12px rgba(75, 49, 28, 0.08);
 }
 
 body:not(.site-home) #main-content,
@@ -72,6 +81,15 @@ body:not(.site-home) #page-header + section:not(#main-content) {
 
 body:not(.site-home) #page-header + section:not(#main-content) > .container-1200 {
     padding: 10px clamp(14px, 2vw, 22px);
+}
+
+body:not(.site-home) .scroll-mt-20,
+body:not(.site-home) .tab-content {
+    scroll-margin-top: calc(var(--sticky-stack-offset, 160px) + var(--content-anchor-gap, 28px)) !important;
+}
+
+body:not(.site-home) #main-content {
+    scroll-margin-top: var(--sticky-stack-offset, 160px) !important;
 }
 
 body:not(.site-home) main#main-content {
@@ -1131,6 +1149,129 @@ body:not(.site-home) main#main-content > section {
     display: block;
 }
 
+.admissions-intro {
+    max-width: 48rem;
+    margin: 0 auto 2.5rem;
+}
+
+.admissions-card {
+    max-width: 56rem;
+    margin: 0 auto;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.admissions-card:hover {
+    border-color: #d7cbb8;
+    box-shadow: 0 4px 12px rgba(122, 26, 20, 0.05);
+}
+
+.admissions-card .content-section {
+    max-width: none;
+    padding: 1.5rem;
+}
+
+.admissions-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.admissions-card-index {
+    margin: 0 0 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7a1a14;
+}
+
+.admissions-card-title {
+    margin: 0;
+}
+
+.admissions-card-badge {
+    flex: 0 0 auto;
+    border: 1px solid #e5e7eb;
+    background: #f5f5f5;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #525252;
+}
+
+.admissions-card-lead {
+    font-size: 1.0625rem;
+    color: #404040;
+    margin-bottom: 1.25rem;
+}
+
+.admissions-card-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.admissions-card-grid--media {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+}
+
+.admissions-card-panel {
+    border: 1px solid #e5e7eb;
+    background: #fcfcfc;
+    padding: 1.25rem;
+}
+
+.admissions-card-panel--media {
+    padding: 1rem;
+    background: #ffffff;
+}
+
+.admissions-card-panel--muted {
+    background: #faf7f2;
+    border-color: #e7ddd0;
+    margin-top: 1rem;
+}
+
+.admissions-card-image {
+    margin: 0;
+    max-width: none !important;
+}
+
+.admissions-link-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.admissions-link-stack .download-link {
+    margin: 0;
+}
+
+.admissions-rule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.admissions-rule-block {
+    border-top: 3px solid #7a1a14;
+    background: #fcfcfc;
+    padding: 1rem 1rem 0.5rem;
+}
+
+.admissions-rule-block h4 {
+    margin-top: 0;
+}
+
+.admissions-rule-block ol {
+    margin-bottom: 0;
+}
+
 /* Content sections */
 .content-section {
     max-width: 56rem;
@@ -1236,6 +1377,23 @@ body:not(.site-home) main#main-content > section {
     /* border-radius: 0.5rem; */
     margin: 1rem 0;
     /* color: rgba(59, 130, 246, .5); */
+}
+
+@media (max-width: 900px) {
+    .admissions-card-grid--media,
+    .admissions-rule-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .admissions-card .content-section {
+        padding: 1.125rem;
+    }
+
+    .admissions-card-header {
+        flex-direction: column;
+    }
 }
 
 /* Resource cards */
@@ -1394,4 +1552,3 @@ body:not(.site-home) main#main-content > section {
     position: relative;
     z-index: 1;
 }
-

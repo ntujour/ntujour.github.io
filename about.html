@@ -84,15 +84,23 @@
                         <a href="admissions.html"
                             class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">入學資訊</a>
                         <div class="dropdown-menu">
-                            <a href="admissions.html#qualifying">推甄入學</a>
-                            <a href="admissions.html#entrance">入學考試</a>
+                            <a href="admissions.html#qualifying">甄試入學</a>
+                            <a href="admissions.html#entrance">招生考試</a>
                             <a href="admissions.html#past-exam">歷屆考古題</a>
                             <a href="admissions.html#international">國際生</a>
+                            <a href="admissions.html#ochkmc">僑港澳生</a>
                         </div>
                     </li>
-                    <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
-                        <a href="students/student-learning.html"
+                    <li class="nav-item has-dropdown border-b sm:border-none border-white/10 w-full sm:w-auto">
+                        <a href="student-learning.html"
                             class="block px-3 py-2 text-[13px] text-white hover:text-ntu-gold font-medium transition">學生學習</a>
+                        <div class="dropdown-menu">
+                            <a href="student-learning.html#coursemap">課程地圖與課表</a>
+                            <a href="student-learning.html#course-regulation">修業規定</a>
+                            <a href="student-learning.html#degree-exam">學位考試資訊</a>
+                            <a href="student-learning.html#cross-school">校際與跨系選課</a>
+                            <a href="student-learning.html#scholarships">獎補助</a>
+                        </div>
                     </li>
                     <li class="nav-item border-b sm:border-none border-white/10 w-full sm:w-auto">
                         <a href="publications/e-report.html"
@@ -387,6 +395,252 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 3D Route Guide: 捷運科技大樓站 → 新聞研究所 -->
+                        <div id="rt3d" tabindex="0" aria-label="3D 路線導覽：捷運科技大樓站到新聞研究所">
+                            <style>
+                                #rt3d { outline: none; }
+                                #rt3d .rt3d-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+                                #rt3d .rt3d-head h4 { font-size: 1.25rem; font-weight: 800; color: #171717; }
+                                #rt3d .rt3d-head span { font-size: .78rem; letter-spacing: .14em; color: #a3a3a3; font-weight: 600; }
+                                .rt3d-stage { position: relative; height: 430px; border-radius: 1rem; overflow: hidden; perspective: 1100px; background: radial-gradient(120% 100% at 50% 0%, #1c2434 0%, #0c1220 75%); box-shadow: 0 18px 40px -18px rgba(0,0,0,.55); }
+                                @media (min-width: 768px) { .rt3d-stage { height: 540px; } }
+                                .rt3d-camera { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; }
+                                .rt3d-pan { position: absolute; left: 0; top: 0; }
+                                #rt3d.ready .rt3d-camera, #rt3d.ready .rt3d-pan { transition: transform 1.3s cubic-bezier(.25,.8,.25,1); }
+                                #rt3dMap { position: absolute; left: -400px; top: -550px; display: block; }
+                                .rt3d-vignette { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 130px 36px rgba(0,0,0,.55); }
+                                .rt3d-vignette::before, .rt3d-vignette::after { content: ""; position: absolute; left: 0; right: 0; height: 38px; }
+                                .rt3d-vignette::before { top: 0; background: linear-gradient(rgba(0,0,0,.78), transparent); }
+                                .rt3d-vignette::after { bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,.78)); }
+                                .rt3d-flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+                                .rt3d-flash.go { animation: rt3dFlash .55s ease-out; }
+                                @keyframes rt3dFlash { 0% { opacity: .3; } 100% { opacity: 0; } }
+                                .rt3d-badge { position: absolute; top: 14px; left: 14px; display: flex; align-items: center; gap: 8px; background: rgba(10,14,24,.74); color: #fff; font-size: 11px; letter-spacing: .14em; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); }
+                                .rt3d-badge .rt3d-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: rt3dBlink 1.2s steps(2) infinite; }
+                                @keyframes rt3dBlink { 50% { opacity: .25; } }
+                                .rt3d-route-tag { position: absolute; top: 14px; right: 14px; background: rgba(10,14,24,.74); color: #f2b84b; font-size: 11px; letter-spacing: .08em; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(242,184,75,.35); }
+                                @media (max-width: 520px) { .rt3d-route-tag { display: none; } }
+                                .rt3d-lower { position: absolute; left: 16px; right: 16px; bottom: 16px; pointer-events: none; }
+                                .rt3d-lower.anim { animation: rt3dIn .55s .1s both; }
+                                @keyframes rt3dIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+                                .rt3d-kicker { display: inline-block; background: #a32035; color: #fff; font-size: 11px; letter-spacing: .18em; padding: 4px 10px; border-radius: 4px 4px 0 0; font-weight: 800; }
+                                .rt3d-lt-box { background: linear-gradient(90deg, rgba(8,12,22,.92), rgba(8,12,22,.6) 65%, transparent); padding: 12px 18px; border-left: 4px solid #f2b84b; border-radius: 0 10px 10px 0; max-width: 580px; }
+                                .rt3d-lt-title { color: #fff; font-weight: 800; font-size: 1.1rem; }
+                                .rt3d-lt-desc { color: #cdd6e6; font-size: .88rem; margin-top: 4px; line-height: 1.65; }
+                                .rt3d-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+                                .rt3d-controls > button { padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: .9rem; border: 1px solid #d4d4d8; background: #fff; color: #404040; cursor: pointer; transition: all .2s; }
+                                .rt3d-controls > button:hover:not(:disabled) { border-color: #a3a3a3; transform: translateY(-1px); }
+                                .rt3d-controls > button:disabled { opacity: .35; cursor: not-allowed; }
+                                .rt3d-controls > button.rt3d-primary { background: #7e2a33; color: #fff; border-color: transparent; box-shadow: 0 6px 16px -6px rgba(126,42,51,.6); }
+                                .rt3d-controls > button.rt3d-primary:hover { background: #93333e; }
+                                .rt3d-dots { display: flex; gap: 8px; flex-wrap: wrap; }
+                                .rt3d-dots button { width: 10px; height: 10px; border-radius: 50%; background: #d4d4d8; border: none; padding: 0; cursor: pointer; transition: all .25s; }
+                                .rt3d-dots button.on { background: #a32035; transform: scale(1.35); }
+                                .rt3d-note { font-size: .75rem; color: #a3a3a3; margin-top: 8px; }
+                                /* SVG element states */
+                                #rt3d .rt3d-hl rect, #rt3d .rt3d-hl circle, #rt3d .rt3d-hl text { transition: all .5s; }
+                                #rt3d .rt3d-hl.on rect { fill: #6b4a1f; stroke: #f2b84b; filter: drop-shadow(0 0 14px rgba(242,184,75,.85)); }
+                                #rt3d .rt3d-hl.on text { fill: #ffe2a6; }
+                                #rt3d .rt3d-ring { opacity: 0; fill: none; stroke: #f2b84b; stroke-width: 4; transform-box: fill-box; transform-origin: center; }
+                                #rt3d .rt3d-ring.on { animation: rt3dRing 1.5s ease-out infinite; }
+                                @keyframes rt3dRing { 0% { opacity: .95; transform: scale(.55); } 100% { opacity: 0; transform: scale(1.35); } }
+                                #rt3dProgress { transition: none; }
+                                #rt3d.ready #rt3dProgress { transition: stroke-dashoffset 1.3s cubic-bezier(.4,0,.2,1); }
+                                #rt3d.ready #rt3dWalker { transition: transform 1.3s cubic-bezier(.4,0,.2,1); }
+                                #rt3d .rt3d-wpulse { transform-box: fill-box; transform-origin: center; animation: rt3dRing 1.6s ease-out infinite; }
+                            </style>
+
+                            <div class="rt3d-head">
+                                <h4>3D 路線導覽｜從捷運科技大樓站走到新聞所</h4>
+                                <span>SPECIAL&nbsp;PROGRAM・ROUTE&nbsp;GUIDE</span>
+                            </div>
+
+                            <div class="rt3d-stage">
+                                <div class="rt3d-camera" id="rt3dCamera">
+                                    <div class="rt3d-pan" id="rt3dPan">
+                                        <svg id="rt3dMap" width="800" height="1100" viewBox="0 0 800 1100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <!-- campus / city base -->
+                                            <rect x="0" y="0" width="800" height="726" fill="#16301d"/>
+                                            <rect x="0" y="726" width="800" height="374" fill="#1a2130"/>
+                                            <text x="120" y="80" fill="#2f5c3c" font-size="38" font-weight="700">臺大校園</text>
+                                            <!-- city blocks -->
+                                            <rect x="60" y="762" width="270" height="96" rx="10" fill="#242e44" stroke="#303c58"/>
+                                            <rect x="500" y="762" width="240" height="96" rx="10" fill="#242e44" stroke="#303c58"/>
+                                            <rect x="60" y="950" width="270" height="116" rx="10" fill="#242e44" stroke="#303c58"/>
+                                            <rect x="500" y="950" width="240" height="116" rx="10" fill="#242e44" stroke="#303c58"/>
+                                            <!-- campus trees -->
+                                            <circle cx="95" cy="130" r="26" fill="#1f4429"/><circle cx="145" cy="630" r="20" fill="#1f4429"/>
+                                            <circle cx="690" cy="95" r="24" fill="#1f4429"/><circle cx="705" cy="630" r="22" fill="#1f4429"/>
+                                            <circle cx="110" cy="305" r="22" fill="#1f4429"/><circle cx="695" cy="300" r="20" fill="#1f4429"/>
+                                            <circle cx="125" cy="430" r="18" fill="#1f4429"/><circle cx="670" cy="455" r="20" fill="#1f4429"/>
+                                            <!-- 辛亥路 -->
+                                            <rect x="0" y="680" width="800" height="46" fill="#3c465c"/>
+                                            <line x1="0" y1="703" x2="800" y2="703" stroke="#aab6cf" stroke-width="3" stroke-dasharray="26 18"/>
+                                            <text x="56" y="670" fill="#c6d0e6" font-size="22" font-weight="700">辛亥路三段</text>
+                                            <!-- 復興南路二段 -->
+                                            <rect x="372" y="726" width="56" height="374" fill="#3c465c"/>
+                                            <line x1="400" y1="726" x2="400" y2="1100" stroke="#aab6cf" stroke-width="3" stroke-dasharray="26 18"/>
+                                            <text transform="translate(352 838) rotate(-90)" fill="#c6d0e6" font-size="20" font-weight="700">復興南路二段</text>
+                                            <!-- 和平東路 -->
+                                            <rect x="0" y="880" width="800" height="46" fill="#3c465c"/>
+                                            <line x1="0" y1="903" x2="800" y2="903" stroke="#aab6cf" stroke-width="3" stroke-dasharray="26 18"/>
+                                            <text x="56" y="872" fill="#c6d0e6" font-size="22" font-weight="700">和平東路</text>
+                                            <!-- 文湖線高架 -->
+                                            <line x1="438" y1="726" x2="438" y2="1100" stroke="#7a4a21" stroke-width="10" opacity=".95"/>
+                                            <line x1="438" y1="726" x2="438" y2="1100" stroke="#c98a3d" stroke-width="4" stroke-dasharray="12 14"/>
+                                            <text transform="translate(466 838) rotate(-90)" fill="#d8a45f" font-size="16" font-weight="700">文湖線（高架）</text>
+                                            <!-- 校內道路 -->
+                                            <rect x="382" y="140" width="36" height="540" fill="#41506b"/>
+                                            <line x1="400" y1="150" x2="400" y2="676" stroke="#94a3bf" stroke-width="2.5" stroke-dasharray="16 14"/>
+                                            <rect x="230" y="288" width="410" height="26" fill="#41506b"/>
+                                            <!-- 側門 -->
+                                            <g class="rt3d-hl" id="hl-gate">
+                                                <rect x="362" y="660" width="14" height="22" rx="3" fill="#d9c08a"/>
+                                                <rect x="424" y="660" width="14" height="22" rx="3" fill="#d9c08a"/>
+                                                <text x="448" y="652" fill="#ecd9a8" font-size="20" font-weight="700">臺大側門</text>
+                                            </g>
+                                            <!-- 建築物 -->
+                                            <rect x="170" y="140" width="160" height="120" rx="12" fill="#243047" stroke="#36425f" stroke-width="2"/>
+                                            <rect x="180" y="335" width="150" height="105" rx="12" fill="#243047" stroke="#36425f" stroke-width="2"/>
+                                            <g class="rt3d-hl" id="hl-soc">
+                                                <rect x="452" y="470" width="190" height="160" rx="14" fill="#2c3a55" stroke="#4d5f82" stroke-width="2"/>
+                                                <text x="547" y="545" text-anchor="middle" fill="#d6deef" font-size="25" font-weight="800">社會科學院</text>
+                                                <text x="547" y="575" text-anchor="middle" fill="#9aa8c4" font-size="16">（右手邊）</text>
+                                            </g>
+                                            <g class="rt3d-hl" id="hl-law">
+                                                <rect x="158" y="470" width="190" height="160" rx="14" fill="#2c3a55" stroke="#4d5f82" stroke-width="2"/>
+                                                <text x="253" y="545" text-anchor="middle" fill="#d6deef" font-size="25" font-weight="800">霖澤館</text>
+                                                <text x="253" y="575" text-anchor="middle" fill="#9aa8c4" font-size="16">法律學院（左手邊）</text>
+                                            </g>
+                                            <g class="rt3d-hl" id="hl-nd">
+                                                <rect x="452" y="346" width="172" height="100" rx="12" fill="#2c3a55" stroke="#4d5f82" stroke-width="2"/>
+                                                <text x="538" y="392" text-anchor="middle" fill="#d6deef" font-size="22" font-weight="800">國發所</text>
+                                                <text x="538" y="420" text-anchor="middle" fill="#9aa8c4" font-size="15">（右手邊）</text>
+                                            </g>
+                                            <g class="rt3d-hl" id="hl-jour">
+                                                <rect x="452" y="150" width="162" height="110" rx="12" fill="#2c3a55" stroke="#4d5f82" stroke-width="2"/>
+                                                <text x="533" y="200" text-anchor="middle" fill="#d6deef" font-size="23" font-weight="800">新聞研究所</text>
+                                                <text x="533" y="230" text-anchor="middle" fill="#9aa8c4" font-size="15">目的地（右手邊）</text>
+                                            </g>
+                                            <!-- 捷運站 -->
+                                            <g class="rt3d-hl" id="hl-station">
+                                                <rect x="368" y="952" width="64" height="68" rx="12" fill="#6b4318" stroke="#c98a3d" stroke-width="2"/>
+                                                <circle cx="400" cy="986" r="19" fill="#8a5a23" stroke="#fff" stroke-width="3"/>
+                                                <text x="400" y="992" text-anchor="middle" fill="#fff" font-size="15" font-weight="800">BR</text>
+                                                <text x="400" y="1052" text-anchor="middle" fill="#ecd9a8" font-size="22" font-weight="800">捷運科技大樓站</text>
+                                                <rect x="446" y="956" width="50" height="27" rx="6" fill="#f2b84b"/>
+                                                <text x="471" y="975" text-anchor="middle" fill="#1a1d26" font-size="15" font-weight="800">出口2</text>
+                                            </g>
+                                            <!-- 路口提示圈 -->
+                                            <circle class="rt3d-ring" id="hl-ring0" cx="400" cy="903" r="46"/>
+                                            <circle class="rt3d-ring" id="hl-ring1" cx="400" cy="703" r="46"/>
+                                            <circle class="rt3d-ring" id="hl-ring2" cx="400" cy="301" r="40"/>
+                                            <!-- 路線 -->
+                                            <path id="rt3dPreview" d="M400 1005 L400 726 L400 314 L400 240 L446 208" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-dasharray="10 12"/>
+                                            <path id="rt3dProgress" d="M400 1005 L400 726 L400 314 L400 240 L446 208" fill="none" stroke="#f2b84b" stroke-width="7" stroke-linecap="round" style="filter:drop-shadow(0 0 8px rgba(242,184,75,.9))"/>
+                                            <!-- 行人位置 -->
+                                            <g id="rt3dWalker">
+                                                <circle class="rt3d-wpulse" r="16" fill="none" stroke="#e3413a" stroke-width="3"/>
+                                                <circle r="11" fill="#e3413a" stroke="#fff" stroke-width="3.5"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="rt3d-vignette"></div>
+                                <div class="rt3d-flash" id="rt3dFlash"></div>
+                                <div class="rt3d-badge"><span class="rt3d-dot"></span>路線導覽特別企劃</div>
+                                <div class="rt3d-route-tag">文湖線 科技大樓站 ➜ 臺大新聞所</div>
+                                <div class="rt3d-lower" id="rt3dLower">
+                                    <span class="rt3d-kicker" id="rt3dKicker">OPENING</span>
+                                    <div class="rt3d-lt-box">
+                                        <div class="rt3d-lt-title" id="rt3dTitle"></div>
+                                        <div class="rt3d-lt-desc" id="rt3dDesc"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rt3d-controls">
+                                <button type="button" id="rt3dPrev">◀ 上一步</button>
+                                <div class="rt3d-dots" id="rt3dDots"></div>
+                                <button type="button" id="rt3dNext" class="rt3d-primary">下一步 ▶</button>
+                            </div>
+                            <p class="rt3d-note">※ 互動示意圖（非實際比例）；畫面上方為行進方向。可用鍵盤 ← → 切換步驟。</p>
+
+                            <script>
+                            (function () {
+                                var steps = [
+                                    { k: 'OPENING', t: '路線總覽：科技大樓站 ➜ 新聞研究所', d: '從捷運文湖線「科技大樓站」2 號出口出發，沿復興南路二段右側南行，先穿越和平東路，再直行約 5 分鐘抵達辛亥路口，進入臺大校園後直行即可抵達新聞研究所。', fx: 400, fy: 600, s: 0.6, tilt: 46, rz: 0, p: 0, hl: [] },
+                                    { k: 'STEP 1／9', t: '從科技大樓站 2 號出口出發', d: '搭乘文湖線至「科技大樓站」，由新啟用的 2 號出口出站，沿復興南路二段右側人行道往南（辛亥路方向）出發。', fx: 400, fy: 975, s: 1.6, tilt: 55, rz: -4, p: 0.01, hl: ['hl-station'] },
+                                    { k: 'STEP 2／9', t: '穿越和平東路', d: '出站後不久即抵達和平東路口，依行人號誌直行穿越和平東路，繼續沿復興南路右側前進。', fx: 400, fy: 903, s: 1.65, tilt: 54, rz: 3, p: 0.125, hl: ['hl-ring0'] },
+                                    { k: 'STEP 3／9', t: '沿復興南路二段直行約 5 分鐘', d: '沿復興南路二段右側人行道直行約 5 分鐘（約 400 公尺），文湖線高架軌道就在你的頭頂上方。', fx: 400, fy: 800, s: 1.4, tilt: 57, rz: -2, p: 0.25, hl: [] },
+                                    { k: 'STEP 4／9', t: '重要路口：辛亥路口', d: '抵達復興南路 × 辛亥路三段路口，依行人號誌穿越辛亥路。', fx: 400, fy: 705, s: 1.65, tilt: 54, rz: -3, p: 0.37, hl: ['hl-ring1'] },
+                                    { k: 'STEP 5／9', t: '進入臺大校園（側門）', d: '過馬路後即為臺大側門，進入校園後沿校內道路繼續直行。', fx: 400, fy: 640, s: 1.75, tilt: 56, rz: 2, p: 0.43, hl: ['hl-gate'] },
+                                    { k: 'STEP 6／9', t: '右手社科院、左手霖澤館', d: '右手邊是社會科學院，左手邊是法律學院霖澤館，從兩棟建築之間繼續直行。', fx: 400, fy: 550, s: 1.45, tilt: 55, rz: 0, p: 0.55, hl: ['hl-soc', 'hl-law'] },
+                                    { k: 'STEP 7／9', t: '經過右側國發所', d: '繼續前行，右手邊會經過國家發展研究所。', fx: 420, fy: 400, s: 1.55, tilt: 56, rz: -2, p: 0.74, hl: ['hl-nd'] },
+                                    { k: 'STEP 8／9', t: '再過一個路口', d: '通過下一個校內路口，目的地新聞研究所就在前方不遠處。', fx: 400, fy: 300, s: 1.7, tilt: 54, rz: 3, p: 0.86, hl: ['hl-ring2'] },
+                                    { k: 'STEP 9／9｜抵達', t: '右手邊就是新聞研究所！', d: '過了路口之後，右手邊即為臺大新聞研究所，歡迎蒞臨！', fx: 430, fy: 210, s: 1.8, tilt: 50, rz: -5, p: 1, hl: ['hl-jour'] }
+                                ];
+                                var root = document.getElementById('rt3d');
+                                var cam = document.getElementById('rt3dCamera');
+                                var pan = document.getElementById('rt3dPan');
+                                var prog = document.getElementById('rt3dProgress');
+                                var walker = document.getElementById('rt3dWalker');
+                                var lower = document.getElementById('rt3dLower');
+                                var kicker = document.getElementById('rt3dKicker');
+                                var title = document.getElementById('rt3dTitle');
+                                var desc = document.getElementById('rt3dDesc');
+                                var flash = document.getElementById('rt3dFlash');
+                                var prev = document.getElementById('rt3dPrev');
+                                var next = document.getElementById('rt3dNext');
+                                var dots = document.getElementById('rt3dDots');
+                                var len = prog.getTotalLength();
+                                prog.style.strokeDasharray = len;
+                                prog.style.strokeDashoffset = len;
+                                steps.forEach(function (s, i) {
+                                    var b = document.createElement('button');
+                                    b.type = 'button';
+                                    b.setAttribute('aria-label', '步驟 ' + (i + 1));
+                                    b.addEventListener('click', function () { go(i); });
+                                    dots.appendChild(b);
+                                });
+                                var cur = -1;
+                                function go(i) {
+                                    if (i < 0 || i >= steps.length) return;
+                                    cur = i;
+                                    var s = steps[i];
+                                    cam.style.transform = 'rotateX(' + s.tilt + 'deg) rotateZ(' + s.rz + 'deg) scale(' + s.s + ')';
+                                    pan.style.transform = 'translate(' + (400 - s.fx) + 'px,' + (550 - s.fy) + 'px)';
+                                    prog.style.strokeDashoffset = len * (1 - s.p);
+                                    var pt = prog.getPointAtLength(len * s.p);
+                                    walker.style.transform = 'translate(' + pt.x + 'px,' + pt.y + 'px)';
+                                    root.querySelectorAll('.rt3d-hl.on, .rt3d-ring.on').forEach(function (el) { el.classList.remove('on'); });
+                                    s.hl.forEach(function (id) {
+                                        var el = document.getElementById(id);
+                                        if (el) el.classList.add('on');
+                                    });
+                                    kicker.textContent = s.k;
+                                    title.textContent = s.t;
+                                    desc.textContent = s.d;
+                                    if (root.classList.contains('ready')) {
+                                        lower.classList.remove('anim'); void lower.offsetWidth; lower.classList.add('anim');
+                                        flash.classList.remove('go'); void flash.offsetWidth; flash.classList.add('go');
+                                    }
+                                    prev.disabled = (i === 0);
+                                    next.textContent = (i === steps.length - 1) ? '↺ 重新開始' : '下一步 ▶';
+                                    dots.querySelectorAll('button').forEach(function (b, j) { b.classList.toggle('on', j === i); });
+                                }
+                                prev.addEventListener('click', function () { go(cur - 1); });
+                                next.addEventListener('click', function () { go(cur === steps.length - 1 ? 0 : cur + 1); });
+                                root.addEventListener('keydown', function (e) {
+                                    if (e.key === 'ArrowRight') { e.preventDefault(); go(Math.min(cur + 1, steps.length - 1)); }
+                                    if (e.key === 'ArrowLeft') { e.preventDefault(); go(Math.max(cur - 1, 0)); }
+                                });
+                                go(0);
+                                requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('ready'); }); });
+                            })();
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -467,7 +721,7 @@
     </div>
 </section>
 
-<section id="site-map" class="site-map-band"><div class="container-1200"><div class="site-map-grid"><div class="site-map-card"><h4 class="site-map-title">學生專區</h4><ul class="site-map-list"><li><a href="students/course-map.html" class="site-map-link">課程地圖</a></li><li><a href="students/course-regulation.html" class="site-map-link">修業規定</a></li><li><a href="students/statute-and-form.html" class="site-map-link">表單下載</a></li><li><a href="students/student-learning.html" class="site-map-link">學生學習</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">認識本所</h4><ul class="site-map-list"><li><a href="about.html#intro" class="site-map-link">本所介紹</a></li><li><a href="faculty/faculty.html" class="site-map-link">師資總覽</a></li><li><a href="publications/e-report.html" class="site-map-link">捐款支持</a></li><li><a href="about.html#transportation" class="site-map-link">聯絡我們</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">入學資訊</h4><ul class="site-map-list"><li><a href="admissions.html#qualifying" class="site-map-link">甄試入學</a></li><li><a href="admissions.html#entrance" class="site-map-link">招生考試</a></li><li><a href="admissions.html#past-exam" class="site-map-link">歷屆考古題</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">校友與連結</h4><ul class="site-map-list"><li><a href="about.html#donate" class="site-map-link">捐款支持</a></li><li><a href="resources.html" class="site-map-link">相關資源</a></li><li><a href="staff.html" class="site-map-link">行政人員</a></li><li><a href="news.html" class="site-map-link">最新消息</a></li></ul></div></div></div></section>
+<section id="site-map" class="site-map-band"><div class="container-1200"><div class="site-map-grid"><div class="site-map-card"><h4 class="site-map-title">學生專區</h4><ul class="site-map-list"><li><a href="student-learning.html#coursemap" class="site-map-link">課程地圖</a></li><li><a href="student-learning.html#course-regulation" class="site-map-link">修業規定</a></li><li><a href="student-learning.html#degree-exam" class="site-map-link">表單下載</a></li><li><a href="student-learning.html" class="site-map-link">學生學習</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">認識本所</h4><ul class="site-map-list"><li><a href="about.html#intro" class="site-map-link">本所介紹</a></li><li><a href="faculty/faculty.html" class="site-map-link">師資總覽</a></li><li><a href="publications/e-report.html" class="site-map-link">捐款支持</a></li><li><a href="about.html#transportation" class="site-map-link">聯絡我們</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">入學資訊</h4><ul class="site-map-list"><li><a href="admissions.html#qualifying" class="site-map-link">甄試入學</a></li><li><a href="admissions.html#entrance" class="site-map-link">招生考試</a></li><li><a href="admissions.html#past-exam" class="site-map-link">歷屆考古題</a></li></ul></div><div class="site-map-card"><h4 class="site-map-title">校友與連結</h4><ul class="site-map-list"><li><a href="about.html#donate" class="site-map-link">捐款支持</a></li><li><a href="resources.html" class="site-map-link">相關資源</a></li><li><a href="staff.html" class="site-map-link">行政人員</a></li><li><a href="news.html" class="site-map-link">最新消息</a></li></ul></div></div></div></section>
 <footer id="site-footer" class="bg-neutral-800 py-4 border-t border-neutral-600">
     <div class="container-1200">
         <div class="site-footer-grid">

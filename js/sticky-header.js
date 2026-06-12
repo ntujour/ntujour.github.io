@@ -6,21 +6,30 @@
  */
 (function () {
     const banner = document.getElementById('site-banner');
-    if (!banner) return;
+    const siteNav = document.getElementById('site-nav');
+    const pageHeader = document.getElementById('page-header');
 
-    function updateBannerHeight() {
-        // Measure real height including borders/padding
-        const h = banner.offsetHeight;
-        document.documentElement.style.setProperty('--banner-height', `${h}px`);
+    if (!banner && !siteNav && !pageHeader) return;
+
+    function updateStickyMetrics() {
+        const bannerHeight = banner ? banner.offsetHeight : 0;
+        const siteNavHeight = siteNav ? siteNav.offsetHeight : 0;
+        const pageHeaderHeight = pageHeader ? pageHeader.offsetHeight : 0;
+
+        document.documentElement.style.setProperty('--banner-height', `${bannerHeight}px`);
+        document.documentElement.style.setProperty('--site-nav-height', `${siteNavHeight}px`);
+        document.documentElement.style.setProperty('--page-header-height', `${pageHeaderHeight}px`);
+        document.documentElement.style.setProperty(
+            '--sticky-stack-offset',
+            `${bannerHeight + siteNavHeight + pageHeaderHeight}px`
+        );
     }
 
-    // Set height on initial load
-    updateBannerHeight();
+    updateStickyMetrics();
 
-    // Re-measure height on window resize
     let resizeTimer;
     window.addEventListener('resize', function () {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(updateBannerHeight, 100);
+        resizeTimer = setTimeout(updateStickyMetrics, 100);
     });
 })();
