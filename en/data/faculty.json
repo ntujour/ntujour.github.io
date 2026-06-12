@@ -89,17 +89,17 @@
       "profileUrl": "faculty/lokman-tsui.html"
     },
     {
-      "name": "Adrian Rauchfleisch",
-      "nameZh": "Adrian Rauchfleisch",
-      "title": "教授",
+      "name": "Adrian Rauchfleisch (劉好迪)",
+      "nameZh": "Adrian Rauchfleisch (劉好迪)",
+      "title": "特聘教授",
       "photo": "../images/faculty/RauchfleischA.png",
       "tags": [],
       "placeholder": "A",
       "profileUrl": "faculty/adrianrauchfleisch.html"
     },
     {
-      "name": "Lokman Tsui（徐洛文）",
-      "nameZh": "Lokman Tsui（徐洛文）",
+      "name": "Lokman Tsui (徐洛文)",
+      "nameZh": "Lokman Tsui (徐洛文)",
       "title": "助理教授",
       "photo": "../images/faculty/lokmantsui.jpg",
       "tags": [],
@@ -236,7 +236,7 @@
       "tags": [
         "Digital Innovation & Media Management"
       ],
-      "title": "實務教師／兼任助理教授級專業技術人員"
+      "title": "兼任助理教授級專業技術人員"
     },
     {
       "name": "De-Lin Fang",
@@ -255,14 +255,6 @@
         "Digital Innovation & Media Management"
       ],
       "title": "兼任助理教授級專業技術人員"
-    },
-    {
-      "name": "Archie Tse",
-      "nameZh": "Archie Tse",
-      "title": "兼任副教授級專業技術人員",
-      "photo": "../images/faculty/archie-tse.jpg",
-      "tags": [],
-      "placeholder": "A"
     },
     {
       "name": "黃兆徽",
@@ -318,27 +310,7 @@
       ]
     }
   ],
-  "remembrance": [
-    {
-      "name": "Rou-Jin Chen",
-      "nameZh": "陳柔縉",
-      "photo": "../images/faculty/chenjoumin.jpg",
-      "tags": [
-        "Reporting & Writing (II)"
-      ],
-      "title": "兼任副教授級專業技術人員（感謝與追思）"
-    },
-    {
-      "name": "Yen-Yuan Ni",
-      "nameZh": "倪炎元",
-      "title": "Professor",
-      "photo": "../images/faculty/niyenyuan.jpg",
-      "tags": [
-        "Public Relations",
-        "News Reporting"
-      ]
-    }
-  ],
+  "remembrance": [],
   "retired": [
     {
       "name": "Chao-Chen Lin",
@@ -349,6 +321,33 @@
       "tags": [
         "Visual Journalism",
         "Investigative Journalism"
+      ]
+    },
+    {
+      "name": "Archie Tse",
+      "nameZh": "Archie Tse",
+      "title": "兼任副教授級專業技術人員",
+      "photo": "../images/faculty/archie-tse.jpg",
+      "tags": [],
+      "placeholder": "A"
+    },
+    {
+      "name": "Rou-Jin Chen",
+      "nameZh": "陳柔縉",
+      "photo": "../images/faculty/chenjoumin.jpg",
+      "tags": [
+        "Reporting & Writing (II)"
+      ],
+      "title": "兼任專業技術人員（追思與感恩）"
+    },
+    {
+      "name": "Yen-Yuan Ni",
+      "nameZh": "倪炎元",
+      "title": "Professor",
+      "photo": "../images/faculty/niyenyuan.jpg",
+      "tags": [
+        "Public Relations",
+        "News Reporting"
       ]
     }
   ]
