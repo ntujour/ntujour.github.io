@@ -130,21 +130,13 @@
     },
     {
       "name": "Lin-Lin Ku",
-      "nameZh": "古玲玲",
+      "nameZh": "谷玲玲",
       "title": "Associate Professor",
-      "photo": "image/Lin-Lin%20Ku.png",
+      "photo": "../images/faculty/kulingling.png",
       "tags": [
         "Communication Statistics",
         "News Writing in English"
       ]
-    },
-    {
-      "name": "谷玲玲",
-      "nameZh": "谷玲玲",
-      "title": "兼任副教授",
-      "photo": "../images/faculty/kulingling.png",
-      "tags": [],
-      "placeholder": "谷"
     }
   ],
   "specialist": [

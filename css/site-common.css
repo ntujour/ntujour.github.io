@@ -10,6 +10,7 @@ body {
 }
 
 :root {
+    --page-shell-gap: 16px;
     --content-anchor-gap: 16px;
 }
 
@@ -51,7 +52,8 @@ body:not(.site-home) #page-header > .container-1200,
 body:not(.site-home) #main-content > .container-1200,
 body:not(.site-home) #page-header + section > .container-1200,
 body:not(.site-home) #page-header + section + section > .container-1200,
-body:not(.site-home) main#main-content > section > .container-1200 {
+body:not(.site-home) main#main-content > section > .container-1200,
+body:not(.site-home) section#main-content > section > .container-1200 {
     border: 1px solid #d7cbb8;
     background: #ffffff;
     box-shadow: 0 1px 0 rgba(75, 49, 28, 0.04);
@@ -65,12 +67,13 @@ body:not(.site-home) #page-header > .container-1200 {
 body:not(.site-home) #main-content,
 body:not(.site-home) #page-header + section,
 body:not(.site-home) #page-header + section + section {
-    padding-block: 16px !important;
+    padding-block: var(--page-shell-gap, 16px) !important;
 }
 
 body:not(.site-home) #main-content > .container-1200,
 body:not(.site-home) #page-header + section + section > .container-1200,
-body:not(.site-home) main#main-content > section > .container-1200 {
+body:not(.site-home) main#main-content > section > .container-1200,
+body:not(.site-home) section#main-content > section > .container-1200 {
     padding: clamp(20px, 2.6vw, 32px);
 }
 
@@ -89,14 +92,16 @@ body:not(.site-home) .tab-content {
 }
 
 body:not(.site-home) #main-content {
-    scroll-margin-top: var(--sticky-stack-offset, 160px) !important;
+    scroll-margin-top: calc(var(--sticky-stack-offset, 160px) + var(--page-shell-gap, 16px)) !important;
 }
 
-body:not(.site-home) main#main-content {
-    padding-block: 0 !important;
+body:not(.site-home) main#main-content,
+body:not(.site-home) section#main-content {
+    padding-block: var(--page-shell-gap, 16px) !important;
 }
 
-body:not(.site-home) main#main-content > section {
+body:not(.site-home) main#main-content > section,
+body:not(.site-home) section#main-content > section {
     border-bottom: 0 !important;
     background: transparent !important;
     padding-block: 16px !important;
@@ -714,7 +719,8 @@ body:not(.site-home) main#main-content > section {
     body:not(.site-home) #main-content > .container-1200,
     body:not(.site-home) #page-header + section > .container-1200,
     body:not(.site-home) #page-header + section + section > .container-1200,
-    body:not(.site-home) main#main-content > section > .container-1200 {
+    body:not(.site-home) main#main-content > section > .container-1200,
+    body:not(.site-home) section#main-content > section > .container-1200 {
         padding: 16px;
     }
 
@@ -1384,21 +1390,25 @@ body:not(.site-home) main#main-content > section {
     scroll-margin-top: calc(var(--sticky-stack-offset, 160px) + var(--content-anchor-gap, 28px));
 }
 
-body:not(.site-home) main#main-content > section.content-frame-section {
+body:not(.site-home) main#main-content > section.content-frame-section,
+body:not(.site-home) section#main-content > section.content-frame-section {
     padding-block: 16px !important;
 }
 
-body:not(.site-home) main#main-content > section.content-frame-section > .container-1200 {
+body:not(.site-home) main#main-content > section.content-frame-section > .container-1200,
+body:not(.site-home) section#main-content > section.content-frame-section > .container-1200 {
     border: 1px solid #d7cbb8;
     background: #ffffff;
     box-shadow: 0 1px 0 rgba(75, 49, 28, 0.04);
 }
 
-body:not(.site-home) main#main-content > section.content-frame-section.content-frame-section--muted > .container-1200 {
+body:not(.site-home) main#main-content > section.content-frame-section.content-frame-section--muted > .container-1200,
+body:not(.site-home) section#main-content > section.content-frame-section.content-frame-section--muted > .container-1200 {
     background: #faf9f5;
 }
 
-body:not(.site-home) main#main-content > .container-1200 > section.tab-content.content-frame-section {
+body:not(.site-home) main#main-content > .container-1200 > section.tab-content.content-frame-section,
+body:not(.site-home) section#main-content > .container-1200 > section.tab-content.content-frame-section {
     margin-top: 16px;
     border: 1px solid #d7cbb8;
     background: #ffffff;
@@ -1406,7 +1416,8 @@ body:not(.site-home) main#main-content > .container-1200 > section.tab-content.c
     padding: clamp(20px, 2.6vw, 32px);
 }
 
-body:not(.site-home) main#main-content > .container-1200 > section.tab-content.content-frame-section.content-frame-section--muted {
+body:not(.site-home) main#main-content > .container-1200 > section.tab-content.content-frame-section.content-frame-section--muted,
+body:not(.site-home) section#main-content > .container-1200 > section.tab-content.content-frame-section.content-frame-section--muted {
     background: #faf9f5;
 }
 

@@ -449,13 +449,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
-            const scrollToActiveTab = (targetContent) => {
-                if (!targetContent) {
+            const mainContent = document.getElementById('main-content');
+            const scrollMainContentIntoView = () => {
+                if (!mainContent) {
                     return;
                 }
 
                 requestAnimationFrame(() => {
-                    targetContent.scrollIntoView({
+                    mainContent.scrollIntoView({
                         block: 'start',
                         behavior: 'auto',
                     });
@@ -481,7 +482,7 @@
                 }
 
                 if (alignHeader) {
-                    scrollToActiveTab(targetContent);
+                    scrollMainContentIntoView();
                 }
             };
 
