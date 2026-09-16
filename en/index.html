@@ -401,6 +401,9 @@
     </div>
   </footer>
 
+  <script src="../js/cloud-news.js?v=20260913-2"></script>
+<script>window.NTUJourFacultyPaths = {"ji-lung-hsieh": "jerryhsieh", "lih-yun-lin": "lihyunlin", "chen-ling-hung": "clhung", "adrian-rauchfleisch": "adrianrauchfleisch", "hui-ju-tsai": "tsaihuiju", "i-i-chan": "chanii311", "lokman-tsui": "lokmantsui", "wangtaili": "wangtaili", "chenshunhsiao": "chenshunhsiao", "kulingling": "kulingling", "lichihte": "lichihte", "liangyufang": "liangyufang", "archietse": "archietse", "lihsuehli": "lihsuehli", "liyenfu": "liyenfu", "yangkuangsheng": "yangkuangsheng", "liulijen": "liulijen", "kuochunglun": "kuochunglun", "hsiaofuyuan": "hsiaofuyuan", "chengkaichun": "chengkaichun", "changchiehping": "changchiehping", "huangchepin": "huangchepin", "fangterlin": "fangterlin", "wuwanyu": "wuwanyu", "huangchaohui": "huangchaohui", "changchinhwa": "changchinhwa", "carolinelin": "carolinelin", "niyenyuan": "niyenyuan", "chenjoumin": "chenjoumin", "liuchingi": "liuchingi", "hui-chieh-su": "hui-chieh-su"};</script>
+<script src="../js/faculty-cloud.js?v=20260916-4"></script>
   <script>
     // ── Image gallery arrows (infinite loop) ────────────────────────────
     (function () {
@@ -482,8 +485,9 @@
 
     // ── Faculty card builder ─────────────────────────────────────────────
     function buildFacultyCard(f, isFulltime, isRemembrance) {
-      const tag      = isFulltime ? 'a' : 'div';
-      const href     = isFulltime ? ` href="${esc(f.profileUrl)}"` : '';
+      const hasProfile = Boolean(f.profileUrl);
+      const tag      = hasProfile ? 'a' : 'div';
+      const href     = hasProfile ? ` href="${esc(f.profileUrl)}"` : '';
       const extra    = isRemembrance ? ' faculty-card-remembrance' : '';
       const nameCol  = isRemembrance ? ' style="color:var(--text-700);"' : '';
       const zh       = f.nameZh
@@ -558,8 +562,8 @@
 
     // ── Load JSON data ───────────────────────────────────────────────────
     Promise.all([
-      fetch('data/news.json').then(r => r.json()),
-      fetch('data/faculty.json').then(r => r.json()),
+      window.NTUJourNews.loadIndex('en', 'data/news.json'),
+      window.NTUJourFacultyCloud.loadEnglishIndex().catch(() => fetch('data/faculty.json').then(r => r.json())),
       fetch('data/visiting-scholars.json').then(r => r.json())
     ]).then(([news, faculty, scholars]) => {
 
@@ -638,6 +642,5 @@
 
     }).catch(err => console.error('Data load failed:', err));
   </script>
-
 </body>
 </html>

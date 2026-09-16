@@ -1,0 +1,83 @@
+{
+  "items": [
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "ji-lung-hsieh",
+      "name": "Ji-Lung Hsieh",
+      "order": 101,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/a03929699b544cc69528.png",
+      "title": "Associate Professor &amp; Director"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "lih-yun-lin",
+      "name": "Lih-Yun Lin",
+      "order": 102,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/2b50d92d87fb8d66c483.png",
+      "title": "Professor"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "chen-ling-hung",
+      "name": "Chen-Ling Hung",
+      "order": 103,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/ef21981bda0a6dc08c9e.jpg",
+      "title": "Professor"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "adrian-rauchfleisch",
+      "name": "Adrian Rauchfleisch",
+      "order": 104,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/d50496201b99bd5047eb.png",
+      "title": "Distinguished Professor"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "hui-ju-tsai",
+      "name": "Hui-Ju Tsai",
+      "order": 105,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/0b5f2cb998a3ac8e14d0.jpg",
+      "title": "Associate Professor"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "i-i-chan",
+      "name": "I-I Chan",
+      "order": 106,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/2524a09ea0d944b4ed1f.png",
+      "title": "Associate Professor"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "lokman-tsui",
+      "name": "Lokman Tsui",
+      "order": 107,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/f69fd56daf6c702072fd.jpg",
+      "title": "Assistant Professor"
+    }
+  ],
+  "lang": "en",
+  "schemaVersion": 1
+}

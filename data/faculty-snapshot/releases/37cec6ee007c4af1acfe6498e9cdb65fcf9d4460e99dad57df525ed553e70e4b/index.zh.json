@@ -1,0 +1,294 @@
+{
+  "items": [
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "ji-lung-hsieh",
+      "name": "謝吉隆",
+      "order": 101,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/a03929699b544cc69528.png",
+      "title": "副教授兼所長"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "lih-yun-lin",
+      "name": "林麗雲",
+      "order": 102,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/2b50d92d87fb8d66c483.png",
+      "title": "教授"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "chen-ling-hung",
+      "name": "洪貞玲",
+      "order": 103,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/ef21981bda0a6dc08c9e.jpg",
+      "title": "教授"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "adrian-rauchfleisch",
+      "name": "Adrian Rauchfleisch (劉好迪)",
+      "order": 104,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/d50496201b99bd5047eb.png",
+      "title": "特聘教授"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "hui-ju-tsai",
+      "name": "蔡蕙如",
+      "order": 105,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/0b5f2cb998a3ac8e14d0.jpg",
+      "title": "副教授"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "i-i-chan",
+      "name": "詹怡宜",
+      "order": 106,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/2524a09ea0d944b4ed1f.png",
+      "title": "副教授"
+    },
+    {
+      "categories": [
+        "fulltime"
+      ],
+      "category": "fulltime",
+      "id": "lokman-tsui",
+      "name": "Lokman Tsui (徐洛文)",
+      "order": 107,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/f69fd56daf6c702072fd.jpg",
+      "title": "助理教授"
+    },
+    {
+      "categories": [
+        "parttime"
+      ],
+      "category": "parttime",
+      "id": "wangtaili",
+      "name": "王泰俐",
+      "order": 201,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/64900ba3c92a95d88566.png",
+      "title": "兼任教授"
+    },
+    {
+      "categories": [
+        "parttime"
+      ],
+      "category": "parttime",
+      "id": "chenshunhsiao",
+      "name": "陳順孝",
+      "order": 202,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/a8f5a657b33026487576.jpg",
+      "title": "兼任教授"
+    },
+    {
+      "categories": [
+        "parttime",
+        "retired"
+      ],
+      "category": "parttime",
+      "id": "kulingling",
+      "name": "谷玲玲",
+      "order": 203,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/7e00f752302f166327d7.png",
+      "title": "兼任副教授"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "lichihte",
+      "name": "李志德",
+      "order": 301,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/e7642b85cd3050773d31.jpg",
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "liangyufang",
+      "name": "梁玉芳",
+      "order": 302,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/e563eec06591aee5f43c.jpg",
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "lihsuehli",
+      "name": "李雪莉",
+      "order": 304,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/34746e30844af3c8f6a8.png",
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "liyenfu",
+      "name": "李彥甫",
+      "order": 305,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/180d0648cb0b10432d49.jpg",
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "yangkuangsheng",
+      "name": "楊光昇",
+      "order": 307,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/ea6d533acd39028cec9d.jpg",
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "liulijen",
+      "name": "劉力仁",
+      "order": 308,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/cdb763c9bac9fc27fe98.jpg",
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "hsiaofuyuan",
+      "name": "蕭富元",
+      "order": 310,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/38e93ea3aa60430ed1a7.jpg",
+      "title": "兼任副教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "chengkaichun",
+      "name": "鄭凱駿",
+      "order": 311,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/9f5a41e811a9a73466b3.png",
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "changchiehping",
+      "name": "張潔平",
+      "order": 312,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/f41242cca00fe2eeb9c6.jpg",
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "huangchepin",
+      "name": "黃哲斌",
+      "order": 313,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/f43b1ea25802701ad1ee.jpg",
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "fangterlin",
+      "name": "方德琳",
+      "order": 314,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/39e44bd74d2793540164.jpg",
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "practical"
+      ],
+      "category": "practical",
+      "id": "wuwanyu",
+      "name": "吳婉瑜",
+      "order": 315,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/0f3494896f5f975acfeb.jpg",
+      "title": "兼任助理教授級專業技術人員"
+    },
+    {
+      "categories": [
+        "honorary",
+        "retired"
+      ],
+      "category": "honorary",
+      "id": "changchinhwa",
+      "name": "張錦華",
+      "order": 401,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/2b087587ab8f8f101584.png",
+      "title": "名譽教授"
+    },
+    {
+      "categories": [
+        "retired"
+      ],
+      "category": "retired",
+      "id": "carolinelin",
+      "name": "林照真",
+      "order": 402,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/b870ba6dc5c3da26b22e.jpg",
+      "title": "教授"
+    },
+    {
+      "categories": [
+        "joint"
+      ],
+      "category": "joint",
+      "id": "liuchingi",
+      "name": "劉靜怡",
+      "order": 501,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/fdb51986df9d49a0f15b.jpg",
+      "title": "合聘教授（國發所）"
+    },
+    {
+      "categories": [
+        "joint"
+      ],
+      "category": "joint",
+      "id": "hui-chieh-su",
+      "name": "蘇慧婕",
+      "order": 502,
+      "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/hui-chieh-su-985c37cd3a5b00f3cc11.jpg",
+      "title": "副教授（與法律學院合聘）"
+    }
+  ],
+  "lang": "zh",
+  "schemaVersion": 1
+}

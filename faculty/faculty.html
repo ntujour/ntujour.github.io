@@ -290,6 +290,8 @@
 
 
     <script src="../js/sticky-header.js"></script>
+<script>window.NTUJourFacultyPaths = {"ji-lung-hsieh": "jerryhsieh", "lih-yun-lin": "lihyunlin", "chen-ling-hung": "clhung", "adrian-rauchfleisch": "adrianrauchfleisch", "hui-ju-tsai": "tsaihuiju", "i-i-chan": "chanii311", "lokman-tsui": "lokmantsui", "wangtaili": "wangtaili", "chenshunhsiao": "chenshunhsiao", "kulingling": "kulingling", "lichihte": "lichihte", "liangyufang": "liangyufang", "archietse": "archietse", "lihsuehli": "lihsuehli", "liyenfu": "liyenfu", "yangkuangsheng": "yangkuangsheng", "liulijen": "liulijen", "kuochunglun": "kuochunglun", "hsiaofuyuan": "hsiaofuyuan", "chengkaichun": "chengkaichun", "changchiehping": "changchiehping", "huangchepin": "huangchepin", "fangterlin": "fangterlin", "wuwanyu": "wuwanyu", "huangchaohui": "huangchaohui", "changchinhwa": "changchinhwa", "carolinelin": "carolinelin", "niyenyuan": "niyenyuan", "chenjoumin": "chenjoumin", "liuchingi": "liuchingi", "hui-chieh-su": "hui-chieh-su"};</script>
+<script src="../js/faculty-cloud.js?v=20260916-4"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const pathPrefix = '../';
@@ -323,6 +325,9 @@
                 const clean = String(photo || '').trim();
                 if (!clean) {
                     return pathPrefix + 'images/default.png';
+                }
+                if (/^https?:\/\//i.test(clean)) {
+                    return clean;
                 }
                 return pathPrefix + clean.replace(/^\/+/, '');
             }
@@ -381,7 +386,7 @@
                     categoryKey === 'all'
                         ? facultyData
                         : facultyData.filter(function (item) {
-                            return item.category_key === categoryKey;
+                            return (item.category_keys || [item.category_key]).includes(categoryKey);
                         })
                 );
                 if (!filtered.length) {
@@ -393,7 +398,7 @@
             function updateCounts() {
                 categories.forEach(function (category) {
                     const count = facultyData.filter(function (item) {
-                        return category.key === 'all' ? true : item.category_key === category.key;
+                        return category.key === 'all' ? true : (item.category_keys || [item.category_key]).includes(category.key);
                     }).length;
                     const el = countSpans.get(category.key);
                     if (el) {
@@ -441,7 +446,7 @@
                     const count = activeCategory === 'all'
                         ? facultyData.length
                         : facultyData.filter(function (item) {
-                            return item.category_key === activeCategory;
+                            return (item.category_keys || [item.category_key]).includes(activeCategory);
                         }).length;
                     status.textContent = `${current ? current.label : '教師'}：${count} 位`;
                 }
@@ -464,7 +469,7 @@
                 button.setAttribute('aria-pressed', 'false');
             });
 
-            fetch('../data/faculty.json', { cache: 'no-store' })
+            window.NTUJourFacultyCloud.loadZhIndex(window.NTUJourFacultyPaths).then(function (data) { return { ok: true, json: function () { return data; } }; }).catch(function () { return fetch('../data/faculty.json', { cache: 'no-store' }); })
                 .then(function (response) {
                     if (!response.ok) {
                         throw new Error(`faculty.json request failed: ${response.status}`);

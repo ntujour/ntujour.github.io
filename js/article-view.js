@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 async function loadArticle(type, id) {
     try {
+        if (type === 'cloud-news') {
+            const article = await window.NTUJourNews.loadDetail('zh', id, 'data/news.json');
+            document.getElementById('breadcrumb-category').innerHTML = '<a href="news.html" class="hover:text-gray-900">最新消息</a>';
+            document.title = article.title + ' - 國立臺灣大學新聞研究所';
+            displayArticle(article, 'news');
+            return;
+        }
+        if (type === 'cloud-activity') {
+            const article = await window.NTUJourNews.loadDetail('zh', id, 'data/activities.json');
+            document.getElementById('breadcrumb-category').innerHTML = '<a href="activities.html" class="hover:text-gray-900">活動資訊</a>';
+            document.title = article.title + ' - 國立臺灣大學新聞研究所';
+            displayArticle(article, 'activity');
+            return;
+        }
         const filename = type === 'news' ? 'data/news.json' : 'data/activities.json';
         const response = await fetch(filename);
         const articles = await response.json();
@@ -47,7 +61,8 @@ function displayArticle(article, type) {
     const container = document.getElementById('article-content');
     const hashtags = renderHashtags(article.hashtags);
     const mediumLink = renderMediumLink(article.external_url);
-    const articleImages = renderArticleImages(article);
+    const coverImage = renderArticleCover(article);
+    const galleryImages = renderArticleGallery(article);
 
     let extraInfo = '';
     if (type === 'activity' && (article.time || article.location)) {
@@ -71,33 +86,38 @@ function displayArticle(article, type) {
         </div>
 
         ${mediumLink}
-        ${articleImages}
+        ${coverImage}
 
         ${extraInfo}
 
         <div class="article-body">
             ${article.content}
         </div>
+
+        ${galleryImages}
     `;
 }
 
-function renderArticleImages(article) {
+function renderArticleCover(article) {
     const coverImage = String(article.image || '').trim();
-    const rawGallery = Array.isArray(article.gallery_images) ? article.gallery_images : [];
-    const gallery = rawGallery
+    if (!coverImage) return '';
+    return `
+        <figure class="article-cover-container group">
+            <div class="article-cover-inner">
+                ${renderCroppedImage(coverImage, article.title || '', article.image_crop, 'article-cover-img')}
+            </div>
+        </figure>
+    `;
+}
+
+function renderArticleGallery(article) {
+    const coverImage = String(article.image || '').trim();
+    const gallery = (Array.isArray(article.gallery_images) ? article.gallery_images : [])
         .map((value) => String(value || '').trim())
         .filter((value) => value && value !== coverImage);
-
-    if (!coverImage && gallery.length === 0) return '';
-
-    const coverHtml = coverImage ? `
-        <figure class="mb-6">
-            ${renderCroppedImage(coverImage, article.title || '', article.image_crop, 'content-image')}
-        </figure>
-    ` : '';
-
-    const galleryHtml = gallery.length ? `
-        <section class="article-gallery mt-2 mb-8 border-t border-neutral-200 pt-6">
+    if (!gallery.length) return '';
+    return `
+        <section class="article-gallery clear-both mt-8 mb-8 border-t border-neutral-200 pt-6">
             <h2 class="mb-4 text-lg font-bold text-neutral-900">相關照片</h2>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 ${gallery.map((src) => `
@@ -107,9 +127,7 @@ function renderArticleImages(article) {
                 `).join('')}
             </div>
         </section>
-    ` : '';
-
-    return coverHtml + galleryHtml;
+    `;
 }
 
 function renderMediumLink(url) {
