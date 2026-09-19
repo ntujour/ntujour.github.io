@@ -1,0 +1,8 @@
+# Local development artifacts must never be tracked or published from generated output.
+.DS_Store
+.Rhistory
+.claude/
+.gitattributes
+CLAUDE.md
+INSTRUCTION.md
+LOG.md

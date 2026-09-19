@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T07:31:44.079605+00:00",
+  "generatedAt": "2026-09-19T15:43:56.126416+00:00",
   "generator": "local_generator_app",
   "files": {
     "404.html": "95dfacdfd83b320899b5e65b84f0d2a6f76f8ca2ce3ed3e09126ce65e5ded4ef",
@@ -207,9 +207,6 @@
     "documents/深度報導論文_題目及計畫大綱.pdf": "c4bc49579c511520bd9fb5ab74337f91a8d4ff408eb455ee0db9dd9387bbfcfe",
     "documents/深度報導論文寫作規定_113修訂版.pdf": "ddd0f4547cb51cb152159da6eb923556d14df498bb43da7efa094ef90e56b0a6",
     "documents/深度報導論文封面範本_2023版.doc": "b4ff90975c0b7e7e3afc7549485ccacaac6ab98a611fff601c29f9be3f18c647",
-    "en/CLAUDE.md": "2bd30efe8c27ee39ae24e4e487907a15eac3354ca18ae1d47d7e0dac70c7c434",
-    "en/INSTRUCTION.md": "c739ebb9f0c4bf8b58747ed75dc7af0d07495d85e2c328d9354ec1f543f135f9",
-    "en/LOG.md": "d63232d5b8d851e73ad837ff185cc6a3558cf870f9634f31841c21bb1da79ba7",
     "en/css/style.css": "7f92ea2cf75ae2895220449249a422d31ea84556a02d6f04017c10bf783f5509",
     "en/data/faculty.json": "42720b852b2a48b70466ee2009d1c39a0d213eabe68727c5617a2d09a39b91f6",
     "en/data/news.json": "20e10b9db29f13ab29e5f773a2ad1ad672e9db49f5f6d23cbc7fe5ff2ac3c6ac",
