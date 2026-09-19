@@ -1,10 +1,10 @@
 {
-  "bodyHtml": "<p><strong>授課科目</strong>：政治傳播、媒介心理學與實務、影像新聞雜誌、傳播研究方法、電子媒體實習</p>\n<p><strong>研究專長</strong>：媒體心理、正向心理學、政治傳播、影像新聞、網路傳播</p><p><b>教師個人網站：</b><span><a href=\"https://drlilywang.com/\" target=\"_blank\">https://drlilywang.com/</a>&nbsp;</span></p>",
+  "bodyHtml": "<p><strong>研究專長</strong><span>：媒體心理、正向心理學、政治傳播、影像新聞、網路傳播</span></p>",
   "categories": [
     "parttime"
   ],
   "category": "parttime",
-  "email": "",
+  "email": "tailiwster@gmail.com",
   "expertise": "政治傳播、媒介心理學與實務、影像新聞雜誌、傳播研究方法、電子媒體實習",
   "id": "wangtaili",
   "lang": "zh",
@@ -16,5 +16,5 @@
   "photo": "https://storage.googleapis.com/ntujour-graduate/faculty-pilot/v1/media/64900ba3c92a95d88566.png",
   "schemaVersion": 1,
   "title": "兼任教授",
-  "website": ""
+  "website": "https://drlilywang.com/"
 }
